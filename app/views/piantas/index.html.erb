@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="catalogo-content">
+    <h1>Catalogo</h1>
+    <ul>
+      <li>
+        <% @piante.each do |pianta| %>
+          <%= link_to pianta_path(pianta.id), pianta.name %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
