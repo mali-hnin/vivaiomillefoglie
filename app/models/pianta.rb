@@ -1,0 +1,2 @@
+class Pianta < ApplicationRecord
+end
