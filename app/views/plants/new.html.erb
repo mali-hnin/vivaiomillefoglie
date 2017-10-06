@@ -1,0 +1,24 @@
+<div class="container">
+  <h3 class="text-center">Inserisci una nuova pianta</h3>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="plant-form my-5 pb-5">
+          <%= simple_form_for @plant do |f| %>
+            <%= f.input :name, required: :true, autofocus: :true %>
+            <%= f.input :description, class: "text-field-height" %>
+            <%= f.input :category %>
+            <%= f.input :esposizione %>
+            <%= f.input :fioritura %>
+            <%= f.input :utile_per %>
+            <%= f.input :altezza %>
+            <%= f.input :terreno %>
+            <%= f.input :densità %>
+            <%= f.input :vaso %>
+            <%= f.input :disponibile %>
+            <%= f.input :novità %>
+            <%= f.button :submit, class: "btn btn-info btn-block" %>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

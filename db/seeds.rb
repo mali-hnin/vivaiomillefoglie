@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  pianta = Pianta.create(
+  plants = Plant.create(
     name: Faker::Ancient.primordial+" "+Faker::Ancient.titan+" "+Faker::Lorem.word,
     photo: "https://source.unsplash.com/collection/256466",
     description: Faker::Lorem.paragraph,
@@ -18,7 +18,7 @@
     terreno: ["umido", "secco"].sample,
     densità: ["solitaria", "alta", "media"].sample,
     vaso: ["10cm", "15cm", "20cm", "30cm"].sample,
-    disponibilità: ["true", "false"].sample,
+    disponibile: ["true", "false"].sample,
     novità: ["true", "false"].sample
   )
 end

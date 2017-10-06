@@ -6,8 +6,8 @@
   <div class="catalogo-content">
     <h1>Catalogo</h1>
     <ul>
-      <% @piantas.each do |pianta| %>
-        <li><%= link_to pianta.name, pianta_path(pianta.id) %></li>
+      <% @plants.each do |pianta| %>
+        <li><%= link_to pianta.name, plant_path(pianta.id) %></li>
       <% end %>
     </ul>
   </div>

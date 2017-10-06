@@ -1,6 +1,6 @@
 class PiantasController < ApplicationController
   def index
-    @piante = Pianta.all
+    @piantas = Pianta.all
   end
 
   def show

@@ -13,7 +13,7 @@
       <li><strong>Vaso:</strong> <%= @pianta.vaso %></li>
     </ul>
     <ul>
-      <%  if @pianta.disponibilità? %>
+      <% if @pianta.disponibilità? %>
         <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
         <%  else %>
           <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
