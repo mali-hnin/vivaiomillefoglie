@@ -1,6 +1,9 @@
 <div class="container">
   <div class="pianta-content mb-5">
-    <h1><%= @plant.name %></h1>
+
+      <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-info" %>
+      <h1><%= @plant.name %></h1>
+
     <%= image_tag @plant.photo %>
     <p><%= @plant.description %></p>
     <ul>

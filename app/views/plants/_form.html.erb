@@ -1,0 +1,15 @@
+<%= simple_form_for @plant do |f| %>
+  <%= f.input :name, required: true, autofocus: true %>
+  <%= f.input :description, class: "text-field-height" %>
+  <%= f.input :category %>
+  <%= f.input :esposizione %>
+  <%= f.input :fioritura %>
+  <%= f.input :utile_per %>
+  <%= f.input :altezza %>
+  <%= f.input :terreno %>
+  <%= f.input :densità %>
+  <%= f.input :vaso %>
+  <%= f.input :disponibile %>
+  <%= f.input :novità %>
+  <%= f.button :submit, class: "btn btn-info btn-block" %>
+<% end %>
