@@ -1,6 +1,26 @@
 <div class="container">
   <div class="pianta-content">
     <h1><%= @pianta.name %></h1>
-
+    <%= image_tag @pianta.photo %>
+    <p><%= @pianta.description %></p>
+    <ul>
+      <li><strong>Categoria:</strong> <%= @pianta.category %></li>
+      <li><strong>Esposizione:</strong> <%= @pianta.esposizione %></li>
+      <li><strong>Fioritura:</strong> <%= @pianta.fioritura %></li>
+      <li><strong>Altezza:</strong> <%= @pianta.altezza %></li>
+      <li><strong>Terreno:</strong> <%= @pianta.terreno %></li>
+      <li><strong>Densità:</strong> <%= @pianta.densità %></li>
+      <li><strong>Vaso:</strong> <%= @pianta.vaso %></li>
+    </ul>
+    <ul>
+      <%  if @pianta.disponibilità? %>
+        <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
+        <%  else %>
+          <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
+      <% end %>
+      <%  if @pianta.novità? %>
+        <li>Questa pianta è una <span class="text-warning">novità 2017</span>!</li>
+      <% end %>
+    </ul>
   </div>
 </div>

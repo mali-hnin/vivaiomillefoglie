@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>Inserisci una nuova pianta</h3>
+  <%= simple_form_for(@pianta) do |f| %>
+    <%= f.input :name, required: :true, autofocus: :true %>
+    <%= f.input :description %>
+    <%= f.button :submit, "Crea una nuova entrata nel catalogo" %>
+  <% end %>
+</div>
+
