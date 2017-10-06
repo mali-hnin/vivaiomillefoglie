@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="pianta-content mb-5">
+    <h1><%= @plant.name %></h1>
+    <%= image_tag @plant.photo %>
+    <p><%= @plant.description %></p>
+    <ul>
+      <li><strong>Categoria:</strong> <%= @plant.category %></li>
+      <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
+      <li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
+      <li><strong>Altezza:</strong> <%= @plant.altezza %></li>
+      <li><strong>Terreno:</strong> <%= @plant.terreno %></li>
+      <li><strong>Densità:</strong> <%= @plant.densità %></li>
+      <li><strong>Vaso:</strong> <%= @plant.vaso %></li>
+    </ul>
+    <ul>
+      <% if @plant.disponibile? %>
+        <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
+        <% else %>
+          <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
+      <% end %>
+      <% if @plant.novità? %>
+        <li>Questa pianta è una <span class="text-warning">novità 2017</span>!</li>
+      <% end %>
+    </ul>
+    <%= link_to '<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Torna al catalogo'.html_safe, plants_path %>
+  </div>
+</div>

@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+  plants = Plant.create(
+    name: Faker::Ancient.primordial+" "+Faker::Ancient.titan+" "+Faker::Lorem.word,
+    photo: "https://source.unsplash.com/collection/256466",
+    description: Faker::Lorem.paragraph,
+    category: Faker::ElderScrolls.race,
+    esposizione: ['sole', 'ombra', "mezz'ombra"].sample,
+    fioritura: ["estate", "autunno", "inverno", "primavera"].sample,
+    altezza: ["bassa", "media", "alta"].sample,
+    terreno: ["umido", "secco"].sample,
+    densità: ["solitaria", "alta", "media"].sample,
+    vaso: ["10cm", "15cm", "20cm", "30cm"].sample,
+    disponibile: ["true", "false"].sample,
+    novità: ["true", "false"].sample
+  )
+end
