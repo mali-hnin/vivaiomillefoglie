@@ -1,10 +1,8 @@
 <div class="container">
   <div class="pianta-content mb-5">
-
-      <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-info" %>
       <h1><%= @plant.name %></h1>
 
-    <%= image_tag @plant.photo %>
+    <%= image_tag @plant.photo unless @plant.photo.nil? %>
     <p><%= @plant.description %></p>
     <ul>
       <li><strong>Categoria:</strong> <%= @plant.category %></li>
@@ -25,6 +23,9 @@
         <li>Questa pianta è una <span class="text-warning">novità 2017</span>!</li>
       <% end %>
     </ul>
-    <%= link_to '<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Torna al catalogo'.html_safe, plants_path %>
+    <%= link_to '<i class="fa fa-long-arrow-left" aria-hidden="true"></i> Torna al catalogo'.html_safe, plants_path %> <br />
+    <br />
+    <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-info" %>
+    <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
   </div>
 </div>
