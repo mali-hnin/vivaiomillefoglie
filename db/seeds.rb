@@ -14,7 +14,7 @@
     category: Faker::ElderScrolls.race,
     esposizione: ['sole', 'ombra', "mezz'ombra"].sample,
     fioritura: ["estate", "autunno", "inverno", "primavera"].sample,
-    altezza: ["bassa", "madia", "alta"].sample,
+    altezza: ["bassa", "media", "alta"].sample,
     terreno: ["umido", "secco"].sample,
     densità: ["solitaria", "alta", "media"].sample,
     vaso: ["10cm", "15cm", "20cm", "30cm"].sample,

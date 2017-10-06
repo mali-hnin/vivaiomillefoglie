@@ -4,7 +4,7 @@
     <div class="col-xs-6 col-xs-offset-3">
       <div class="plant-form my-5 pb-5">
           <%= simple_form_for @plant do |f| %>
-            <%= f.input :name, required: :true, autofocus: :true %>
+            <%= f.input :name, required: true, autofocus: true %>
             <%= f.input :description, class: "text-field-height" %>
             <%= f.input :category %>
             <%= f.input :esposizione %>
