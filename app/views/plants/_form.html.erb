@@ -1,5 +1,6 @@
 <%= simple_form_for @plant do |f| %>
   <%= f.input :name, required: true, autofocus: true %>
+  <%= f.input :photos, as: :attachinary %>
   <%= f.input :description, class: "text-field-height" %>
   <%= f.input :category %>
   <%= f.input :esposizione %>
