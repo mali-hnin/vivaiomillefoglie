@@ -1,8 +1,13 @@
 <div class="container">
   <div class="pianta-content mb-5">
-      <h1><%= @plant.name %></h1>
-
-    <%= image_tag @plant.photo unless @plant.photo.nil? %>
+    <h1><%= @plant.name %></h1>
+    <% if @plant.photos.empty? %>
+      <%= image_tag "https://source.unsplash.com/collection/256466" %>
+    <% else %>
+      <% @plant.photos.each do |photo| %>
+        <%= cl_image_tag photo.path %>
+      <% end %>
+    <% end %>
     <p><%= @plant.description %></p>
     <ul>
       <li><strong>Categoria:</strong> <%= @plant.category %></li>

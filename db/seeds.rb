@@ -7,9 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  plants = Plant.create(
+   plant = Plant.new(
     name: Faker::Ancient.primordial+" "+Faker::Ancient.titan+" "+Faker::Lorem.word,
-    photo: "https://source.unsplash.com/collection/256466",
     description: Faker::Lorem.paragraph,
     category: Faker::ElderScrolls.race,
     esposizione: ['sole', 'ombra', "mezz'ombra"].sample,
@@ -21,4 +20,5 @@
     disponibile: ["true", "false"].sample,
     novità: ["true", "false"].sample
   )
+  plant.save!
 end
