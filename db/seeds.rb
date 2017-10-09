@@ -7,10 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  urls = [
-    "https://source.unsplash.com/collection/256466"
-  ]
-  plant = Plant.new(
+   plant = Plant.new(
     name: Faker::Ancient.primordial+" "+Faker::Ancient.titan+" "+Faker::Lorem.word,
     description: Faker::Lorem.paragraph,
     category: Faker::ElderScrolls.race,
@@ -24,5 +21,4 @@
     novità: ["true", "false"].sample
   )
   plant.save!
-  plant.photo_urls = urls
 end
