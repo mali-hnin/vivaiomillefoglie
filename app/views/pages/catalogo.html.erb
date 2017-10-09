@@ -6,15 +6,9 @@
   <div class="catalogo-content text-center">
     <h2>Scegli una categoria</h2>
     <div id="categorie">
-      <div class="categoria-catalogo">
-        <h4>Alberi, arbusti e rampicanti</h4>
-      </div>
-      <div class="categoria-catalogo">
-        <h4>Erbacee perenni</h4>
-      </div>
-      <div class="categoria-catalogo">
-        <h4>Graminacee</h4>
-      </div>
+      <%= link_to "Alberi, arbusti e rampicanti", "", class: "categoria-catalogo"%>
+      <%= link_to "Erbacee perenni", "", class: "categoria-catalogo"%>
+      <%= link_to "Graminacee", "", class: "categoria-catalogo"%>
     </div>
     <h2>Oppure vedi tutto il <%= link_to "catalogo", plants_path %>.</h2>
   </div>
