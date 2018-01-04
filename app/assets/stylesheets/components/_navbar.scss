@@ -1,6 +1,6 @@
-div {
+/* div {
   border: black 1px solid;
-}
+} */
 
 .nav-link {
   cursor: pointer;
@@ -16,13 +16,14 @@ div {
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  height: 100px;
-  background-color: #3E3D2A;
+  min-height: 80px;
+  background-color: $dark-green;
   transition: all 0.3s ease;
-  padding: 0px 30px;
+  padding: 10px 30px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 /* Logo */
@@ -45,30 +46,41 @@ div {
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #F3F9D2;
+  color: $yellow;
   font-size: 18px;
+  font-family: "Roboto", Georgia, Serif;
 }
 
 .light-blue-text {
-  color: #9EB6C0;
-  font-size: 70%;
+  color: $light-blue;
+  font-size: 90%;
+  font-weight: lighter;
 }
 
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $purple;
   text-decoration: none;
 }
 
+.navbar-wagon-link:focus {
+  color: $purple;
+  text-decoration: none;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 2px $black;
+  border-color: $dark-green;
+  background-color: $dark-green;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: #F3F9D2 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -84,8 +96,8 @@ div {
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: $dark-green;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid $dark-green;
+  border-top: 1px solid $dark-green;
 }
