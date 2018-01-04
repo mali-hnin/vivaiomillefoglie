@@ -19,7 +19,7 @@
   min-height: 80px;
   background-color: $dark-green;
   transition: all 0.3s ease;
-  padding: 10px 30px;
+  padding: 3px 30px 10px 30px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -28,7 +28,8 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  height: 80px;
+  margin-left: 50px;
 }
 
 /* Links sections */
