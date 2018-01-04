@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side {
+  min-width: 25vw;
+  max-width: 35vw;
+  min-height: 200px;
+}

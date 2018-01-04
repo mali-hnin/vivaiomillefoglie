@@ -3,6 +3,19 @@ div {
 }
 
 .sidebar {
-  width: 500px;
-  min-height: 600px;
+  width: auto;
+  min-height: auto;
+}
+
+.info-box {
+  background-color: $light-green;
+  margin: 30px;
+  padding: 18px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.left-side-bottom {
+  display: flex;
+  justify-content: center;
 }
