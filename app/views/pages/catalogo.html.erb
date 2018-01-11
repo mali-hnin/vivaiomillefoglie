@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
   <div class="banner catalogo-banner" style="background-image:url(<%= asset_path "banner2.jpg" %>)"></div>
 
@@ -31,34 +31,17 @@
           Caratteristiche Ornamentali
         </div>
         <div class="categoria-content">
-          <!-- <div class="dropdown spacing-5">
-            <%= link_to 'Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>'.html_safe, "#", "data-toggle" => "dropdown"%>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><%= link_to "Primavera", "#", class: "navbar-wagon-item" %></li>
-              <li><%= link_to "Estate", "#", class: "navbar-wagon-item" %></li>
-              <li><%= link_to "Autunno", "#", class: "navbar-wagon-item" %></li>
-              <li><%= link_to "Inverno", "#", class: "navbar-wagon-item" %></li>
-            </ul>
-          </div>
-          <div class="dropdown spacing-5">
-            <%= link_to 'Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>'.html_safe, "#", "data-toggle" => "dropdown"%>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><%= link_to "Alte", "#", class: "navbar-wagon-item" %></li>
-              <li><%= link_to "Medie", "#", class: "navbar-wagon-item" %></li>
-              <li><%= link_to "Basse", "#", class: "navbar-wagon-item" %></li>
-            </ul>
-          </div> -->
           <div id="categoria-accordion" data-children=".item">
             <div class="item spacing-5">
               <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
                 Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
               </a>
               <div id="categoria-accordion2" class="collapse" role="tabpanel">
-                <ul class="mb-3">
-                  <li><%= link_to "Primavera", "#", class: "navbar-wagon-item" %></li>
-                  <li><%= link_to "Estate", "#", class: "navbar-wagon-item" %></li>
-                  <li><%= link_to "Autunno", "#", class: "navbar-wagon-item" %></li>
-                  <li><%= link_to "Inverno", "#", class: "navbar-wagon-item" %></li>
+                <ul class="mb-3 accordion-menu">
+                  <li><%= link_to "Primavera", "#", class: "" %></li>
+                  <li><%= link_to "Estate", "#", class: "" %></li>
+                  <li><%= link_to "Autunno", "#", class: "" %></li>
+                  <li><%= link_to "Inverno", "#", class: "" %></li>
                 </ul>
               </div>
             </div>
@@ -67,10 +50,10 @@
                 Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>
               </a>
               <div id="categoria-accordion3" class="collapse" role="tabpanel">
-                <ul class="mb-3">
-                  <li><%= link_to "Basse", "#", class: "navbar-wagon-item" %></li>
-                  <li><%= link_to "Medie", "#", class: "navbar-wagon-item" %></li>
-                  <li><%= link_to "Alte", "#", class: "navbar-wagon-item" %></li>
+                <ul class="mb-3 accordion-menu">
+                  <li><%= link_to "Basse", "#", class: "" %></li>
+                  <li><%= link_to "Medie", "#", class: "" %></li>
+                  <li><%= link_to "Alte", "#", class: "" %></li>
                 </ul>
               </div>
             </div>
