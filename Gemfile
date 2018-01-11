@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'jquery-slick-rails'
 
 # Test and development gems
 group :development, :test do

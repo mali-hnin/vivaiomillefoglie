@@ -2,19 +2,21 @@
   display: flex;
   justify-content: space-around;
   margin: 50px 0px;
+}
 
+.banner {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bottom-content {
   width: 300px;
   height: 130px;
-  background-size: cover;
   background-position: 100% 0%;
   p{
     color: white;
     margin: 0px;
   }
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
