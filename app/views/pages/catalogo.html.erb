@@ -1,78 +1,74 @@
 <div class="container">
 
   <div class="banner catalogo-banner" style="background-image:url(<%= asset_path "banner2.jpg" %>)"></div>
+
   <div class="catalogo-content text-center">
+    <!-- Headers row for worst-case solution -->
+    <!-- <div class="row">
+      <div class="col-xs-0 col-md-0 col-lg-2"></div>
+      <div class="col-xs-12 col-md-6 col-lg-2">
+        <strong>Tipologia:</strong>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-2">
+        <strong>Esigenza:</strong>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-2">
+        <strong>Caratteristiche Ornamentali:
+        </strong>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-2">
+        <strong>Funzione:</strong>
+      </div>
+      <div class="col-xs-0 col-md-0 col-lg-2"></div>
+    </div> -->
 
-    <div id="categorie text-center">
-      <!-- Headers row for worst-case solution -->
-      <!-- <div class="row">
-        <div class="col-xs-0 col-md-0 col-lg-2"></div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Tipologia:</strong>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="categoria-header">
+          Tipologia
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Esigenza:</strong>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Caratteristiche Ornamentali:
-          </strong>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Funzione:</strong>
-        </div>
-        <div class="col-xs-0 col-md-0 col-lg-2"></div>
-      </div> -->
+        <div class="categoria-content">
+          <%= link_to "Erbacee perenni", "#" %>
+          <%= link_to "Erbacee annuali", "#" %>
+          <%= link_to "Graminacee", "#" %>
+          <%= link_to "Altro", "#" %></div>
+      </div>
 
-      <div class="row">
-        <div class="col-xs-0 col-md-0 col-lg-2"></div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <div class="categoria-header">
-            Tipologia
-          </div>
-          <div class="categoria-content">
-            <%= link_to "Erbacee perenni", "#" %>
-            <%= link_to "Erbacee annuali", "#" %>
-            <%= link_to "Graminacee", "#" %>
-            <%= link_to "Altro", "#" %></div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="categoria-header">
+          Esigenza:
         </div>
-
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <div class="categoria-header">
-            Esigenza:
-          </div>
-          <div class="categoria-content">
-            <%= link_to "Sole", "#" %>
-            <%= link_to "Ombra", "#" %>
-            <%= link_to "Mezz'ombra", "#" %>
-            <%= link_to "Secco", "#" %>
-          </div>
+        <div class="categoria-content">
+          <%= link_to "Sole", "#" %>
+          <%= link_to "Ombra", "#" %>
+          <%= link_to "Mezz'ombra", "#" %>
+          <%= link_to "Secco", "#" %>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <div class="categoria-header">
-            Caratteristiche Ornamentali
-          </div>
-          <div class="categoria-content">
-            <%= link_to "Fioritura primavera", "#" %>
-            <%= link_to "Fioritura estate", "#" %>
-            <%= link_to "Fioritura autunno", "#" %>
-            <%= link_to "Fioritura inverno", "#" %>
-            <%= link_to "Alte", "#" %>
-            <%= link_to "Medie", "#" %>
-            <%= link_to "Basse", "#" %>
-            <%= link_to "Fogliame decorativo", "#" %>
-            <%= link_to "Da taglio", "#" %>
-          </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="categoria-header">
+          Caratteristiche Ornamentali
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <div class="categoria-header">
-            Funzione
-          </div>
-          <div class="categoria-content">
-            <%= link_to "Coprisuolo", "#" %>
-            <%= link_to "Per farfalle e insetti", "#" %>
-          </div>
+        <div class="categoria-content">
+          <%= link_to "Fioritura primavera", "#" %>
+          <%= link_to "Fioritura estate", "#" %>
+          <%= link_to "Fioritura autunno", "#" %>
+          <%= link_to "Fioritura inverno", "#" %>
+          <%= link_to "Alte", "#" %>
+          <%= link_to "Medie", "#" %>
+          <%= link_to "Basse", "#" %>
+          <%= link_to "Fogliame decorativo", "#" %>
+          <%= link_to "Da taglio", "#" %>
         </div>
-        <div class="col-xs-0 col-md-0 col-lg-2"></div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="categoria-header">
+          Funzione
+        </div>
+        <div class="categoria-content">
+          <%= link_to "Coprisuolo", "#" %>
+          <%= link_to "Per farfalle e insetti", "#" %>
+        </div>
       </div>
     </div>
   </div>
@@ -83,7 +79,9 @@
 
   <div class="admin-buttons">
     <p>Pannello Amministratori</p>
-    <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
-        <%= link_to "Vedi tutto il Catalogo", plants_path, class: "btn btn-primary" %></div>
+    <div>
+      <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+      <%= link_to "Vedi tutto il Catalogo", plants_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
