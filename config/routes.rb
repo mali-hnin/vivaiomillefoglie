@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :plants
   get "/catalogo", to: "pages#catalogo"
+  get "/giardini", to: "pages#giardini"
 
   mount Attachinary::Engine => "/attachinary"
 end

@@ -1,15 +1,40 @@
+<!-- Code to put an image as background in rails -->
+<!-- style="background-image:url(<%= asset_path "4.jpg" %>)" -->
+
 <%= content_for :left_side_text do %>
-
-    <p>Un vivaio e un giardino, un luogo di ricerca, riproduzione e coltivazione di piante.</p>
-    <p>Proponiamo collezioni di ERBACEE PERENNI E GRAMINACEE ORNAMENTALI con una particolare attenzione a piante per il bird-garden (piante da bacca e da siepe), piante per attirare farfalle e altri insetti utili, piante per il miglioramento naturale del suolo (specie azotofissatrici, coprisuolo...).</p>
-    <p>Sperimentiamo tecniche per giardini eco-sostenibili.</p>
-    <p>PROGETTIAMO E REALIZZIAMO GIARDINI E TERRAZZI.</p>
-    <p>Effettuiamo la vendita delle piante sia per corrispondenza che direttamente in vivaio.</p>
-
+  <p>Un vivaio e un giardino, un luogo di ricerca, riproduzione e coltivazione di piante.</p>
+  <p>Proponiamo collezioni di ERBACEE PERENNI E GRAMINACEE ORNAMENTALI con una particolare attenzione a piante per il bird-garden (piante da bacca e da siepe), piante per attirare farfalle e altri insetti utili, piante per il miglioramento naturale del suolo (specie azotofissatrici, coprisuolo...).</p>
+  <p>Sperimentiamo tecniche per giardini eco-sostenibili.</p>
+  <p>PROGETTIAMO E REALIZZIAMO GIARDINI E TERRAZZI.</p>
+  <p>Effettuiamo la vendita delle piante sia per corrispondenza che direttamente in vivaio.</p>
 <% end %>
-<div class="banner" style="background-image:url(<%= asset_path "4.jpg" %>)">
-  <div class="banner-content text-center">
-    <h1>Vivaio Millefoglie</h1>
-    <p>Visita il nostro catalogo online!</p>
+
+<div class="page-wrapper">
+  <div class="your-class">
+    <div>
+      <%= image_tag "1.jpg" %>
+    </div>
+    <div>
+      <%= image_tag "2.jpg" %>
+    </div>
+    <div>
+      <%= image_tag "3.jpg" %>
+    </div>
+    <div>
+      <%= image_tag "4.jpg" %>
+    </div>
+  </div>
+
+  <div class="page-bottom">
+    <div class="bottom-content" style="background-image:url(<%= asset_path "eventi.jpg" %>)">
+      <div class="banner-text">
+        <p>EVENTI</p>
+      </div>
+    </div>
+    <div class="bottom-content" style="background-image:url(<%= asset_path "newsletter.jpg" %>)">
+      <div class="banner-text">
+        <p>NEWSLETTER</p>
+      </div>
+    </div>
   </div>
 </div>
