@@ -9,6 +9,7 @@
   flex-direction: column;
   width: 100%;
   padding: 30px;
+  text-align: center;
 }
 
 .banner-text {
@@ -17,6 +18,16 @@
   text-align: center;
 }
 
+.carousel-container {
+  display: flex;
+  justify-content: center;
+}
+
 .carousel {
   margin: 0px;
+  max-width: 500px;
+}
+
+.carousel-item {
+  max-width: 500px;
 }
