@@ -4,11 +4,32 @@
   <div class="catalogo-content text-center">
 
     <div id="categorie text-center">
+      <!-- Headers row for worst-case solution -->
+      <!-- <div class="row">
+        <div class="col-xs-0 col-md-0 col-lg-2"></div>
+        <div class="col-xs-12 col-md-6 col-lg-2">
+          <strong>Tipologia:</strong>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-2">
+          <strong>Esigenza:</strong>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-2">
+          <strong>Caratteristiche Ornamentali:
+          </strong>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-2">
+          <strong>Funzione:</strong>
+        </div>
+        <div class="col-xs-0 col-md-0 col-lg-2"></div>
+      </div> -->
+
       <div class="row">
         <div class="col-xs-0 col-md-0 col-lg-2"></div>
         <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Per Tipologia:</strong>
-          <div class="colonna-catalogo">
+          <div class="categoria-header">
+            Tipologia
+          </div>
+          <div class="categoria-content">
             <%= link_to "Erbacee perenni", "#" %>
             <%= link_to "Erbacee annuali", "#" %>
             <%= link_to "Graminacee", "#" %>
@@ -16,8 +37,10 @@
         </div>
 
         <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Per Esigenza:</strong>
-          <div class="colonna-catalogo">
+          <div class="categoria-header">
+            Esigenza:
+          </div>
+          <div class="categoria-content">
             <%= link_to "Sole", "#" %>
             <%= link_to "Ombra", "#" %>
             <%= link_to "Mezz'ombra", "#" %>
@@ -25,9 +48,10 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Per Caratteristiche Ornamentali:
-          </strong>
-          <div class="colonna-catalogo">
+          <div class="categoria-header">
+            Caratteristiche Ornamentali
+          </div>
+          <div class="categoria-content">
             <%= link_to "Fioritura primavera", "#" %>
             <%= link_to "Fioritura estate", "#" %>
             <%= link_to "Fioritura autunno", "#" %>
@@ -40,8 +64,10 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-2">
-          <strong>Per Funzione:</strong>
-          <div class="colonna-catalogo">
+          <div class="categoria-header">
+            Funzione
+          </div>
+          <div class="categoria-content">
             <%= link_to "Coprisuolo", "#" %>
             <%= link_to "Per farfalle e insetti", "#" %>
           </div>
