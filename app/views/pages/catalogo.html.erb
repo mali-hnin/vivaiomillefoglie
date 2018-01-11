@@ -31,7 +31,7 @@
           Caratteristiche Ornamentali
         </div>
         <div class="categoria-content">
-          <div class="dropdown spacing-5">
+          <!-- <div class="dropdown spacing-5">
             <%= link_to 'Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>'.html_safe, "#", "data-toggle" => "dropdown"%>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><%= link_to "Primavera", "#", class: "navbar-wagon-item" %></li>
@@ -47,6 +47,33 @@
               <li><%= link_to "Medie", "#", class: "navbar-wagon-item" %></li>
               <li><%= link_to "Basse", "#", class: "navbar-wagon-item" %></li>
             </ul>
+          </div> -->
+          <div id="categoria-accordion" data-children=".item">
+            <div class="item spacing-5">
+              <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
+                Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
+              </a>
+              <div id="categoria-accordion2" class="collapse" role="tabpanel">
+                <ul class="mb-3">
+                  <li><%= link_to "Primavera", "#", class: "navbar-wagon-item" %></li>
+                  <li><%= link_to "Estate", "#", class: "navbar-wagon-item" %></li>
+                  <li><%= link_to "Autunno", "#", class: "navbar-wagon-item" %></li>
+                  <li><%= link_to "Inverno", "#", class: "navbar-wagon-item" %></li>
+                </ul>
+              </div>
+            </div>
+            <div class="item spacing-5">
+              <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion3" role="button" aria-expanded="false" aria-controls="categoria-accordion3">
+                Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </a>
+              <div id="categoria-accordion3" class="collapse" role="tabpanel">
+                <ul class="mb-3">
+                  <li><%= link_to "Basse", "#", class: "navbar-wagon-item" %></li>
+                  <li><%= link_to "Medie", "#", class: "navbar-wagon-item" %></li>
+                  <li><%= link_to "Alte", "#", class: "navbar-wagon-item" %></li>
+                </ul>
+              </div>
+            </div>
           </div>
           <%= link_to "Fogliame decorativo", "#" %>
           <%= link_to "Da taglio", "#" %>
