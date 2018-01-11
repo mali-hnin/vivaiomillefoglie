@@ -1,15 +1,53 @@
 <div class="container">
   <div class="admin-buttons">
     <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+    <p>[vedi tutto il <%= link_to "catalogo", plants_path %>]</p>
   </div>
 
   <div class="catalogo-content text-center">
-    <h2>Scegli una categoria</h2>
-    <div id="categorie">
-      <%= link_to "Alberi, arbusti e rampicanti", "", class: "categoria-catalogo"%>
-      <%= link_to "Erbacee perenni", "", class: "categoria-catalogo"%>
-      <%= link_to "Graminacee", "", class: "categoria-catalogo"%>
+    <!-- <h2>Oppure scegli una categoria:</h2> -->
+    <div id="categorie text-center">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <strong>Per Tipologia:</strong>
+          <div class="colonna-catalogo">
+            <%= link_to "Erbacee perenni", "#" %>
+            <%= link_to "Erbacee annuali", "#" %>
+            <%= link_to "Graminacee", "#" %>
+            <%= link_to "Altro", "#" %></div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <strong>Per Esigenza:</strong>
+          <div class="colonna-catalogo">
+            <%= link_to "Sole", "#" %>
+            <%= link_to "Ombra", "#" %>
+            <%= link_to "Mezz'ombra", "#" %>
+            <%= link_to "Secco", "#" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <strong>Per Caratteristiche Ornamentali:
+          </strong>
+          <div class="colonna-catalogo">
+            <%= link_to "Fioritura primavera", "#" %>
+            <%= link_to "Fioritura estate", "#" %>
+            <%= link_to "Fioritura autunno", "#" %>
+            <%= link_to "Fioritura inverno", "#" %>
+            <%= link_to "Alte", "#" %>
+            <%= link_to "Medie", "#" %>
+            <%= link_to "Basse", "#" %>
+            <%= link_to "Fogliame decorativo", "#" %>
+            <%= link_to "Da taglio", "#" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <strong>Per Funzione:</strong>
+          <div class="colonna-catalogo">
+            <%= link_to "Coprisuolo", "#" %>
+            <%= link_to "Per farfalle e insetti", "#" %>
+          </div>
+        </div>
+      </div>
     </div>
-    <h2>Oppure vedi tutto il <%= link_to "catalogo", plants_path %>.</h2>
   </div>
 </div>

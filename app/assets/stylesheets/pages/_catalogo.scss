@@ -1,3 +1,8 @@
+.admin-buttons {
+  display: flex;
+  margin-bottom: 100px;
+}
+
 #categorie {
   display: flex;
   justify-content: space-between;
@@ -13,4 +18,9 @@
   height: 130px;
   padding: 20px;
   font-size: 24px;
+}
+
+.colonna-catalogo {
+  display: flex;
+  flex-direction: column;
 }
