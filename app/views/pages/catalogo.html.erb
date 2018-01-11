@@ -3,25 +3,6 @@
   <div class="banner catalogo-banner" style="background-image:url(<%= asset_path "banner2.jpg" %>)"></div>
 
   <div class="catalogo-content text-center">
-    <!-- Headers row for worst-case solution -->
-    <!-- <div class="row">
-      <div class="col-xs-0 col-md-0 col-lg-2"></div>
-      <div class="col-xs-12 col-md-6 col-lg-2">
-        <strong>Tipologia:</strong>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-2">
-        <strong>Esigenza:</strong>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-2">
-        <strong>Caratteristiche Ornamentali:
-        </strong>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-2">
-        <strong>Funzione:</strong>
-      </div>
-      <div class="col-xs-0 col-md-0 col-lg-2"></div>
-    </div> -->
-
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-3">
         <div class="categoria-header">
@@ -36,7 +17,7 @@
 
       <div class="col-xs-12 col-md-6 col-lg-3">
         <div class="categoria-header">
-          Esigenza:
+          Esigenza
         </div>
         <div class="categoria-content">
           <%= link_to "Sole", "#" %>
@@ -50,13 +31,23 @@
           Caratteristiche Ornamentali
         </div>
         <div class="categoria-content">
-          <%= link_to "Fioritura primavera", "#" %>
-          <%= link_to "Fioritura estate", "#" %>
-          <%= link_to "Fioritura autunno", "#" %>
-          <%= link_to "Fioritura inverno", "#" %>
-          <%= link_to "Alte", "#" %>
-          <%= link_to "Medie", "#" %>
-          <%= link_to "Basse", "#" %>
+          <div class="dropdown spacing-5">
+            <%= link_to 'Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>'.html_safe, "#", "data-toggle" => "dropdown"%>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><%= link_to "Primavera", "#", class: "navbar-wagon-item" %></li>
+              <li><%= link_to "Estate", "#", class: "navbar-wagon-item" %></li>
+              <li><%= link_to "Autunno", "#", class: "navbar-wagon-item" %></li>
+              <li><%= link_to "Inverno", "#", class: "navbar-wagon-item" %></li>
+            </ul>
+          </div>
+          <div class="dropdown spacing-5">
+            <%= link_to 'Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>'.html_safe, "#", "data-toggle" => "dropdown"%>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><%= link_to "Alte", "#", class: "navbar-wagon-item" %></li>
+              <li><%= link_to "Medie", "#", class: "navbar-wagon-item" %></li>
+              <li><%= link_to "Basse", "#", class: "navbar-wagon-item" %></li>
+            </ul>
+          </div>
           <%= link_to "Fogliame decorativo", "#" %>
           <%= link_to "Da taglio", "#" %>
         </div>
