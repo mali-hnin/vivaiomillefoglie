@@ -23,6 +23,8 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'faker'
+gem 'money-rails', '~>1'
+
 
 # Front-end gems
 gem 'autoprefixer-rails'
