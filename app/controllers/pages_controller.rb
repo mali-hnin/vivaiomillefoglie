@@ -4,5 +4,4 @@ class PagesController < ApplicationController
 
   def catalogo
   end
-
 end
