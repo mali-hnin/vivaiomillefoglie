@@ -11,15 +11,8 @@
     <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Catalogo", catalogo_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
-    <div class="dropdown">
-      <%= link_to 'Notizie <i class="fa fa-angle-down" aria-hidden="true"></i>
-'.html_safe, "", class: "navbar-wagon-item navbar-wagon-link uppercase-text", "data-toggle" => "dropdown" %>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Eventi", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Newsletter", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Rassegna Stampa", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
-    </div>
+    <%= link_to "Blog", giardini_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
+    <%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Contatti & Dove Siamo", "", class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
   </div>
   <!-- Right Navigation -->
@@ -42,11 +35,19 @@
         <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Catalogo", catalogo_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Giardini", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Eventi", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Newsletter", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Rassegna Stampa", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Contatti & Dove Siamo", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
 </div>
+
+<!-- DROPDOWN NAVBAR ITEM currently not using -->
+    <!-- <div class="dropdown">
+      <%= link_to 'Notizie <i class="fa fa-angle-down" aria-hidden="true"></i>
+'.html_safe, "", class: "navbar-wagon-item navbar-wagon-link uppercase-text", "data-toggle" => "dropdown" %>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "Eventi", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Newsletter", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Rassegna Stampa", "", class: "navbar-wagon-item navbar-wagon-link" %></li>
+      </ul>
+    </div> -->
