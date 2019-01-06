@@ -1,1 +1,38 @@
-<h1>Giardini</h1>
+<div class="page-wrapper">
+  <h1>Giardini</h1>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <%= image_tag "1.jpg" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "2.jpg" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "3.jpg" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "4.jpg" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CAROUSEL JS SCRIPT -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.carousel').slick({
+      autoplay: false,
+      autoplaySpeed: 3000,
+      dots: true,
+      infinite: true,
+      speed: 800,
+      fade: true,
+      arrows: true,
+    });
+  });
+</script>
