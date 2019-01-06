@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :plants
   get "/catalogo", to: "pages#catalogo"
   get "/giardini", to: "pages#giardini"
+  get "/millefoglie-flowers-lab", to: "pages#flowerslab", as: :flowerslab
+  get "/contatti", to: "pages#contatti", as: :contatti
 
   mount Attachinary::Engine => "/attachinary"
 end
