@@ -1,5 +1,8 @@
 <div class="container">
   <div class="pianta-content mb-5">
+    <% if @plant.nascondi? %>
+      <h2>NASCOSTA</h2>
+    <% end %>
     <h1><%= @plant.name %></h1>
     <% if @plant.photos.empty? %>
       <%= image_tag "https://source.unsplash.com/collection/256466" %>
