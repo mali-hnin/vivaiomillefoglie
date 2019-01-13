@@ -6,7 +6,7 @@
   <div class="catalogo-content">
     <h1>Catalogo / <%= @plants.count %> piante</h1>
     <ul>
-      <% @plants.each do |pianta| %>
+      <% @plants.sort_by(&:created_at).reverse.each do |pianta| %>
         <li>
          <% if pianta.nascondi? %>
            <span class="nascosta">NASCOSTA</span>
