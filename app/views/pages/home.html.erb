@@ -1,4 +1,4 @@
-<!-- Code to put an image as background in rails -->
+<!-- Code to put an image as a div's background in rails -->
 <!-- style="background-image:url(<%= asset_path "4.jpg" %>)" -->
 
 <%= content_for :left_side_text do %>
@@ -26,26 +26,8 @@
       </div>
     </div>
   </div>
-
+<!-- PUT FOOTER HERE -->
   <div class="page-bottom">
     <%= render 'shared/page-bottom' %>
   </div>
 </div>
-
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.carousel').slick({
-      autoplay: true,
-      autoplaySpeed: 3000,
-      dots: true,
-      infinite: true,
-      speed: 800,
-      fade: true,
-      arrows: false,
-    });
-  });
-</script>
