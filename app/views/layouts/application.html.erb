@@ -13,14 +13,12 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <div class="wrapper">
-      <%= render 'shared/flashes' %>
-      <!-- <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p> -->
-      <%= yield %>
-      <%= javascript_include_tag 'application' %>
-      <%= cloudinary_js_config %>
-    </div>
+    <%= render 'shared/flashes' %>
+    <!-- <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> -->
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
     <!-- PUT FOOTER HERE -->
     <%= render 'shared/page-bottom' %>
   </body>
