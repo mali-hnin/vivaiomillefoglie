@@ -2,7 +2,6 @@
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
     <%= image_tag "logo-orizz.png", alt: "Millefoglie Piante e Giardini" %>
-
   </a>
 
   <!-- Left Navigation -->
@@ -11,7 +10,7 @@
     <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Catalogo", catalogo_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
-    <%= link_to "Blog", giardini_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
+    <%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
   </div>
@@ -22,8 +21,7 @@
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text", method: :delete do %>
         <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
         <% end %>
-    <% else %>
-      <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
+
     <% end %>
   </div>
   <!-- Dropdown appearing on mobile only -->
@@ -42,6 +40,10 @@
     </div>
   </div>
 </div>
+
+<!-- LOGIN RX NAVIGATION ITEM for when customer login system is set up -->
+    <!-- <% else %>
+       <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %> -->
 
 <!-- DROPDOWN NAVBAR ITEMS currently not using -->
     <!-- <div class="dropdown">

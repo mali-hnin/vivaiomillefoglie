@@ -3,10 +3,10 @@
   border: 0.5px black solid;
 } */
 
-// body {
-//   background-image: url("bg1.jpg");
-//   background-size: cover;
-// }
+.home-bg {
+  background-image: url("bg1.jpg");
+  background-size: cover;
+}
 
 .page-wrapper {
   display: flex;
@@ -23,16 +23,37 @@
   text-align: center;
 }
 
-.carousel-container {
+/* SIDEBAR STYLING */
+/* div {
+  border: black 1px solid;
+}
+ */
+.sidebar {
+  width: auto;
+  min-height: auto;
+}
+
+.left-side-logo {
+  text-align: center;
+  img {
+    width: 200px;
+  }
+}
+
+.side-text-box{
+  padding: 30px;
+  font-size: 15px;
+}
+
+.info-box {
+  background-color: $light-green;
+  margin: 30px;
+  padding: 18px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.left-side-bottom {
   display: flex;
   justify-content: center;
-}
-
-.carousel {
-  margin: 0px;
-  max-width: 500px;
-}
-
-.carousel-item {
-  max-width: 500px;
 }

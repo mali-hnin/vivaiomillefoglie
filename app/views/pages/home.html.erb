@@ -1,33 +1,36 @@
 <!-- Code to put an image as a div's background in rails -->
 <!-- style="background-image:url(<%= asset_path "4.jpg" %>)" -->
 
-<%= content_for :left_side_text do %>
-  <p>Un vivaio e un giardino, un luogo di ricerca, riproduzione e coltivazione di piante.</p>
-  <p>Proponiamo collezioni di ERBACEE PERENNI E GRAMINACEE ORNAMENTALI con una particolare attenzione a piante per il bird-garden (piante da bacca e da siepe), piante per attirare farfalle e altri insetti utili, piante per il miglioramento naturale del suolo (specie azotofissatrici, coprisuolo...).</p>
-  <p>Sperimentiamo tecniche per giardini eco-sostenibili.</p>
-  <p>PROGETTIAMO E REALIZZIAMO GIARDINI E TERRAZZI.</p>
-  <p>Effettuiamo la vendita delle piante sia per corrispondenza che direttamente in vivaio.</p>
-<% end %>
+<div class="home-bg">
+  <div class="page-wrapper">
+    <div class = "left-side">
+      <div class="left-side-logo">
+        <%= image_tag "logo-vert.png" %>
+      </div>
+      <div class="left-side-text">
+        <div class="info-box">
+          <p>Un vivaio e un giardino, un luogo di ricerca, riproduzione e coltivazione di piante.</p>
+          <p>Proponiamo collezioni di ERBACEE PERENNI E GRAMINACEE ORNAMENTALI con una particolare attenzione a piante per il bird-garden (piante da bacca e da siepe), piante per attirare farfalle e altri insetti utili, piante per il miglioramento naturale del suolo (specie azotofissatrici, coprisuolo...).</p>
+          <p>Sperimentiamo tecniche per giardini eco-sostenibili.</p>
+          <p>PROGETTIAMO E REALIZZIAMO GIARDINI E TERRAZZI.</p>
+          <p>Effettuiamo la vendita delle piante sia per corrispondenza che direttamente in vivaio.</p>
+        </div>
+      </div>
+      <div class="left-side-bottom">
+        <div class="info-box">
+          <p>GLI ORARI DEL VIVAIO</p>
+          <p>VENERDI-SABATO<br>
+          9.00-12-30<br>
+          16.00-tramonto</p>
 
-<div class="page-wrapper">
-  <div class="carousel-container">
-    <div class="carousel">
-      <div class="carousel-item">
-        <%= image_tag "1.jpg" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "2.jpg" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "3.jpg" %>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "4.jpg" %>
+          <p>DICEMBRE-GENNAIO e AGOSTO<br>
+          CHIUSO</p>
+          <p>FEBBRAIO SU APPUNTAMENTO</p>
+
+          <%= link_to "Dove Siamo", contatti_path %><br>
+          <%= link_to "Come Acquistare", "" %>
+        </div>
       </div>
     </div>
-  </div>
-<!-- PUT FOOTER HERE -->
-  <div class="page-bottom">
-    <%= render 'shared/page-bottom' %>
   </div>
 </div>
