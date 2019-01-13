@@ -12,6 +12,8 @@
            NASCOSTA
          <% end %>
           <%= link_to pianta.name, plant_path(pianta.id) %>
+          <!-- Turns Rails timestamps into European format, setup in en.yml -->
+          Ultimo aggiornamento: <%= l pianta.updated_at, format: :euro %>
         </li>
       <% end %>
     </ul>
