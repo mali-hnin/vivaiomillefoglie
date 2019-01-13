@@ -1,88 +1,92 @@
-<div class="page-wrapper">
+<div class="catalogo-bg">
+  <div class="page-wrapper">
 
-  <div class="banner catalogo-banner" style="background-image:url(<%= asset_path "banner2.jpg" %>)"></div>
+    <div class="banner catalogo-banner">
+      <h1>Catalogo</h1>
+    </div>
 
-  <div class="catalogo-content text-center">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="categoria-header">
-          Tipologia
-        </div>
-        <div class="categoria-content">
-          <%= link_to "Erbacee perenni", "#" %>
-          <%= link_to "Erbacee annuali", "#" %>
-          <%= link_to "Graminacee", "#" %>
-          <%= link_to "Altro", "#" %></div>
-      </div>
-
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="categoria-header">
-          Esigenza
-        </div>
-        <div class="categoria-content">
-          <%= link_to "Sole", "#" %>
-          <%= link_to "Ombra", "#" %>
-          <%= link_to "Mezz'ombra", "#" %>
-          <%= link_to "Secco", "#" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="categoria-header">
-          Caratteristiche Ornamentali
-        </div>
-        <div class="categoria-content">
-          <div id="categoria-accordion" data-children=".item">
-            <div class="item spacing-5">
-              <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
-                Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
-              </a>
-              <div id="categoria-accordion2" class="collapse" role="tabpanel">
-                <ul class="mb-3 accordion-menu">
-                  <li><%= link_to "Primavera", "#", class: "" %></li>
-                  <li><%= link_to "Estate", "#", class: "" %></li>
-                  <li><%= link_to "Autunno", "#", class: "" %></li>
-                  <li><%= link_to "Inverno", "#", class: "" %></li>
-                </ul>
-              </div>
-            </div>
-            <div class="item spacing-5">
-              <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion3" role="button" aria-expanded="false" aria-controls="categoria-accordion3">
-                Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </a>
-              <div id="categoria-accordion3" class="collapse" role="tabpanel">
-                <ul class="mb-3 accordion-menu">
-                  <li><%= link_to "Basse", "#", class: "" %></li>
-                  <li><%= link_to "Medie", "#", class: "" %></li>
-                  <li><%= link_to "Alte", "#", class: "" %></li>
-                </ul>
-              </div>
-            </div>
+    <div class="catalogo-content text-center">
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="categoria-header">
+            Tipologia
           </div>
-          <%= link_to "Fogliame decorativo", "#" %>
-          <%= link_to "Da taglio", "#" %>
+          <div class="categoria-content">
+            <%= link_to "Erbacee perenni", "#" %>
+            <%= link_to "Erbacee annuali", "#" %>
+            <%= link_to "Graminacee", "#" %>
+            <%= link_to "Altro", "#" %></div>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="categoria-header">
-          Funzione
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="categoria-header">
+            Esigenza
+          </div>
+          <div class="categoria-content">
+            <%= link_to "Sole", "#" %>
+            <%= link_to "Ombra", "#" %>
+            <%= link_to "Mezz'ombra", "#" %>
+            <%= link_to "Secco", "#" %>
+          </div>
         </div>
-        <div class="categoria-content">
-          <%= link_to "Coprisuolo", "#" %>
-          <%= link_to "Per farfalle e insetti", "#" %>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="categoria-header">
+            Caratteristiche Ornamentali
+          </div>
+          <div class="categoria-content">
+            <div id="categoria-accordion" data-children=".item">
+              <div class="item spacing-5">
+                <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
+                  Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+                <div id="categoria-accordion2" class="collapse" role="tabpanel">
+                  <ul class="mb-3 accordion-menu">
+                    <li><%= link_to "Primavera", "#", class: "" %></li>
+                    <li><%= link_to "Estate", "#", class: "" %></li>
+                    <li><%= link_to "Autunno", "#", class: "" %></li>
+                    <li><%= link_to "Inverno", "#", class: "" %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="item spacing-5">
+                <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion3" role="button" aria-expanded="false" aria-controls="categoria-accordion3">
+                  Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+                <div id="categoria-accordion3" class="collapse" role="tabpanel">
+                  <ul class="mb-3 accordion-menu">
+                    <li><%= link_to "Basse", "#", class: "" %></li>
+                    <li><%= link_to "Medie", "#", class: "" %></li>
+                    <li><%= link_to "Alte", "#", class: "" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <%= link_to "Fogliame decorativo", "#" %>
+            <%= link_to "Da taglio", "#" %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+          <div class="categoria-header">
+            Funzione
+          </div>
+          <div class="categoria-content">
+            <%= link_to "Coprisuolo", "#" %>
+            <%= link_to "Per farfalle e insetti", "#" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="page-bottom">
-   <%= render 'shared/page-bottom' %>
-  </div>
+    <div class="page-bottom">
+     <%= render 'shared/page-bottom' %>
+    </div>
 
-  <div class="admin-buttons">
-    <p>Pannello Amministratori</p>
-    <div>
-      <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
-      <%= link_to "Vedi tutto il Catalogo", plants_path, class: "btn btn-primary" %>
+    <div class="admin-buttons">
+      <p>Pannello Amministratori</p>
+      <div>
+        <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+        <%= link_to "Vedi tutto il Catalogo", plants_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
