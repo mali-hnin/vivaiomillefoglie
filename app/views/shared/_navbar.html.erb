@@ -22,8 +22,7 @@
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text", method: :delete do %>
         <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
         <% end %>
-    <% else %>
-      <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
+
     <% end %>
   </div>
   <!-- Dropdown appearing on mobile only -->
@@ -42,6 +41,10 @@
     </div>
   </div>
 </div>
+
+<!-- LOGIN RX NAVIGATION ITEM for when customer login system is set up -->
+    <!-- <% else %>
+       <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %> -->
 
 <!-- DROPDOWN NAVBAR ITEMS currently not using -->
     <!-- <div class="dropdown">
