@@ -2,7 +2,15 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @plants = Plant.all
+    @plants = Plant.all.order('name ASC')
+  end
+
+  def by_created
+    @plants = Plant.all.order('created_at DESC')
+  end
+
+  def by_updated
+    @plants = Plant.all.order('updated_at DESC')
   end
 
   def show
