@@ -2,11 +2,11 @@
   <%= f.input :name, required: true, autofocus: true %>
   <%= f.input :photos, as: :attachinary %>
   <%= f.input :description, class: "text-field-height" %>
-  <%= f.input :category %>
-  <%= f.input :esposizione %>
-  <%= f.input :fioritura %>
-  <%= f.input :utile_per %>
-  <%= f.input :altezza %>
+  <%= f.input :category, placeholder: "Tipologia: erbacee perenni/erbacee annuali/graminacee/altro" %>
+  <%= f.input :esposizione, placeholder: "Esigenza: sole/ombra/mezz'ombra/secco" %>
+  <%= f.input :fioritura, placeholder: "primavera/estate/autunno/inverno" %>
+  <%= f.input :utile_per, placeholder: "fogliame decorativo/da taglio/coprisuolo/farfalle e insetti" %>
+  <%= f.input :altezza, placeholder: "bassa/media/alta" %>
   <%= f.input :terreno %>
   <%= f.input :densità %>
   <%= f.input :vaso %>
