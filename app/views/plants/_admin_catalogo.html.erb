@@ -8,7 +8,7 @@
   <%= link_to "ordina per ultima aggiornata", by_updated_plants_path, class: "btn" %>
   <div class="catalogo-content">
     <h1>Catalogo / <%= @plants.count %> piante</h1>
-    <ul>
+    <ol>
       <% @plants.each do |pianta| %>
         <li>
          <% if pianta.nascondi? %>
@@ -19,7 +19,7 @@
           Ultimo aggiornamento: <%= l pianta.updated_at, format: :euro %>
         </li>
       <% end %>
-    </ul>
+    </ol>
   </div>
 </div>
 

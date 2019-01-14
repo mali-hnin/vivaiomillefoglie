@@ -4,9 +4,9 @@
   <%= f.input :description, class: "text-field-height" %>
   <%= f.input :category, placeholder: "Tipologia: erbacee perenni/erbacee annuali/graminacee/altro" %>
   <%= f.input :esposizione, placeholder: "Esigenza: sole/ombra/mezz'ombra/secco" %>
-  <%= f.input :fioritura, placeholder: "primavera/estate/autunno/inverno" %>
+  <%= f.input :fioritura, collection: ['Primavera', 'Estate', 'Autunno', 'Inverno'], placeholder: "stagione"%>
   <%= f.input :utile_per, placeholder: "fogliame decorativo/da taglio/coprisuolo/farfalle e insetti" %>
-  <%= f.input :altezza, placeholder: "bassa/media/alta" %>
+  <%= f.input :altezza, collection: ['Bassa', 'Media', 'Alta']%>
   <%= f.input :terreno %>
   <%= f.input :densità %>
   <%= f.input :vaso %>
@@ -16,3 +16,5 @@
   <%= f.input :prezzo %>
   <%= f.button :submit, class: "btn btn-info btn-block" %>
 <% end %>
+
+  <!-- placeholder: "primavera/estate/autunno/inverno" -->
