@@ -2,7 +2,13 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @plants = Plant.all.order('name ASC')
+    @limit = 50
+    # offset equals the page we're in, so if we're in the first page
+    # offset = 0 * limit, in this case 10, fetching only the first 10 items.
+    # Second page, offset = 1 * limit, fetching 10 items after the first 10, etc.
+    # thx to http://www.mozartreina.com/pagination-with-rails.html
+    offset = params[:offset].to_i * @limit ||=0
+    @plants = Plant.all.offset(offset).limit(@limit).order('name ASC')
   end
 
   def by_created

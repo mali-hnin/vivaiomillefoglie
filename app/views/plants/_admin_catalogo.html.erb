@@ -7,7 +7,7 @@
   <%= link_to "ordina per ultima creata", by_created_plants_path, class: "btn" %>
   <%= link_to "ordina per ultima aggiornata", by_updated_plants_path, class: "btn" %>
   <div class="catalogo-content">
-    <h1>Catalogo / <%= @plants.count %> piante</h1>
+    <h1>Catalogo / <%= Plant.all.count %> piante</h1>
     <ol>
       <% @plants.each do |pianta| %>
         <li>
@@ -20,6 +20,10 @@
         </li>
       <% end %>
     </ol>
+    <!-- ceil is called because you want the number rounded up, e.g. 16/10 should equal 2 not 1.6 -->
+    <% (Plant.all.size.to_f/@limit).ceil.times do |n| %>
+    <%= link_to (n + 1).to_s, plants_path(offset: n) %>
+    <% end %>
   </div>
 </div>
 
