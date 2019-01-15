@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+
+# Converts Rails timestamps into European format
+  time:
+
+    formats:
+
+      euro: "%d/%m/%Y, %H:%M"
