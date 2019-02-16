@@ -1,9 +1,13 @@
-.wrapper {
+/* .wrapper {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .left-side {
   width: 490px;
   min-height: 200px;
+}
+
+.bg {
+  background-size: cover;
 }
