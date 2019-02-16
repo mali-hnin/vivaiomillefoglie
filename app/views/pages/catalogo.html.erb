@@ -16,7 +16,7 @@
             Tipologia
           </div>
           <div class="categoria-content">
-            <%= link_to "Erbacee perenni", "#" %>
+            <%= link_to "Erbacee perenni", plants_path(category: "Erbacee perenni") %>
             <%= link_to "Erbacee annuali", "#" %>
             <%= link_to "Graminacee", "#" %>
             <%= link_to "Altro", "#" %></div>
@@ -27,7 +27,7 @@
             Esigenza
           </div>
           <div class="categoria-content">
-            <%= link_to "Sole", "#" %>
+            <%= link_to "Sole", plants_path(esposizione: "sole") %>
             <%= link_to "Ombra", "#" %>
             <%= link_to "Mezz'ombra", "#" %>
             <%= link_to "Secco", "#" %>

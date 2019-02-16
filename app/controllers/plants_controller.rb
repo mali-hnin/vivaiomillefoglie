@@ -6,9 +6,15 @@ class PlantsController < ApplicationController
     # offset = 0 * limit, in this case 10, fetching only the first 10 items.
     # Second page, offset = 1 * limit, fetching 10 items after the first 10, etc.
     # thx to http://www.mozartreina.com/pagination-with-rails.html
-    @limit = 50
+    @limit = 20
     offset = params[:offset].to_i * @limit ||=0
-    @plants = Plant.all.offset(offset).limit(@limit).order('name ASC')
+    if params[:category]
+      @plants = Plant.where(category: params[:category])
+    elsif params[:esposizione]
+      @plants = Plant.where("esposizione ILIKE :esposizione", esposizione: '%'+params[:esposizione]+'%')
+    else
+      @plants = Plant.all
+    end
   end
 
   def by_created
