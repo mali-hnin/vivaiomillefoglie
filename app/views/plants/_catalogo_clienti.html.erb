@@ -1,0 +1,15 @@
+<div class="catalogo-content">
+    <h1>Catalogo</h1>
+    <ol>
+      <% @plants.each do |pianta| %>
+        <li>
+         <% if pianta.nascondi? %>
+           <span class="text-warning">NASCOSTA</span>
+         <% end %>
+          <%= link_to pianta.name, plant_path(pianta.id) %>
+          <!-- Turns Rails timestamps into European format, setup in en.yml -->
+          Ultimo aggiornamento: <%= l pianta.updated_at, format: :euro %>
+        </li>
+      <% end %>
+    </ol>
+  </div>
