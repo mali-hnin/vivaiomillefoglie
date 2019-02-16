@@ -1,7 +1,11 @@
 <!-- Code to put an image as a div's background in rails -->
 <!-- style="background-image:url(<%= asset_path "4.jpg" %>)" -->
 
-<div class="home-bg">
+<div class="bg" style="background-image:url(<%= asset_path "bg6.jpg" %>)">
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
+  <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
   <div class="page-wrapper">
     <div class = "left-side">
       <div class="left-side-logo">
