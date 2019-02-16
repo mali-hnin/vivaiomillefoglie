@@ -9,9 +9,17 @@ class PlantsController < ApplicationController
     @limit = 20
     offset = params[:offset].to_i * @limit ||=0
     if params[:category]
-      @plants = Plant.where(category: params[:category])
+      @plants = Plant.where("category ILIKE :category", category: '%'+params[:category]+'%')
     elsif params[:esposizione]
       @plants = Plant.where("esposizione ILIKE :esposizione", esposizione: '%'+params[:esposizione]+'%')
+    elsif params[:fioritura]
+      @plants = Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%')
+    elsif params[:altezza]
+      @plants = Plant.where("altezza ILIKE :altezza", altezza: '%'+params[:altezza]+'%')
+    elsif params[:terreno]
+      @plants = Plant.where("terreno ILIKE :terreno", terreno: '%'+params[:terreno]+'%')
+    elsif params[:utile_per]
+      @plants = Plant.where("utile_per ILIKE :utile_per", utile_per: '%'+params[:utile_per]+'%')
     else
       @plants = Plant.all
     end
