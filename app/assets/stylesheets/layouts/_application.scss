@@ -11,3 +11,11 @@
 .bg {
   background-size: cover;
 }
+
+.banner {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
