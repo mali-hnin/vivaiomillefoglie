@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.5.3'
 
 # To force bundler to load github repos thru https protocol
 git_source(:github) do |repo_name|
