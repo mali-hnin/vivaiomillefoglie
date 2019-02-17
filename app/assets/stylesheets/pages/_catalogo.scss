@@ -5,16 +5,18 @@
 
 .catalogo-banner {
   width: auto;
-  height: 230px;
+  max-width: 1000px;
+  align-self: center;
   background-position: 50% 50%;
   margin-bottom: 30px;
-  h1 {
-    color: white;
+  color: white;
+  h1, h2 {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   }
 }
 
 .catalogo-content {
-  padding: 100px;
+  padding: 30px 100px;
 }
 
 .categoria-content {
