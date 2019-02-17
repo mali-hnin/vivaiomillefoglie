@@ -10,7 +10,6 @@
 
 .page-wrapper {
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   width: 100%;
   padding: 30px;
@@ -24,35 +23,28 @@
 }
 
 /* SIDEBAR STYLING */
-/* div {
-  border: black 1px solid;
-}
- */
-.sidebar {
-  width: auto;
-  min-height: auto;
-}
-
-.left-side-logo {
-  text-align: center;
-  img {
-    width: 200px;
-  }
-}
-
-.side-text-box{
-  padding: 30px;
-  font-size: 15px;
-}
 
 .info-box {
   padding: 70px 30px 30px 30px;
   color: white;
   font-size: 17px;
   text-align: justify;
+  h1 {
+    color: black;
+    text-align: justify;
+    font-weight: bold;
+  }
 }
 
 .left-side-bottom {
   display: flex;
   justify-content: center;
+}
+
+.orange-text {
+  color: $orange;
+}
+
+.home-title {
+  width: max-content;
 }

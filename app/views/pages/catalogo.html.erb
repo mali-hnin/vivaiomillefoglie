@@ -1,81 +1,95 @@
-<div class="bg" style="background-image:url(<%= asset_path "banner2.jpg" %>)">
+<div class="bg" style="background-image:url(<%= asset_path "bg2.jpg" %>)">
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
 
   <div class="page-wrapper">
-    <div class="banner catalogo-banner">
-      <h1>Catalogo</h1>
+    <div class="catalogo-banner">
+      <h2>Nel nostro catalogo trovate erbacee perenni, graminacee ornamentali ed annuali da fiore</h2>
+      <p>scelte  per la loro bellezza e utili a una gestione del giardino secondo natura. Possono servire per attirare insetti e uccelli in giardino, per migliorare in modo naturale il suolo (specie azotofissatrici, coprisuolo)per sopportare siccità e arido.</p>
+
+      <p>Selezioniamo le varietà che riteniamo più resistenti a malattie e parassiti, poco esigenti di irrigazione, belle il più a lungo possibile nell'arco delle stagioni.</br>
+      Cerchiamo di allevare piante forti, pronte a crescere e diventare rigogliose nei vostri giardini; per questo vengono coltivate per tutto l'anno in campo aperto nel rispetto dei loro cicli biologici.</p>
+
+      <p>Evitiamo eccessi di concimazione e forzature per ottenere esemplari sani e resistenti.</br>
+      Impieghiamo terricci preparati in azienda con terra di campo, compost da verde, torba e pomice.</br>
+      Utilizziamo  per la concimazione ed eventuali trattamenti antiparassitari prodotti poco inquinanti ammessi in agricoltura biologica.</br>
+      Molte delle piante sono riprodotte da semi, talee o divisioni di piante madri coltivate e selezionate nel nostro giardino.</p>
+      <h1>Coltiviamo la bellezza al ritmo della natura!</h1>
     </div>
 
     <div class="catalogo-content text-center">
       <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <div class="categoria-header">
-            Tipologia
-          </div>
-          <div class="categoria-content">
-            <%= link_to "Erbacee perenni", plants_path(category: "erbacee perenni") %>
-            <%= link_to "Erbacee annuali", plants_path(category: "erbacee annuali") %>
-            <%= link_to "Graminacee", plants_path(category: "graminacee") %>
-            <%= link_to "Altro", '#' %></div>
-        </div>
-
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <div class="categoria-header">
-            Esigenza
-          </div>
-          <div class="categoria-content">
-            <%= link_to "Sole", plants_path(esposizione: "sole") %>
-            <%= link_to "Ombra", plants_path(esposizione: "ombra") %>
-            <%= link_to "Mezz'ombra", plants_path(esposizione: "Mezz'ombra") %>
-            <%= link_to "Secco", "#" %>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <div class="categoria-header">
-            Caratteristiche Ornamentali
-          </div>
-          <div class="categoria-content">
-            <div id="categoria-accordion" data-children=".item">
-              <div class="item spacing-5">
-                <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
-                  Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
-                </a>
-                <div id="categoria-accordion2" class="collapse" role="tabpanel">
-                  <ul class="mb-3 accordion-menu">
-                    <li><%= link_to "Primavera", plants_path(fioritura: "primavera"), class: "" %></li>
-                    <li><%= link_to "Estate", plants_path(fioritura: "estate"), class: "" %></li>
-                    <li><%= link_to "Autunno", plants_path(fioritura: "autunno"), class: "" %></li>
-                    <li><%= link_to "Inverno", plants_path(fioritura: "inverno"), class: "" %></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="item spacing-5">
-                <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion3" role="button" aria-expanded="false" aria-controls="categoria-accordion3">
-                  Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </a>
-                <div id="categoria-accordion3" class="collapse" role="tabpanel">
-                  <ul class="mb-3 accordion-menu">
-                    <li><%= link_to "Basse", plants_path(altezza: "bassa"), class: "" %></li>
-                    <li><%= link_to "Medie", plants_path(altezza: "media"), class: "" %></li>
-                    <li><%= link_to "Alte", plants_path(altezza: "alta"), class: "" %></li>
-                  </ul>
-                </div>
-              </div>
+        <div class="categorie-row">
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="categoria-header">
+              Tipo di piante
             </div>
-            <%= link_to "Fogliame decorativo", "#" %>
-            <%= link_to "Da taglio", "#" %>
+            <div class="categoria-content">
+              <%= link_to "Erbacee perenni", plants_path(category: "erbacee perenni") %>
+              <%= link_to "Erbacee annuali", plants_path(category: "erbacee annuali") %>
+              <%= link_to "Graminacee", plants_path(category: "graminacee") %>
+              <%= link_to "Altro", '#' %></div>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-3">
-          <div class="categoria-header">
-            Funzione
+
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="categoria-header">
+              Esposizione
+            </div>
+            <div class="categoria-content">
+              <%= link_to "Sole", plants_path(esposizione: "sole") %>
+              <%= link_to "Ombra", plants_path(esposizione: "ombra") %>
+              <%= link_to "Mezz'ombra", plants_path(esposizione: "Mezz'ombra") %>
+            </div>
           </div>
-          <div class="categoria-content">
-            <%= link_to "Coprisuolo", "#" %>
-            <%= link_to "Per farfalle e insetti", "#" %>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="categoria-header">
+              Caratteristiche
+            </div>
+            <div class="categoria-content">
+              <div id="categoria-accordion" data-children=".item">
+                <div class="item spacing-5">
+                  <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
+                    Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                  <div id="categoria-accordion2" class="collapse" role="tabpanel">
+                    <ul class="mb-3 accordion-menu">
+                      <li><%= link_to "Primavera", plants_path(fioritura: "primavera"), class: "" %></li>
+                      <li><%= link_to "Estate", plants_path(fioritura: "estate"), class: "" %></li>
+                      <li><%= link_to "Autunno", plants_path(fioritura: "autunno"), class: "" %></li>
+                      <li><%= link_to "Inverno", plants_path(fioritura: "inverno"), class: "" %></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item spacing-5">
+                  <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion3" role="button" aria-expanded="false" aria-controls="categoria-accordion3">
+                    Altezza <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </a>
+                  <div id="categoria-accordion3" class="collapse" role="tabpanel">
+                    <ul class="mb-3 accordion-menu">
+                      <li><%= link_to "Basse", plants_path(altezza: "bassa"), class: "" %></li>
+                      <li><%= link_to "Medie", plants_path(altezza: "media"), class: "" %></li>
+                      <li><%= link_to "Alte", plants_path(altezza: "alta"), class: "" %></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <%= link_to "Fogliame ornamentale", "#" %>
+              <%= link_to "Da taglio", "#" %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="categoria-header">
+              Interesse per l'ambiente
+            </div>
+            <div class="categoria-content">
+              <%= link_to "Piante coprisuolo", "#" %>
+              <%= link_to "Piante azotofissatrici", "#" %>
+              <%= link_to "Piante utili per insetti e uccelli", "#" %>
+              <%= link_to "Piante con poche esigenze di irrigazione", "#" %>
+              <%= link_to "Piante spontanee", "#" %>
+            </div>
           </div>
         </div>
       </div>

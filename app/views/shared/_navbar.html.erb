@@ -16,12 +16,10 @@
   </div>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Carrello'.html_safe, "", class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text", method: :delete do %>
         <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-        <% end %>
-
+      <% end %>
     <% end %>
   </div>
   <!-- Dropdown appearing on mobile only -->
@@ -43,6 +41,7 @@
 
 <!-- LOGIN RX NAVIGATION ITEM for when customer login system is set up -->
     <!-- <% else %>
-       <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %> -->
+       <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
+    <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Carrello'.html_safe, "", class: "navbar-wagon-item navbar-wagon-link light-blue-text" %> -->
 
 

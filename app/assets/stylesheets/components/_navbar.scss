@@ -36,6 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 150px;
 }
 
 /* Basic navbar item */
@@ -59,12 +60,12 @@
 }
 
 .navbar-wagon-link:hover {
-  color: $purple;
+  color: $orange;
   text-decoration: none;
 }
 
 .navbar-wagon-link:focus {
-  color: $purple;
+  color: $orange;
   text-decoration: none;
 }
 
@@ -89,7 +90,7 @@
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: $purple !important;
+  color: $orange !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
