@@ -1,8 +1,8 @@
-.catalogo-bg {
+/* .catalogo-bg {
   background-image: url("banner2.jpg");
   background-size: cover;
 }
-
+ */
 .catalogo-banner {
   width: auto;
   max-width: 1000px;
@@ -19,13 +19,24 @@
   padding: 30px 100px;
 }
 
+.categorie-row{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  width: 100%;
+}
+
 .categoria-content {
   display: flex;
   flex-direction: column;
   a {
     margin: 5px 0px;
+    color: $dark-green;
   }
-  background-color: rgba(255, 255, 255, 0.5);
+  a:hover {
+    text-decoration: none;
+    color: $dark-green;
+    font-weight: bolder;
+  }
 }
 
 .spacing-5 {
@@ -46,9 +57,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $light-green;
   padding: 30px;
-  border-radius: 3px
+  border-bottom: solid 1px;
+  font-weight: bold;
+  color: $dark-green;
 }
 
 /* Dropdown menu */
