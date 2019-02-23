@@ -28,7 +28,7 @@ gem 'money-rails', '~>1.12'
 
 # Front-end gems
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'sass-rails'

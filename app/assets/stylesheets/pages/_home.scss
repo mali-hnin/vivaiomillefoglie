@@ -8,16 +8,7 @@
   background-size: cover;
 }
 
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 30px;
-  text-align: center;
-}
-
 .banner-text {
-  font-family: "Roboto", Georgia, Serif;
   font-size: 30px;
   text-align: center;
 }
@@ -27,12 +18,12 @@
 .info-box {
   padding: 70px 30px 30px 30px;
   color: white;
+  font-family: 'Muli', sans-serif;
   font-size: 17px;
   text-align: justify;
   h1 {
-    color: black;
     text-align: justify;
-    font-weight: bold;
+    font-family: 'IM Fell Double Pica', serif;
   }
 }
 
@@ -43,8 +34,5 @@
 
 .orange-text {
   color: $orange;
-}
-
-.home-title {
-  width: max-content;
+  font-family: 'Montserrat Black', sans-serif;
 }

@@ -1,55 +1,26 @@
-<div class="bg" style="background-image:url(<%= asset_path "bg5.jpg" %>)">
+<div class="bg" style="background-image:url(<%= asset_path "bg09.jpg" %>); background-position: 0% 100%">
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
   <div class="page-wrapper">
-    <div id="giardini-text">
-      <h1>Giardini secondo natura e sogni</h1>
-      <p>Ci piacciono le piante e le coltiviamo da anni. Abbiamo imparato a guardarlo con gli occhi delle piante, il mondo.</p>
+    <div class = "left-side">
+      <div class="left-side-text">
+        <div class="info-box">
+          <div class="title">
+            <h1>Giardini secondo natura e sogni</h1>
+          </div>
+          <p>Ci piacciono le piante e le coltiviamo da anni. Abbiamo imparato a guardarlo con gli occhi delle piante, il mondo.</p>
 
-      <p>Facciamo giardini in cui la vita delle piante e dell'uomo sia facile.</p>
+          <p>Facciamo giardini in cui la vita delle piante e dell'uomo sia facile.</p>
 
-      <p>Facciamo giardini con gentilezza, perchè la bellezza nasca dalla semplicità.</p>
+          <p>Facciamo giardini con gentilezza, perchè la bellezza nasca dalla semplicità.</p>
 
-      <p>Progettiamo i giardini pensando alle piante e alle loro esigenze e alle persone che li abiteranno.</br>
-      Non dimentichiamo i sogni.</br>
-      Ascoltiamo desideri e cerchiamo di dare loro forma e vita.</p>
-    </div>
-    <div class="carousel-container">
-      <div class="carousel">
-        <div class="carousel-item">
-          <%= image_tag "1.jpg" %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag "2.jpg" %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag "3.jpg" %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag "4.jpg" %>
+          <p>Progettiamo i giardini pensando alle piante e alle loro esigenze e alle persone che li abiteranno.</br>
+          Non dimentichiamo i sogni.</br>
+          Ascoltiamo desideri e cerchiamo di dare loro forma e vita.</p>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- CAROUSEL JS SCRIPT -->
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.carousel').slick({
-        autoplay: false,
-        autoplaySpeed: 3000,
-        dots: true,
-        infinite: true,
-        speed: 800,
-        fade: true,
-        arrows: true,
-      });
-    });
-  </script>
 </div>
