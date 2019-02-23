@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/catalogo-intro", to: "pages#catalogo_intro"
   get "/catalogo", to: "pages#catalogo"
   get "/giardini", to: "pages#giardini"
   get "/millefoglie-flowers-lab", to: "pages#flowerslab", as: :flowerslab

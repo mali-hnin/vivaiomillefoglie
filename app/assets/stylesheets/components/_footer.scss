@@ -1,4 +1,7 @@
 .footer {
   background-color: $dark-green;
   color: $yellow;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
