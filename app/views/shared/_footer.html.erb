@@ -1,24 +1,26 @@
 <div class="footer">
-  <div class="info-box" id="orari">
-    <p>Gli orari del vivaio</p>
+  <div class="footer-column" id="orari">
+    <p class="uppercase-text bolder-text">Gli orari del vivaio</p>
     <p>Venerdì-Sabato<br>
     9.00-12-30<br>
     15.30-tramonto</p>
 
     <p>Dicembre-Gennaio e Agosto<br>
-    chiuso</p>
+    <span class="bolder-text">chiuso</span></p>
     <p>Febbraio su appuntamento</p>
 
-    <%= link_to "Dove Siamo", contatti_path %><br>
-    <%= link_to "Come Acquistare", "" %>
+    <%= link_to "Dove Siamo", contatti_path, class: "orange-text" %><br>
+    <%= link_to "Come Acquistare", "", class: "orange-text" %>
   </div>
-  <div class="info-box" id="social media">
-
+  <div class="footer-column" id="social-media">
+    <p class="uppercase-text bolder-text">seguici</p>
+    <%= image_tag "facebook-small.png", alt: "Facebook" %>
+    <%= image_tag "instagram-small.png", alt: "Instagram" %>
   </div>
-  <div class="info-box" id="bonus-verde">
-
+  <div class="footer-column" id="bonus-verde">
+    <%= image_tag "bonusverde.jpg", alt: "Bonus Verde" %>
   </div>
-  <div class="info-box" id="acquista-online">
-
+  <div class="footer-column" id="acquista-online">
+    <%= image_tag "ordinaonline.jpg", alt: "Acquista Online" %>
   </div>
 </div>

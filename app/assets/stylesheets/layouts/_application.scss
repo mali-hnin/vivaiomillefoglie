@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: row;
 } */
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
 .left-side {
   width: 490px;
   min-height: 200px;
@@ -14,7 +19,7 @@
 }
 
 .white-bg {
-  background-color: $yellow;
+  background-color: white;
 }
 
 .page-wrapper {
