@@ -24,6 +24,15 @@
   h1 {
     text-align: justify;
     font-family: 'IM Fell Double Pica', serif;
+    a {
+      color: $orange;
+      text-align: center;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+    a:hover {
+      font-weight: 600;
+      text-decoration: none;
+    }
   }
 }
 
