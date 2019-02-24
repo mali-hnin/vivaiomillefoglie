@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get "/giardini", to: "pages#giardini"
   get "/millefoglie-flowers-lab", to: "pages#flowerslab", as: :flowerslab
   get "/contatti", to: "pages#contatti", as: :contatti
+  get "/eventi", to: "pages#eventi"
+  get "/bonus-verde", to: "pages#bonusverde", as: :bonusverde
+  get "/come-acquistare", to: "pages#comeacquistare", as: :acquistare
 
   mount Attachinary::Engine => "/attachinary"
 end
