@@ -1,0 +1,987 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2019-02-16 12:49:04.847034'
+    - '2019-02-16 12:49:04.847034'
+
+---
+plants:
+  columns:
+  - id
+  - name
+  - photo
+  - description
+  - category
+  - esposizione
+  - fioritura
+  - altezza
+  - terreno
+  - densità
+  - vaso
+  - disponibile
+  - novità
+  - utile_per
+  - created_at
+  - updated_at
+  - price_cents
+  - price_currency
+  - nascondi
+  records: 
+  - - 1
+    - Aether Atlas similique
+    - 
+    - Deserunt facere voluptatibus. Atque molestiae modi. Dolores et commodi.
+    - erbacee annuali
+    - sole, ombra
+    - ''
+    - ''
+    - umido
+    - media
+    - 20cm
+    - true
+    - false
+    - ''
+    - '2019-02-16 12:49:12.357362'
+    - '2019-02-16 18:20:08.11146'
+    - 12900
+    - EUR
+    - false
+  - - 2
+    - Aion Lelantos aliquam
+    - 
+    - Quia quia consectetur. Voluptatem ipsam facere. Sit voluptate ducimus.
+    - erbacee perenni
+    - mezz'ombra
+    - inverno
+    - bassa
+    - secco
+    - alta
+    - 15cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.363108'
+    - '2019-02-16 12:49:12.363108'
+    - 1000
+    - EUR
+    - true
+  - - 3
+    - Nyx Asteria et
+    - 
+    - Voluptas vel id. Tempora libero est. Cumque dolores laborum.
+    - arbusti
+    - sole
+    - estate
+    - alta
+    - secco
+    - media
+    - 30cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.367592'
+    - '2019-02-16 12:49:12.367592'
+    - 3300
+    - EUR
+    - false
+  - - 4
+    - Hypnos Crius sint
+    - 
+    - Aut blanditiis explicabo. Et dolores ratione. Qui aut vero.
+    - erbacee perenni
+    - ombra
+    - primavera
+    - media
+    - secco
+    - alta
+    - 10cm
+    - true
+    - false
+    - 
+    - '2019-02-16 12:49:12.371806'
+    - '2019-02-16 12:49:12.371806'
+    - 4800
+    - EUR
+    - true
+  - - 5
+    - Nemesis Helios et
+    - 
+    - Et minima reiciendis. Dicta aut magnam. Consequatur omnis vel.
+    - erbacee perenni
+    - ombra
+    - estate
+    - alta
+    - umido
+    - alta
+    - 30cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.375541'
+    - '2019-02-16 12:49:12.375541'
+    - 11400
+    - EUR
+    - true
+  - - 6
+    - Uranus Mnemosyne corrupti
+    - 
+    - Quas sunt sint. Repudiandae distinctio autem. Dolor velit doloribus.
+    - creature
+    - mezz'ombra
+    - autunno
+    - media
+    - umido
+    - media
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.379738'
+    - '2019-02-16 12:49:12.379738'
+    - 13800
+    - EUR
+    - false
+  - - 7
+    - Gaia Themis quaerat
+    - 
+    - Sit libero dolorem. Ut a vitae. Quia omnis temporibus.
+    - erbacee perenni
+    - Sole, ombra
+    - ''
+    - ''
+    - secco
+    - media
+    - 10cm
+    - false
+    - false
+    - ''
+    - '2019-02-16 12:49:12.383786'
+    - '2019-02-16 18:45:05.080365'
+    - 8700
+    - EUR
+    - false
+  - - 8
+    - Pontus Aura eum
+    - 
+    - Dolorem culpa voluptatem. Et fugiat maxime. Repellendus temporibus officiis.
+    - arbusti
+    - sole
+    - estate
+    - alta
+    - secco
+    - media
+    - 20cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.387573'
+    - '2019-02-16 12:49:12.387573'
+    - 7800
+    - EUR
+    - false
+  - - 9
+    - Gaia Epimetheus recusandae
+    - 
+    - Commodi quae esse. Numquam sapiente voluptate. Eum praesentium perferendis.
+    - graminacee
+    - mezz'ombra
+    - primavera
+    - media
+    - umido
+    - solitaria
+    - 20cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.391454'
+    - '2019-02-16 12:49:12.391454'
+    - 13200
+    - EUR
+    - false
+  - - 10
+    - Ananke Astraeus nihil
+    - 
+    - Deserunt voluptatem cupiditate. Dolorum incidunt deserunt. Rerum quasi qui.
+    - creature
+    - ombra
+    - primavera
+    - alta
+    - secco
+    - solitaria
+    - 15cm
+    - true
+    - false
+    - 
+    - '2019-02-16 12:49:12.3956'
+    - '2019-02-16 12:49:12.3956'
+    - 11300
+    - EUR
+    - true
+  - - 11
+    - Chaos Clymene est
+    - 
+    - Numquam in necessitatibus. A repudiandae distinctio. Eos consequuntur et.
+    - erbacee annuali
+    - ombra
+    - inverno
+    - bassa
+    - secco
+    - alta
+    - 15cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.402681'
+    - '2019-02-16 12:49:12.402681'
+    - 6600
+    - EUR
+    - true
+  - - 12
+    - Ananke Aura corrupti
+    - 
+    - Sint aut natus. Minus et labore. Et aut laudantium.
+    - erbacee perenni
+    - ombra
+    - primavera
+    - alta
+    - umido
+    - media
+    - 30cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.406604'
+    - '2019-02-16 12:49:12.406604'
+    - 1300
+    - EUR
+    - false
+  - - 13
+    - Ourea Leto praesentium
+    - 
+    - Illum quia commodi. Vel saepe qui. Et ipsum quasi.
+    - creature
+    - sole
+    - estate
+    - media
+    - umido
+    - alta
+    - 30cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.41093'
+    - '2019-02-16 12:49:12.41093'
+    - 12900
+    - EUR
+    - false
+  - - 14
+    - Chronos Theia maiores
+    - 
+    - Aspernatur velit ut. Sapiente aliquid ipsa. Officiis omnis maxime.
+    - graminacee
+    - sole
+    - estate
+    - alta
+    - umido
+    - media
+    - 15cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.41495'
+    - '2019-02-16 12:49:12.41495'
+    - 5500
+    - EUR
+    - false
+  - - 15
+    - Uranus Prometheus quibusdam
+    - 
+    - Earum et molestias. Qui pariatur labore. Possimus quo sit.
+    - erbacee perenni
+    - ombra
+    - autunno
+    - alta
+    - umido
+    - media
+    - 10cm
+    - true
+    - false
+    - 
+    - '2019-02-16 12:49:12.418994'
+    - '2019-02-16 12:49:12.418994'
+    - 11200
+    - EUR
+    - true
+  - - 16
+    - Eros Iapetus vel
+    - 
+    - Molestias recusandae consequatur. Harum corporis accusamus. Et quisquam voluptatem.
+    - erbacee annuali
+    - sole
+    - inverno
+    - media
+    - secco
+    - alta
+    - 30cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.422541'
+    - '2019-02-16 12:49:12.422541'
+    - 4900
+    - EUR
+    - true
+  - - 17
+    - Ananke Selene quod
+    - 
+    - Ut adipisci qui. Et maxime dolorem. Ducimus quo nobis.
+    - creature
+    - ombra
+    - estate
+    - alta
+    - secco
+    - alta
+    - 10cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.426609'
+    - '2019-02-16 12:49:12.426609'
+    - 8900
+    - EUR
+    - true
+  - - 18
+    - Eros Lelantos nobis
+    - 
+    - Maxime quia omnis. Est voluptatem dolores. Odio modi blanditiis.
+    - graminacee
+    - mezz'ombra
+    - primavera
+    - bassa
+    - umido
+    - media
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.430687'
+    - '2019-02-16 12:49:12.430687'
+    - 6900
+    - EUR
+    - true
+  - - 19
+    - Thanatos Crius perferendis
+    - 
+    - Adipisci sunt amet. Quis excepturi suscipit. Sed perspiciatis deleniti.
+    - creature
+    - sole
+    - autunno
+    - bassa
+    - umido
+    - solitaria
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.434606'
+    - '2019-02-16 12:49:12.434606'
+    - 4100
+    - EUR
+    - true
+  - - 20
+    - Thalassa Epimetheus dolores
+    - 
+    - Voluptates fugit nulla. Id quisquam officia. Omnis magni error.
+    - arbusti
+    - ombra
+    - autunno
+    - media
+    - umido
+    - media
+    - 15cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.438229'
+    - '2019-02-16 12:49:12.438229'
+    - 5600
+    - EUR
+    - false
+  - - 21
+    - Aether Aura qui
+    - 
+    - Tenetur odit maiores. Et ut facilis. Veritatis voluptates rem.
+    - arbusti
+    - sole
+    - autunno
+    - media
+    - umido
+    - media
+    - 15cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.442141'
+    - '2019-02-16 12:49:12.442141'
+    - 12200
+    - EUR
+    - true
+  - - 22
+    - Pontus Iapetus ut
+    - 
+    - Quia omnis qui. Laborum qui omnis. At doloremque et.
+    - erbacee perenni
+    - ombra
+    - inverno
+    - alta
+    - umido
+    - media
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.445907'
+    - '2019-02-16 12:49:12.445907'
+    - 3700
+    - EUR
+    - false
+  - - 23
+    - Aether Phoebe rerum
+    - 
+    - Qui eius repellat. Deserunt consequatur temporibus. Quo impedit assumenda.
+    - arbusti
+    - ombra
+    - primavera
+    - media
+    - umido
+    - solitaria
+    - 20cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.449707'
+    - '2019-02-16 12:49:12.449707'
+    - 11100
+    - EUR
+    - false
+  - - 24
+    - Nemesis Prometheus commodi
+    - 
+    - Libero iste et. Voluptatum explicabo possimus. Dicta sed eum.
+    - arbusti
+    - mezz'ombra
+    - primavera
+    - alta
+    - umido
+    - media
+    - 10cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.453535'
+    - '2019-02-16 12:49:12.453535'
+    - 6500
+    - EUR
+    - false
+  - - 25
+    - Phanes Astraeus veritatis
+    - 
+    - Eligendi sed quos. Impedit nulla aut. Dolorem quis pariatur.
+    - arbusti
+    - mezz'ombra
+    - inverno
+    - bassa
+    - secco
+    - media
+    - 20cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.457691'
+    - '2019-02-16 12:49:12.457691'
+    - 9700
+    - EUR
+    - false
+  - - 26
+    - Chronos Coeus accusamus
+    - 
+    - Odio perferendis et. Sed laudantium dolores. Neque quia ducimus.
+    - graminacee
+    - mezz'ombra
+    - autunno
+    - media
+    - umido
+    - alta
+    - 10cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.461591'
+    - '2019-02-16 12:49:12.461591'
+    - 2700
+    - EUR
+    - true
+  - - 27
+    - Ourea Cronus omnis
+    - 
+    - Quaerat officia maxime. Totam odio accusantium. Et voluptatem sint.
+    - erbacee perenni
+    - sole
+    - inverno
+    - alta
+    - umido
+    - media
+    - 10cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.465428'
+    - '2019-02-16 12:49:12.465428'
+    - 4300
+    - EUR
+    - false
+  - - 28
+    - Ourea Prometheus quibusdam
+    - 
+    - Omnis nobis voluptas. Adipisci libero rerum. Quia nihil enim.
+    - erbacee perenni
+    - ombra
+    - estate
+    - media
+    - secco
+    - media
+    - 30cm
+    - true
+    - false
+    - 
+    - '2019-02-16 12:49:12.469815'
+    - '2019-02-16 12:49:12.469815'
+    - 2100
+    - EUR
+    - false
+  - - 29
+    - Chaos Clymene quos
+    - 
+    - Blanditiis excepturi ex. Esse quam illum. Qui provident quos.
+    - graminacee
+    - mezz'ombra
+    - autunno
+    - media
+    - secco
+    - alta
+    - 30cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.473924'
+    - '2019-02-16 12:49:12.473924'
+    - 5600
+    - EUR
+    - true
+  - - 30
+    - Thalassa Dione aliquam
+    - 
+    - Aut laudantium aspernatur. Quia fuga sequi. Sapiente non voluptatum.
+    - arbusti
+    - mezz'ombra
+    - inverno
+    - bassa
+    - secco
+    - media
+    - 30cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.477994'
+    - '2019-02-16 12:49:12.477994'
+    - 500
+    - EUR
+    - true
+  - - 31
+    - Ourea Ophion qui
+    - 
+    - Aspernatur et quos. Iusto reprehenderit provident. Deleniti omnis architecto.
+    - graminacee
+    - mezz'ombra
+    - estate
+    - media
+    - secco
+    - solitaria
+    - 10cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.481642'
+    - '2019-02-16 12:49:12.481642'
+    - 4600
+    - EUR
+    - false
+  - - 32
+    - Ourea Helios labore
+    - 
+    - Atque ad et. Neque ullam nobis. Iusto qui vel.
+    - erbacee annuali
+    - ombra
+    - primavera
+    - media
+    - secco
+    - alta
+    - 10cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.485849'
+    - '2019-02-16 12:49:12.485849'
+    - 10600
+    - EUR
+    - false
+  - - 33
+    - Phanes Hyperion dolorem
+    - 
+    - Eius et culpa. Doloremque quam molestias. Perferendis et officiis.
+    - arbusti
+    - mezz'ombra
+    - primavera
+    - bassa
+    - secco
+    - solitaria
+    - 10cm
+    - true
+    - false
+    - 
+    - '2019-02-16 12:49:12.490142'
+    - '2019-02-16 12:49:12.490142'
+    - 10900
+    - EUR
+    - true
+  - - 34
+    - Thalassa Atlas porro
+    - 
+    - Labore libero ut. Qui nulla quis. Dolore rem aliquam.
+    - arbusti
+    - mezz'ombra
+    - autunno
+    - bassa
+    - umido
+    - media
+    - 30cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.49425'
+    - '2019-02-16 12:49:12.49425'
+    - 10800
+    - EUR
+    - true
+  - - 35
+    - Aion Selene quidem
+    - 
+    - Non provident ut. In rem totam. Nostrum sit a.
+    - erbacee perenni
+    - sole
+    - estate
+    - media
+    - umido
+    - alta
+    - 30cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.497974'
+    - '2019-02-16 12:49:12.497974'
+    - 13400
+    - EUR
+    - false
+  - - 36
+    - Aion Iapetus aut
+    - 
+    - Saepe alias facilis. Dolorem quo ad. Nesciunt perspiciatis officia.
+    - graminacee
+    - sole
+    - primavera
+    - alta
+    - secco
+    - media
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.503514'
+    - '2019-02-16 12:49:12.503514'
+    - 5400
+    - EUR
+    - true
+  - - 37
+    - Thanatos Atlas officiis
+    - 
+    - Eos nulla sit. Sit pariatur mollitia. Error dolores ratione.
+    - erbacee annuali
+    - sole
+    - primavera
+    - media
+    - umido
+    - alta
+    - 20cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.507613'
+    - '2019-02-16 12:49:12.507613'
+    - 14100
+    - EUR
+    - true
+  - - 38
+    - Nesoi Eurynome rerum
+    - 
+    - Adipisci ut sapiente. Perferendis et iste. Omnis cum aperiam.
+    - erbacee perenni
+    - ombra
+    - primavera
+    - bassa
+    - umido
+    - alta
+    - 15cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.512201'
+    - '2019-02-16 12:49:12.512201'
+    - 5500
+    - EUR
+    - false
+  - - 39
+    - Chronos Metis enim
+    - 
+    - Non praesentium eos. Quasi voluptatum est. Consequatur at itaque.
+    - creature
+    - ombra
+    - autunno
+    - media
+    - secco
+    - alta
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.516882'
+    - '2019-02-16 12:49:12.516882'
+    - 14200
+    - EUR
+    - false
+  - - 40
+    - Thalassa Rhea ut
+    - 
+    - Nisi eos similique. Voluptatem delectus perspiciatis. Quas dolorum et.
+    - erbacee annuali
+    - ombra
+    - inverno
+    - alta
+    - umido
+    - media
+    - 15cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.521117'
+    - '2019-02-16 12:49:12.521117'
+    - 2700
+    - EUR
+    - false
+  - - 41
+    - Hypnos Helios ut
+    - 
+    - Natus minus iste. Autem qui laudantium. Quod alias tenetur.
+    - erbacee perenni
+    - sole
+    - primavera
+    - bassa
+    - secco
+    - alta
+    - 30cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.525272'
+    - '2019-02-16 12:49:12.525272'
+    - 2800
+    - EUR
+    - true
+  - - 42
+    - Eros Metis voluptatem
+    - 
+    - Aut quo dignissimos. Ipsa et quia. Est eos sapiente.
+    - arbusti
+    - ombra
+    - estate
+    - media
+    - umido
+    - alta
+    - 10cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.52907'
+    - '2019-02-16 12:49:12.52907'
+    - 3800
+    - EUR
+    - false
+  - - 43
+    - Chronos Epimetheus doloremque
+    - 
+    - Atque aut blanditiis. Ipsum tempora sapiente. In cumque magnam.
+    - graminacee
+    - sole
+    - primavera
+    - alta
+    - umido
+    - media
+    - 10cm
+    - true
+    - false
+    - 
+    - '2019-02-16 12:49:12.533417'
+    - '2019-02-16 12:49:12.533417'
+    - 14400
+    - EUR
+    - true
+  - - 44
+    - Uranus Epimetheus dicta
+    - 
+    - Facilis molestiae blanditiis. Repellat dolorem consectetur. Quasi omnis dolores.
+    - creature
+    - sole
+    - primavera
+    - media
+    - umido
+    - solitaria
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.537918'
+    - '2019-02-16 12:49:12.537918'
+    - 9500
+    - EUR
+    - true
+  - - 45
+    - Gaia Coeus temporibus
+    - 
+    - Quisquam suscipit odit. Id quod neque. Ea et dolorem.
+    - erbacee perenni
+    - sole
+    - primavera
+    - bassa
+    - umido
+    - media
+    - 10cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.542581'
+    - '2019-02-16 12:49:12.542581'
+    - 9400
+    - EUR
+    - false
+  - - 46
+    - Erebus Rhea delectus
+    - 
+    - Quia veritatis et. Excepturi pariatur rerum. Voluptatum omnis esse.
+    - erbacee perenni
+    - sole
+    - inverno
+    - alta
+    - umido
+    - media
+    - 10cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.546522'
+    - '2019-02-16 12:49:12.546522'
+    - 7200
+    - EUR
+    - true
+  - - 47
+    - Ananke Ophion sed
+    - 
+    - Et occaecati dolore. Debitis in blanditiis. Sit et aut.
+    - erbacee annuali
+    - sole
+    - primavera
+    - media
+    - umido
+    - media
+    - 20cm
+    - false
+    - false
+    - 
+    - '2019-02-16 12:49:12.551199'
+    - '2019-02-16 12:49:12.551199'
+    - 9600
+    - EUR
+    - false
+  - - 48
+    - Pontus Themis laborum
+    - 
+    - Temporibus explicabo ut. Placeat dignissimos commodi. Velit amet dolorem.
+    - creature
+    - ombra
+    - autunno
+    - alta
+    - umido
+    - solitaria
+    - 15cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.556307'
+    - '2019-02-16 12:49:12.556307'
+    - 10000
+    - EUR
+    - false
+  - - 49
+    - Gaia Crius vitae
+    - 
+    - Rerum id tempora. Sed a rem. Est qui autem.
+    - graminacee
+    - ombra
+    - inverno
+    - alta
+    - secco
+    - alta
+    - 10cm
+    - true
+    - true
+    - 
+    - '2019-02-16 12:49:12.564091'
+    - '2019-02-16 12:49:12.564091'
+    - 14200
+    - EUR
+    - true
+  - - 50
+    - Hypnos Eurybia suscipit
+    - 
+    - Vero nihil perferendis. At quia natus. Optio aut consequuntur.
+    - arbusti
+    - mezz'ombra
+    - estate
+    - alta
+    - secco
+    - solitaria
+    - 20cm
+    - false
+    - true
+    - 
+    - '2019-02-16 12:49:12.567827'
+    - '2019-02-16 12:49:12.567827'
+    - 5900
+    - EUR
+    - true
