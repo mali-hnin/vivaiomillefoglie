@@ -26,10 +26,14 @@
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 72px;
-  margin-left: 50px;
-  padding-top: 10px;
+.navbar-wagon-brand {
+  display: flex;
+  justify-content: flex-end;
+  img {
+    height: 72px;
+    margin-left: 50px;
+    padding-top: 10px;
+    }
 }
 
 /* Links sections */
