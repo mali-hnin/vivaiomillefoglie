@@ -18,9 +18,10 @@ body {
   background-color: $dark-green;
 }
 
-/* .white-bg {
-  background-color: white;
-} */
+.white-bg {
+  /* background-color: white; */
+  color: $yellow;
+}
 
 .page-wrapper {
   display: flex;
