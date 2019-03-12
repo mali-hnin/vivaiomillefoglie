@@ -3,6 +3,9 @@
   <%= render 'shared/flashes' %>
   <div class="page-wrapper white-bg">
     <div class="catalogo-content text-center">
+      <div class="catalogo-banner">
+        <h1>Catalogo</h1>
+      </div>
       <div class="row">
         <div class="categorie-row">
           <div class="col-xs-12 col-md-6 col-lg-3">
@@ -78,12 +81,14 @@
       </div>
     </div>
 
-    <div class="admin-buttons">
-      <p>Pannello Amministratori</p>
-      <div>
-        <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
-        <%= link_to "Vedi tutto il Catalogo", plants_path, class: "btn btn-primary" %>
+    <% if user_signed_in? && current_user.admin %>
+      <div class="admin-buttons">
+        <p>Pannello Amministratori</p>
+        <div>
+          <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+          <%= link_to "Vedi tutto il Catalogo", plants_path, class: "btn btn-primary" %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
