@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "/eventi", to: "pages#eventi"
   get "/bonus-verde", to: "pages#bonusverde", as: :bonusverde
   get "/come-acquistare", to: "pages#comeacquistare", as: :acquistare
+  get "/abbonamento", to: "pages#abbonamento"
+  get "/condizionivendita", to: "pages#condizionivendita"
 
   mount Attachinary::Engine => "/attachinary"
 end
