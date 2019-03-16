@@ -5,6 +5,11 @@
 
 body {
   font-family: 'Muli', sans-serif;
+  a:hover{
+    text-decoration: none;
+    color: $orange;
+    font-weight: bold;
+  }
 }
 
 .left-side {
@@ -19,8 +24,8 @@ body {
 }
 
 .white-bg {
-  /* background-color: white; */
-  color: $yellow;
+  background-color: #ebebcb;
+  /* color: $dark-green; */
 }
 
 .page-wrapper {
