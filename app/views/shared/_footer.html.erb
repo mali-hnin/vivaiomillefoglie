@@ -1,37 +1,47 @@
 <div class="footer">
-  <div class="footer-main">
-    <div class="footer-column" id="orari">
-      <p class="uppercase-text bolder-text">Gli orari del vivaio</p>
-      <p>Venerdì-Sabato<br>
-      9.00-12-30<br>
-      15.30-tramonto</p>
+    <div class="footer-main">
+  <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="footer-column" id="orari">
+          <p class="uppercase-text bolder-text">Gli orari del vivaio</p>
+          <p>Venerdì-Sabato<br>
+          9.00-12-30<br>
+          15.30-tramonto</p>
 
-      <p>Dicembre-Gennaio e Agosto<br>
-      <span class="bolder-text">chiuso</span></p>
-      <p>Febbraio su appuntamento</p>
+          <p>Dicembre-Gennaio e Agosto<br>
+          <span class="bolder-text">chiuso</span></p>
+          <p>Febbraio su appuntamento</p>
 
-      <%= link_to "Dove Siamo", contatti_path, class: "orange-text" %><br>
-      <%= link_to "Come Acquistare", acquistare_path, class: "orange-text" %>
-    </div>
-    <div class="footer-column" id="acquista-online">
-      <%= link_to "ordina online", catalogo_intro_path, class: "orange-text" %>
-    </div>
-    <div class="footer-column" id="social-media">
-      <div class="uppercase-text bolder-text", id="one">
-        <p>seguici</p>
+          <%= link_to "Dove Siamo", contatti_path, class: "orange-text" %><br>
+          <%= link_to "Come Acquistare", acquistare_path, class: "orange-text" %>
+        </div>
       </div>
-        <p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "@vivaiomillefoglie.it", "https://www.facebook.com/vivaiomillefoglie.it/", target: :_blank %></p>
-        <p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "@millefoglieflowerslab", "https://www.facebook.com/millefoglieflowerslab/", target: :_blank %></p>
-        <p><%= image_tag "ig-xsmall.png", alt: "Instagram" %><%= link_to "@felipedelmillefoglie", "https://www.instagram.com/felipedelmillefoglie/", target: :_blank %></p>
-        <p><%= image_tag "ig-xsmall.png", alt: "Instagram" %><%= link_to "@roxdelmillefoglie", "https://www.instagram.com/roxdelmillefoglie/", target: :_blank %></p>
-        <p><%= image_tag "ig-xsmall.png", alt: "Instagram" %><%= link_to "@millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank %></p>
-    </div>
-    <div class="footer-column" id="bonus-verde">
-      <p class="uppercase-text bolder-text">Bonus Verde</p>
-      <p class="bolder-text">incentivi fiscali del 36%</p>
-      <p>per giardini, balconi e terrazzi privati e condominiali</p>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="footer-column" id="acquista-online">
+          <%= link_to "ordina online", catalogo_intro_path, class: "orange-text" %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="footer-column" id="social-media">
+          <div class="uppercase-text bolder-text", id="one">
+            <p>seguici</p>
+          </div>
+            <p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "@vivaiomillefoglie.it", "https://www.facebook.com/vivaiomillefoglie.it/", target: :_blank %></p>
+            <p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "@millefoglieflowerslab", "https://www.facebook.com/millefoglieflowerslab/", target: :_blank %></p>
+            <p><%= image_tag "ig-xsmall.png", alt: "Instagram" %><%= link_to "@felipedelmillefoglie", "https://www.instagram.com/felipedelmillefoglie/", target: :_blank %></p>
+            <p><%= image_tag "ig-xsmall.png", alt: "Instagram" %><%= link_to "@roxdelmillefoglie", "https://www.instagram.com/roxdelmillefoglie/", target: :_blank %></p>
+            <p><%= image_tag "ig-xsmall.png", alt: "Instagram" %><%= link_to "@millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank %></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="footer-column" id="bonus-verde">
+          <p class="uppercase-text bolder-text">Bonus Verde</p>
+          <p class="bolder-text">incentivi fiscali del 36%</p>
+          <p>per giardini, balconi e terrazzi privati e condominiali</p>
 
-      <%= link_to "clicca qui per maggiori informazioni", bonusverde_path, class: "orange-text" %>
+          <%= link_to "clicca qui per maggiori informazioni", bonusverde_path, class: "orange-text" %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
