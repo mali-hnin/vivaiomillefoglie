@@ -23,6 +23,7 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     end
+    @plants.type = params[:plants_type]
   end
 
   def by_created
