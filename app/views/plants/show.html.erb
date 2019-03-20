@@ -7,8 +7,12 @@
           <h2>NASCOSTA</h2>
         <% end %>
         <h1><%= @plant.name %></h1>
-        <% @plant.photos.each do |photo| %>
-          <%= cl_image_tag photo.path %>
+        <% if @plant.photos.empty? %>
+          <%= image_tag "Logo_2.png" %>
+        <% else %>
+          <% @plant.photos.each do |photo| %>
+            <%= cl_image_tag photo.path %>
+          <% end %>
         <% end %>
         <p><%= simple_format(@plant.description) %></p>
         <ul>
