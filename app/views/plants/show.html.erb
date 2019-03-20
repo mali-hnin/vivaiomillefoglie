@@ -10,7 +10,7 @@
         <% @plant.photos.each do |photo| %>
           <%= cl_image_tag photo.path %>
         <% end %>
-        <p><%= @plant.description %></p>
+        <p><%= simple_format(@plant.description) %></p>
         <ul>
           <li><strong>Categoria:</strong> <%= @plant.category %></li>
           <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
