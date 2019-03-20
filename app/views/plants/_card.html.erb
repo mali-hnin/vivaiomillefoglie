@@ -1,11 +1,7 @@
 <div class="column-center">
   <div class="plant-card">
     <div class="card-photo">
-      <% if plant.photo.nil? %>
-        <%= @photo = image_tag ["3.jpg", "banner.gif", "bg10.jpg", "bg13.jpg", "bg03.jpg", "2.jpg", "bg05.jpg", "newsletter.jpg"].sample %>
-      <% else %>
-        <%= @photo = plant.photo %>
-      <% end %>
+      <%= @photo = plant.photo %>
     </div>
 
     <div class="card-content">
