@@ -7,13 +7,9 @@
   display: flex;
   flex-direction: column;
   width: auto;
-  max-width: 1000px;
   min-height: 200px;
   align-self: center;
   text-align: center;
-  h1, h2 {
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  }
   a {
     margin: 5px 0px;
     color: black;

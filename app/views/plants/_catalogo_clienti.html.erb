@@ -1,9 +1,11 @@
 <div class="catalogo-content white-bg">
   <div class="row">
     <% @plants.each do |plant| %>
+    <% if plant.nascondi? == false %>
       <div class="col-xs-12 col-sm-4">
         <%= render "plants/card", plant: plant %>
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>
