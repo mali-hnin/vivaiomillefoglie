@@ -16,7 +16,14 @@
     <%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
   </div>
   <!-- Right Navigation -->
+  <% if cart_has_items %>
+    <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link light-blue-text" do %>
+      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+      <%= cart_count_over_one %>
+    <% end %>
+  <% end %>
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "Carrello", cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text", method: :delete do %>
         <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -47,6 +54,12 @@
 <!-- LOGIN RX NAVIGATION ITEM for when customer login system is set up -->
     <!-- <% else %>
        <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
-    <%= link_to '<i class="fa fa-shopping-basket" aria-hidden="true"></i> Carrello'.html_safe, "", class: "navbar-wagon-item navbar-wagon-link light-blue-text" %> -->
+    <% if cart_has_items %>
+      <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link light-blue-text" do %>
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        <%= cart_count_over_one %>
+      <% end %>
+    <% end %>
+  -->
 
 

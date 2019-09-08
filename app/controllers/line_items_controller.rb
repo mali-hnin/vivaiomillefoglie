@@ -1,5 +1,4 @@
 class LineItemsController < ApplicationController
-  class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
@@ -26,7 +25,7 @@ class LineItemsController < ApplicationController
 
   # POST /line_items
   # POST /line_items.json
-def create
+  def create
     @plant = Plant.find(params[:plant_id])
     @line_item = @cart.add_plant(@plant)
 
