@@ -25,18 +25,21 @@
   </div>
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <%= link_to 'Menu <i class="fa fa-angle-down" aria-hidden="true"></i>
-      '.html_safe, "", class: "navbar-wagon-item navbar-wagon-link uppercase-text", "data-toggle" => "dropdown" %>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      </ul>
+    <div id="menu-accordion" data-children=".item">
+      <div class="item spacing-5">
+        <a data-toggle="collapse" data-parent="#menu-accordion" href="#menu-accordion2" role="button" aria-expanded="false" aria-controls="menu-accordion2">Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+        <div id="menu-accordion2" class="collapse" role="tabpanel">
+          <ul class="mb-3 accordion-menu">
+            <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+            <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
