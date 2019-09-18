@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'by_updated', to: "plants#by_updated"
     end
   end
+  resources :line_items
+  resources :carts
 
   get "/catalogo-intro", to: "pages#catalogo_intro"
   get "/catalogo", to: "pages#catalogo"

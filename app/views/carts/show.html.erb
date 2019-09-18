@@ -1,0 +1,22 @@
+<div class="bg">
+  <%= render 'shared/navbar' %>
+  <div class="catalogo-content white-bg">
+    <div class="">
+      <%= link_to 'Continua con gli acquisti', catalogo_path, class: 'button is-warning' %>
+    </div>
+    <hr />
+    <section class="section">
+      <%= render(@cart.line_items) %>
+      <div class="columns">
+        <div class="column">
+          <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "button" %>
+        </div>
+        <div class="">
+          <h4>
+            <span class="">Totale:</span> <%= humanized_money_with_symbol @cart.total_price %>
+          </h4>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

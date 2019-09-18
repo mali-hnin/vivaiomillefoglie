@@ -1,0 +1,31 @@
+<div class="columns align-items-center">
+  <div class="column is-1">
+    Quantità: <%= line_item.quantity %>
+  </div>
+  <div>
+    <figure>
+      <% if line_item.plant.photos.empty? %>
+        <%= image_tag "Logo_2_thumb.png" %>
+      <% else %>
+        <%= cl_image_tag line_item.plant.photos.first, crop: :thumb%>
+      <% end %>
+    </figure>
+  </div>
+  <div class="column is-9">
+    <strong><%= line_item.plant.name %></strong>
+    <div class="columns align-items-center">
+      <div class="content column is-9">
+        <%= truncate(line_item.plant.description, length: 140) %>
+      </div>
+      <div class="column is-3 has-text-right">
+        <strong class="f4"><%= humanized_money_with_symbol line_item.total_price %></strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= link_to 'Rimuovi', line_item, method: :delete, data: { confirm: "Sei sicur*? " }, class: "button" %>
+</div>
+
+<hr/ >

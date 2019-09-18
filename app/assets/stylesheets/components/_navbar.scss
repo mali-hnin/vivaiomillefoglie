@@ -40,7 +40,7 @@
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   min-width: 150px;
 }
 
@@ -60,7 +60,6 @@
 
 .light-blue-text {
   color: $light-blue;
-  font-size:75%;
   font-weight: lighter;
 }
 
