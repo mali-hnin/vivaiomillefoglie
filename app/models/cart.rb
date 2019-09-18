@@ -1,5 +1,6 @@
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
+  register_currency :eur
 
     def add_plant(plant)
       current_item = line_items.find_by(plant_id: plant.id)

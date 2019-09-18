@@ -20,7 +20,7 @@
     disponibile: ["true", "false"].sample,
     novità: ["true", "false"].sample,
     nascondi: ["true", "false"].sample,
-    prezzo: rand(5...150)
+    prezzo: rand(5.5...15)
   )
   plant.save!
 end

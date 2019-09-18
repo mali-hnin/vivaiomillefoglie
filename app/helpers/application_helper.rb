@@ -6,6 +6,10 @@ module ApplicationHelper
     end
   end
 
+  def cart_count
+    return "#{@cart.line_items.count}".html_safe
+  end
+
   def cart_has_items
     return @cart.line_items.count > 0
   end
