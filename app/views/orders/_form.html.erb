@@ -1,0 +1,8 @@
+<%= simple_form_for [@cart, @order] do |f| %>
+  <%= f.input :name, label: "Nome e cognome", required: true, autofocus: true %>
+  <%= f.input :email, label: "Indirizzo email",  required: true%>
+  <%= f.input :phone, label: "Telefono", required: true %>
+  <%= f.input :address, label: "Indirizzo per la spedizione", required: true %>
+  <%= f.input :message, label: "Commenti", class: "text-field-height" %>
+  <%= f.button :submit, "Invia", class: "btn btn-warning btn-block" %>
+<% end %>
