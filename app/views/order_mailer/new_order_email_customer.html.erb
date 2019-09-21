@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Grazie per l'ordine! Ti contatteremo presto per confermare la spedizione.</p>
+    <p>
+    Riepilogo Ordine<br>
+    --------------------------
+    </p>
+    <p>Nome: <%= @order.name %></p>
+    <p>Email: <%= @order.email %></p>
+    <p>Telefono: <%= @order.phone %></p>
+    <p>Indirizzo spedizione: <%= @order.address %></p>
+    <p>
+    Commenti:<br>
+    ----------
+    </p>
+    <p><%= @order.message %></p>
+    <p>
+    Ordine:<br>
+    ----------
+    </p>
+    <p><%= @order.cart.line_items %></p>
+  </body>
+</html>

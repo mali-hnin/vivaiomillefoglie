@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     end
   end
   resources :line_items
-  resources :carts
+  resources :carts do
+    resources :orders, only: [:new, :create]
+  end
 
   get "/catalogo-intro", to: "pages#catalogo_intro"
   get "/catalogo", to: "pages#catalogo"
