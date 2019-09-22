@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
     elsif params[:utile_per]
       @plants = Plant.where("utile_per ILIKE :utile_per", utile_per: '%'+params[:utile_per]+'%').order('name ASC')
     else
-      @plants = Plant.all
+      @plants = Plant.all.order('name ASC')
     end
   end
 
