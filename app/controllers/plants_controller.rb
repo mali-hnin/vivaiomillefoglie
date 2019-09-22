@@ -10,17 +10,17 @@ class PlantsController < ApplicationController
     @limit = 20
     offset = params[:offset].to_i * @limit ||=0
     if params[:category]
-      @plants = Plant.where("category ILIKE :category", category: '%'+params[:category]+'%')
+      @plants = Plant.where("category ILIKE :category", category: '%'+params[:category]+'%').order('name ASC')
     elsif params[:esposizione]
-      @plants = Plant.where("esposizione ILIKE :esposizione", esposizione: '%'+params[:esposizione]+'%')
+      @plants = Plant.where("esposizione ILIKE :esposizione", esposizione: params[:esposizione]+'%').order('name ASC')
     elsif params[:fioritura]
-      @plants = Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%')
+      @plants = Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%').order('name ASC')
     elsif params[:altezza]
-      @plants = Plant.where("altezza ILIKE :altezza", altezza: '%'+params[:altezza]+'%')
+      @plants = Plant.where("altezza ILIKE :altezza", altezza: '%'+params[:altezza]+'%').order('name ASC')
     elsif params[:terreno]
-      @plants = Plant.where("terreno ILIKE :terreno", terreno: '%'+params[:terreno]+'%')
+      @plants = Plant.where("terreno ILIKE :terreno", terreno: '%'+params[:terreno]+'%').order('name ASC')
     elsif params[:utile_per]
-      @plants = Plant.where("utile_per ILIKE :utile_per", utile_per: '%'+params[:utile_per]+'%')
+      @plants = Plant.where("utile_per ILIKE :utile_per", utile_per: '%'+params[:utile_per]+'%').order('name ASC')
     else
       @plants = Plant.all
     end

@@ -1,4 +1,5 @@
 <div class="catalogo-content white-bg">
+  <%= link_to "Torna indietro", catalogo_path %>
   <div class="row">
     <% @plants.each do |plant| %>
     <% if plant.nascondi? == false %>
