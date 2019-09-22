@@ -6,8 +6,10 @@
         <div class="alert alert-<%= key %> alert-dismissible"><%= value %></div>
       <% end %>
       <div class="pianta-content mb-5">
-        <% if @plant.nascondi? %>
-          <h2>NASCOSTA</h2>
+        <% if user_signed_in? && current_user.admin%>
+          <% if @plant.nascondi? %>
+            <h2>NASCOSTA</h2>
+          <% end %>
         <% end %>
         <h1><%= @plant.name %></h1>
         <% if @plant.photos.empty? %>
@@ -38,7 +40,8 @@
             <li>Questa pianta è una <span class="text-warning">novità 2017</span>!</li>
           <% end %>
         </ul>
-        <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'button is-warning add-to-cart' %>
+        <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'spacing-5 add-to-cart' %>
+        <%= link_to "Torna indietro", :back %>
         <% if user_signed_in? && current_user.admin %>
           <div class="admin-buttons">
             <p>Pannello Amministratori</p>

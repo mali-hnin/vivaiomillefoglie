@@ -1,6 +1,6 @@
 class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
-  has_one :order
+  has_many :order, dependent: :destroy
   register_currency :eur
 
     def add_plant(plant)
