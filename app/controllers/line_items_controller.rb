@@ -28,16 +28,11 @@ class LineItemsController < ApplicationController
   def create
     plant = Plant.find(params[:plant_id])
     @line_item = @cart.add_plant(plant)
-
-    respond_to do |format|
-      if @line_item.save
-        flash[:info] = "Pianta aggiunta al carrello"
-        format.html { redirect_to @line_item.plant}
-        format.json { render :show, status: :created, location: @line_item }
-      else
-        format.html { render :new }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
+    if @line_item.save
+      flash[:info] = "Pianta aggiunta al carrello"
+      redirect_back(fallback_location: @line_item.plant)
+    else
+      render :new
     end
   end
 

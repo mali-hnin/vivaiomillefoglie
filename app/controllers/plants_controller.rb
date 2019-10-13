@@ -7,12 +7,12 @@ class PlantsController < ApplicationController
     # offset = 0 * limit, in this case 10, fetching only the first 10 items.
     # Second page, offset = 1 * limit, fetching 10 items after the first 10, etc.
     # thx to http://www.mozartreina.com/pagination-with-rails.html
-    @limit = 20
+    @limit = 18
     offset = params[:offset].to_i * @limit ||=0
     if params[:category]
       @plants = Plant.where("category ILIKE :category", category: '%'+params[:category]+'%').order('name ASC')
     elsif params[:esposizione]
-      @plants = Plant.where("esposizione ILIKE :esposizione", esposizione: params[:esposizione]+'%').order('name ASC')
+      @plants = Plant.where("esposizione ILIKE :esposizione", esposizione: '%'+''+params[:esposizione]+'%').order('name ASC')
     elsif params[:fioritura]
       @plants = Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%').order('name ASC')
     elsif params[:altezza]
@@ -20,7 +20,7 @@ class PlantsController < ApplicationController
     elsif params[:terreno]
       @plants = Plant.where("terreno ILIKE :terreno", terreno: '%'+params[:terreno]+'%').order('name ASC')
     elsif params[:utile_per]
-      @plants = Plant.where("utile_per ILIKE :utile_per", utile_per: '%'+params[:utile_per]+'%').order('name ASC')
+      @plants = Plant.where("utile_per ILIKE :utile_per OR utile_per ILIKE :utile_per2", utile_per: '%'+params[:utile_per]+'%', utile_per2: '%'+params[:utile_per2]+'%').order('name ASC')
     else
       @plants = Plant.all.order('name ASC')
     end

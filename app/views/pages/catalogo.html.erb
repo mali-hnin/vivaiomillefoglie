@@ -17,7 +17,7 @@
               <%= link_to "Erbacee perenni", plants_path(category: "erbacee perenni") %>
               <%= link_to "Erbacee annuali", plants_path(category: "erbacee annuali") %>
               <%= link_to "Graminacee", plants_path(category: "graminacee") %>
-              <%= link_to "Altro", '#' %></div>
+              <%= link_to "Altro", plants_path(category: "altro") %></div>
           </div>
 
           <div class="col-xs-12 col-md-6 col-lg-3">
@@ -62,8 +62,8 @@
                   </div>
                 </div>
               </div>
-              <%= link_to "Fogliame ornamentale", plants_path(utile_per: "fogliame ornamentale") %>
-              <%= link_to "Da taglio", plants_path(utile_per: "taglio") %>
+              <%= link_to "Fogliame ornamentale", plants_path(utile_per: "fogliame decorativo ornamentale", utile_per2: "fogliame decorativo") %>
+              <%= link_to "Da taglio", plants_path(utile_per: "taglio", utile_per2: "x") %>
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3">
@@ -71,11 +71,11 @@
               Interesse per l'ambiente
             </div>
             <div class="categoria-content">
-              <%= link_to "Piante coprisuolo", plants_path(utile_per: "coprisuolo") %>
-              <%= link_to "Piante azotofissatrici", plants_path(utile_per: "azotofissat") %>
-              <%= link_to "Piante utili per insetti e uccelli", "#" %>
-              <%= link_to "Piante con poche esigenze di irrigazione", "#" %>
-              <%= link_to "Piante spontanee", "#" %>
+              <%= link_to "Piante coprisuolo", plants_path(utile_per: "coprisuolo", utile_per2: "x") %>
+              <%= link_to "Piante azotofissatrici", plants_path(utile_per: "azotofissat", utile_per2: "x") %>
+              <%= link_to "Piante utili per insetti e uccelli", plants_path(utile_per: "insetti", utile_per2: "uccelli") %>
+              <%= link_to "Piante con poche esigenze di irrigazione", plants_path(utile_per: "secco", utile_per2: "x") %>
+              <%= link_to "Piante spontanee", plants_path(utile_per: "spontan", utile_per2: "x") %>
             </div>
           </div>
         </div>
