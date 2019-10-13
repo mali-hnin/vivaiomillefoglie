@@ -3,7 +3,7 @@
   <div class="white-bg">
     <div class="container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %> alert-dismissible"><%= value %></div>
+        <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
       <% end %>
       <div class="pianta-content mb-5">
         <% if user_signed_in? && current_user.admin%>
@@ -37,10 +37,10 @@
               <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
           <% end %>
           <% if @plant.novità? %>
-            <li>Questa pianta è una <span class="text-warning">novità 2017</span>!</li>
+            <li>Questa pianta è una <span class="text-warning">novità</span>!</li>
           <% end %>
         </ul>
-        <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'spacing-5 add-to-cart' %>
+        <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple' %>
         <%= link_to "Torna indietro", :back %>
         <% if user_signed_in? && current_user.admin %>
           <div class="admin-buttons">
