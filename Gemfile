@@ -27,6 +27,7 @@ gem 'jquery-fileupload-rails'
 gem 'faker'
 gem 'money-rails', '~>1.12'
 gem 'yaml_db'
+gem 'pagy'
 
 
 
