@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
 
   def cart_count_over_one
     if @cart.line_items.count > 0
