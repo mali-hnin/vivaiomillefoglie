@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
+  before_action :set_plant, only: [:show, :edit, :update, :destroy]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create, :destroy]
 
@@ -26,8 +27,10 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    plant = Plant.find(params[:plant_id])
-    @line_item = @cart.add_plant(plant)
+    @cart = current_cart
+    @line_item = @cart.line_items.new(line_item_params)
+    @cart.save
+    session[:cart_id] = @cart.id
     if @line_item.save
       flash[:info] = "Pianta aggiunta al carrello"
       redirect_back(fallback_location: @line_item.plant)
