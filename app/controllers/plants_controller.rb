@@ -27,6 +27,12 @@ class PlantsController < ApplicationController
     @line_item = @cart.line_items.new
   end
 
+  def admin_catalogo
+    @limit = 50
+    offset = params[:offset].to_i * @limit ||=0
+    @plants = Plant.all.offset(offset).limit(@limit).order('name ASC')
+  end
+
   def by_created
     @limit = 50
     offset = params[:offset].to_i * @limit ||=0

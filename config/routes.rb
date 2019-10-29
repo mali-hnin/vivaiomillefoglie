@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "/come-acquistare", to: "pages#comeacquistare", as: :acquistare
   get "/abbonamento", to: "pages#abbonamento"
   get "/condizionivendita", to: "pages#condizionivendita"
+  get "/admin_catalogo", to: "plants#admin_catalogo"
 
   mount Attachinary::Engine => "/attachinary"
 end
