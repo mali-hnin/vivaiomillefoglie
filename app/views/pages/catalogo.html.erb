@@ -5,7 +5,7 @@
     <div class="catalogo-content text-center">
       <div class="catalogo-banner">
         <h1>Catalogo</h1>
-        <h4><%= link_to "Vedi tutte le piante", plants_path %></h4>
+        <h4><%= link_to "Vedi tutte le piante", plants_path, class: "orange-text" %></h4>
       </div>
       <div class="row">
         <div class="categorie-row">
@@ -27,7 +27,6 @@
             <div class="categoria-content">
               <%= link_to "Sole", plants_path(esposizione: "sole") %>
               <%= link_to "Ombra", plants_path(esposizione: "ombra") %>
-              <%= link_to "Mezz'ombra", plants_path(esposizione: "Mezz'ombra") %>
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3">
