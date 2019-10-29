@@ -12,7 +12,7 @@ class PlantsController < ApplicationController
     if params[:category]
       @pagy, @plants = pagy(Plant.where("category ILIKE :category", category: '%'+params[:category]+'%').order('name ASC'), items: 12)
     elsif params[:esposizione]
-      @pagy, @plants = pagy(Plant.where("esposizione ILIKE :esposizione", esposizione: '%'+''+params[:esposizione]+'%').order('name ASC'), items: 12)
+      @pagy, @plants = pagy(Plant.where("esposizione ILIKE :esposizione", esposizione: params[:esposizione]+'%').order('name ASC'), items: 12)
     elsif params[:fioritura]
       @pagy, @plants = pagy(Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%').order('name ASC'), items: 12)
     elsif params[:altezza]
