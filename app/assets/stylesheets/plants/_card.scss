@@ -6,7 +6,7 @@
 .plant-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   height: 100%;
   width: 300px;
   margin: 15px
@@ -47,4 +47,8 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.small-field {
+  width: 50px;
 }

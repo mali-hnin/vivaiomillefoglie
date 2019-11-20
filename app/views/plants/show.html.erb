@@ -40,7 +40,15 @@
             <li>Questa pianta è una <span class="text-warning">novità</span>!</li>
           <% end %>
         </ul>
-        <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple' %>
+        <% if @plant.disponibile? %>
+          <%= form_for @line_item do |f| %>
+            <%= f.hidden_field :plant_id, value: @plant.id %>
+            <%= f.number_field :quantity, value: 1, class: "small-field" %>
+            <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
+          <% end %>
+        <% else %>
+          <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
+        <% end %>
         <%= link_to "Torna indietro", :back %>
         <% if user_signed_in? && current_user.admin %>
           <div class="admin-buttons">

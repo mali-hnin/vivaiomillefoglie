@@ -46,6 +46,7 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @line_item = @cart.line_items.new
   end
 
   def new
