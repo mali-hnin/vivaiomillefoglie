@@ -3,7 +3,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>Hai ricevuto un nuovo ordine da <%= @order.name %>!</p>
+    <p>Nuovo ordine da <strong><%= @order.name %></strong>.</p>
     <p>
     Dettagli Ordine<br>
     --------------------------
@@ -12,15 +12,17 @@
     <p>Email: <%= @order.email %></p>
     <p>Telefono: <%= @order.phone %></p>
     <p>Indirizzo spedizione: <%= @order.address %></p>
+    <p>Commenti: <%= @order.message %></p>
     <p>
-    Commenti:<br>
-    ----------
+    ----------<br>
+    Ordine:
     </p>
-    <p><%= @order.message %></p>
-    <p>
-    Ordine:<br>
-    ----------
+    <p><% @order.cart.line_items.each do |lineitem| %>
+        <%= lineitem.quantity  %>
+        <%= lineitem.plant.name  %>,
+        <%= lineitem.plant.prezzo humanized_money_with_symbol %>
+       <% end %>
     </p>
-    <p><%= @order.cart %></p>
+    <p>Totale: <%= @cart.total_price humanized_money_with_symbol %></p>
   </body>
 </html>

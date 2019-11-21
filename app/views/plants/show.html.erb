@@ -28,7 +28,7 @@
           <li><strong>Terreno:</strong> <%= @plant.terreno %></li>
           <li><strong>Densità:</strong> <%= @plant.densità %></li>
           <li><strong>Vaso:</strong> <%= @plant.vaso %></li>
-          <li><strong>Prezzo:</strong> <%= humanized_money_with_symbol @plant.prezzo %></li>
+          <li><strong>Prezzo:</strong> <%= @plant.prezzo humanized_money_with_symbol %></li>
         </ul>
         <ul>
           <% if @plant.disponibile? %>

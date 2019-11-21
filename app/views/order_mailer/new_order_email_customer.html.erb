@@ -6,26 +6,23 @@
     <p>Grazie per l'ordine! Ti contatteremo presto per confermare la spedizione.</p>
     <p>
     Riepilogo Ordine<br>
-    --------------------------
+    ----------------------
     </p>
     <p>Nome: <%= @order.name %></p>
     <p>Email: <%= @order.email %></p>
     <p>Telefono: <%= @order.phone %></p>
     <p>Indirizzo spedizione: <%= @order.address %></p>
+    <p>Commenti: <%= @order.message %></p>
     <p>
-    Commenti:<br>
-    ----------
-    </p>
-    <p><%= @order.message %></p>
-    <p>
-    Ordine:<br>
-    ----------
+    ----------<br>
+    Ordine:
     </p>
     <p><% @order.cart.line_items.each do |lineitem| %>
         <%= lineitem.quantity  %>
-        <%= lineitem.plant.name  %>
-        <%= lineitem.plant.prezzo  %>
+        <%= lineitem.plant.name  %>,
+        <%= lineitem.plant.prezzo humanized_money_with_symbol %>
        <% end %>
     </p>
+    <p>Totale: <%= @cart.total_price humanized_money_with_symbol %></p>
   </body>
 </html>
