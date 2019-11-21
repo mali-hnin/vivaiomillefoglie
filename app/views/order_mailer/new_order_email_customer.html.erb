@@ -21,6 +21,11 @@
     Ordine:<br>
     ----------
     </p>
-    <p><%= @order.cart.line_items %></p>
+    <p><% @order.cart.line_items.each do |lineitem| %>
+        <%= lineitem.quantity  %>
+        <%= lineitem.plant.name  %>
+        <%= lineitem.plant.prezzo  %>
+       <% end %>
+    </p>
   </body>
 </html>
