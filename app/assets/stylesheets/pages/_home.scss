@@ -16,7 +16,7 @@
 /* SIDEBAR STYLING */
 
 .info-box {
-  padding: 70px 30px 30px 30px;
+  padding: 30px 30px 30px 30px;
   color: white;
   font-family: 'Muli', sans-serif;
   font-size: 17px;
@@ -27,10 +27,6 @@
       color: $orange;
       text-align: center;
       text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-    a:hover {
-      font-weight: 600;
-      text-decoration: none;
     }
   }
 }

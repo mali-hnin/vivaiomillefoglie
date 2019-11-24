@@ -2,7 +2,6 @@
   <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
 <% end %>
 <div class="catalogo-content white-bg">
-  <%= link_to "Torna indietro", catalogo_path %>
   <div class="row">
     <% @plants.each do |plant| %>
     <% if plant.nascondi? == false %>
@@ -13,5 +12,6 @@
     <% end %>
   </div>
   <%= pagy_nav(@pagy).html_safe %>
+  <%= link_to "Torna indietro", catalogo_path %>
 </div>
 
