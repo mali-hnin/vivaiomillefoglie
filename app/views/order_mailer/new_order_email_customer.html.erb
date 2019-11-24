@@ -23,6 +23,6 @@
         <%= humanized_money_with_symbol lineitem.plant.prezzo %>
        <% end %>
     </p>
-    <p>Totale: <%= humanized_money_with_symbol @cart.total_price %></p>
+    <p>Totale: <%= humanized_money_with_symbol @order.cart.total_price %></p>
   </body>
 </html>
