@@ -17,12 +17,12 @@
     ----------<br>
     Ordine:
     </p>
-    <p><% @order.cart.line_items.each do |lineitem| %>
-        <%= lineitem.quantity  %>
+    <ul><% @order.cart.line_items.each do |lineitem| %>
+        <li><%= lineitem.quantity  %>
         <%= lineitem.plant.name  %>,
-        <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+        <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
        <% end %>
-    </p>
+    </ul>
     <p>Totale: <%= humanized_money_with_symbol @order.cart.total_price %></p>
   </body>
 </html>
