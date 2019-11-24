@@ -20,9 +20,9 @@
     <p><% @order.cart.line_items.each do |lineitem| %>
         <%= lineitem.quantity  %>
         <%= lineitem.plant.name  %>,
-        <%= lineitem.plant.prezzo humanized_money_with_symbol %>
+        <%= humanized_money_with_symbol lineitem.plant.prezzo %>
        <% end %>
     </p>
-    <p>Totale: <%= @cart.total_price humanized_money_with_symbol %></p>
+    <p>Totale: <%= humanized_money_with_symbol @cart.total_price %></p>
   </body>
 </html>
