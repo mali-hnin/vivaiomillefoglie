@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       OrderMailer.with(order: @order).new_order_email_admin.deliver_later
       OrderMailer.with(order: @order).new_order_email_customer.deliver_later
       redirect_to root_path
-      @cart.destroy
+
       flash[:info] = "Ordine inviato con successo! Ti abbiamo inviato una mail di conferma"
     else
       flash.now[:error] = "Il tuo ordine conteneva degli errori. Per favore ricontrolla i campi."
