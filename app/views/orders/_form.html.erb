@@ -1,9 +1,29 @@
-<%= simple_form_for [@cart, @order] do |f| %>
-  <%= f.input :name, label: "Nome e cognome", required: true, autofocus: true %>
-  <%= f.input :email, label: "Indirizzo email",  required: true%>
-  <%= f.input :phone, label: "Telefono", required: true %>
-  <%= f.input :address, label: "Indirizzo per la spedizione", required: true %>
-  <%= f.input :cf, label: "Codice Fiscale (necessario per la ricevuta)", required: true %>
-  <%= f.input :message, label: "Commenti", class: "text-field-height" %>
-  <%= f.button :submit, "Invia", class: "btn btn-warning btn-block" %>
+<%= simple_form_for [@cart, @order], wrapper: :horizontal_form,
+  wrapper_mappings: {
+    date:          :horizontal_multi_select,
+    datetime:      :horizontal_multi_select,
+    file:          :horizontal_file,
+    range:         :horizontal_range,
+    time:          :horizontal_multi_select
+  } do |f| %>
+  <%= f.input :name, label: "Nome e cognome", autofocus: true %>
+  <%= f.input :address, label: "Indirizzo" %>
+  <%= f.input :citta, label: "Città" %>
+  <%= f.input :cap, label: "CAP" %>
+  <%= f.input :cf, label: "Codice Fiscale (necessario per la ricevuta)" %>
+  <%= f.input :phone, label: "Telefono" %>
+  <%= f.input :email, label: "Email", as: :email%>
+  <%= f.input :email_confirmation, label: "Conferma email", as: :email%>
+  <%= f.input :message, label: "Messaggio", wrapper_html: {rows: 5} %>
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <%= f.input :trattamento_dati, hint: "- Autorizzo il trattamento dei miei dati ai sensi del D.Lgs 96/2003", label: false%>
+      <%= f.input :condizioni_di_vendita, hint: "- Dichiaro di avere letto e accettato le #{link_to 'Condizioni di Vendita', condizionivendita_path, class: "orange-text"}".html_safe, label: false %>
+    </div>
+  </div>
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <%= f.button :submit, "Invia", class: "btn btn-warning" %>
+    </div>
+  </div>
 <% end %>

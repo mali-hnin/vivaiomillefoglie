@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_105038) do
+ActiveRecord::Schema.define(version: 2019_12_02_192913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,12 +50,18 @@ ActiveRecord::Schema.define(version: 2019_11_20_105038) do
     t.string "email"
     t.string "address"
     t.string "phone"
-    t.string "message"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "order"
     t.bigint "cart_id"
     t.string "cf"
+    t.string "citta"
+    t.string "cap"
+    t.string "metodo_pagamento"
+    t.string "periodo_spedizione"
+    t.boolean "condizioni_di_vendita"
+    t.boolean "trattamento_dati"
     t.index ["cart_id"], name: "index_orders_on_cart_id"
   end
 
