@@ -25,6 +25,8 @@
               <p class="small text-danger">non disponibile</p>
             <% end %>
             <p class="light"><%= humanized_money_with_symbol plant.prezzo %></p>
+          </div>
+        </div>
             <% if plant.disponibile? %>
               <%= form_for @line_item do |f| %>
                 <%= f.hidden_field :plant_id, value: plant.id %>
@@ -34,8 +36,6 @@
             <% else %>
               <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card-link"%>
             <% end %>
-          </div>
-        </div>
       </div>
   </div>
 </div>

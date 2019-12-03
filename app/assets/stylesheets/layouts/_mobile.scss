@@ -1,0 +1,21 @@
+@media only screen and (max-width: 600px) {
+  .left-side {
+    width: 100%;
+  }
+  .title {
+    width: 100%;
+    h1 {
+      text-align: center;
+    }
+  }
+  .page-wrapper {
+    padding: 0px;
+  }
+  .catalogo-content {
+   padding: 0px;
+  }
+  .container{
+    min-width:100% !important;
+    max-width:100% !important;
+  }
+}

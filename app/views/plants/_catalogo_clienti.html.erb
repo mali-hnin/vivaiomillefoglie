@@ -5,7 +5,7 @@
   <div class="row">
     <% @plants.each do |plant| %>
     <% if plant.nascondi? == false %>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-6 col-sm-4">
         <%= render "plants/card", plant: plant %>
       </div>
     <% end %>
