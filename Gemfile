@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Basic gems
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
