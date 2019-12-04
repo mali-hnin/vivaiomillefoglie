@@ -1,4 +1,4 @@
-Grazie per l'ordine! Ti contatteremo presto per confermare la spedizione.
+La ringraziamo del suo ordine. Questo è un messaggio automatico. Riceverà al più presto la nostra conferma d'ordine con l'indicazione delle spese di spedizione.
 ===============================================
 
 Riepilogo Ordine:
@@ -7,7 +7,16 @@ Riepilogo Ordine:
 Nome: <%= @order.name %>
 Email: <%= @order.email %>
 Telefono: <%= @order.phone %>
-Indirizzo spedizione: <%= @order.address %>
+Indirizzo spedizione: <%= @order.address %>, <%= @order.cap %> <%= @order.citta %>
 
 Commenti:
 <%= @order.message %>
+
+
+----------<br>
+Ordine:
+<% @order.cart.line_items.each do |lineitem| %>
+<%= lineitem.quantity  %> <%= lineitem.plant.name  %>, <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+<% end %>
+
+Totale (escluse le spese di spedizione): <%= humanized_money_with_symbol @order.cart.total_price %>

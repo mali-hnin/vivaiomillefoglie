@@ -7,10 +7,10 @@
 .plant-card {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   height: 100%;
   width: 300px;
-  margin: 15px
+  margin: 15px;
+  padding-bottom: 20px;
 }
 
 .card-photo img {
@@ -59,4 +59,14 @@
 
 .small-field {
   width: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .plant-card {
+    transform: scale(0.7, 0.7);
+  -ms-transform: scale(0.7, 0.7); /* IE 9 */
+  -webkit-transform: scale(0.7, 0.7); /* Safari and Chrome */
+  -o-transform: scale(0.7, 0.7); /* Opera */
+  -moz-transform: scale(0.7, 0.7); /* Firefox */
+  }
 }
