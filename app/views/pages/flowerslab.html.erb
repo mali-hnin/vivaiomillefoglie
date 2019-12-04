@@ -1,4 +1,4 @@
-<div class="bg" style="background-image:url(<%= asset_path "bg08b.jpg" %>)">
+<div class="bg bg-lab" style="background-image:url(<%= asset_path "bg08b.jpg" %>)">
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <!-- <p class="notice"><%= notice %></p>
@@ -7,6 +7,7 @@
     <div class="page-wrapper">
       <div class="left-side">
         <div class="info-box bg-opacity">
+          <div class="bg-opacity-mobile">
           <div class="title">
             <h1>Ci piacciono i fiori belli!</h1>
           </div>
@@ -18,10 +19,11 @@
 
           <p>Puoi venire a raccoglierli nel nostro orto dei fiori, oppure chiederci di portare dei mazzi a casa tua, o a casa di qualcuno a cui vuoi fare un dono. Avrai fiori sempre freschi perchè appena colti.</p>
 
-          <p>Puoi scegliere di fare un <%= link_to "abbonamento", abbonamento_path, class: "orange-text" %>, per il tempo che vuoi, per rendere i fiori una gioia di tutti i giorni.</p>
+          <p>Puoi scegliere di fare un <span style="font-size:18pt"><%= link_to "abbonamento", abbonamento_path, class: "orange-text link-highlight" %></span>, per il tempo che vuoi, per rendere i fiori una gioia di tutti i giorni.</p>
 
           <p>Contattaci per feste, matrimoni ed eventi.</p>
           <p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>Sono fiori di stagione a km zero!</span></p>
+        </div>
         </div>
       </div>
       <div class="banner catalogo-banner"></div>

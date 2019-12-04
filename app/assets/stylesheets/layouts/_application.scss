@@ -5,6 +5,7 @@
 
 body {
   font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
   a:hover{
     text-decoration: none;
     color: $orange;
@@ -52,17 +53,4 @@ body {
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-  .left-side {
-    width: 100%;
-  }
-  .title {
-    width: 100%;
-    h1 {
-      text-align: center;
-    }
-  }
-  .page-wrapper {
-    padding: 0px;
-  }
-}
+

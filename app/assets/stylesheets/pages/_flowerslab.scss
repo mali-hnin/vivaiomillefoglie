@@ -10,3 +10,25 @@
   background-color: rgba(0, 0, 0, 0.3);
   margin-top: 40px;
 }
+
+.link-highlight {
+  text-decoration: none;
+  box-shadow: inset 0 -6px 0 rgba(144, 52, 253,.5);
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  padding: 0 2px;
+}
+
+@media only screen and (max-width: 600px)  {
+  .bg-lab {
+    background-position: right;
+  }
+  .bg-opacity-mobile {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    margin: 0px;
+  }
+  .bg-opacity {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+}
