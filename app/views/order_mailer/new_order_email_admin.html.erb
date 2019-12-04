@@ -11,7 +11,10 @@
     <p>Nome: <%= @order.name %></p>
     <p>Email: <%= @order.email %></p>
     <p>Telefono: <%= @order.phone %></p>
-    <p>Indirizzo spedizione: <%= @order.address %></p>
+    <p>Indirizzo spedizione: <%= @order.address %></p>, <%= @order.cap %> <%= @order.citta %></p>
+    <p>Codice Fiscale: <%= @order.cf %></p>
+    <p>Metodo di pagamento: <%= @order.metodo_pagamento %></p>
+    <p>Periodo di spedizione: <%= @order.periodo_spedizione %></p>
     <p>Commenti: <%= @order.message %></p>
     <p>
     ----------<br>
