@@ -1,20 +1,19 @@
 <%= simple_form_for @plant do |f| %>
   <%= f.input :name, label: "Nome",  required: true, autofocus: true %>
   <%= f.input :photos, label: "Foto", as: :attachinary %>
-  <%= f.input :description, label: "Descrizione", class: "text-field-height" %>
-  <%= f.input :category, label: "Tipologia",  placeholder: "Tipologia: erbacee perenni/erbacee annuali/graminacee/altro" %>
+  <%= f.input :description, label: "Descrizione", class: "text-field-height", input_html: { 'rows' => 7} %>
+  <%= f.input :category, label: "Tipologia",  placeholder: "erbacee perenni/erbacee annuali/graminacee/altro" %>
   <%= f.input :esposizione, label: "Esposizione/Esigenza", placeholder: "Esigenza: sole/ombra/mezz'ombra/secco" %>
-  <%= f.input :fioritura, collection: ['Primavera', 'Estate', 'Autunno', 'Inverno'], placeholder: "stagione"%>
-  <%= f.input :utile_per, placeholder: "fogliame decorativo/da taglio/coprisuolo/farfalle e insetti" %>
-  <%= f.input :altezza, collection: ['Bassa', 'Media', 'Alta']%>
+  <%= f.input :fioritura, placeholder: "stagione"%>
+  <%= f.input :utile_per, placeholder: "Esempi: fogliame decorativo/da taglio/coprisuolo/farfalle e insetti" %>
+  <%= f.input :altezza, placeholder:'Bassa, Media, Alta e cm'%>
   <%= f.input :terreno %>
   <%= f.input :densità %>
   <%= f.input :vaso %>
-  <%= f.input :disponibile, label: "Disponibile?", as: :radio_buttons %>
-  <%= f.input :novità, label: "Novità 2019", as: :radio_buttons %>
-  <%= f.input :nascondi, as: :radio_buttons %>
-  <%= f.input :prezzo %>
-  <%= f.button :submit, class: "btn btn-info btn-block" %>
+  <%= f.input :prezzo, placeholder: "0.00" %>
+  <%= f.input :disponibile, label: "Disponibile?" %>
+  <%= f.input :novità, label: "Novità" %>
+  <%= f.input :nascondi %>
+  <%= f.button :submit, "Salva", class: "btn btn-success btn-block" %>
 <% end %>
-
-  <!-- placeholder: "primavera/estate/autunno/inverno" -->
+<%= link_to "Annulla", plants_path, class: "btn btn-mine btn-block" %>
