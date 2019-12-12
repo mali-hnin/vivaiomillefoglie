@@ -9,7 +9,9 @@ class PlantsController < ApplicationController
     # offset = 0 * limit, in this case 10, fetching only the first 10 items.
     # Second page, offset = 1 * limit, fetching 10 items after the first 10, etc.
     # thx to http://www.mozartreina.com/pagination-with-rails.html
-    if params[:category]
+    if params[:search] && params[:search].present?
+      @pagy, @plants = pagy(Plant.search_plants(params[:search]), items: 12)
+    elsif params[:category]
       @pagy, @plants = pagy(Plant.where("category ILIKE :category", category: '%'+params[:category]+'%').order('name ASC'), items: 12)
     elsif params[:esposizione]
       @pagy, @plants = pagy(Plant.where("esposizione ILIKE :esposizione", esposizione: params[:esposizione]+'%').order('name ASC'), items: 12)

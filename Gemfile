@@ -28,7 +28,7 @@ gem 'faker'
 gem 'money-rails', '~>1.12'
 gem 'yaml_db'
 gem 'pagy'
-
+gem 'pg_search', '~> 2.3.0'
 
 
 # Front-end gems
