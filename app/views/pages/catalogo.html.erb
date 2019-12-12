@@ -6,6 +6,16 @@
       <div class="catalogo-banner">
         <h1>Catalogo</h1>
         <h4><%= link_to "Vedi tutte le piante", plants_path, class: "orange-text" %></h4>
+        <div class="search">
+          <%= form_tag plants_path, method: "get" do %>
+            <div class="input-group">
+              <%= text_field_tag :search, params[:search], placeholder: "Cerca una pianta", class: 'searchTerm', remote: true %>
+              <button  type="submit" class="btn btn-info btn-sm">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="row">
         <div class="categorie-row">
