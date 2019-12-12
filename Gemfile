@@ -12,7 +12,7 @@ gem "devise", ">= 4.7.1"
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
-gem 'puma'
+gem "puma", ">= 3.12.2"
 gem 'rails', '>=5.2.2'
 gem 'redis'
 # gem 'webpacker', '~> 3.0'
