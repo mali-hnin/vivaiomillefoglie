@@ -7,7 +7,7 @@
       <% if line_item.plant.photos.empty? %>
         <%= image_tag "Logo_2_thumb.png" %>
       <% else %>
-        <%= cl_image_tag line_item.plant.photos.first, crop: :thumb%>
+        <%= cl_image_tag line_item.plant.photos.first.path, crop: :thumb%>
       <% end %>
     </figure>
   </div>
