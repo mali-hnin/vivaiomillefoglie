@@ -1,7 +1,4 @@
 <div class="columns align-items-center">
-  <div class="column is-1">
-    Quantità: <%= line_item.quantity %>
-  </div>
   <div>
     <figure>
       <% if line_item.plant.photos.empty? %>
@@ -21,6 +18,9 @@
         <strong class="f4"><%= humanized_money_with_symbol line_item.total_price %></strong>
       </div>
     </div>
+  </div>
+  <div class="column is-1">
+    Quantità: <%= line_item.quantity %>
   </div>
 </div>
 
