@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "vivaiomillefoglie"
-set :repo_url, "git@github.com:mali-hnin/-vivaio-millefoglie.git"
+set :repo_url, "git@github.com:mali-hnin/vivaiomillefoglie.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
