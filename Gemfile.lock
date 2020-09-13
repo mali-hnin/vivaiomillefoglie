@@ -297,9 +297,9 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   bootstrap-sass (>= 3.4.1)
-  capistrano (~> 3.11)
+  capistrano (~> 3.10)
   capistrano-passenger (~> 0.2.0)
-  capistrano-rails (~> 1.4)
+  capistrano-rails (~> 1.6)
   capistrano-rbenv (~> 2.1, >= 2.1.4)
   cloudinary (= 1.1.7)
   coffee-rails

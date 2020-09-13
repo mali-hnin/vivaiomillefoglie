@@ -21,11 +21,12 @@ gem "actionview", ">= 5.2.2.1"
 gem "railties", ">= 5.2.2.1"
 
 # deploy gems
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
-
+group :development do
+  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano-rails', '~> 1.6', require: false
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+end
 # specific gems
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
