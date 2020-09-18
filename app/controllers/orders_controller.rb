@@ -14,6 +14,8 @@ class OrdersController < ApplicationController
     if @order.save
       OrderMailer.with(order: @order).new_order_email_admin.deliver_later
       OrderMailer.with(order: @order).new_order_email_customer.deliver_later
+      session[:cart_id] = nil
+      # @cart = Cart.new
       redirect_to root_path
 
       flash[:info] = "Ordine inviato con successo! Ti abbiamo inviato una mail di conferma"
