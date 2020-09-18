@@ -9,3 +9,5 @@ public/assets
 # Ignore application configuration
 /config/application.yml
 secrets.yml
+
+/config/master.key
