@@ -3,7 +3,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p>La ringraziamo del suo ordine. Questo è un messaggio automatico. Riceverà al più presto la nostra conferma d'ordine con l'indicazione delle spese di spedizione dal nostro indirizzo principale: <em>info@vivaiomillefoglie.it</em>.</p>
+    <p>La ringraziamo del suo ordine. Questo è un messaggio automatico. Riceverà al più presto la nostra conferma d'ordine con l'indicazione delle spese di spedizione dal nostro indirizzo principale: info@vivaiomillefoglie.it.</p>
     <br>
     <p>
     <p style="color:#fd5f00 font-size:120%">Riepilogo Ordine</p>
@@ -25,10 +25,10 @@
       <% @order.cart.line_items.each do |lineitem| %>
         <li><%= lineitem.quantity  %>
         <%= lineitem.plant.name  %>,
-        <%= humanized_money_with_symstrongol lineitem.plant.prezzo %></li>
+        <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
        <% end %>
     </ul>
-    <p><strong>Totale (<u>escluse le spese di spedizione</u>):</strong> <%= humanized_money_with_symstrongol @order.cart.total_price %></p>
+    <p><strong>Totale (<u>escluse le spese di spedizione</u>):</strong> <%= humanized_money_with_symbol @order.cart.total_price %></p>
     <br>
     <br>
     <p>Cordiali saluti,</p>
