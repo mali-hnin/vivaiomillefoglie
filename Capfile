@@ -32,7 +32,8 @@ install_plugin Capistrano::SCM::Git
 # require "capistrano/rails/assets"
 # require "capistrano/rails/migrations"
 
-require "capistrano/rails" if ENV['RUN_MIGRATIONS']
+# require "capistrano/rails"
+require 'capistrano/rails/migrations' if ENV['RUN_MIGRATIONS']
 require "capistrano/passenger"
 require "capistrano/rbenv"
 
