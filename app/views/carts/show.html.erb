@@ -8,7 +8,6 @@
         <%= render(@cart.line_items) %>
         <div class="columns">
           <div class="column">
-            <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "button" %>
           </div>
           <div class="">
             <h4>
@@ -16,7 +15,10 @@
             </h4>
           </div>
         </div>
-        <%= link_to "Ordina", new_cart_order_path(@cart), class: "btn btn-warning" %>
+        <%= link_to "Ordina", new_cart_order_path(@cart), class: "btn btn-purple btn-lg" %>
+        <br>
+        <br>
+        <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "button" %>
       </section>
     </div>
   </div>
