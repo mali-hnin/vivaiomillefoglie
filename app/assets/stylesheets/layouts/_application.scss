@@ -7,8 +7,8 @@ body {
   font-family: 'Muli', sans-serif;
   overflow-x: hidden;
   a:hover{
-    text-decoration: none;
     color: $orange;
+    text-decoration: none;
     font-weight: bold;
   }
 }
@@ -27,7 +27,6 @@ body {
 .white-bg {
   background-color: #ebebcb;
   min-height: 50vh;
-  /* color: $dark-green; */
 }
 
 .page-wrapper {
@@ -47,6 +46,10 @@ body {
 
 .title {
   width: max-content;
+}
+
+.content {
+  margin-top: 50px;
 }
 
 .text-center {

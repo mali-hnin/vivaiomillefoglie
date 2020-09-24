@@ -41,6 +41,11 @@
   font-family: 'Montserrat Black', sans-serif;
 }
 
+.orange-link {
+  color: $orange;
+  a{color: $orange;}
+}
+
 @media only screen and (max-width: 600px) {
   /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3)); */
 }
