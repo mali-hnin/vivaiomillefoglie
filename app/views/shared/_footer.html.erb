@@ -2,7 +2,7 @@
   <div class="footer-main">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="footer-column" id="orari">
+        <div class="footer-column mobile-column-center" id="orari">
           <p class="uppercase-text bolder-text">Gli orari del vivaio</p>
           <p>Venerdì e Sabato<br>
           9.00-12.30<br>
@@ -15,12 +15,22 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="footer-column" id="acquista-online">
+        <div class="footer-column mobile-column-center" id="acquista-online">
           <%= link_to "ordina online ", catalogo_intro_path, class: "orange-text" %><span class= "orange-text"><i class="fab fa-envira"></i></span>
+        </div>
+        <div class="search mobile-column-center">
+          <%= form_tag plants_path, method: "get" do %>
+            <div class="input-group">
+              <%= text_field_tag :search, params[:search], placeholder: "Cerca una pianta", class: 'searchTerm', remote: true %>
+              <button  type="submit" class="btn btn-info btn-sm">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="footer-column" id="social-media">
+        <div class="footer-column mobile-column-center" id="social-media">
           <div class="uppercase-text bolder-text", id="one">
             <p>seguici</p>
           </div>
@@ -34,7 +44,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-6 col-lg-3">
-        <div class="footer-column" id="bonus-verde">
+        <div class="footer-column mobile-column-center" id="bonus-verde">
           <p class="uppercase-text bolder-text">Bonus Verde</p>
           <p class="bolder-text">incentivi fiscali del 36%</p>
           <p>per giardini, balconi e terrazzi privati e condominiali</p>

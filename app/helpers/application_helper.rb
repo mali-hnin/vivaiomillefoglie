@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def cart_count
-    return "#{@cart.line_items.sum('quantity')}".html_safe
+    return "#{@cart.line_items.sum(:quantity)}".html_safe
   end
 
   def cart_has_items
