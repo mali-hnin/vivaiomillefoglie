@@ -12,7 +12,8 @@
       <% end %>
       <% end %>
     </div>
-    <%= pagy_nav(@pagy).html_safe %>
+    <%= pagy_bootstrap_nav(@pagy).html_safe %>
+    <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
     <%= link_to "Torna indietro", catalogo_path %>
   </div>
 </div>

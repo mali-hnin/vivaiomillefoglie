@@ -1,0 +1,20 @@
+.pagination {
+  li {
+    a {
+      color: $black;
+      background-color: #ebebcb;
+      border: 1px solid #bbb;
+    }
+  }
+}
+
+.page-item.disabled .page-link {
+  background-color: #ebebcb;
+  border: 1px solid #bbb;
+}
+
+.page-item.active .page-link {
+  color: white;
+  background-color: $light-blue;
+  border: 1px solid $light-blue;
+}
