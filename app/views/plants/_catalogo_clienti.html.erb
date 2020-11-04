@@ -6,14 +6,15 @@
     <div class="row">
       <% @plants.each do |plant| %>
       <% if plant.nascondi? == false %>
-        <div class="col-xs-6 col-sm-4">
+        <div class="col-xs-6 col-md-4">
           <%= render "plants/card", plant: plant %>
         </div>
       <% end %>
       <% end %>
     </div>
-    <%= pagy_bootstrap_nav(@pagy).html_safe %>
+    <div class="navigation-box">
     <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
-    <%= link_to "Torna indietro", catalogo_path %>
+    <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+    </div>
   </div>
 </div>

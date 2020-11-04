@@ -1,20 +1,64 @@
+// personalised styles
 .pagination {
-  li {
-    a {
-      color: $black;
-      background-color: #ebebcb;
-      border: 1px solid #bbb;
-    }
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  a {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.428571429;
+    color: #2d2d2d;
+    text-decoration: none;
+    background-color: #ebebcb;
+    border: 1px solid #bbb;
   }
 }
 
-.page-item.disabled .page-link {
+@media only screen and (max-width: 600px) {
+  .pagination {
+    margin-top: 0px;
+  }
+}
+// .page {
+//   position: relative;
+//   float: left;
+//   padding: 6px 12px;
+//   margin-left: -1px;
+//   line-height: 1.428571429;
+// }
+
+.page.disabled {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.428571429;
   background-color: #ebebcb;
   border: 1px solid #bbb;
+  color: #bbb;
 }
 
-.page-item.active .page-link {
+.page.current {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.428571429;
   color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
   background-color: $light-blue;
   border: 1px solid $light-blue;
+}
+
+.page.gap {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.428571429;
+  background-color: #ebebcb;
+  border: 1px solid #bbb;
+  color: #bbb;
 }
