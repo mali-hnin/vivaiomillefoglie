@@ -18,6 +18,15 @@
   padding: 60px 100px 40px 100px;
   display: flex;
   flex-direction: column;
+  li {
+    font-size: 75%;
+    color: black;
+    a {
+      font-size: large;
+      font-weight: bold;
+      color: #564399;
+    }
+  }
 }
 
 .categorie-row{
