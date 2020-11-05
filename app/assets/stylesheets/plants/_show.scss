@@ -1,4 +1,14 @@
+.flexy {
+  display: flex;
+  height: 100%;
+}
+
+
 .pianta-content img {
   max-height: 50vh;
   width: auto;
+}
+
+.pianta-bottom {
+  align-self: flex-end;
 }
