@@ -18,6 +18,18 @@
   padding: 60px 100px 40px 100px;
   display: flex;
   flex-direction: column;
+  .white {
+    background-color: #F1F0EA;
+  }
+  li {
+    font-size: 75%;
+    color: black;
+    a {
+      font-size: large;
+      font-weight: bold;
+      color: #564399;
+    }
+  }
 }
 
 .categorie-row{
@@ -32,6 +44,7 @@
   a {
     margin: 5px 0px;
     color: black;
+    line-height: 2;
   }
 }
 
@@ -62,8 +75,8 @@
 /* Dropdown menu */
 .accordion-menu {
   margin-top: 15px;
-  border-color: $yellow;
-  background-color: $yellow;
+  border-color: #E0DDCF;
+  background-color: #E0DDCF;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -73,7 +86,6 @@
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: $black !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
+  // font-size: 15px !important;
   padding: 10px 20px;
 }

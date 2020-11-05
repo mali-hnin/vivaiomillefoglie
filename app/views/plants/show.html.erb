@@ -58,7 +58,7 @@
           <% end %>
         </div>
         <div class="content">
-         <%= link_to "Torna indietro", :back %>
+         <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
         </div>
         <% if user_signed_in? && current_user.admin %>
           <div class="admin-buttons">

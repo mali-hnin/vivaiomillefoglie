@@ -66,6 +66,11 @@
   font-weight: lighter;
 }
 
+.bright-blue-text {
+  color: $light-blue-bright;
+  font-weight: lighter;
+}
+
 .navbar-wagon-link:hover {
   color: $orange;
   text-decoration: none;
@@ -120,6 +125,24 @@
   color: $yellow;
 }
 
+@media only screen and (max-width: 1300px) {
+  .navbar-wagon-link {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .navbar-wagon-link {
+    font-size: 70%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-wagon-link {
+    font-size: larger;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .navbar-wagon-brand {
     img {
@@ -128,5 +151,14 @@
   }
   .light-blue-text {
     text-shadow: 2px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .navbar-wagon {
+    padding: 5px;
+  }
+  .navbar-wagon-item {
+    padding: 0px 5px;
   }
 }
