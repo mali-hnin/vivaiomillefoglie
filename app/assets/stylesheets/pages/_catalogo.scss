@@ -21,9 +21,6 @@
   .white {
     background-color: #F1F0EA;
   }
-  a {
-    line-height: 2 !important;
-  }
   li {
     font-size: 75%;
     color: black;
@@ -47,6 +44,7 @@
   a {
     margin: 5px 0px;
     color: black;
+    line-height: 2;
   }
 }
 
