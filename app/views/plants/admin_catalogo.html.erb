@@ -5,7 +5,8 @@
     <% if user_signed_in? && current_user.admin %>
       <div class="container">
         <div class="admin-buttons">
-          <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+          <h3>Pannello Amministratori</h3>
+          <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
         </div>
         <div class="catalogo-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>
@@ -14,7 +15,7 @@
           <p><%= link_to "ordina per ultima aggiornata", by_updated_plants_path, class: "" %></p>
           <ol>
             <% @plants.each do |pianta| %>
-              <li>
+              <li class="spacing-5">
                 <% if pianta.nascondi? %>
                   <span class="text-warning">NASCOSTA</span>
                 <% end %>

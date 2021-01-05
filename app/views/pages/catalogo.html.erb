@@ -2,6 +2,17 @@
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <div class="page-wrapper white-bg">
+    <% if user_signed_in? && current_user.admin %>
+      <div class="container">
+        <div class="admin-buttons">
+          <h3>Pannello Amministratori</h3>
+          <div>
+            <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+            <%= link_to "Vedi il Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <div class="catalogo-content text-center">
       <div class="catalogo-banner">
         <h1 class="text-center">Catalogo</h1>
@@ -22,7 +33,6 @@
                 <%= link_to "Graminacee", plants_path(category: "graminacee") %>
                 <%= link_to "Altro", plants_path(category: "altro") %></div>
             </div>
-
             <div class="col-xs-12 col-md-6 col-lg-3">
               <div class="categoria-header">
                 Esposizione
@@ -84,15 +94,5 @@
         </div>
       </div>
     </div>
-
-    <% if user_signed_in? && current_user.admin %>
-      <div class="admin-buttons">
-        <p>Pannello Amministratori</p>
-        <div>
-          <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
-          <%= link_to "Vedi tutto il Catalogo", admin_catalogo_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>

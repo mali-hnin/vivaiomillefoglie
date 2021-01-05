@@ -1,10 +1,20 @@
 <div class="bg">
   <%= render 'shared/navbar' %>
   <div class="white-bg">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
-      <% end %>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
+    <% end %>
     <div class="container">
+      <% if user_signed_in? && current_user.admin %>
+        <div class="admin-buttons">
+          <h3>Pannello Amministratori</h3>
+          <div class="spacing-5">
+            <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-success" %>
+            <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+          </div>
+          <div class="spacing-5"><%= link_to "Torna al Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %></div>
+        </div>
+      <% end %>
       <div class="pianta-content mb-5">
         <% if user_signed_in? && current_user.admin%>
           <% if @plant.nascondi? %>
@@ -38,8 +48,8 @@
           <ul>
             <% if @plant.disponibile? %>
               <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
-              <% else %>
-                <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
+            <% else %>
+              <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
             <% end %>
             <% if @plant.novità? %>
               <li>Questa pianta è una <span class="text-warning">novità</span>!</li>
@@ -58,16 +68,8 @@
           <% end %>
         </div>
         <div class="content">
-         <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+          <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
         </div>
-        <% if user_signed_in? && current_user.admin %>
-          <div class="admin-buttons">
-            <p><u>Pannello Amministratori</u></p>
-              <br />
-              <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-primary" %>
-              <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>

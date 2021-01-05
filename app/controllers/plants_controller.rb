@@ -26,15 +26,15 @@ class PlantsController < ApplicationController
   end
 
   def admin_catalogo
-    @pagy, @plants = pagy(Plant.all.alphabetically)
+    @pagy, @plants = pagy(Plant.all.alphabetically, items: 50)
   end
 
   def by_created
-    @pagy, @plants = pagy(Plant.all.recently_created)
+    @pagy, @plants = pagy(Plant.all.recently_created, items: 50)
   end
 
   def by_updated
-    @pagy, @plants = pagy(Plant.all.recently_updated)
+    @pagy, @plants = pagy(Plant.all.recently_updated, items: 50)
   end
 
   def show
