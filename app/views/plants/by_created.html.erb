@@ -1,1 +1,36 @@
-<%= render 'admin_catalogo' %>
+<div class="bg">
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
+  <div class="white-bg">
+    <% if user_signed_in? && current_user.admin %>
+      <div class="container">
+        <div class="admin-buttons">
+          <h3>Pannello Amministratori</h3>
+          <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
+        </div>
+        <div class="catalogo-content">
+          <h1>Catalogo / <%= Plant.all.count %> piante</h1>
+          <p><%= link_to "ordine alfabetico", admin_catalogo_path, class: "" %></p>
+          <p><%= link_to "ordina per ultima creata", by_created_plants_path, class: "" %></p>
+          <p><%= link_to "ordina per ultima aggiornata", by_updated_plants_path, class: "" %></p>
+          <ol>
+            <% @plants.each do |pianta| %>
+              <li class="spacing-5">
+                <% if pianta.nascondi? %>
+                  <span class="text-warning">NASCOSTA</span>
+                <% end %>
+                <%= link_to pianta.name, plant_path(pianta.id) %>
+                <!-- Turns Rails timestamps into European format, setup in en.yml -->
+                Ultimo aggiornamento: <%= l pianta.updated_at, format: :euro %>
+              </li>
+            <% end %>
+          </ol>
+          <div class="navigation-box">
+            <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+            <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -30,6 +30,11 @@
       color: #564399;
     }
   }
+  th {
+    a {
+      color: #1338be;
+    }
+  }
 }
 
 .categorie-row{
@@ -56,9 +61,21 @@
   display: flex;
   flex-direction: column;
   margin: 15px;
-  padding: 10px;
-  width: 500px;
+  padding: 5px 0px 30px 0px;
   text-align: center;
+  border: solid 5px #4c4c4c;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background-color: #e5e5e5;
+  p {
+    margin-bottom: 30px;
+  }
+  /* background:
+      linear-gradient(to top, #4caf50, #4caf50 5px, transparent 5px),
+      linear-gradient(to right, #c1ef8c, #c1ef8c 5px, transparent 5px),
+      linear-gradient(to bottom, #8bc34a, #8bc34a 5px, transparent 5px),
+      linear-gradient(to left, #009688, #009688 5px, transparent 5px); */
+  /* background-origin: border-box; */
+  /* box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2); */
 }
 
 .categoria-header {
@@ -89,3 +106,26 @@
   // font-size: 15px !important;
   padding: 10px 20px;
 }
+
+.flower-list{
+  margin: 30px 0px 40px 0px;
+
+  li {
+    list-style-type: "❀";
+    padding-inline-start: 1ch;
+    a {
+        color: #31b753;
+    }
+  }
+}
+
+/* Sets serial number in front of table row */
+.css-serial {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
+

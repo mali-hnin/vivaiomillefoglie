@@ -4,31 +4,55 @@
   <div class="white-bg">
     <% if user_signed_in? && current_user.admin %>
       <div class="container">
+        <!-- Admin Panel -->
         <div class="admin-buttons">
-          <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
+          <p class="uppercase-text">Pannello Amministratori</p>
+          <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
         </div>
-
+        <!-- End of Admin Panel -->
         <div class="catalogo-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>
-          <%= link_to "ordine alfabetico", plants_path, class: "btn" %>
-          <%= link_to "ordina per ultima creata", by_created_plants_path, class: "btn" %>
-          <%= link_to "ordina per ultima aggiornata", by_updated_plants_path, class: "btn" %>
-          <ol>
-            <% @plants.each do |pianta| %>
-              <li>
-               <% if pianta.nascondi? %>
-                 <span class="text-warning">NASCOSTA</span>
-               <% end %>
-                <%= link_to pianta.name, plant_path(pianta.id) %>
-                <!-- Turns Rails timestamps into European format, setup in en.yml -->
-                Ultimo aggiornamento: <%= l pianta.updated_at, format: :euro %>
-              </li>
-            <% end %>
-          </ol>
-          <!-- ceil is called because you want the number rounded up, e.g. 16/10 should equal 2 not 1.6 -->
-          <% (Plant.all.size.to_f/@limit).ceil.times do |n| %>
-          <%= link_to (n + 1).to_s, plants_path(offset: n) %>
-          <% end %>
+          <ul class="flower-list">
+            <li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_path %></li>
+            <li class="spacing-5"><%= link_to "ordina per ultima creata", by_created_plants_path %></li>
+            <li class="spacing-5"><%= link_to "ordina per ultima aggiornata", by_updated_plants_path %></li>
+          </ul>
+          <table class="table table-hover css-serial">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Creata</th>
+                <th scope="col">Ultimo Aggiornamento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @plants.each do |pianta| %>
+                <tr>
+                  <td> <!-- this td stays empty to receive the row number from the css-serial class-->
+                  </td>
+                  <th scope="row">
+                    <% if pianta.nascondi? %>
+                      <span class="text-warning">NASCOSTA</span>
+                    <% end %>
+                    <%= link_to pianta.name, plant_path(pianta.id) %>
+                  </th>
+                  <td>
+                    <!-- Turns Rails timestamps into European format, setup in en.yml -->
+                    <%= l pianta.created_at, format: :euro %>
+                  </td>
+                  <td scope="row">
+                    <!-- Turns Rails timestamps into European format, setup in en.yml -->
+                    <%= l pianta.updated_at, format: :euro %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <div class="navigation-box">
+            <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+            <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+          </div>
         </div>
       </div>
     <% end %>
