@@ -11,55 +11,77 @@
             <h2>NASCOSTA</h2>
           <% end %>
         <% end %>
-        <div class="content">
-          <h1><%= @plant.name %></h1>
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <!-- top part / left column-->
+            <div class="pianta-top">
+              <div class="content">
+                <h1><%= @plant.name %></h1>
+              </div>
+              <div class="content">
+                <% if @plant.photos.empty? %>
+                  <%= image_tag "Logo_2.png" %>
+                <% else %>
+                  <% @plant.photos.each do |photo| %>
+                    <%= cl_image_tag photo.path %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+            <div class="col-xs-12 col-md-6">
+            <!-- need this dumba** extra div otherwise pianta bottom won't stay tf down -->
+            <div class="flexy">
+              <!-- bottom part / right column-->
+              <div class="pianta-bottom">
+                <div class="content">
+                  <p><%= simple_format(@plant.description) %></p>
+                  <ul>
+                    <li><strong>Categoria:</strong> <%= @plant.category %></li>
+                    <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
+                    <li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
+                    <li><strong>Altezza:</strong> <%= @plant.altezza %></li>
+                    <li><strong>Terreno:</strong> <%= @plant.terreno %></li>
+                    <li><strong>Densità:</strong> <%= @plant.densità %></li>
+                    <li><strong>Vaso:</strong> <%= @plant.vaso %></li>
+                    <li><strong>Prezzo:</strong> <%= humanized_money_with_symbol @plant.prezzo %></li>
+                  </ul>
+                  <ul>
+                    <% if @plant.disponibile? %>
+                      <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
+                      <% else %>
+                        <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
+                    <% end %>
+                    <% if @plant.novità? %>
+                      <li>Questa pianta è una <span class="text-warning">novità</span>!</li>
+                    <% end %>
+                  </ul>
+                </div>
+                <div class="content">
+                  <% if @plant.disponibile? %>
+                    <%= form_for @line_item do |f| %>
+                      <%= f.hidden_field :plant_id, value: @plant.id %>
+                      <%= f.number_field :quantity, value: 1, class: "small-field" %>
+                      <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
+                    <% end %>
+                  <% else %>
+                    <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
+                  <% end %>
+                </div>
+                <div class="content">
+                 <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+                </div>
+              <!-- end of pianta bottom div -->
+              </div>
+            <!-- end of flexy div -->
+            </div>
+          <!-- end of col div -->
+          </div>
+        <!-- end of row div -->
+
         </div>
-        <div class="content">
-          <% if @plant.photos.empty? %>
-            <%= image_tag "Logo_2.png" %>
-          <% else %>
-            <% @plant.photos.each do |photo| %>
-              <%= cl_image_tag photo.path %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="content">
-          <p><%= simple_format(@plant.description) %></p>
-          <ul>
-            <li><strong>Categoria:</strong> <%= @plant.category %></li>
-            <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
-            <li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
-            <li><strong>Altezza:</strong> <%= @plant.altezza %></li>
-            <li><strong>Terreno:</strong> <%= @plant.terreno %></li>
-            <li><strong>Densità:</strong> <%= @plant.densità %></li>
-            <li><strong>Vaso:</strong> <%= @plant.vaso %></li>
-            <li><strong>Prezzo:</strong> <%= humanized_money_with_symbol @plant.prezzo %></li>
-          </ul>
-          <ul>
-            <% if @plant.disponibile? %>
-              <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
-              <% else %>
-                <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
-            <% end %>
-            <% if @plant.novità? %>
-              <li>Questa pianta è una <span class="text-warning">novità</span>!</li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="content">
-          <% if @plant.disponibile? %>
-            <%= form_for @line_item do |f| %>
-              <%= f.hidden_field :plant_id, value: @plant.id %>
-              <%= f.number_field :quantity, value: 1, class: "small-field" %>
-              <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
-            <% end %>
-          <% else %>
-            <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
-          <% end %>
-        </div>
-        <div class="content">
-         <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
-        </div>
+
+        <!-- admin panel -->
         <% if user_signed_in? && current_user.admin %>
           <div class="admin-buttons">
             <p><u>Pannello Amministratori</u></p>
