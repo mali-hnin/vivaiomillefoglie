@@ -30,6 +30,11 @@
       color: #564399;
     }
   }
+  th {
+    a {
+      color: #1338be;
+    }
+  }
 }
 
 .categorie-row{
@@ -58,7 +63,6 @@
   flex-direction: column;
   margin: 15px;
   padding: 10px;
-  // width: 500px;
   text-align: center;
 }
 
@@ -90,3 +94,25 @@
   // font-size: 15px !important;
   padding: 10px 20px;
 }
+
+.flower-list{
+  margin: 30px 0px 40px 0px;
+  li {
+    list-style-type: "🌼";
+    padding-inline-start: 1ch;
+    a {
+        color: $green;
+    }
+  }
+}
+
+/* Sets serial number in front of table row */
+.css-serial {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
+
