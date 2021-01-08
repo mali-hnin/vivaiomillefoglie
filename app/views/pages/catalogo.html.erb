@@ -2,10 +2,11 @@
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <div class="page-wrapper white-bg">
+    <!-- Admin Panel -->
     <% if user_signed_in? && current_user.admin %>
       <div class="container">
         <div class="admin-buttons">
-          <h3>Pannello Amministratori</h3>
+          <p class="uppercase-text">Pannello Amministratori</p>
           <div>
             <%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %>
             <%= link_to "Vedi il Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %>
@@ -13,6 +14,7 @@
         </div>
       </div>
     <% end %>
+    <!-- End of Admin Panel -->
     <div class="catalogo-content text-center">
       <div class="catalogo-banner">
         <h1 class="text-center">Catalogo</h1>

@@ -4,10 +4,12 @@
   <div class="white-bg">
     <% if user_signed_in? && current_user.admin %>
       <div class="container">
+        <!-- Admin Panel -->
         <div class="admin-buttons">
-          <h3>Pannello Amministratori</h3>
+          <p class="uppercase-text">Pannello Amministratori</p>
           <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
         </div>
+        <!-- End of Admin Panel -->
         <div class="catalogo-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>
           <ul class="flower-list">

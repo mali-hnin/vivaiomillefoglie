@@ -8,7 +8,7 @@
       <!-- Admin Panel -->
       <% if user_signed_in? && current_user.admin %>
         <div class="admin-buttons">
-          <h3>Pannello Amministratori</h3>
+          <p class="uppercase-text">Pannello Amministratori</p>
           <div class="spacing-5">
             <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-success" %>
             <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
@@ -20,7 +20,7 @@
       <div class="pianta-content mb-5">
         <% if user_signed_in? && current_user.admin%>
           <% if @plant.nascondi? %>
-            <h2>NASCOSTA</h2>
+            <h3>NASCOSTA</h3>
           <% end %>
         <% end %>
         <div class="row">
