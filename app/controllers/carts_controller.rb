@@ -12,6 +12,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @line_items = @cart.line_items.order('plant_id ASC')
   end
 
   # GET /carts/new
@@ -62,18 +63,18 @@ class CartsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cart
-      @cart = Cart.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cart
+    @cart = Cart.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def cart_params
-      params.fetch(:cart, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def cart_params
+    params.fetch(:cart, {})
+  end
 
-    def invalid_cart
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to root_path
-    end
+  def invalid_cart
+    logger.error "Attempt to access invalid cart #{params[:id]}"
+    redirect_to root_path
+  end
 end

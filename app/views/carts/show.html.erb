@@ -2,24 +2,68 @@
   <%= render 'shared/navbar' %>
   <div class="catalogo-content white-bg">
     <div class="container">
-      <%= link_to 'Continua con gli acquisti', catalogo_path, class: 'button is-warning' %>
-      <hr />
-      <section class="section">
-        <%= render(@cart.line_items) %>
-        <div class="columns">
-          <div class="column">
-          </div>
-          <div class="">
+      <%= link_to 'Continua con gli acquisti', catalogo_path, class: '' %>
+      <hr class="invisible" />
+      <div class="cart-content">
+        <div class="row">
+          <div class="col-xs-12 col-md">
             <h4>
               <span class="">Totale:</span> <%= humanized_money_with_symbol @cart.total_price %>
             </h4>
           </div>
+          <div class="col-xs-12 col-md-9">
+            <%= link_to "Ordina", new_cart_order_path(@cart), class: "btn btn-purple btn-lg" %>
+          </div>
         </div>
-        <%= link_to "Ordina", new_cart_order_path(@cart), class: "btn btn-purple btn-lg" %>
-        <br>
-        <br>
-        <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "button" %>
-      </section>
+      </div>
+      <hr class="style-six" />
+      <!-- Cart contents -->
+      <% @line_items.each do |line_item| %>
+        <div class="line-item">
+          <div class="cart-content">
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md">
+              <!-- top part / left column-->
+              <div class="pianta-top">
+                <div class="cart-content">
+                  <% if line_item.plant.photos.empty? %>
+                    <%= image_tag "Logo_2.png", style: 'height:100px;width:auto;' %>
+                  <% else %>
+                    <%= cl_image_tag line_item.plant.photos.first.path, size: '100x100', crop: :fill %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9">
+              <!-- need this dumba** extra div otherwise pianta bottom won't stay tf down -->
+              <div class="flexy">
+                <!-- bottom part / right column-->
+                <div class="pianta-bottom">
+                  <div class="">
+                    <div class="bolder-text"><%= link_to line_item.plant.name, plant_path(line_item.plant_id) %></div>
+                    <div class="small-caps lighter-text">Quantità: <%= line_item.quantity %></div>
+                    <div class="bolder-text"><%= humanized_money_with_symbol line_item.total_price %></div>
+                  </div>
+                  <div class="">
+                    <div class="lighter-text"><%= truncate(line_item.plant.description, length: 140) %></div>
+                  </div>
+                  <div class="">
+                    <%= link_to 'Rimuovi', line_item, method: :delete, data: { confirm: "Sei sicur*? " }, class: "lighter-text" %>
+                  </div>
+                  <!-- end of pianta bottom div -->
+                </div>
+                <!-- end of flexy div -->
+              </div>
+              <!-- end of col div -->
+            </div>
+            <!-- end of row div -->
+          </div>
+        </div>
+      <% end %>
+      <br>
+      <br>
+      <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "button" %>
     </div>
   </div>
 </div>
