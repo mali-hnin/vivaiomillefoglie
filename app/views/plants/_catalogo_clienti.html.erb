@@ -6,16 +6,16 @@
     <p><%= @pagy.count %> risultati</p>
     <div class="row">
       <% @plants.each do |plant| %>
-      <% if plant.nascondi? == false %>
-        <div class="col-xs-6 col-md-4">
-          <%= render "plants/card", plant: plant %>
-        </div>
-      <% end %>
+        <% if plant.nascondi? == false %>
+          <div class="col-xs-6 col-md-4">
+            <%= render "plants/card", plant: plant %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class="navigation-box">
-    <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
-    <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+      <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+      <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
     </div>
   </div>
 </div>
