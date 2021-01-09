@@ -20,6 +20,11 @@ gem 'coffee-rails'
 gem "actionview", ">= 5.2.2.1"
 gem "railties", ">= 5.2.2.1"
 
+
+gem "nokogiri", ">= 1.11.0.rc4"
+
+
+
 # deploy gems
 group :development do
   gem 'capistrano', '~> 3.10', require: false
