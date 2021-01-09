@@ -7,7 +7,6 @@
   </div>
   <!-- Left Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Millefoglie Flowerslab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
@@ -16,7 +15,6 @@
     <%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
   </div>
   <!-- Right Navigation -->
-
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link bright-blue-text" do %>
       <%= "Carrello" %>&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;</i> <%= cart_count %>
@@ -27,32 +25,30 @@
       <% end %>
     <% end %>
   </div>
-
   <!-- Dropdown appearing on mobile only -->
   <!-- Dropdown list appearing on mobile only -->
-    <div class="navbar-wagon-item hidden-md hidden-lg cart-sm">
-      <p><%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link bright-blue-text" do %>
+  <div class="navbar-wagon-item hidden-md hidden-lg cart-sm">
+    <p><%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link bright-blue-text" do %>
         <i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;</i><%= cart_count %>
       <% end %></p>
+  </div>
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown ">
+      <p class="dropdown-toggle" data-toggle="dropdown">MENU</p>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      </ul>
     </div>
-    <div class="navbar-wagon-item hidden-md hidden-lg">
-      <div class="dropdown">
-        <p class="dropdown-toggle" data-toggle="dropdown">MENU</p>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        </ul>
-      </div>
-    </div>
+  </div>
 </div>
-
 <!-- LOGIN RX NAVIGATION ITEM for when customer login system is set up -->
-    <!-- <% else %>
+<!-- <% else %>
        <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
     <% if cart_has_items %>
       <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link light-blue-text" do %>
@@ -61,5 +57,3 @@
       <% end %>
     <% end %>
   -->
-
-

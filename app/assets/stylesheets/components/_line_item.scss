@@ -48,7 +48,11 @@ hr.invisible {
 }
 
 @media only screen and (max-width: 768px) {
-  /* .cart-content {
+  .cart-content {
     text-align: center;
-  } */
+  }
+
+  .cart-img img {
+    margin-bottom: 10px;
+  }
 }

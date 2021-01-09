@@ -20,13 +20,11 @@
       <!-- Cart contents -->
       <% @line_items.each do |line_item| %>
         <div class="line-item">
-          <div class="cart-content">
-          </div>
           <div class="row">
             <div class="col-xs-12 col-md">
               <!-- top part / left column-->
               <div class="pianta-top">
-                <div class="cart-content">
+                <div class="cart-img">
                   <% if line_item.plant.photos.empty? %>
                     <%= image_tag "Logo_2.png", style: 'height:100px;width:auto;' %>
                   <% else %>
