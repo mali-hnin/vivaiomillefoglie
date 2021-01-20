@@ -29,8 +29,10 @@ class PlantsController < ApplicationController
   def export
     @plants = Plant.all.alphabetically
     respond_to do |format|
-      format.xlsx
-      format.csv { send_data @plants.to_csv }
+      format.xlsx {
+        response.headers['Content-Disposition'] = 'filename="catalogo_vivaio.xlsx"'
+      }
+      format.csv { send_data @plants.to_csv, filename: "catalogo_vivaio_#{Date.today}.csv" }
     end
   end
 
