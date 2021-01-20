@@ -7,7 +7,11 @@
         <!-- Admin Panel -->
         <div class="admin-buttons">
           <p class="uppercase-text">Pannello Amministratori</p>
-          <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
+          <div class="spacing-5"><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
+          <div class="spacing-5">
+            <%= link_to "Esporta catalogo Excel", export_plants_path(format: "xlsx"), class: "btn btn-light" %>
+            <%= link_to "Esporta catalogo CSV", export_plants_path(format: "csv"), class: "btn btn-light" %>
+          </div>
         </div>
         <!-- End of Admin Panel -->
         <div class="catalogo-content">
