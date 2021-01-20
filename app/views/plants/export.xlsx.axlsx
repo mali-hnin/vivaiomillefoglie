@@ -37,7 +37,7 @@ wb.styles do |style|
       plant.price_cents.to_f / 100,
       plant.price_currency,
       plant.nascondi
-      ], types: [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, :string, :string, nil, nil, nil, :float, :string ]
+      ], types: [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, :string, :string, nil, nil, nil, :float, nil, :string ]
     end
 
   sheet.column_widths 5, nil, 50
