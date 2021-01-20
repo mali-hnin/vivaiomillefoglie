@@ -41,6 +41,9 @@ gem 'money-rails', '~>1.12'
 gem 'yaml_db'
 gem 'pagy'
 gem 'pg_search', '~> 2.3.0'
+# to export data to xls:
+gem 'caxlsx'
+gem 'caxlsx_rails'
 
 
 # Front-end gems

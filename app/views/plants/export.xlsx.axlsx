@@ -1,0 +1,47 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+  project_heading = style.add_style(b: true, sz: 14)
+  heading = style.add_style(b: true)
+
+  wb.add_worksheet(name: "Piante Catalogo") do |sheet|
+    # Add a title row
+    sheet.add_row [nil, "Catalogo Vivaio Millefoglie"], style: project_heading
+
+    # Add the date this was downloaded
+    sheet.add_row [nil, Time.now.strftime("%d/%m/%Y - %R")]
+
+    # Add a blank row
+    sheet.add_row []
+
+    # generates the header row
+    sheet.add_row %w(Id Nome Descrizione Categoria Esposizione Fioritura Altezza Terreno Densità Vaso Disponibile? Novità? Utile_per Data_creazione Ultimo_aggiornamento Prezzo - Nascosta?), style: heading
+
+    # generates data rows
+    @plants.each do |plant|
+      sheet.add_row [plant.id,
+      plant.name,
+      plant.description,
+      plant.category,
+      plant.esposizione,
+      plant.fioritura,
+      plant.altezza,
+      plant.terreno,
+      plant.densità,
+      plant.vaso,
+      plant.disponibile,
+      plant.novità,
+      plant.utile_per,
+      plant.created_at,
+      plant.updated_at,
+      plant.price_cents.to_f / 100,
+      plant.price_currency,
+      plant.nascondi
+      ], types: [nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, :string, :string, nil, nil, nil, :float, :string ]
+    end
+
+  sheet.column_widths 5, nil, 50
+
+  end
+end
+
