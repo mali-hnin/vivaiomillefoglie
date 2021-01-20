@@ -13,7 +13,10 @@
         <div class="catalogo-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>
           <div>
-            <%= link_to "Esporta catalogo Excel", admin_catalogo_path(format: "xlsx"), class: "btn btn-light" %>
+            <%= link_to "Esporta catalogo Excel", export_plants_path(format: "xlsx"), class: "btn btn-light" %>
+          </div>
+          <div>
+            <%= link_to "Esporta catalogo CSV", export_plants_path(format: "csv"), class: "btn btn-light" %>
           </div>
           <ul class="flower-list">
             <li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_path %></li>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do    # collection => no restaurant id in URL
       get 'by_created', to: "plants#by_created"
       get 'by_updated', to: "plants#by_updated"
+      get 'export', to: "plants#export"
     end
   end
   resources :line_items

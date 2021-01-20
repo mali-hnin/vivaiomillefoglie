@@ -26,12 +26,16 @@ class PlantsController < ApplicationController
     @line_item = @cart.line_items.new
   end
 
+  def export
+    @plants = Plant.all.alphabetically
+    respond_to do |format|
+      format.xlsx
+      format.csv { send_data @plants.to_csv }
+    end
+  end
+
   def admin_catalogo
     @pagy, @plants = pagy(Plant.all.alphabetically, items: 50)
-    respond_to do |format|
-      format.html
-      format.xlsx
-    end
   end
 
   def by_created
