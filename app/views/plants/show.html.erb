@@ -10,7 +10,7 @@
         <div class="admin-buttons">
           <p class="uppercase-text">Pannello Amministratori</p>
           <div class="spacing-5">
-            <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-success" %>
+            <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-warning" %>
             <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
           </div>
           <div class="spacing-5"><%= link_to "Torna al Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %></div>

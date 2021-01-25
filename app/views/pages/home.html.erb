@@ -1,36 +1,35 @@
-<!-- Code to put an image as a div's background in rails -->
-<!-- style="background-image:url(<%= asset_path "4.jpg" %>)" -->
-
 <div class="bg" style="background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.2)),url(<%= asset_path "bg12.jpg" %>) ">
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
-  <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
-  <div class="page-wrapper">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
-    <% end %>
+  <div class="page-wrapper-row">
     <div class = "left-side">
       <div class="left-side-text">
         <div class="info-box">
           <div class="title">
             <h1>millefoglie <span class="orange-text bolder-text">E</span>' un giardino!</h1>
           </div>
-          <p>Ci sono un vivaio di piante erbacee perenni, graminacee ornamentali e annuali da fiore.</br>
-          Un orto dei fiori in cui coltiviamo fiori da taglio.</br>
+          <div>
+            <p>Ci sono un vivaio di piante erbacee perenni, graminacee ornamentali e annuali da fiore.</br>
+            Un orto dei fiori in cui coltiviamo fiori da taglio.</br>
           Tante piante da vedere, tra cui passeggiare... per scoprirle, imparare ad apprezzarle, magari portarle a casa.</p>
-
-          <p>Cerchiamo continuamente piante che ancora non conosciamo, nuove specie e varietà.</p>
-
-          <p>Scegliamo quelle  più rustiche, poco esigenti, resistenti a parassiti e malattie; le sperimentiamo nel nostro giardino; le riproduciamo, coltiviamo e le offriamo a chi le apprezza.</p>
-
-          <p>Effettuiamo la vendita delle piante e dei fiori in vivaio o per corrispondenza.</p>
-
-          <p>Progettiamo e realizziamo giardini e terrazzi.</p>
-        </div>
-      </div>
-      <div class="left-side-bottom">
+        <p>Cerchiamo continuamente piante che ancora non conosciamo, nuove specie e varietà.</p>
+        <p>Scegliamo quelle  più rustiche, poco esigenti, resistenti a parassiti e malattie; le sperimentiamo nel nostro giardino; le riproduciamo, coltiviamo e le offriamo a chi le apprezza.</p>
+        <p>Effettuiamo la vendita delle piante e dei fiori in vivaio o per corrispondenza.</p>
+        <p>Progettiamo e realizziamo giardini e terrazzi.</p>
       </div>
     </div>
   </div>
+  <div class="left-side-bottom">
+  </div>
+</div>
+<% if user_signed_in? && current_user.admin %>
+  <!-- Admin Panel -->
+  <div class="right-side">
+    <div class="width-50">
+      <%= render 'plants/admin_panel_main' %>
+    </div>
+  </div>
+  <!-- End of Admin Panel -->
+<% end %>
+</div>
 </div>
