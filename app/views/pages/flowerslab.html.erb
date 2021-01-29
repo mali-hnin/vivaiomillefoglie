@@ -1,38 +1,29 @@
-<div class="bg bg-lab" style="background-image:url(<%= asset_path "bg08b.jpg" %>)">
+<div class="bg bg-lab" style="background-image:url(<%= asset_path "bg08b.jpg" %>); background-position:75% 25%">
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-  <div>
-    <div class="page-wrapper">
-      <div class="left-side">
-        <div class="info-box bg-opacity">
-          <div class="bg-opacity-mobile">
+  <div class="page-wrapper">
+    <div class="left-side">
+      <div class="info-box bg-opacity">
+        <div class="bg-opacity-mobile">
           <div class="title">
             <h1>Ci piacciono i fiori belli!</h1>
           </div>
           <p>Quelli che coltiviamo nel nostro orto dei fiori, cresciuti con attenzione e rispetto per l'ambiente.</p>
-
           <p>Fiori che portano in casa i colori e i profumi di ogni stagione.</p>
-
           <p>Mescoliamo i fiori del nostro orto e del giardino con quelli che raccogliamo nei prati o nei boschi, con le fronde prese nelle siepi tra i campi.</p>
-
           <p>Puoi venire a raccoglierli nel nostro orto dei fiori, oppure chiederci di portare dei mazzi a casa tua, o a casa di qualcuno a cui vuoi fare un dono. Avrai fiori sempre freschi perchè appena colti.</p>
-
           <p>Puoi scegliere di fare un <span style="font-size:16pt"><%= link_to "abbonamento", abbonamento_path, class: "orange-text" %></span>, per il tempo che vuoi, per rendere i fiori una gioia di tutti i giorni.</p>
-
           <p><%= link_to "Contattaci", contatti_path, class: "orange-link" %> per feste, matrimoni ed eventi.</p>
-          <p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>Sono fiori di stagione a km zero!</span></p>
-
+          <p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>
+              Sono fiori di stagione a km zero!</span></p>
           <p class="orange-text text-center content" style="font-size:22px"><i class="fab fa-instagram"></i> <%= link_to "millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank, class: "orange-text"%></p>
           <div class="text-center content">
-            <%= image_tag "flowerslab.png", class: "flowerslablogo" %>
+            <%= image_tag "ig.png", class: "flowerslablogo" %>
           </div>
         </div>
-        </div>
       </div>
-      <div class="banner catalogo-banner"></div>
-      <div class="banner catalogo-banner"></div>
     </div>
   </div>
 </div>
