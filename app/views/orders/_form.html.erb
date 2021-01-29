@@ -17,7 +17,7 @@
   <%= f.input :email, label: "Email", as: :email%>
   <%= f.input :email_confirmation, label: "Conferma email", as: :email%>
   <%= f.input :message, label: "Messaggio", input_html: {rows: 3} %>
-  <%= f.input :metodo_pagamento, label: "Metodo di pagamento", as: :radio_buttons, collection: ['Contrassegno postale', 'Bonifico bancario']  %>
+  <%= f.input :metodo_pagamento, label: "Metodo di pagamento", as: :radio_buttons, collection: ['Satispay', 'Bonifico bancario', 'Contrassegno postale']  %>
   <%= f.input :periodo_spedizione, label: "Scegli il periodo di spedizione", as: :radio_buttons, collection: ['A discrezione del vivaio.', 'Novembre', 'Dicembre', 'Gennaio', 'Febbraio', 'Marzo']  %>
   <div class="form-group row mb-0">
     <div class="col-sm-9 offset-sm-3">
