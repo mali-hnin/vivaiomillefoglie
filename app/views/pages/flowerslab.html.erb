@@ -20,9 +20,9 @@
         <p class="orange-text text-center" style="font-size:22px;margin-top:30px"><i class="fab fa-instagram-square"></i> <%= link_to "millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank, class: "orange-text"%></p>
         <div style="align-self:center", class="ig-feed-container">
           <% @ig_photos.first(9).each do |ig_photo| %>
-            <div class="">
+            <%= link_to ig_photo["permalink"], target: :_blank do %>
               <%= image_tag ig_photo["media_url"] %>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>

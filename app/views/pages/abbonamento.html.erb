@@ -23,7 +23,11 @@
       </div>
       <div class="content">
         <% if !@ig_photos.empty? %>
-          <%= image_tag @ig_photos.sample["media_url"], class: "flowerslabdeco" %>
+          <% @ig_photos.sample(3).each do |ig_photo| %>
+            <%= link_to ig_photo["permalink"], target: :_blank do %>
+              <%= image_tag ig_photo["media_url"], class: "flowerslabdeco" %>
+            <% end %>
+          <% end %>
         <% else %>
           <%= image_tag "abbonamento4.png", class: "flowerslabdeco" %>
         <% end %>
