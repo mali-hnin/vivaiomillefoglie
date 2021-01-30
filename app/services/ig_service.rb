@@ -1,4 +1,3 @@
-require 'uri'
 class IgService
 
   def get_ig_feed

@@ -21,8 +21,12 @@
       <div class="content">
         <p><%= link_to "Contattaci", contatti_path, class: "orange-text" %> per prenotare il tuo abbonamento o singolo mazzo!</p>
       </div>
-      <div class="content ">
-        <%= image_tag "abbonamento4.png", class: "flowerslabdeco" %>
+      <div class="content">
+        <% if !@ig_photos.empty? %>
+          <%= image_tag @ig_photos.sample["media_url"], class: "flowerslabdeco" %>
+        <% else %>
+          <%= image_tag "abbonamento4.png", class: "flowerslabdeco" %>
+        <% end %>
       </div>
     </div>
   </div>
