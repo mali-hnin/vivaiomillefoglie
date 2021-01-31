@@ -44,6 +44,8 @@ gem 'pg_search', '~> 2.3.0'
 # to export data to xls:
 gem 'caxlsx'
 gem 'caxlsx_rails'
+# client library for making http requests from Ruby
+gem 'http', '~> 4.4.1'
 
 
 # Front-end gems

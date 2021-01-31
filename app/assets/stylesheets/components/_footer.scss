@@ -22,10 +22,6 @@
 #social-media {
   a {
     color: $yellow;
-    :hover {
-      text-decoration: none;
-      color: $orange;
-    }
   }
   img {
     margin: 5px;
@@ -41,8 +37,6 @@
   font-size: 30px;
 
   a:hover {
-    text-decoration: none;
-    font-weight: bold;
     color: $orange;
   }
  }
