@@ -22,7 +22,7 @@
         <p><%= link_to "Contattaci", contatti_path, class: "orange-text" %> per prenotare il tuo abbonamento o singolo mazzo!</p>
       </div>
       <div class="content text-center">
-        <% if !@ig_photos.empty? %>
+        <% if !@ig_photos.empty? && !@ig_photos.nil? %>
           <% @ig_photos.sample(3).each do |ig_photo| %>
             <%= link_to ig_photo["permalink"], target: :_blank do %>
               <%= image_tag ig_photo["media_url"], class: "flowerslabdeco" %>
