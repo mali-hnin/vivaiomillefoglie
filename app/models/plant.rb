@@ -18,6 +18,22 @@ class Plant < ApplicationRecord
 
   private
 
+  def self.options_for_category
+    plants = Plant.arel_table
+    order(plants[:category].lower).group_by{|e| e.category}.map(&:first).map(&:titleize)
+  end
+  def self.options_for_esposizione
+    plants = Plant.arel_table
+    order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first).map(&:titleize)
+  end
+
+  def self.options_for_fioritura
+    plants = Plant.arel_table
+    order(plants[:fioritura].lower).group_by{|e| e.fioritura}.map(&:first).map(&:titleize)
+  end
+
+  private
+
   def self.to_csv
     CSV.generate do |csv|
       csv << column_names
@@ -33,19 +49,4 @@ class Plant < ApplicationRecord
       throw :abort
     end
   end
-end
-
-def self.options_for_category
-  plants = Plant.arel_table
-  order(plants[:category].lower).group_by{|e| e.category}.map(&:first).map(&:titleize)
-end
-
-def self.options_for_esposizione
-  plants = Plant.arel_table
-  order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first).map(&:titleize)
-end
-
-def self.options_for_fioritura
-  plants = Plant.arel_table
-  order(plants[:fioritura].lower).group_by{|e| e.fioritura}.map(&:first).map(&:titleize)
 end

@@ -1,8 +1,9 @@
 <!-- Filters -->
-<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' }, remote: true do |f| %>
-  Categoria <%= f.select( :with_category, @filterrific.select_options[:with_category] ) %>
-  Esposizione <%= f.select( :with_esposizione, @filterrific.select_options[:with_esposizione] ) %>
+<%= form_with(url: plants_path, method: :get, local: true) do |f| %>
+  Categoria <%= f.select :category, Plant.options_for_category %>
+  Esposizione <%= f.select :esposizione, Plant.options_for_esposizione  %>
+  Fioritura <%= f.select :fioritura, Plant.options_for_fioritura %>
   <%= f.submit 'Filtra' %>
-  <%= link_to('Reset filters', reset_filterrific_ur, ) %>
+  <%= link_to('Reset filters',  ) %>
 <% end %>
 <!-- End of Filters -->

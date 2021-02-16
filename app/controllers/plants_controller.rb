@@ -5,6 +5,7 @@ class PlantsController < ApplicationController
   include Pagy::Backend
 
   def index
+
     # if params[:search] && params[:search].present?
     #   @pagy, @plants = pagy(Plant.search_plants(params[:search]).alphabetically)
     # elsif params[:category]

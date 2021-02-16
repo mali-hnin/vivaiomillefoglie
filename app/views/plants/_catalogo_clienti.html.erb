@@ -4,6 +4,7 @@
   <% end %>
   <div class="catalogo-content">
     <p><%= @pagy.count %> risultati</p>
+    <%= render 'filters' %>
     <div class="row">
       <% @plants.each do |plant| %>
         <div class="col-xs-6 col-md-4">
