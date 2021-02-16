@@ -4,7 +4,8 @@ class Plant < ApplicationRecord
   scope :alphabetically, -> { order('name ASC') }
   scope :recently_created, -> { order("created_at DESC") }
   scope :recently_updated, -> { order("updated_at DESC") }
-  scope :filter_by_category, -> (category) { where("category ILIKE ?", category)}
+  scope :is_visible, -> { where(nascondi: false) }
+  scope :filter_by_category, -> (category) { where("category ILIKE ?", '%'+ category +'%')}
   scope :filter_by_esposizione, -> (esposizione) { where("esposizione ILIKE ?", esposizione)}
   scope :filter_by_fioritura, -> (fioritura) { where("fioritura ILIKE ?", fioritura)}
 
@@ -32,4 +33,14 @@ class Plant < ApplicationRecord
       throw :abort
     end
   end
+end
+
+def self.options_for_category
+  plants = Plant.arel_table
+  order(plants[:category].lower).group_by{|e| e.category}.map(&:first)
+end
+
+def self.options_for_esposizione
+  plants = Plant.arel_table
+  order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first)
 end

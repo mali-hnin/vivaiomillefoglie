@@ -20,7 +20,7 @@ class PlantsController < ApplicationController
     # elsif params[:utile_per]
     #   @pagy, @plants = pagy(Plant.where("utile_per ILIKE :utile_per OR utile_per ILIKE :utile_per2", utile_per: '%'+params[:utile_per]+'%', utile_per2: '%'+params[:utile_per2]+'%').alphabetically)
     # else
-    @pagy, @plants = pagy(Plant.filter(params.slice(:category, :esposizione, :fioritura)).alphabetically)
+    @pagy, @plants = pagy(Plant.filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
     # end
 
     @line_item = @cart.line_items.new
