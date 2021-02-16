@@ -5,23 +5,23 @@ class PlantsController < ApplicationController
   include Pagy::Backend
 
   def index
-    if params[:search] && params[:search].present?
-      @pagy, @plants = pagy(Plant.search_plants(params[:search]).alphabetically)
-    elsif params[:category]
-      @pagy, @plants = pagy(Plant.where("category ILIKE :category", category: '%'+params[:category]+'%').alphabetically)
-    elsif params[:esposizione]
-      @pagy, @plants = pagy(Plant.where("esposizione ILIKE :esposizione", esposizione: params[:esposizione]+'%').alphabetically)
-    elsif params[:fioritura]
-      @pagy, @plants = pagy(Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%').alphabetically)
-    elsif params[:altezza]
-      @pagy, @plants = pagy(Plant.where("altezza ILIKE :altezza", altezza: '%'+params[:altezza]+'%').alphabetically)
-    elsif params[:terreno]
-      @pagy, @plants = pagy(Plant.where("terreno ILIKE :terreno", terreno: '%'+params[:terreno]+'%').alphabetically)
-    elsif params[:utile_per]
-      @pagy, @plants = pagy(Plant.where("utile_per ILIKE :utile_per OR utile_per ILIKE :utile_per2", utile_per: '%'+params[:utile_per]+'%', utile_per2: '%'+params[:utile_per2]+'%').alphabetically)
-    else
-      @pagy, @plants = pagy(Plant.all.alphabetically)
-    end
+    # if params[:search] && params[:search].present?
+    #   @pagy, @plants = pagy(Plant.search_plants(params[:search]).alphabetically)
+    # elsif params[:category]
+    #   @pagy, @plants = pagy(Plant.where("category ILIKE :category", category: '%'+params[:category]+'%').alphabetically)
+    # elsif params[:esposizione]
+    #   @pagy, @plants = pagy(Plant.where("esposizione ILIKE :esposizione", esposizione: params[:esposizione]+'%').alphabetically)
+    # elsif params[:fioritura]
+    #   @pagy, @plants = pagy(Plant.where("fioritura ILIKE :fioritura", fioritura: '%'+params[:fioritura]+'%').alphabetically)
+    # elsif params[:altezza]
+    #   @pagy, @plants = pagy(Plant.where("altezza ILIKE :altezza", altezza: '%'+params[:altezza]+'%').alphabetically)
+    # elsif params[:terreno]
+    #   @pagy, @plants = pagy(Plant.where("terreno ILIKE :terreno", terreno: '%'+params[:terreno]+'%').alphabetically)
+    # elsif params[:utile_per]
+    #   @pagy, @plants = pagy(Plant.where("utile_per ILIKE :utile_per OR utile_per ILIKE :utile_per2", utile_per: '%'+params[:utile_per]+'%', utile_per2: '%'+params[:utile_per2]+'%').alphabetically)
+    # else
+    @pagy, @plants = pagy(Plant.filter(params.slice(:category, :esposizione, :fioritura)).alphabetically)
+    # end
 
     @line_item = @cart.line_items.new
   end

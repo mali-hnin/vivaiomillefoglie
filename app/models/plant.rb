@@ -4,10 +4,16 @@ class Plant < ApplicationRecord
   scope :alphabetically, -> { order('name ASC') }
   scope :recently_created, -> { order("created_at DESC") }
   scope :recently_updated, -> { order("updated_at DESC") }
+  scope :filter_by_category, -> (category) { where("category ILIKE ?", category)}
+  scope :filter_by_esposizione, -> (esposizione) { where("esposizione ILIKE ?", esposizione)}
+  scope :filter_by_fioritura, -> (fioritura) { where("fioritura ILIKE ?", fioritura)}
+
 
   has_many :line_items
   include PgSearch
   pg_search_scope :search_plants, against: [:name, :description, :category, :utile_per], using: { tsearch: { any_word: true } }
+
+  include Filterable
 
   private
 
