@@ -6,11 +6,9 @@
     <p><%= @pagy.count %> risultati</p>
     <div class="row">
       <% @plants.each do |plant| %>
-        <% if plant.nascondi? == false %>
-          <div class="col-xs-6 col-md-4">
-            <%= render "plants/card", plant: plant %>
-          </div>
-        <% end %>
+        <div class="col-xs-6 col-md-4">
+          <%= render "plants/card", plant: plant %>
+        </div>
       <% end %>
     </div>
     <div class="navigation-box">

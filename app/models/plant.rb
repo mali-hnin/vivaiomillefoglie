@@ -37,10 +37,15 @@ end
 
 def self.options_for_category
   plants = Plant.arel_table
-  order(plants[:category].lower).group_by{|e| e.category}.map(&:first)
+  order(plants[:category].lower).group_by{|e| e.category}.map(&:first).map(&:titleize)
 end
 
 def self.options_for_esposizione
   plants = Plant.arel_table
-  order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first)
+  order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first).map(&:titleize)
+end
+
+def self.options_for_fioritura
+  plants = Plant.arel_table
+  order(plants[:fioritura].lower).group_by{|e| e.fioritura}.map(&:first).map(&:titleize)
 end

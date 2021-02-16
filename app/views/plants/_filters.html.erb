@@ -1,0 +1,8 @@
+<!-- Filters -->
+<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' }, remote: true do |f| %>
+  Categoria <%= f.select( :with_category, @filterrific.select_options[:with_category] ) %>
+  Esposizione <%= f.select( :with_esposizione, @filterrific.select_options[:with_esposizione] ) %>
+  <%= f.submit 'Filtra' %>
+  <%= link_to('Reset filters', reset_filterrific_ur, ) %>
+<% end %>
+<!-- End of Filters -->
