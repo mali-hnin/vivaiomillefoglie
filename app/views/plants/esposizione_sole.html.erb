@@ -1,0 +1,29 @@
+<div class="bg">
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
+  <div class="white-bg">
+    <div class="catalogo-content">
+      <h1>Esposizione: <%= @esposizione.titleize %></h1>
+      <p><%= @pagy.count %> risultati</p>
+      <!-- Filters -->
+      <%= form_with(url: esposizione_sole_plants_path, method: :get, local: true) do |f| %>
+        Categoria <%= f.select :category, Plant.options_for_category  %>
+        Fioritura <%= f.select :fioritura, [ "Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %>
+        <%= f.submit 'Filtra' %>
+        <%= link_to('Reset filters', esposizione_sole_plants_path ) %>
+      <% end %>
+      <!-- End of Filters -->
+      <div class="row">
+        <% @plants.each do |plant| %>
+          <div class="col-xs-6 col-md-4">
+            <%= render "plants/card", plant: plant %>
+          </div>
+        <% end %>
+      </div>
+      <div class="navigation-box">
+        <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+        <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+      </div>
+    </div>
+  </div>
+</div>

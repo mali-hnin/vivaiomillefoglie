@@ -6,6 +6,12 @@ Rails.application.routes.draw do
     collection do    # collection => no restaurant id in URL
       get 'by_created', to: "plants#by_created"
       get 'by_updated', to: "plants#by_updated"
+      get 'erbacee_perenni', to: "plants#erbacee_perenni"
+      get 'erbacee_annuali', to: "plants#erbacee_annuali"
+      get 'graminacee', to: "plants#graminacee"
+      get 'categoria_altro', to: "plants#categoria_altro"
+      get 'esposizione_sole', to: "plants#esposizione_sole"
+      get 'esposizione_ombra', to: "plants#esposizione_ombra"
       get 'export', to: "plants#export"
     end
   end

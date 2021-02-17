@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :erbacee_perenni, :erbacee_annuali, :graminacee, :categoria_altro, :esposizione_sole, :esposizione_ombra]
 
   include Pagy::Backend
 
@@ -23,7 +23,50 @@ class PlantsController < ApplicationController
     # else
     @pagy, @plants = pagy(Plant.filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
     # end
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @line_item = @cart.line_items.new
+  end
 
+  def erbacee_perenni
+    @category = "erbacee perenni"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @line_item = @cart.line_items.new
+  end
+
+  def erbacee_annuali
+    @category = "erbacee annuali"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
+    @line_item = @cart.line_items.new
+  end
+
+  def graminacee
+    @category = "graminacee"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
+    @line_item = @cart.line_items.new
+  end
+
+  def categoria_altro
+    @category = "altre categorie"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
+    @line_item = @cart.line_items.new
+  end
+
+  def esposizione_sole
+    @esposizione = "sole"
+    @pagy, @plants = pagy(Plant.filter_by_esposizione(@esposizione).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
+    @line_item = @cart.line_items.new
+  end
+
+  def esposizione_ombra
+    @esposizione = "ombra"
+    @pagy, @plants = pagy(Plant.filter_by_esposizione(@esposizione).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
     @line_item = @cart.line_items.new
   end
 

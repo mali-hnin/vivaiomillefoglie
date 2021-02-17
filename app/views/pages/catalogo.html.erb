@@ -24,18 +24,18 @@
                 Tipo di piante
               </div>
               <div class="categoria-content">
-                <%= link_to "Erbacee perenni", plants_path(category: "erbacee perenni") %>
-                <%= link_to "Erbacee annuali", plants_path(category: "erbacee annuali") %>
-                <%= link_to "Graminacee", plants_path(category: "graminacee") %>
-                <%= link_to "Altro", plants_path(category: "altro") %></div>
+                <%= link_to "Erbacee perenni", erbacee_perenni_plants_path %>
+                <%= link_to "Erbacee annuali", erbacee_annuali_plants_path(category: "erbacee annuali") %>
+                <%= link_to "Graminacee", graminacee_plants_path(category: "graminacee") %>
+                <%= link_to "Altro", categoria_altro_plants_path(category: "altro") %></div>
             </div>
             <div class="col-xs-12 col-md-6 col-lg-3">
               <div class="categoria-header">
                 Esposizione
               </div>
               <div class="categoria-content">
-                <%= link_to "Sole", plants_path(esposizione: "sole") %>
-                <%= link_to "Ombra", plants_path(esposizione: "ombra") %>
+                <%= link_to "Sole", esposizione_sole_plants_path(esposizione: "sole") %>
+                <%= link_to "Ombra", esposizione_ombra_plants_path(esposizione: "ombra") %>
               </div>
             </div>
             <div class="col-xs-12 col-md-6 col-lg-3">
@@ -46,7 +46,7 @@
                 <div id="categoria-accordion" data-children=".item">
                   <div class="item spacing-5">
                     <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
-                      Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
+                      Stagione della fioritura <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                     <div id="categoria-accordion2" class="collapse" role="tabpanel">
                       <ul class="mb-3 accordion-menu">

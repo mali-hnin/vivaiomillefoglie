@@ -3,6 +3,11 @@
     <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
   <% end %>
   <div class="catalogo-content">
+    <% if params[:category].present? %>
+      <%= @category.titleize %>
+    <% elsif params[:esposizione].present? %>
+      <%= @esposizione.titleize %>
+    <% end %>
     <p><%= @pagy.count %> risultati</p>
     <%= render 'filters' %>
     <div class="row">

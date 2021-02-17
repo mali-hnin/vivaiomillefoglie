@@ -2,8 +2,8 @@
 <%= form_with(url: plants_path, method: :get, local: true) do |f| %>
   Categoria <%= f.select :category, Plant.options_for_category %>
   Esposizione <%= f.select :esposizione, Plant.options_for_esposizione  %>
-  Fioritura <%= f.select :fioritura, Plant.options_for_fioritura %>
+  Fioritura <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %>
   <%= f.submit 'Filtra' %>
-  <%= link_to('Reset filters',  ) %>
+  <%= link_to('Reset filters', plants_path ) %>
 <% end %>
 <!-- End of Filters -->
