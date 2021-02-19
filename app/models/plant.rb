@@ -31,9 +31,9 @@ class Plant < ApplicationRecord
     order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first).map(&:titleize)
   end
 
-  def self.options_for_fioritura
+  def self.options_for_funzione
     plants = Plant.arel_table
-    order(plants[:fioritura].lower).group_by{|e| e.fioritura}.map(&:first).map(&:titleize)
+    order(plants[:utile_per].lower).group_by{|e| e.utile_per}.map(&:first).map(&:titleize)
   end
 
   private
