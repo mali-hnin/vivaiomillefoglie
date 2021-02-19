@@ -4,7 +4,7 @@
     <div class="catalogo-content">
       <h1><%= @category.titleize %></h1>
       <!-- Filters -->
-      <%= form_with(url: erbacee_annuali_plants_path, id: "filter-form", method: :get, local: false) do |f| %>
+      <%= form_with(url: erbacee_annuali_plants_path, id: "filter-form", method: :get, remote: true) do |f| %>
         Esposizione <%= f.select :esposizione, Plant.options_for_esposizione  %>
         Fioritura <%= f.select :fioritura, [ "Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %>
         <%= f.submit 'Filtra' %>

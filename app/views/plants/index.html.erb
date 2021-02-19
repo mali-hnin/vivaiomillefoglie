@@ -5,9 +5,10 @@
       <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
     <% end %>
     <div class="catalogo-content">
-      <p><%= @pagy.count %> risultati</p>
-      <%= render 'filters' %>
-      <%= render 'catalogo_clienti' %>
+      <%= render 'filters_form' %>
+      <div class="filter-results">
+        <%= render 'catalogo_clienti' %>
+      </div>
     </div>
   </div>
 </div>

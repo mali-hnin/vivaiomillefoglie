@@ -54,7 +54,7 @@ class PlantsController < ApplicationController
 
   def categoria_altro
     @category = "altre categorie"
-    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.altre_categorie.filter(params.slice(:category, :esposizione, :fioritura)).is_visible.alphabetically)
     @line_item = @cart.line_items.new
   end
 

@@ -6,8 +6,11 @@ class Plant < ApplicationRecord
   scope :recently_updated, -> { order("updated_at DESC") }
   scope :is_visible, -> { where(nascondi: false) }
   scope :filter_by_category, -> (category) { where("category ILIKE ?", '%'+ category +'%')}
+  scope :altre_categorie, -> { where.not("category ILIKE ?", "erbacee perenni").where.not("category ILIKE ?", "erbacee annuali").where.not("category ILIKE ?", "graminacee")}
   scope :filter_by_esposizione, -> (esposizione) { where("esposizione ILIKE ?", esposizione)}
   scope :filter_by_fioritura, -> (fioritura) { where("fioritura ILIKE ?", fioritura)}
+  scope :filter_by_altezza, -> (altezza) { where("altezza ILIKE ?", altezza)}
+  scope :filter_by_funzione, -> (funzione) { where("funzione ILIKE ?", funzione)}
 
 
   has_many :line_items
