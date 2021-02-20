@@ -35,6 +35,8 @@ class Plant < ApplicationRecord
   def self.options_for_funzione
     plants = Plant.arel_table
     functions = Plant.order(plants[:utile_per].lower).group_by{|e| e.utile_per}.map(&:first)
+    # bc utile_per can often be empty, this if clause returns an empty string if none of the plants
+    # in the page have an utile_per, otherwise it raises an error for titleize on nil class
     if functions[1].nil?
       return functions[0]
     else
