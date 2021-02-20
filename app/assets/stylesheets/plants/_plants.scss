@@ -7,3 +7,40 @@
   align-items: center;
   flex-direction: column;
 }
+
+.catalogo-filters-grid {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto auto;
+
+}
+
+.catalogo-filters-content {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  margin: 5px;
+  a {
+    margin: 5px;
+  }
+  label {
+    margin: 5px;
+    font-weight: normal;
+  }
+}
+
+@media only screen and (max-width: 1285px) {
+  .catalogo-filters-grid {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .catalogo-filters-grid {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .catalogo-filters-content {
+    display: grid;
+    grid-template-columns: 110px 200px;
+  }
+}
