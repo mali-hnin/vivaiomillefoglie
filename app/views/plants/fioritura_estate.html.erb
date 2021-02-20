@@ -1,0 +1,24 @@
+<div class="bg">
+  <%= render 'shared/navbar' %>
+  <div class="white-bg">
+    <%= render 'shared/catalogo_flash' %>
+    <div class="catalogo-content">
+      <h1>Fioritura in <%= @fioritura.titleize %></h1>
+      <!-- Filters -->
+      <%= form_with(url: fioritura_estate_plants_path, method: :get, remote: true) do |f| %>
+        <div class="catalogo-filters-grid">
+          <div class="catalogo-filters-content"><%= f.label :category, "Categoria" %> <%= f.select :category, Plant.options_for_category, include_blank: true  %></div>
+          <div class="catalogo-filters-content"><%= f.label :esposizione, "Esposizione" %> <%= f.select :esposizione, Plant.options_for_esposizione  %></div>
+          <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione  %></div>
+          <div class="catalogo-filters-content"><%= f.submit 'Filtra' %>
+            <%= link_to('Resetta filtri', fioritura_estate_plants_path ) %></div>
+        </div>
+      <% end %>
+      <!-- End of Filters -->
+      <div class="filter-results">
+        <%= render 'catalogo_clienti' %>
+      </div>
+    </div>
+  </div>
+</div>

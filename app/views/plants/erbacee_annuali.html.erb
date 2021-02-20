@@ -5,13 +5,15 @@
     <div class="catalogo-content">
       <h1><%= @category.titleize %></h1>
       <!-- Filters -->
-      <%= form_with(url: erbacee_annuali_plants_path, id: "filter-form", method: :get, remote: true) do |f| %>
-        Esposizione <%= f.select :esposizione, Plant.options_for_esposizione  %>
-        Fioritura <%= f.select :fioritura, [ "Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %>
-        Altezza <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %>
-        Funzioni <%= f.select :funzione, Plant.options_for_funzione  %>
-        <%= f.submit 'Filtra' %>
-        <%= link_to('Reset filters', erbacee_annuali_plants_path ) %>
+      <%= form_with(url: erbacee_annuali_plants_path, method: :get, remote: true) do |f| %>
+        <div class="catalogo-filters-grid">
+          <div class="catalogo-filters-content"><%= f.label :esposizione, "Esposizione" %> <%= f.select :esposizione, Plant.options_for_esposizione  %></div>
+          <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione  %></div>
+          <div class="catalogo-filters-content"><%= f.submit 'Filtra' %>
+            <%= link_to('Resetta filtri', erbacee_annuali_plants_path ) %></div>
+        </div>
       <% end %>
       <!-- End of Filters -->
       <div class="filter-results">

@@ -1,28 +1,23 @@
 <div class="bg">
   <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
   <div class="white-bg">
+    <%= render 'shared/catalogo_flash' %>
     <div class="catalogo-content">
-      <h1>Esposizione: <%= @esposizione.titleize %></h1>
-      <p><%= @pagy.count %> risultati</p>
+      <h1>Piante da <%= @esposizione.titleize %></h1>
       <!-- Filters -->
-      <%= form_with(url: esposizione_ombra_plants_path, method: :get, local: true) do |f| %>
-        Categoria <%= f.select :category, Plant.options_for_category  %>
-        Fioritura <%= f.select :fioritura, [ "Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %>
-        <%= f.submit 'Filtra' %>
-        <%= link_to('Reset filters', esposizione_ombra_plants_path ) %>
+      <%= form_with(url: esposizione_ombra_plants_path, method: :get, remote: true) do |f| %>
+        <div class="catalogo-filters-grid">
+          <div class="catalogo-filters-content"><%= f.label :category, "Categoria" %> <%= f.select :category, Plant.options_for_category, include_blank: true  %></div>
+          <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione  %></div>
+          <div class="catalogo-filters-content"><%= f.submit 'Filtra' %>
+            <%= link_to('Resetta filtri', esposizione_ombra_plants_path ) %></div>
+        </div>
       <% end %>
       <!-- End of Filters -->
-      <div class="row">
-        <% @plants.each do |plant| %>
-          <div class="col-xs-6 col-md-4">
-            <%= render "plants/card", plant: plant %>
-          </div>
-        <% end %>
-      </div>
-      <div class="navigation-box">
-        <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
-        <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+      <div class="filter-results">
+        <%= render 'catalogo_clienti' %>
       </div>
     </div>
   </div>
