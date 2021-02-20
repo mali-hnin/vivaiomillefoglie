@@ -1,7 +1,7 @@
 <!-- Filters -->
 <%= form_with(url: plants_path, method: :get, remote: true) do |f| %>
   <div class="catalogo-filters-grid">
-    <div class="catalogo-filters-content"><%= f.label :category, "Categoria" %> <%= f.select :category, Plant.options_for_category %></div>
+    <div class="catalogo-filters-content"><%= f.label :category, "Categoria" %> <%= f.select :category, Plant.options_for_category, include_blank: true  %></div>
     <div class="catalogo-filters-content"><%= f.label :esposizione, "Esposizione" %> <%= f.select :esposizione, Plant.options_for_esposizione  %></div>
     <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %></div>
     <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
