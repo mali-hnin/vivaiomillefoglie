@@ -13,6 +13,7 @@ class PlantsController < ApplicationController
   def index
     if params[:search] && params[:search].present?
       @pagy, @plants = pagy(Plant.search_plants(params[:search]).alphabetically)
+    else
       @pagy, @plants = pagy(Plant.filter(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     end
     respond_to do |format|

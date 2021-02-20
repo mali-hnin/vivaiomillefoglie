@@ -1,12 +1,17 @@
 <div class="bg">
   <%= render 'shared/navbar' %>
   <div class="white-bg">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
+    <% end %>
     <div class="catalogo-content">
       <h1><%= @category.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: erbacee_annuali_plants_path, id: "filter-form", method: :get, remote: true) do |f| %>
         Esposizione <%= f.select :esposizione, Plant.options_for_esposizione  %>
         Fioritura <%= f.select :fioritura, [ "Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %>
+        Altezza <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %>
+        Funzioni <%= f.select :funzione, Plant.options_for_funzione  %>
         <%= f.submit 'Filtra' %>
         <%= link_to('Reset filters', erbacee_annuali_plants_path ) %>
       <% end %>

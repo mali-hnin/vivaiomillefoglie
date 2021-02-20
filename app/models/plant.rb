@@ -26,6 +26,7 @@ class Plant < ApplicationRecord
     plants = Plant.arel_table
     order(plants[:category].lower).group_by{|e| e.category}.map(&:first).map(&:titleize)
   end
+
   def self.options_for_esposizione
     plants = Plant.arel_table
     order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first).map(&:titleize)
@@ -33,7 +34,12 @@ class Plant < ApplicationRecord
 
   def self.options_for_funzione
     plants = Plant.arel_table
-    order(plants[:utile_per].lower).group_by{|e| e.utile_per}.map(&:first).map(&:titleize)
+    functions = Plant.order(plants[:utile_per].lower).group_by{|e| e.utile_per}.map(&:first)
+    if functions[1].nil?
+      return functions[0]
+    else
+      functions.map(&:titleize)
+    end
   end
 
   private
