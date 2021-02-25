@@ -15,7 +15,7 @@ class Plant < ApplicationRecord
 
 
   has_many :line_items
-  include PgSearch
+  include PgSearch::Model
   pg_search_scope :search_plants, against: [:name, :description, :category, :utile_per], using: { tsearch: { any_word: true } }
 
   include Filterable
@@ -24,17 +24,17 @@ class Plant < ApplicationRecord
 
   def self.options_for_category
     plants = Plant.arel_table
-    order(plants[:category].lower).group_by{|e| e.category}.map(&:first).map(&:titleize)
+    order(plants[:category].lower).group_by{|e| e.category.downcase.strip}.map(&:first).map(&:titleize)
   end
 
   def self.options_for_esposizione
     plants = Plant.arel_table
-    order(plants[:esposizione].lower).group_by{|e| e.esposizione}.map(&:first).map(&:titleize)
+    order(plants[:esposizione].lower).group_by{|e| e.esposizione.downcase.strip}.map(&:first).map(&:titleize)
   end
 
   def self.options_for_funzione
     plants = Plant.arel_table
-    functions = Plant.order(plants[:utile_per].lower).group_by{|e| e.utile_per}.map(&:first)
+    functions = Plant.order(plants[:utile_per].lower).group_by{|e| e.utile_per.downcase.strip}.map(&:first)
     # bc utile_per can often be empty, this if clause returns an empty string if none of the plants
     # in the page have an utile_per, otherwise it raises an error for titleize on nil class
     if functions[1].nil?
