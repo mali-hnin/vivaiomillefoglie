@@ -10,7 +10,7 @@
           <div class="catalogo-filters-content"><%= f.label :esposizione, "Esposizione" %> <%= f.select :esposizione, Plant.options_for_esposizione  %></div>
           <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %></div>
           <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
-          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione  %></div>
+          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione, include_blank: true %></div>
           <div class="catalogo-filters-content"><%= f.submit 'Filtra' %>
             <%= link_to('Resetta filtri', erbacee_perenni_plants_path ) %></div>
         </div>
