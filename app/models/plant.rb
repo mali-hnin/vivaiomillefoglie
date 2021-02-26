@@ -31,6 +31,14 @@ class Plant < ApplicationRecord
     ]
   end
 
+  def self.options_for_fioritura
+    ["Primavera", "Estate", "Autunno", "Inverno"]
+  end
+
+  def self.options_for_altezza
+    [ "Alta", "Media", "Bassa" ]
+  end
+
   def self.options_for_esposizione
     [
       ["Sole"],

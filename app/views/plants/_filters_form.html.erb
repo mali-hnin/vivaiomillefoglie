@@ -3,8 +3,8 @@
   <div class="catalogo-filters-grid">
     <div class="catalogo-filters-content"><%= f.label :category, "Categoria" %> <%= f.select :category, Plant.options_for_category, include_blank: true  %></div>
     <div class="catalogo-filters-content"><%= f.label :esposizione, "Esposizione" %> <%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true  %></div>
-    <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %></div>
-    <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
+    <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true %></div>
+    <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, Plant.options_for_altezza, include_blank: true %></div>
     <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione, include_blank: true  %></div>
     <div class="catalogo-filters-content"><%= f.submit 'Filtra' %>
       <%= link_to('Resetta filtri', plants_path ) %></div>

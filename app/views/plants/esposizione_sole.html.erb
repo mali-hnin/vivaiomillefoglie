@@ -3,14 +3,15 @@
   <div class="white-bg">
     <%= render 'shared/catalogo_flash' %>
     <div class="catalogo-content">
+      <p><%= link_to raw("&larr; Torna all'indice del catalogo"), catalogo_path, class: "orange-text" %></p>
       <h1>Piante da <%= @esposizione.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: esposizione_sole_plants_path, method: :get, remote: true) do |f| %>
         <div class="catalogo-filters-grid">
           <div class="catalogo-filters-content"><%= f.label :category, "Categoria" %> <%= f.select :category, Plant.options_for_category, include_blank: true  %></div>
-          <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, ["Primavera", "Estate", "Autunno", "Inverno"], include_blank: true %></div>
-          <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, [ "Alta", "Media", "Bassa" ], include_blank: true %></div>
-          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione  %></div>
+          <div class="catalogo-filters-content"><%= f.label :fioritura, "Fioritura" %> <%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :altezza, "Altezza" %> <%= f.select :altezza, Plant.options_for_altezza, include_blank: true %></div>
+          <div class="catalogo-filters-content"><%= f.label :funzione, "Funzione" %> <%= f.select :funzione, Plant.options_for_funzione, include_blank: true  %></div>
           <div class="catalogo-filters-content"><%= f.submit 'Filtra' %>
             <%= link_to('Resetta filtri', esposizione_sole_plants_path ) %></div>
         </div>

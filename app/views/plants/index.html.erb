@@ -3,6 +3,7 @@
   <div class="white-bg">
     <%= render 'shared/catalogo_flash' %>
     <div class="catalogo-content">
+      <p><%= link_to raw("&larr; Torna all'indice del catalogo"), catalogo_path, class: "orange-text" %></p>
       <%= render 'filters_form' %>
       <div class="filter-results">
         <%= render 'catalogo_clienti' %>
