@@ -18,6 +18,9 @@
   display: inline-grid;
   grid-template-columns: auto auto;
   margin: 5px;
+  select {
+    width: 200px;
+  }
   a {
     margin: 5px;
   }
