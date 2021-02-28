@@ -3,7 +3,12 @@
   <div class="white-bg">
     <%= render 'shared/catalogo_flash' %>
     <div class="catalogo-content">
-      <p><%= link_to raw("&larr; Torna all'indice del catalogo"), catalogo_path, class: "orange-text" %></p>
+      <nav aria-label="breadcrumb" class="breadcrumbs">
+        <ul>
+          <li><%= link_to "Catalogo", catalogo_path, class: "orange-text" %></li>
+          <li class="bc-active" aria-current="page">Erbacee Perenni</li>
+        </ul>
+      </nav>
       <h1><%= @category.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: erbacee_perenni_plants_path, method: :get, remote: true) do |f| %>

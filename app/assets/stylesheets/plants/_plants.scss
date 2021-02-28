@@ -27,6 +27,29 @@
   }
 }
 
+.breadcrumbs {
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: baseline;
+  }
+  li {
+    font-family: 'Muli Light', sans-serif;
+  }
+}
+
+.breadcrumbs li::before {
+  content: " » ";
+}
+
+.breadcrumbs li:first-child::before {
+    content: "";
+}
+
+.bc-active {
+  padding-left: 5px;
+}
+
 @media only screen and (max-width: 1285px) {
   .catalogo-filters-grid {
     grid-template-columns: auto auto auto;
