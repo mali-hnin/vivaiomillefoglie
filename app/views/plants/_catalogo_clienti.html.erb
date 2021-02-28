@@ -8,5 +8,5 @@
 </div>
 <div class="navigation-box">
   <%= render 'shared/pagination', pagy: @pagy %>
-  <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+  <%= render 'shared/back_button' %>
 </div>
