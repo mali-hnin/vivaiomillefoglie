@@ -25,7 +25,7 @@ class Plant < ApplicationRecord
   def self.options_for_category
     [
       ["Erbacee perenni"],
-      ["Erbacee Annuali"],
+      ["Erbacee annuali"],
       ["Graminacee"],
       ["Altro"]
     ]
