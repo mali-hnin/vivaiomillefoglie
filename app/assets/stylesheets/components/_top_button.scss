@@ -20,3 +20,12 @@
 #topBtn:hover {
   background-color: $dark-green; /* Add a dark-grey background on hover */
 }
+
+@media only screen and (max-width: 767px) {
+  #topBtn {
+    // left: 50%;
+    // transform: translate(-50%);
+    right: 20px;
+    bottom: 10px;
+  }
+}
