@@ -9,7 +9,7 @@
           <li class="bc-active" aria-current="page">Graminacee</li>
         </ul>
       </nav>
-      <h1><%= @category.titleize %></h1>
+      <h1 class="catalogo-mobile"><%= @category.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: graminacee_plants_path, method: :get, remote: true) do |f| %>
         <div class="catalogo-filters-grid">

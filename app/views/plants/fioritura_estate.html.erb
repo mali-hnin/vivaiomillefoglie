@@ -9,7 +9,7 @@
           <li class="bc-active" aria-current="page">Fioritura - Estate</li>
         </ul>
       </nav>
-      <h1>Fioritura in <%= @fioritura.titleize %></h1>
+      <h1 class="catalogo-mobile">Fioritura in <%= @fioritura.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: fioritura_estate_plants_path, method: :get, remote: true) do |f| %>
         <div class="catalogo-filters-grid">

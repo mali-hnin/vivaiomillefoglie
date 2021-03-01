@@ -9,7 +9,7 @@
           <li class="bc-active" aria-current="page">Ambiente - Coprisuolo</li>
         </ul>
       </nav>
-      <h1>Piante <%= @funzione.titleize %></h1>
+      <h1 class="catalogo-mobile">Piante <%= @funzione.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: coprisuolo_plants_path, method: :get, remote: true) do |f| %>
         <div class="catalogo-filters-grid">

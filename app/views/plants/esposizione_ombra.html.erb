@@ -9,7 +9,7 @@
           <li class="bc-active" aria-current="page">Esposizione - Ombra</li>
         </ul>
       </nav>
-      <h1>Piante da <%= @esposizione.titleize %></h1>
+      <h1 class="catalogo-mobile">Piante da <%= @esposizione.titleize %></h1>
       <!-- Filters -->
       <%= form_with(url: esposizione_ombra_plants_path, method: :get, remote: true) do |f| %>
         <div class="catalogo-filters-grid">

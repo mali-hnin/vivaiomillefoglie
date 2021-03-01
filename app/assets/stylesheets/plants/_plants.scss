@@ -24,10 +24,7 @@
   a {
     margin: 5px;
   }
-  label {
-    margin: 5px;
-    font-weight: normal;
-  }
+
 }
 
 .breadcrumbs {
@@ -68,5 +65,10 @@
   .catalogo-filters-content {
     display: grid;
     grid-template-columns: 110px 200px;
+  }
+
+  .catalogo-mobile {
+      text-align: center;
+      font-size: 28pt;
   }
 }
