@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: row;
 } */
+html, body {
+  overflow-x: hidden;
+}
 
 body {
   font-family: 'Muli', sans-serif;
-  overflow-x: hidden;
   a:hover{
     color: $orange;
   }

@@ -24,18 +24,18 @@
                 Tipo di piante
               </div>
               <div class="categoria-content">
-                <%= link_to "Erbacee perenni", plants_path(category: "erbacee perenni") %>
-                <%= link_to "Erbacee annuali", plants_path(category: "erbacee annuali") %>
-                <%= link_to "Graminacee", plants_path(category: "graminacee") %>
-                <%= link_to "Altro", plants_path(category: "altro") %></div>
+                <%= link_to "Erbacee perenni", erbacee_perenni_plants_path %>
+                <%= link_to "Erbacee annuali", erbacee_annuali_plants_path %>
+                <%= link_to "Graminacee", graminacee_plants_path %>
+                <%= link_to "Altro", categoria_altro_plants_path %></div>
             </div>
             <div class="col-xs-12 col-md-6 col-lg-3">
               <div class="categoria-header">
                 Esposizione
               </div>
               <div class="categoria-content">
-                <%= link_to "Sole", plants_path(esposizione: "sole") %>
-                <%= link_to "Ombra", plants_path(esposizione: "ombra") %>
+                <%= link_to "Sole", esposizione_sole_plants_path %>
+                <%= link_to "Ombra", esposizione_ombra_plants_path %>
               </div>
             </div>
             <div class="col-xs-12 col-md-6 col-lg-3">
@@ -46,14 +46,14 @@
                 <div id="categoria-accordion" data-children=".item">
                   <div class="item spacing-5">
                     <a data-toggle="collapse" data-parent="#categoria-accordion" href="#categoria-accordion2" role="button" aria-expanded="false" aria-controls="categoria-accordion2">
-                      Stagione della fioritura<i class="fa fa-angle-down" aria-hidden="true"></i>
+                      Stagione della fioritura <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>
                     <div id="categoria-accordion2" class="collapse" role="tabpanel">
                       <ul class="mb-3 accordion-menu">
-                        <li><%= link_to "Primavera", plants_path(fioritura: "primavera"), class: "" %></li>
-                        <li class="white"><%= link_to "Estate", plants_path(fioritura: "estate"), class: "" %></li>
-                        <li><%= link_to "Autunno", plants_path(fioritura: "autunno"), class: "" %></li>
-                        <li class="white"><%= link_to "Inverno", plants_path(fioritura: "inverno"), class: "" %></li>
+                        <li><%= link_to "Primavera", fioritura_primavera_plants_path, class: "" %></li>
+                        <li class="white"><%= link_to "Estate", fioritura_estate_plants_path, class: "" %></li>
+                        <li><%= link_to "Autunno", fioritura_autunno_plants_path, class: "" %></li>
+                        <li class="white"><%= link_to "Inverno", fioritura_inverno_plants_path, class: "" %></li>
                       </ul>
                     </div>
                   </div>
@@ -63,15 +63,15 @@
                     </a>
                     <div id="categoria-accordion3" class="collapse" role="tabpanel">
                       <ul class="mb-3 accordion-menu">
-                        <li><%= link_to "Basse", plants_path(altezza: "bassa"), class: "" %></li>
-                        <li class="white"><%= link_to "Medie", plants_path(altezza: "media"), class: "" %></li>
-                        <li><%= link_to "Alte", plants_path(altezza: "alta"), class: "" %></li>
+                        <li><%= link_to "Basse", altezza_bassa_plants_path, class: "" %></li>
+                        <li class="white"><%= link_to "Medie", altezza_media_plants_path, class: "" %></li>
+                        <li><%= link_to "Alte", altezza_alta_plants_path, class: "" %></li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <%= link_to "Fogliame ornamentale", plants_path(utile_per: "fogliame", utile_per2: "fogliame decorativo") %>
-                <%= link_to "Da taglio", plants_path(utile_per: "taglio", utile_per2: "x") %>
+                <%= link_to "Fogliame ornamentale", fogliame_ornamentale_plants_path %>
+                <%= link_to "Fiori da taglio", da_taglio_plants_path %>
               </div>
             </div>
             <div class="col-xs-12 col-md-6 col-lg-3">
@@ -79,11 +79,11 @@
                 Interesse per l'ambiente
               </div>
               <div class="categoria-content">
-                <%= link_to "Piante coprisuolo", plants_path(utile_per: "coprisuolo", utile_per2: "x") %>
-                <%= link_to "Piante azotofissatrici", plants_path(utile_per: "azotofissat", utile_per2: "x") %>
-                <%= link_to "Piante utili per insetti e uccelli", plants_path(utile_per: "insetti", utile_per2: "uccelli") %>
-                <%= link_to "Piante con poche esigenze di irrigazione", plants_path(utile_per: "secco", utile_per2: "x") %>
-                <%= link_to "Piante spontanee", plants_path(utile_per: "spontan", utile_per2: "x") %>
+                <%= link_to "Piante coprisuolo", coprisuolo_plants_path %>
+                <%= link_to "Piante azotofissatrici", azotofissatrici_plants_path %>
+                <%= link_to "Piante utili per insetti e uccelli", insetti_e_uccelli_plants_path %>
+                <%= link_to "Piante con poche esigenze di irrigazione", da_secco_plants_path %>
+                <%= link_to "Piante spontanee", spontanee_plants_path %>
               </div>
             </div>
           </div>
