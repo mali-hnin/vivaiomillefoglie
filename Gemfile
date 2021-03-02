@@ -13,12 +13,13 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem "puma", ">= 3.12.2"
-gem 'rails', '>=5.2.2'
+gem 'rails', "6.0.3.5"
 gem 'redis'
 # gem 'webpacker', '~> 3.0'
 gem 'coffee-rails'
 gem "actionview", ">= 5.2.2.1"
 gem "railties", ">= 5.2.2.1"
+
 
 
 gem "nokogiri", ">= 1.11.0.rc4"
