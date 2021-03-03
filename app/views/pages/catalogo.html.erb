@@ -4,22 +4,21 @@
   <div class="page-wrapper white-bg">
     <% if user_signed_in? && current_user.admin %>
       <!-- Admin Panel -->
-      <div class="container">
-        <%= render 'plants/admin_panel_main' %>
-      </div>
+      <%= render 'plants/admin_panel_main' %>
       <!-- End of Admin Panel -->
     <% end %>
     <div class="catalogo-content text-center">
       <div class="catalogo-banner">
         <h1 class="text-center">Catalogo</h1>
-        <h4><%= link_to "Vedi tutte le piante", plants_path, class: "orange-text" %></h4>
-        <br>
-        <%= render 'shared/search_bar' %>
+        <h3><%= link_to "Vedi tutte le piante", plants_path, class: "orange-text" %></h3>
+        <div style="margin: 30px 20px">
+          <%= render 'shared/search_bar' %>
+        </div>
       </div>
       <div class="content">
         <div class="row">
           <div class="categorie-row">
-            <div class="col-xs-12 col-md-12 col-lg-3">
+            <div class="col-xs-12 col-lg-3">
               <div class="categoria-header">
                 Tipo di piante
               </div>
@@ -29,7 +28,7 @@
                 <%= link_to "Graminacee", graminacee_plants_path %>
                 <%= link_to "Altro", categoria_altro_plants_path %></div>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="col-xs-12 col-lg-3">
               <div class="categoria-header">
                 Esposizione
               </div>
@@ -38,7 +37,7 @@
                 <%= link_to "Ombra", esposizione_ombra_plants_path %>
               </div>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="col-xs-12 col-lg-3">
               <div class="categoria-header">
                 Caratteristiche
               </div>
@@ -74,7 +73,7 @@
                 <%= link_to "Fiori da taglio", da_taglio_plants_path %>
               </div>
             </div>
-            <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="col-xs-12 col-lg-3">
               <div class="categoria-header">
                 Interesse per l'ambiente
               </div>
