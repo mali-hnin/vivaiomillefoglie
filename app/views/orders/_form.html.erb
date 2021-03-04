@@ -2,12 +2,12 @@
   <%= f.input :name, label: "Nome e cognome", autofocus: true %>
   <div class="row">
     <div class="col-xs-12 col-sm-7"><%= f.input :address, label: "Indirizzo" %></div>
-    <div class="col-xs-6 col-sm"><%= f.input :citta, label: "Città" %></div>
+    <div class="col-xs-6 col-sm"><%= f.input :citta, label: "Comune" %></div>
     <div class="col-xs-6 col-sm"><%= f.input :cap, label: "CAP" %></div>
   </div>
   <div class="row">
     <div class="col-sm-6"><%= f.input :cf, label: "Codice Fiscale", hint: 'Necessario per la ricevuta' %></div>
-    <div class="col-sm-6"><%= f.input :phone, label: "Telefono" %></div>
+    <div class="col-sm-6"><%= f.input :phone, label: "Telefono", as: :tel %></div>
   </div>
   <div class="row">
     <div class="col-sm-6"><%= f.input :email, label: "Email", as: :email%></div>
@@ -20,7 +20,7 @@
   <%= f.input :condizioni_di_vendita, label: "Dichiaro di avere letto e accettato le #{link_to 'Condizioni di Vendita', condizionivendita_path, target: :_blank, class: "orange-text"}.".html_safe %>
   <div class="row">
     <div class="col-sm">
-      <%= f.button :submit, "Invia", class: "btn btn-warning" %>
+      <%= f.button :submit, "Invia", class: "btn btn-purple" %>
       <%= f.button :button, "Ricomincia", type: "reset", class: "btn btn-outline-secondary" %>
     </div>
   </div>
