@@ -1,4 +1,4 @@
-#topBtn {
+#topBtn, #topBtn:focus {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
@@ -17,7 +17,7 @@
   box-shadow: 0px 8px 5px rgba(0,0,0,0.15);
 }
 
-#topBtn:hover {
+#topBtn:hover, #topBtn:active {
   background-color: $dark-green; /* Add a dark-grey background on hover */
 }
 

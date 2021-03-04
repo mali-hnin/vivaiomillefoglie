@@ -13,14 +13,14 @@
             <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-warning" %>
             <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
           </div>
-          <div class="spacing-5"><%= link_to "Torna al Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %></div>
+          <div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %></div>
         </div>
       <% end %>
       <!-- End of Admin Panel -->
       <div class="pianta-content mb-5">
         <% if user_signed_in? && current_user.admin%>
           <% if @plant.nascondi? %>
-            <h3>NASCOSTA</h3>
+            <h3><span class="highlight">NASCOSTA</span></h3>
           <% end %>
         <% end %>
         <div class="row">
