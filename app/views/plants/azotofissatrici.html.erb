@@ -1,0 +1,31 @@
+<div class="bg">
+  <%= render 'shared/navbar' %>
+  <div class="white-bg">
+    <%= render 'shared/catalogo_flash' %>
+    <div class="catalogo-content">
+      <nav aria-label="breadcrumb" class="breadcrumbs">
+        <ul>
+          <li><%= link_to "Catalogo", catalogo_path, class: "orange-text" %></li>
+          <li class="bc-active" aria-current="page">Ambiente - Azotofissatrici</li>
+        </ul>
+      </nav>
+      <h1 class="catalogo-mobile">Piante Azotofissatrici</h1>
+      <!-- Filters -->
+      <%= form_with(url: azotofissatrici_plants_path, method: :get, remote: true) do |f| %>
+        <div class="catalogo-filters-grid">
+          <div class="catalogo-filters-content"><%= f.select :category, Plant.options_for_category, include_blank: true, prompt: "Categoria"  %></div>
+          <div class="catalogo-filters-content"><%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true, prompt: "Esposizione"  %></div>
+          <div class="catalogo-filters-content"><%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true, prompt: "Fioritura" %></div>
+          <div class="catalogo-filters-content"><%= f.select :altezza, Plant.options_for_altezza, include_blank: true, prompt: "Altezza" %></div>
+          <div class="catalogo-filters-content"><%= f.select :funzione, Plant.options_for_funzione, include_blank: true, prompt: "Funzione"  %></div>
+          <div class="catalogo-filters-content"><%= f.submit 'Filtra', class: "btn btn-primary" %>
+            <%= link_to('Resetta filtri', azotofissatrici_plants_path ) %></div>
+        </div>
+      <% end %>
+      <!-- End of Filters -->
+      <div class="filter-results">
+        <%= render 'catalogo_clienti' %>
+      </div>
+    </div>
+  </div>
+</div>

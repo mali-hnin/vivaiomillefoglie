@@ -5,10 +5,7 @@
     <% if user_signed_in? && current_user.admin %>
       <div class="container">
         <!-- Admin Panel -->
-        <div class="admin-buttons">
-          <p class="uppercase-text">Pannello Amministratori</p>
-          <div><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success" %></div>
-        </div>
+        <%= render 'plants/admin_panel_main' %>
         <!-- End of Admin Panel -->
         <div class="catalogo-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>

@@ -25,35 +25,33 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Dropdown appearing on mobile only -->
-  <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg cart-sm">
-    <p><%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link bright-blue-text" do %>
-        <i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;</i><%= cart_count %>
-      <% end %></p>
+    <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link bright-blue-text" do %>
+      <i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;</i><%= cart_count %>
+    <% end %>
   </div>
+  <!-- Dropdown navigation appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown ">
-      <p class="dropdown-toggle" data-toggle="dropdown">MENU</p>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+    <div class="dropdown">
+      <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        MENU
+      </a>
+      <ul class="dropdown-menu navbar-wagon-dropdown-menu" aria-labelledby="dropdownMenuLink">
         <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Millefoglie Flowers Lab", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
+  <!-- End of dropdown -->
 </div>
-<!-- LOGIN RX NAVIGATION ITEM for when customer login system is set up -->
-<!-- <% else %>
-       <%= link_to "Log In", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link light-blue-text" %>
-    <% if cart_has_items %>
-      <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link light-blue-text" do %>
-        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-        <%= cart_count_over_one %>
-      <% end %>
-    <% end %>
-  -->

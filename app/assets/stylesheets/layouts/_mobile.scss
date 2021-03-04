@@ -1,8 +1,5 @@
 @media only screen and (max-width: 600px) {
 
-body {
-  overflow-x: hidden;
-}
   .left-side {
     width: 100%;
   }
@@ -33,6 +30,10 @@ body {
 
   .column-center {
     // max-height: 100px;
+  }
+
+  .content {
+    margin-top: 10px;
   }
 
 }

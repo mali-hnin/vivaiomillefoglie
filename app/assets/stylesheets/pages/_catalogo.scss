@@ -9,9 +9,7 @@
     margin: 5px 0px;
 
   }
-  a:hover {
-    color: black;
-  }
+
 }
 
 .catalogo-content {
@@ -21,15 +19,6 @@
   .white {
     background-color: #F1F0EA;
   }
-  li {
-    font-size: 75%;
-    color: black;
-    a {
-      font-size: large;
-      font-weight: bold;
-      color: #564399;
-    }
-  }
   th {
     a {
       color: #1338be;
@@ -38,18 +27,33 @@
 }
 
 .categorie-row{
-  /* background-color: rgba(255, 255, 255, 0.5); */
+  // background-color: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
   width: 100%;
+}
+
+.categoria-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 30px;
+  border-bottom: solid 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .categoria-content {
   display: flex;
   flex-direction: column;
+  padding: 0px 15px;
   a {
     margin: 5px 0px;
     color: black;
     line-height: 2;
+    font-size: 19px;
   }
 }
 
@@ -60,33 +64,17 @@
 .admin-buttons {
   display: flex;
   flex-direction: column;
-  margin: 15px;
-  padding: 5px 0px 30px 0px;
+  margin: 20px;
   text-align: center;
-  border: solid 5px #4c4c4c;
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 1px #4c4c4c;
+  // border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  // box-shadow: 15px 20px 5px rgba(0,0,0,0.1);
   background-color: #e5e5e5;
+  width: 800px;
+  padding: 20px;
   p {
     margin-bottom: 30px;
   }
-  /* background:
-      linear-gradient(to top, #4caf50, #4caf50 5px, transparent 5px),
-      linear-gradient(to right, #c1ef8c, #c1ef8c 5px, transparent 5px),
-      linear-gradient(to bottom, #8bc34a, #8bc34a 5px, transparent 5px),
-      linear-gradient(to left, #009688, #009688 5px, transparent 5px); */
-  /* background-origin: border-box; */
-  /* box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2); */
-}
-
-.categoria-header {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  border-bottom: solid 1px;
-  font-weight: bold;
-  color: black;
 }
 
 /* Dropdown menu */
@@ -129,3 +117,27 @@
   content: counter(serial-number);  /* Display the counter */
 }
 
+
+
+.highlight {
+  background-color: rgba(253, 95, 0, 0.5);
+  border-radius: 2px;
+  padding: 2px 3px;
+  a {
+    color: white;
+  }
+}
+
+a[class~="highlight"] {
+    color: white;
+}
+a[class~="highlight"]:hover {
+  color: white;
+  text-decoration: none;
+  background-color: rgba(253, 95, 0, 0.7);
+}
+a[class~="highlight"]:active {
+  color: white;
+  text-decoration: underline;
+  background-color: rgba(253, 95, 0, 0.7);
+}
