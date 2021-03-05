@@ -2,8 +2,9 @@
   <%= f.input :name, label: "Nome e cognome", autofocus: true %>
   <%= f.input :address, label: "Indirizzo" %>
   <div class="row">
-    <div class="col-xs-6 col-sm"><%= f.input :citta, label: "Comune" %></div>
-    <div class="col-xs-6 col-sm"><%= f.input :cap, label: "CAP" %></div>
+    <div class="col-xs-12 col-sm-6"><%= f.input :citta, label: "Comune" %></div>
+    <div class="col-xs-6 col-sm-3"><%= f.input :cap, label: "CAP" %></div>
+    <div class="col-xs-6 col-sm-3"><%= f.input :provincia, as: :string %></div>
   </div>
   <div class="row">
     <div class="col-sm-6"><%= f.input :cf, label: "Codice Fiscale", hint: 'Necessario per la ricevuta' %></div>

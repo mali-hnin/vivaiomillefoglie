@@ -6,33 +6,32 @@
     <p>La ringraziamo del suo ordine. Questo è un messaggio automatico. Riceverà al più presto la nostra conferma d'ordine con l'indicazione delle spese di spedizione dal nostro indirizzo principale: info@vivaiomillefoglie.it.</p>
     <br>
     <p>
-    <p style="color:#fd5f00 font-size:120%">Riepilogo Ordine</p>
+      <p style="color:#fd5f00 font-size:120%">Riepilogo Ordine</p>
     </p>
     <p><strong>Nome:</strong> <%= @order.name %></p>
     <p><strong>Email:</strong> <%= @order.email %></p>
     <p><strong>Telefono:</strong> <%= @order.phone %></p>
-    <p><strong>Indirizzo spedizione:</strong> <%= @order.address %>, <%= @order.cap %> <%= @order.citta %></p>
+    <p><strong>Indirizzo spedizione:</strong> <%= @order.address %>, <%= @order.cap %> <%= @order.citta %> (<%= @order.provincia %>)</p>
     <p><strong>Codice Fiscale</strong> (per la ricevuta): <%= @order.cf %></p>
     <p><strong>Metodo di pagamento:</strong> <%= @order.metodo_pagamento %></p>
     <p><strong>Periodo di spedizione:</strong> <%= @order.periodo_spedizione %></p>
     <p><strong>Commenti:</strong> <%= simple_format(@order.message) %></p>
     <p>
-    <br>
-    <br>
-    <strong>Ordine:</strong>
+      <br>
+      <br>
+      <strong>Ordine:</strong>
     </p>
     <ul>
       <% @order.cart.line_items.each do |lineitem| %>
         <li><%= lineitem.quantity  %>
-        <%= lineitem.plant.name  %>,
-        <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
-       <% end %>
+          <%= lineitem.plant.name  %>,
+          <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
+      <% end %>
     </ul>
     <p><strong>Totale (<u>escluse le spese di spedizione</u>):</strong> <%= humanized_money_with_symbol @order.cart.total_price %></p>
     <br>
     <br>
     <p>Cordiali saluti,</p>
     <p>Millefoglie Piante e Giardini</p>
-
   </body>
 </html>
