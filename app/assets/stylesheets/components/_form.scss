@@ -1,9 +1,14 @@
 label.collection_radio_buttons {
-  padding-left: 5px;
+  // padding-left: 5px;
 }
 
 label.form-check-label {
   font-size: smaller;
-  padding-left: 5px;
+  // padding-left: 5px;
   font-weight: lighter;
+}
+
+legend.col-form-label {
+  float: none;
+  font-weight: bold;
 }

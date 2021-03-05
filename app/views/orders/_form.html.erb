@@ -13,7 +13,7 @@
     <div class="col-sm-6"><%= f.input :email, label: "Email", as: :email%></div>
     <div class="col-sm-6"><%= f.input :email_confirmation, label: "Conferma email", as: :email%></div>
   </div>
-  <%= f.input :message, label: "Messaggio"%>
+  <%= f.input :message, label: "Note o messaggi"%>
   <%= f.input :periodo_spedizione, label: "Scegli il periodo di spedizione", collection: ['A discrezione del vivaio', 'Novembre', 'Dicembre', 'Gennaio', 'Febbraio', 'Marzo']  %>
   <%= f.input :metodo_pagamento, label: "Metodo di pagamento", as: :radio_buttons, collection: ['Satispay', 'Bonifico bancario', 'Contrassegno postale']  %>
   <%= f.input :trattamento_dati, label: "Autorizzo il trattamento dei miei dati ai sensi del D.Lgs 96/2003."%>
