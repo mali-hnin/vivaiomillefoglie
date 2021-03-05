@@ -1,7 +1,7 @@
 <%= simple_form_for [@cart, @order] do |f| %>
   <%= f.input :name, label: "Nome e cognome", autofocus: true %>
+  <%= f.input :address, label: "Indirizzo" %>
   <div class="row">
-    <div class="col-xs-12 col-sm-7"><%= f.input :address, label: "Indirizzo" %></div>
     <div class="col-xs-6 col-sm"><%= f.input :citta, label: "Comune" %></div>
     <div class="col-xs-6 col-sm"><%= f.input :cap, label: "CAP" %></div>
   </div>
@@ -21,7 +21,6 @@
   <div class="row">
     <div class="col-sm">
       <%= f.button :submit, "Invia", class: "btn-purple" %>
-      <%= f.button :button, "Ricomincia", type: "reset", class: "btn-outline-warning" %>
       <%= link_to "Annulla", cart_path(@cart), class: "btn btn-outline-secondary" %>
     </div>
   </div>

@@ -9,3 +9,8 @@ legend.col-form-label {
   float: none !important;
   font-weight: bold;
 }
+
+// for some reason bootstrap removes the downward arrow from select elements in simple_form, this restores it:
+select.form-control {
+  appearance: menulist;
+}
