@@ -15,8 +15,17 @@ Commenti:
 
 ----------<br>
 Ordine:
-<% @order.cart.line_items.each do |lineitem| %>
-<%= lineitem.quantity  %> <%= lineitem.plant.name  %>, <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+<% if !@order.nil? && !@order.cart.nil? %>
+  <% @order.cart.line_items.each do |lineitem| %>
+    <%= lineitem.quantity  %> <%= lineitem.plant.name  %>, <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+  <% end %>
+<% else %>
+  <p>Ordine vuoto.</p>
 <% end %>
 
-Totale (escluse le spese di spedizione): <%= humanized_money_with_symbol @order.cart.total_price %>
+Totale (escluse le spese di spedizione):
+<% if !@order.cart.nil? %>
+  <%= humanized_money_with_symbol @order.cart.total_price %>
+<% else %>
+  0€
+<% end %>
