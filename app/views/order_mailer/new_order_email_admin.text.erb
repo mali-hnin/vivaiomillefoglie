@@ -1,13 +1,34 @@
-Hai ricevuto un nuovo ordine da <%= @order.name %>!
-===============================================
+Nuovo ordine da <%= @order.name %>.
 
-Dettagli Ordine:
---------------------------
+┌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┐
+ Riepilogo Ordine:
+└╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┘
 
 Nome: <%= @order.name %>
 Email: <%= @order.email %>
 Telefono: <%= @order.phone %>
-Indirizzo spedizione: <%= @order.address %>
-
-Commenti:
+Indirizzo di spedizione: <%= @order.address %>, <%= @order.cap %> <%= @order.citta %> (<%= @order.provincia %>)
+Codice Fiscale: <%= @order.cf %>
+Metodo di pagamento: <%= @order.metodo_pagamento %>
+Periodo di spedizione: <%= @order.periodo_spedizione %>
+Note:
 <%= @order.message %>
+
+
+ Ordine:
+┄┄┄┄┄┄┄┄┄
+
+<% if !@order.nil? && !@order.cart.nil? %>
+  <% @order.cart.line_items.each do |lineitem| %>
+  • <%= lineitem.quantity  %> <%= lineitem.plant.name  %>, <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+  <% end %>
+<% else %>
+  <p>Ordine vuoto.</p>
+<% end %>
+
+Totale piante (escluse le spese di spedizione):
+<% if !@order.cart.nil? %>
+  <%= humanized_money_with_symbol @order.cart.total_price %>
+<% else %>
+  0€
+<% end %>
