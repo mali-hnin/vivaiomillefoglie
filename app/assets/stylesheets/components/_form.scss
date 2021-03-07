@@ -1,0 +1,20 @@
+form.simple_form {
+  margin: 20px 0px;
+}
+
+label.form-check-label {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+legend.col-form-label {
+  // in the bootstrap forms "legend" elements always have float: left, but this makes problems with the first radio button alignment
+  // bc it pushes it on the first row next to the label. this fixes it:
+  float: none !important;
+  font-weight: bold;
+}
+
+// for some reason bootstrap removes the downward arrow from select elements in simple_form, this restores it:
+select.form-control {
+  appearance: menulist;
+}

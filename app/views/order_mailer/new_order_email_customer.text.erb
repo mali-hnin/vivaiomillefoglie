@@ -1,22 +1,40 @@
-La ringraziamo del suo ordine. Questo è un messaggio automatico. Riceverà al più presto la nostra conferma d'ordine con l'indicazione delle spese di spedizione.
-===============================================
+Grazie per il suo ordine! Questo è un messaggio automatico.
+La contatteremo al più presto dal nostro indirizzo principale info@vivaiomillefoglie.it con la nostra conferma d'ordine, l'indicazione delle spese di spedizione e i dettagli per la modalità di pagamento da lei specificata.
 
-Riepilogo Ordine:
---------------------------
+┌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┐
+ Riepilogo Ordine:
+└╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌┘
 
 Nome: <%= @order.name %>
 Email: <%= @order.email %>
 Telefono: <%= @order.phone %>
-Indirizzo spedizione: <%= @order.address %>, <%= @order.cap %> <%= @order.citta %>
-
-Commenti:
+Indirizzo di spedizione: <%= @order.address %>, <%= @order.cap %> <%= @order.citta %> (<%= @order.provincia %>)
+Codice Fiscale per la ricevuta: <%= @order.cf %>
+Metodo di pagamento: <%= @order.metodo_pagamento %>
+Periodo di spedizione: <%= @order.periodo_spedizione %>
+Note:
 <%= @order.message %>
 
 
-----------<br>
-Ordine:
-<% @order.cart.line_items.each do |lineitem| %>
-<%= lineitem.quantity  %> <%= lineitem.plant.name  %>, <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+ Ordine:
+┄┄┄┄┄┄┄┄┄
+<% if !@order.nil? && !@order.cart.nil? %>
+  <% @order.cart.line_items.each do |lineitem| %>
+  • <%= lineitem.quantity  %> <%= lineitem.plant.name  %>, <%= humanized_money_with_symbol lineitem.plant.prezzo %>
+  <% end %>
+<% else %>
+  <p>Ordine vuoto.</p>
 <% end %>
 
-Totale (escluse le spese di spedizione): <%= humanized_money_with_symbol @order.cart.total_price %>
+Totale piante (escluse le spese di spedizione):
+<% if !@order.cart.nil? %>
+  <%= humanized_money_with_symbol @order.cart.total_price %>
+<% else %>
+  0€
+<% end %>
+
+
+Cordiali saluti,
+
+Millefoglie Piante e Giardini
+www.vivaiomillefoglie.it

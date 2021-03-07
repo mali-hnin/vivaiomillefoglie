@@ -1,32 +1,70 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+      table {
+        border-collapse: collapse;
+        border-style: hidden;
+      }
+      table td {
+        border: 1px dotted;
+        padding: 5px;
+      }
+    </style>
   </head>
   <body>
     <p>Nuovo ordine da <strong><%= @order.name %></strong>.</p>
     <br>
     <p>
-    <p style="color:#fd5f00 font-size:120%"><strong>Dettagli Ordine</strong></p>
+      <p><span style="background-color:#fd7e32; font-size:120%;"><strong>Dettagli Ordine</strong></span></p>
     </p>
-    <p><strong>Nome:</strong> <%= @order.name %></p>
-    <p><strong>Email:</strong> <%= @order.email %></p>
-    <p><strong>Telefono:</strong> <%= @order.phone %></p>
-    <p><strong>Indirizzo spedizione:</strong> <%= @order.address %>, <%= @order.cap %> <%= @order.citta %></p>
-    <p><strong>Codice Fiscale</strong> (per la ricevuta): <%= @order.cf %></p>
-    <p><strong>Metodo di pagamento:</strong> <%= @order.metodo_pagamento %></p>
-    <p><strong>Periodo di spedizione:</strong> <%= @order.periodo_spedizione %></p>
-    <p><strong>Commenti:</strong> <%= simple_format(@order.message) %></p>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Nome:</strong></td>
+          <td><%= @order.name %></td>
+        </tr>
+        <tr>
+          <td><strong>Email:</strong></td>
+          <td><%= @order.email %></td>
+        </tr>
+        <tr>
+          <td><strong>Telefono:</strong></td>
+          <td><%= @order.phone %></td>
+        </tr>
+        <tr>
+          <td><strong>Indirizzo spedizione:</strong></td>
+          <td><%= @order.address %>, <%= @order.cap %> <%= @order.citta %> (<%= @order.provincia %>)</td>
+        </tr>
+        <tr>
+          <td><strong>Codice Fiscale</strong> (per la ricevuta):</td>
+          <td><%= @order.cf %></td>
+        </tr>
+        <tr>
+          <td><strong>Metodo di pagamento:</strong></td>
+          <td><%= @order.metodo_pagamento %></td>
+        </tr>
+        <tr>
+          <td><strong>Periodo di spedizione:</strong></td>
+          <td><%= @order.periodo_spedizione %></td>
+        </tr>
+        <tr>
+          <td><strong>Note:</strong></td>
+          <td><%= simple_format(@order.message) %></td>
+        </tr>
+      </tbody>
+    </table>
     <p>
-    <br>
-    <br>
-    <strong>Ordine:</strong>
+      <br>
+      <br>
+      <strong>Ordine:</strong>
     </p>
     <ul>
       <% @order.cart.line_items.each do |lineitem| %>
         <li><%= lineitem.quantity  %>
-        <%= lineitem.plant.name  %>,
-        <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
-       <% end %>
+          <%= lineitem.plant.name  %>,
+          <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
+      <% end %>
     </ul>
     <p><strong>Totale (escluse le spese di spedizione):</strong> <%= humanized_money_with_symbol @order.cart.total_price %></p>
   </body>

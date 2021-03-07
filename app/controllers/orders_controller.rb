@@ -24,12 +24,12 @@ class OrdersController < ApplicationController
     end
   end
 
-    private
-    def set_order
-      @order = Order.find(params[:id])
-    end
+  private
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
-    def order_params
-      params.require(:order).permit(:name, :address, :phone, :cf, :citta, :cap, :email, :email_confirmation, :message, :metodo_pagamento, :periodo_spedizione, :trattamento_dati, :condizioni_di_vendita)
-    end
+  def order_params
+    params.require(:order).permit(:name, :address, :phone, :cf, :citta, :cap, :provincia, :email, :email_confirmation, :message, :metodo_pagamento, :periodo_spedizione, :trattamento_dati, :condizioni_di_vendita)
+  end
 end

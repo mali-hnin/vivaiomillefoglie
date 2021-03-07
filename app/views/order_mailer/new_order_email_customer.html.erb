@@ -1,38 +1,96 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+      table {
+        border-collapse: collapse;
+        border-style: hidden;
+      }
+      table td {
+        border: 1px dotted;
+        padding: 5px;
+      }
+            @media only screen and (max-width: 800px) {
+            }
+            @media only screen and (min-width: 802px) {
+      .responsive {
+        margin: 30px 100px;
+      }
+            }
+    </style>
   </head>
   <body>
-    <p>La ringraziamo del suo ordine. Questo è un messaggio automatico. Riceverà al più presto la nostra conferma d'ordine con l'indicazione delle spese di spedizione dal nostro indirizzo principale: info@vivaiomillefoglie.it.</p>
-    <br>
-    <p>
-    <p style="color:#fd5f00 font-size:120%">Riepilogo Ordine</p>
-    </p>
-    <p><strong>Nome:</strong> <%= @order.name %></p>
-    <p><strong>Email:</strong> <%= @order.email %></p>
-    <p><strong>Telefono:</strong> <%= @order.phone %></p>
-    <p><strong>Indirizzo spedizione:</strong> <%= @order.address %>, <%= @order.cap %> <%= @order.citta %></p>
-    <p><strong>Codice Fiscale</strong> (per la ricevuta): <%= @order.cf %></p>
-    <p><strong>Metodo di pagamento:</strong> <%= @order.metodo_pagamento %></p>
-    <p><strong>Periodo di spedizione:</strong> <%= @order.periodo_spedizione %></p>
-    <p><strong>Commenti:</strong> <%= simple_format(@order.message) %></p>
-    <p>
-    <br>
-    <br>
-    <strong>Ordine:</strong>
-    </p>
-    <ul>
-      <% @order.cart.line_items.each do |lineitem| %>
-        <li><%= lineitem.quantity  %>
-        <%= lineitem.plant.name  %>,
-        <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
-       <% end %>
-    </ul>
-    <p><strong>Totale (<u>escluse le spese di spedizione</u>):</strong> <%= humanized_money_with_symbol @order.cart.total_price %></p>
-    <br>
-    <br>
-    <p>Cordiali saluti,</p>
-    <p>Millefoglie Piante e Giardini</p>
-
+    <div class="responsive">
+      <p>Grazie per il suo ordine! Questo è un messaggio automatico. <br>
+        La contatteremo al più presto dal nostro indirizzo principale <a href="mailto:info@vivaiomillefoglie.it">info@vivaiomillefoglie.it</a> con la nostra conferma d'ordine, l'indicazione delle spese di spedizione e i dettagli per la modalità di pagamento da lei specificata.</p>
+      <br>
+      <p>
+        <p><span style="background-color:#fd7e32; font-size:120%;">Riepilogo Ordine</span></p>
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td><strong>Nome:</strong></td>
+            <td><%= @order.name %></td>
+          </tr>
+          <tr>
+            <td><strong>Email:</strong></td>
+            <td><%= @order.email %></td>
+          </tr>
+          <tr>
+            <td><strong>Telefono:</strong></td>
+            <td><%= @order.phone %></td>
+          </tr>
+          <tr>
+            <td><strong>Indirizzo spedizione:</strong></td>
+            <td><%= @order.address %>, <%= @order.cap %> <%= @order.citta %> (<%= @order.provincia %>)</td>
+          </tr>
+          <tr>
+            <td><strong>Codice Fiscale</strong> (per la ricevuta):</td>
+            <td><%= @order.cf %></td>
+          </tr>
+          <tr>
+            <td><strong>Metodo di pagamento:</strong></td>
+            <td><%= @order.metodo_pagamento %></td>
+          </tr>
+          <tr>
+            <td><strong>Periodo di spedizione:</strong></td>
+            <td><%= @order.periodo_spedizione %></td>
+          </tr>
+          <tr>
+            <td><strong>Note:</strong></td>
+            <td><%= simple_format(@order.message) %></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <br>
+        <br>
+        <strong>Ordine:</strong>
+      </p>
+      <ul>
+        <% if !@order.nil? && !@order.cart.nil? %>
+          <% @order.cart.line_items.each do |lineitem| %>
+            <li><%= lineitem.quantity  %>
+              <%= lineitem.plant.name  %>,
+              <%= humanized_money_with_symbol lineitem.plant.prezzo %></li>
+          <% end %>
+        <% else %>
+          <p>Ordine vuoto.</p>
+        <% end %>
+      </ul>
+      <p><strong>Totale piante (<u>escluse le spese di spedizione</u>):</strong>
+        <% if !@order.cart.nil? %>
+          <%= humanized_money_with_symbol @order.cart.total_price %>
+        <% else %>
+          0€
+        <% end %>
+      </p>
+      <br>
+      <p>Cordiali saluti,</p>
+      <p>Millefoglie Piante e Giardini</p>
+      <%= image_tag("logo bianco.png", width: '300') %>
+      <p><a href="www.vivaiomillefoglie.it">www.vivaiomillefoglie.it</a></p>
+    </div>
   </body>
 </html>
