@@ -19,11 +19,12 @@
 }
 
 .ig-feed-container {
+  align-self: center;
   display: inline-grid;
   grid-template-columns: auto auto auto;
   img {
-    width: 123.33px;
-    height: 123.33px;
+    width: 140px;
+    height: 140px;
     margin: 2px;
     object-fit: cover;
   }
@@ -32,6 +33,18 @@
 .ig-grid-fixer {
   display: none;
   }
+
+.flowers-photos {
+  align-self:center;
+  display: grid;
+  grid-template-columns: auto auto;
+  img {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    object-fit: cover;
+  }
+}
 
 
 @media only screen and (max-width: 600px)  {
@@ -69,6 +82,14 @@
     align-items: center;
     font-size: 70px;
     color: rgba(192, 192, 192, 0.7);
+  }
+
+  .flowers-photos {
+    img {
+      height: 170px;
+      width: 170px;
+      margin: 3px;
+    }
   }
 
 }

@@ -17,9 +17,9 @@
         <p><%= link_to "Contattaci", contatti_path, class: "orange-link" %> per feste, matrimoni ed eventi.</p>
         <p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>
             Sono fiori di stagione a km zero!</span></p>
-        <p class="orange-text text-center" style="font-size:22px;margin-top:30px"><i class="fab fa-instagram-square"></i> <%= link_to "millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank, class: "orange-text"%></p>
+        <p class="orange-text text-center" style="margin-top:30px"><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %> <%= link_to "instagram.com/millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank, class: "orange-text"%></p>
         <% if !@ig_photos.empty? && !@ig_photos.nil? %>
-          <div style="align-self:center", class="ig-feed-container">
+          <div class="ig-feed-container">
             <% @ig_photos.first(9).each do |ig_photo| %>
               <%= link_to ig_photo["permalink"], target: :_blank do %>
                 <%= image_tag ig_photo["media_url"] %>
@@ -29,8 +29,15 @@
             <a class="ig-grid-fixer" href="https://www.instagram.com/millefoglieflowerslab/" target="blank">
               <p>+</p>
             </a>
-          </div>
-        <% end %>
+          <% else %>
+            <div class="flowers-photos">
+              <%= image_tag "abbonamento4.png" %>
+              <%= image_tag "abbonamento7.png" %>
+              <%= image_tag "abbonamento5.png" %>
+              <%= image_tag "abbonamento6.png" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
