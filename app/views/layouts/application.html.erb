@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
+    <script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+      cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"it","change_preferences_selector":"#impostazioniCookies"});
+      });
+    </script>
+    <!-- Unnamed script -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179325488-1"></script>
-    <script>
+    <script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=UA-179325488-1"></script>
+    <script type="text/plain" cookie-consent="tracking">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
       gtag('config', 'UA-179325488-1', {'anonymize_ip': true});
     </script>
+    <!-- end of Unnamed script-->
+    <noscript>Cookie Consent by <a href="https://www.PrivacyPolicies.com/cookie-consent/" rel="nofollow noopener">PrivacyPolicies.com</a></noscript>
+    <!-- End Cookie Consent -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= yield(:title_tag).blank? ? "Vivaio Millefoglie" : yield(:title_tag) %></title>
