@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Cookie Consent by https://www.PrivacyPolicies.com -->
+    <script type="text/javascript" src="//www.privacypolicies.com/public/cookie-consent/3.1.0/cookie-consent.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+      cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"light","language":"it","change_preferences_selector":"#impostazioniCookies"});
+      });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/plain" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=UA-179325488-1"></script>
+    <script type="text/plain" cookie-consent="tracking">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'UA-179325488-1', {'anonymize_ip': true});
+      gtag('set', 'allow_google_signals', false);
+      gtag('set', 'allow_ad_personalization_signals', false );
+    </script>
+    <!-- end of Global site tag (gtag.js) - Google Analytics-->
+    <noscript>Cookie Consent by <a href="https://www.PrivacyPolicies.com/cookie-consent/" rel="nofollow noopener">PrivacyPolicies.com</a></noscript>
+    <!-- End Cookie Consent -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= yield(:title_tag).blank? ? "Vivaio Millefoglie" : yield(:title_tag) %></title>
@@ -27,7 +48,6 @@
       <%= javascript_include_tag 'application' %>
       <%= cloudinary_js_config %>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=grey&always=1&scrolling=1"></script>
       <%= yield(:after_js) %>
       <!-- PUT FOOTER HERE -->
       <%= render 'shared/footer' %>
