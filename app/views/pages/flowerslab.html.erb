@@ -17,8 +17,8 @@
         <p><%= link_to "Contattaci", contatti_path, class: "orange-link" %> per feste, matrimoni ed eventi.</p>
         <p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>
             Sono fiori di stagione a km zero!</span></p>
-        <p class="orange-text text-center" style="margin-top:30px"><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %> <%= link_to "instagram.com/millefoglieflowerslab", "https://www.instagram.com/millefoglieflowerslab/", target: :_blank, class: "orange-text"%></p>
-        <% if !@ig_photos.empty? && !@ig_photos.nil? %>
+        <p class="orange-text text-center" style="margin-top:30px"><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %> <%= link_to "instagram.com/orto.dei.fiori", "https://www.instagram.com/orto.dei.fiori/", target: :_blank, class: "orange-text"%></p>
+        <% if !@ig_photos.nil? %>
           <div class="ig-feed-container">
             <% @ig_photos.first(9).each do |ig_photo| %>
               <%= link_to ig_photo["permalink"], target: :_blank do %>
@@ -26,7 +26,7 @@
               <% end %>
             <% end %>
             <!-- blank 10th square appears with mobile layout ONLY -->
-            <a class="ig-grid-fixer" href="https://www.instagram.com/millefoglieflowerslab/" target="blank">
+            <a class="ig-grid-fixer" href="https://www.instagram.com/orto.dei.fiori/" target="blank">
               <p>+</p>
             </a>
           <% else %>
