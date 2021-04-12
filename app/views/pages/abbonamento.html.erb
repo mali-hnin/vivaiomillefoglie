@@ -25,13 +25,13 @@
         <% if !@ig_photos.nil? %>
           <% @ig_photos.sample(3).each do |ig_photo| %>
             <%= link_to ig_photo["permalink"], target: :_blank do %>
-              <%= image_tag ig_photo["media_url"], class: "flowerslabdeco" %>
+              <%= image_tag ig_photo["media_url"], class: "ortodeifiori-deco" %>
             <% end %>
           <% end %>
         <% else %>
-          <%= image_tag "abbonamento4.png", class: "flowerslabdeco" %>
-          <%= image_tag "abbonamento7.png", class: "flowerslabdeco" %>
-          <%= image_tag "abbonamento6.png", class: "flowerslabdeco" %>
+          <%= image_tag "abbonamento4.png", class: "ortodeifiori-deco" %>
+          <%= image_tag "abbonamento7.png", class: "ortodeifiori-deco" %>
+          <%= image_tag "abbonamento6.png", class: "ortodeifiori-deco" %>
         <% end %>
       </div>
     </div>
