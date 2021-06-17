@@ -13,7 +13,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem "puma", ">= 4.3.8"
-gem 'rails', "6.0.3.5"
+gem 'rails', "6.1.3.2"
 gem 'redis'
 # gem 'webpacker', '~> 3.0'
 gem 'coffee-rails'
