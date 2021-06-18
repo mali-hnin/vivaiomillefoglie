@@ -25,9 +25,7 @@
     <% if user_signed_in? && current_user.admin %>
       <!-- Admin Panel -->
       <div class="right-side">
-        <div class="width-50">
-          <%= render 'plants/admin_panel_main' %>
-        </div>
+        <%= render 'plants/admin_panel_main' %>
       </div>
       <!-- End of Admin Panel -->
     <% end %>

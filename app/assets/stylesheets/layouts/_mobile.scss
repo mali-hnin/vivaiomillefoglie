@@ -1,3 +1,13 @@
+@media only screen and (max-width: 800px) {
+  .page-wrapper-row {
+    flex-direction: column;
+  }
+  .admin-buttons {
+    margin: 0px;
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
 
   .left-side {
@@ -12,6 +22,7 @@
   .page-wrapper {
     padding: 0px;
   }
+
 
   .white-bg {
     padding: 10px 0px;
