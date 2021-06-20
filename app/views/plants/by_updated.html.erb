@@ -7,14 +7,14 @@
         <!-- Admin Panel -->
         <%= render 'plants/admin_panel_main' %>
         <!-- End of Admin Panel -->
-        <div class="catalogo-content">
+        <div class="catalogo-admin-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>
           <ul class="flower-list">
             <li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_path %></li>
             <li class="spacing-5"><%= link_to "ordina per ultima creata", by_created_plants_path %></li>
             <li class="spacing-5"><%= link_to "ordina per ultima aggiornata", by_updated_plants_path %></li>
           </ul>
-          <table class="table table-hover css-serial">
+          <table class="css-serial">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -34,11 +34,11 @@
                     <% end %>
                     <%= link_to pianta.name, plant_path(pianta.id) %>
                   </th>
-                  <td>
+                  <td data-label="Creata il">
                     <!-- Turns Rails timestamps into European format, setup in en.yml -->
                     <%= l pianta.created_at, format: :euro %>
                   </td>
-                  <td scope="row">
+                  <td scope="row" data-label="Aggiornata il">
                     <!-- Turns Rails timestamps into European format, setup in en.yml -->
                     <%= l pianta.updated_at, format: :euro %>
                   </td>
