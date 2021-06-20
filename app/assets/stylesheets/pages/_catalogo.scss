@@ -12,7 +12,7 @@
 
 }
 
-.catalogo-content {
+.catalogo-admin-content, .catalogo-content {
   padding: 60px 100px 40px 100px;
   display: flex;
   flex-direction: column;
@@ -59,22 +59,6 @@
 
 .spacing-5 {
   margin: 5px 0px;
-}
-
-.admin-buttons {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  text-align: center;
-  border: solid 1px #4c4c4c;
-  // border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  // box-shadow: 15px 20px 5px rgba(0,0,0,0.1);
-  background-color: #e5e5e5;
-  width: 800px;
-  padding: 20px;
-  p {
-    margin-bottom: 30px;
-  }
 }
 
 /* Dropdown menu */
