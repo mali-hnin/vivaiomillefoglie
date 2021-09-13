@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'vivaio_events/index'
-  get 'vivaio_events/new'
-  get 'vivaio_events/create'
-  get 'vivaio_events/show'
-  get 'vivaio_events/edit'
-  get 'vivaio_events/update'
-  get 'vivaio_events/destroy'
   root to: 'pages#home'
 
   devise_for :users
@@ -40,6 +33,7 @@ Rails.application.routes.draw do
   resources :carts do
     resources :orders, only: [:new, :create]
   end
+  resources :vivaio_events
 
   get "/catalogo-intro", to: "pages#catalogo_intro"
   get "/catalogo", to: "pages#catalogo"
