@@ -1,0 +1,19 @@
+<%= simple_form_for @vivaio_event do |f|%>
+  <%= f.input :title, label: "Titolo",  required: true, autofocus: true %>
+  <%= f.rich_text_area :content, label: "Testo" %>
+  <%= f.button :submit, "Salva", class: "btn btn-success" %>
+  <%= link_to "Annulla", vivaio_events_path, class: "btn btn-mine" %>
+<% end %>
+<br>
+<br>
+<%= form_with model: @vivaio_event do |f| %>
+  <div class="field">
+    <%= f.label :title, "Titolo" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "Testo" %>
+    <%= f.rich_text_area :content %>
+  </div>
+  <%= f.submit %>
+<% end %>
