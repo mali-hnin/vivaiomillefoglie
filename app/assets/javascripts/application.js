@@ -5,5 +5,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require jquery.slick
+//= require trix
+//= require actiontext
 
 //= require_tree .
