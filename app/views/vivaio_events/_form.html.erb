@@ -6,14 +6,3 @@
 <% end %>
 <br>
 <br>
-<%= form_with model: @vivaio_event do |f| %>
-  <div class="field">
-    <%= f.label :title, "Titolo" %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content, "Testo" %>
-    <%= f.rich_text_area :content %>
-  </div>
-  <%= f.submit %>
-<% end %>

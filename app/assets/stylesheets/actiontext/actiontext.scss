@@ -13,6 +13,12 @@
 
 @import "trix/dist/trix";
 
+trix-toolbar .trix-button {
+  /* remove to return to default transparent */
+  background-color: #d3d3d3;
+}
+
+
 .trix-content {
   .attachment-gallery {
     > action-text-attachment,
@@ -38,5 +44,8 @@
       max-width: 100% !important;
     }
   }
+
+  background-color: white;
+
 }
 
