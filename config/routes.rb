@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'vivaio_events/index'
+  get 'vivaio_events/new'
+  get 'vivaio_events/create'
+  get 'vivaio_events/show'
+  get 'vivaio_events/edit'
+  get 'vivaio_events/update'
+  get 'vivaio_events/destroy'
   root to: 'pages#home'
 
   devise_for :users
