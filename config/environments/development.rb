@@ -69,4 +69,7 @@ Rails.application.configure do
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
+
+  # Use Cloudinary.
+  config.active_storage.service = :local
 end
