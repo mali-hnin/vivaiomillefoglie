@@ -1,0 +1,2 @@
+class VivaioEvent < ApplicationRecord
+end
