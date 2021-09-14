@@ -10,6 +10,10 @@
         <% @vivaio_events.each do |event| %>
           <h2><%= link_to event.id, vivaio_event_path(event.id) %></h2>
           <h3><%= event.title %></h3>
+          <!-- takes the first attached image: -->
+          <% if event.content.body.attachments()[0].present? %>
+            <%= image_tag url_for(event.content.body.attachments()[0]) %>
+          <% end %>
           <p><%= event.content %></p>
           <%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
           <%= link_to "Elimina", vivaio_event_path(event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
