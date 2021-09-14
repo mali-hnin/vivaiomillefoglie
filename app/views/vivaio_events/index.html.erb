@@ -12,7 +12,7 @@
           <h3><%= event.title %></h3>
           <!-- takes the first attached image: -->
           <% if event.content.body.attachments()[0].present? %>
-            <%= image_tag url_for(event.content.body.attachments()[0]) %>
+            <%= image_tag url_for(event.content.body.attachments()[0]), style: "height: 100px; width: auto;" %>
           <% end %>
           <p><%= event.content %></p>
           <%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
