@@ -18,6 +18,10 @@ trix-toolbar .trix-button {
   background-color: #e9e9e9;
 }
 
+/* .trix-button--icon-heading-1 {
+  display: none;
+} */
+
 
 .trix-content {
   .attachment-gallery {
@@ -47,5 +51,9 @@ trix-toolbar .trix-button {
 
   background-color: white;
 
+  h2 {
+    font-size: 1.2em;
+    line-height: 1.2;
+  }
 }
 

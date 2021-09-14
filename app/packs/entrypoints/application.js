@@ -18,6 +18,8 @@
 // import * as ActiveStorage from "@rails/activestorage"
 // ActiveStorage.start()
 
-require("trix")
+var Trix = require("trix")
 require("@rails/actiontext")
 require("@rails/activestorage").start()
+
+Trix.config.blockAttributes.heading1.tagName = "h2";
