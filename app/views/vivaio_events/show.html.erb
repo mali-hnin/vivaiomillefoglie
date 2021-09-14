@@ -1,2 +1,16 @@
-<h1>VivaioEvents#show</h1>
-<p>Find me in app/views/vivaio_events/show.html.erb</p>
+<div class="bg">
+  <%= render 'shared/navbar' %>
+  <div class="white-bg">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
+    <% end %>
+    <div class="container">
+      <h1 class="text-center"><%= @vivaio_event.title %></h1>
+      <%= link_to "Modifica", edit_vivaio_event_path(@vivaio_event.id), class: "btn btn-warning" %>
+      <%= link_to "Elimina", vivaio_event_path(@vivaio_event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+      <main>
+        <%= @vivaio_event.content %>
+      </main>
+    </div>
+  </div>
+</div>

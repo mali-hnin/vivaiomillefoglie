@@ -1,4 +1,7 @@
 class VivaioEventsController < ApplicationController
+  before_action :set_vivaio_event, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @vivaio_events = VivaioEvent.all
   end
@@ -34,6 +37,11 @@ class VivaioEventsController < ApplicationController
   end
 
   private
+
+  def set_vivaio_event
+    @vivaio_event = VivaioEvent.find(params[:id])
+  end
+
   def vivaio_event_params
     params.require(:vivaio_event).permit(:title, :content)
   end
