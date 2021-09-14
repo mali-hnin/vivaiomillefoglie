@@ -58,6 +58,7 @@ gem 'sass-rails'
 gem "simple_form", ">= 5.0.0"
 gem 'uglifier'
 gem 'jquery-slick-rails'
+gem 'image_processing', '~> 1.2'
 
 # Test and development gems
 group :development, :test do
