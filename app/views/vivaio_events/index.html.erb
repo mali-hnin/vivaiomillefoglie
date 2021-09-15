@@ -10,7 +10,6 @@
         <div class="row">
           <% @vivaio_events.each do |event| %>
             <div class="col-xs-12 col-md-4">
-              <h2><%= link_to event.id, vivaio_event_path(event.id) %></h2>
               <%= render "event_card", event: event %>
               <div class="event-admin-buttons">
                 <%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
