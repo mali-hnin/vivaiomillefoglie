@@ -10,7 +10,7 @@
       <p class="small-caps"><%= format_event_date event.data_evento, :event_short %></p>
     </div>
     <div class="event-card-title">
-      <%= event.title %>
+      <%= link_to event.title, vivaio_event_path(event.id), class:"event-card-link" %>
     </div>
   </div>
 </div>

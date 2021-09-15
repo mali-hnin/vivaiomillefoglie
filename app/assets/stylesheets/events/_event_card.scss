@@ -4,6 +4,7 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
               0 3px 1px -2px rgba(0, 0, 0, 0.1),
               0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .event-cover-photo {
@@ -25,12 +26,32 @@
 
 .event-card-description {
   padding: 10px;
+
 }
 
 .event-card-date {
   color: $orange;
+  position: relative;
+
 }
 
 .event-card-title {
   font-size: 26px;
+
+}
+
+a.event-card-link {
+  display: block;
+  z-index: 1;
+}
+
+a.event-card-link::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: ' ';
+  background: pink;
+  opacity: 0;
 }
