@@ -212,4 +212,7 @@ it:
       default: "%a %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
+      event_long: "%a %d %B %Y, ore %H:%M"
+      event_short: "%d %b %Y, %H:%M"
+      euro: "%d/%m/%Y, %H:%M"
     pm: pm

@@ -15,11 +15,11 @@ module ApplicationHelper
     return @cart.line_items.count > 0
   end
 
-  def format_event_date(date, format = :long)
+  def format_event_date(date, format)
     if date.blank?
       "Data da confermare"
     else
-      date.to_s(format)
+      I18n.l(date, format: format).to_s
     end
   end
 
