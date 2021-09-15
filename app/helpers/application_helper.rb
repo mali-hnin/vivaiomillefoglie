@@ -15,4 +15,12 @@ module ApplicationHelper
     return @cart.line_items.count > 0
   end
 
+  def format_event_date(date, format = :long)
+    if date.blank?
+      "Data da confermare"
+    else
+      date.to_s(format)
+    end
+  end
+
 end

@@ -10,6 +10,13 @@
         <% @vivaio_events.each do |event| %>
           <h2><%= link_to event.id, vivaio_event_path(event.id) %></h2>
           <h3><%= event.title %></h3>
+          <h4>
+            <% if event.data_evento %>
+              <%= l event.data_evento, format: :long %>
+            <% else %>
+              <%= "Data da confermare" %>
+            <% end %>
+          </h4>
           <!-- takes the first attached image: -->
           <% if event.content.body.attachments()[0].present? %>
             <%= image_tag url_for(event.content.body.attachments()[0]), style: "height: 100px; width: auto;" %>

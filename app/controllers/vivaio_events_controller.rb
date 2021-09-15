@@ -43,6 +43,6 @@ class VivaioEventsController < ApplicationController
   end
 
   def vivaio_event_params
-    params.require(:vivaio_event).permit(:title, :content)
+    params.require(:vivaio_event).permit(:title, :content, :data_evento)
   end
 end

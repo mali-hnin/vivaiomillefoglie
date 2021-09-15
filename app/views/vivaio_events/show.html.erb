@@ -9,6 +9,7 @@
       <%= link_to "Modifica", edit_vivaio_event_path(@vivaio_event.id), class: "btn btn-warning" %>
       <%= link_to "Elimina", vivaio_event_path(@vivaio_event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
       <main>
+        <h3><%= @vivaio_event.data_evento ? @vivaio_event.data_evento : "Data TBD" %></h3>
         <%= @vivaio_event.content %>
       </main>
     </div>
