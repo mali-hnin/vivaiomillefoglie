@@ -3,9 +3,20 @@
 }
 
 .events-grid {
-  margin: 7vh 0;
+  margin: 6vh 0;
 }
 
 .event-admin-buttons {
-  margin: 10px 0px;
+  position: absolute;
+  top: 35px;
+  display: none;
+}
+
+.event h3 {
+  color: $purple;
+  margin: 5vh 0;
+}
+
+.event {
+  margin-bottom: 6vh;
 }
