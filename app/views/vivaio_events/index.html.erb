@@ -5,8 +5,8 @@
       <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
     <% end %>
     <div class="container">
-      <h1 class="text-center">Eventi del Vivaio Millefoglie</h1>
-      <main>
+      <h1 class="text-center" id="blank-title">Eventi presso il Vivaio Millefoglie di Ivrea</h1>
+      <main class="events-grid">
         <div class="row">
           <% @vivaio_events.each do |event| %>
             <div class="col-xs-12 col-md-4">
@@ -19,6 +19,9 @@
           <% end %>
         </div>
       </main>
+      <div>
+        <h4><%= link_to "Vedi gli eventi passati", vivaio_events_path(scope: :past) %></h4>
+      </div>
     </div>
   </div>
 </div>

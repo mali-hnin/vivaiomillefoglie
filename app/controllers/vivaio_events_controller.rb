@@ -3,7 +3,11 @@ class VivaioEventsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @vivaio_events = VivaioEvent.by_event_date.future
+    if params[:scope] && params[:scope] == "past"
+      @vivaio_events = VivaioEvent.past
+    else
+      @vivaio_events = VivaioEvent.by_event_date.future
+    end
   end
 
   def new
