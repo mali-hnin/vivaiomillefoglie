@@ -6,6 +6,13 @@
     <% end %>
     <div class="container">
       <h1 class="text-center" id="blank-title">Eventi presso il Vivaio Millefoglie di Ivrea</h1>
+      <% if user_signed_in? && current_user.admin %>
+        <!-- Admin buttons -->
+        <div>
+          <%= link_to "Nuovo Evento", new_vivaio_event_path, class: "btn btn-success" %>
+        </div>
+        <!-- End of Admin buttons -->
+      <% end %>
       <main class="events-grid">
         <div class="row">
           <% @vivaio_events.each do |event| %>
