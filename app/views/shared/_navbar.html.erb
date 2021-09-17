@@ -11,7 +11,7 @@
     <%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "L'Orto dei Fiori", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
-    <%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
+    <%= link_to "Eventi", vivaio_events_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
   </div>
   <!-- Right Navigation -->
@@ -47,7 +47,7 @@
         <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Eventi", eventi_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Eventi", vivaio_events_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><hr class="dropdown-divider"></li>
         <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <% if user_signed_in? %>
