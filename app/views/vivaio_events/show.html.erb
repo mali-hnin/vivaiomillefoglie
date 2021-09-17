@@ -5,15 +5,20 @@
       <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
     <% end %>
     <div class="container">
-      <div style="display:none;">
-        <%= link_to "Modifica", edit_vivaio_event_path(@vivaio_event.id), class: "btn btn-warning" %>
-        <%= link_to "Elimina", vivaio_event_path(@vivaio_event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-      </div>
+      <% if user_signed_in? && current_user.admin %>
+        <!-- Admin buttons -->
+        <div>
+          <%= link_to "Modifica", edit_vivaio_event_path(@vivaio_event.id), class: "btn btn-warning" %>
+          <%= link_to "Elimina", vivaio_event_path(@vivaio_event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+        </div>
+        <!-- End of Admin buttons -->
+      <% end %>
       <h1 class="text-center"><%= @vivaio_event.title %></h1>
       <main class="event">
         <h3><i class="far fa-calendar-alt"></i> <%= format_event_date @vivaio_event.data_evento, :event_long %></h3>
         <%= @vivaio_event.content %>
       </main>
+      <%= render 'shared/back_button' %>
     </div>
   </div>
 </div>

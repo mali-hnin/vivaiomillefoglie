@@ -1,6 +1,6 @@
 class VivaioEventsController < ApplicationController
   before_action :set_vivaio_event, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     if params[:scope] && params[:scope] == "past"

@@ -11,16 +11,28 @@
           <% @vivaio_events.each do |event| %>
             <div class="col-xs-12 col-md-4">
               <%= render "event_card", event: event %>
-              <div class="event-admin-buttons">
-                <%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
-                <%= link_to "Elimina", vivaio_event_path(event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-              </div>
+              <% if user_signed_in? && current_user.admin %>
+                <!-- Admin buttons -->
+                <div class="event-admin-buttons">
+                  <%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
+                  <%= link_to "Elimina", vivaio_event_path(event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+                </div>
+                <!-- End of Admin buttons -->
+              <% end %>
             </div>
           <% end %>
         </div>
       </main>
       <div>
-        <h4><%= link_to "Vedi gli eventi passati", vivaio_events_path(scope: :past) %> <i class='fa fa-meteor'></i></h4>
+        <% if params[:scope] %>
+          <%= render 'shared/back_button' %>
+        <% else %>
+          <h4>
+            <%= link_to vivaio_events_path(scope: :past) do %>
+              Vedi gli eventi passati <i class='fa fa-meteor'></i>
+            <% end %>
+          </h4>
+        <% end %>
       </div>
     </div>
   </div>
