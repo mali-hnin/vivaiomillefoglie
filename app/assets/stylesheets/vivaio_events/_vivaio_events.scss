@@ -19,3 +19,20 @@
 .event {
   margin-bottom: 6vh;
 }
+
+.left-side-events {
+  width: 620px;
+}
+
+.eventi-index-link a{
+    background-color:rgba(255,255,255,0.5);
+    padding: 3px;
+    float: right;
+  }
+
+@media only screen and (max-width: 600px) {
+  .left-side-events {
+    width: 100%;
+    padding: 0px 5px;
+  }
+}

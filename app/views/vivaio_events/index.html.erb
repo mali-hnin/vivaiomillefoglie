@@ -1,4 +1,5 @@
-<div class="bg" style="background-image:url(<%= asset_path "bg_eventi.jpg" %>)">
+<div class="bg" style="background-image:url(<%= asset_path "bg_eventi.jpg" %>);  background-repeat: no-repeat;
+  background-attachment: fixed;">
   <div style="background-color: rgba(61, 62, 42, 0.4);">
     <%= render 'shared/navbar' %>
   </div>
@@ -6,7 +7,7 @@
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
     <% end %>
-    <div class="container">
+    <div class="left-side-events">
       <h1 class="text-center" id="blank-title">Eventi presso il Vivaio Millefoglie di Ivrea</h1>
       <% if user_signed_in? && current_user.admin %>
         <!-- Admin buttons -->
@@ -18,7 +19,7 @@
       <main class="events-grid">
         <div class="row">
           <% @vivaio_events.each do |event| %>
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-md-6">
               <%= render "event_card", event: event %>
               <% if user_signed_in? && current_user.admin %>
                 <!-- Admin buttons -->
@@ -32,7 +33,7 @@
           <% end %>
         </div>
       </main>
-      <div>
+      <div class="eventi-index-link">
         <% if params[:scope] %>
           <%= render 'shared/back_button' %>
         <% else %>
