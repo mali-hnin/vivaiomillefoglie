@@ -9,7 +9,6 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
-require 'action_text/engine'
 require "sprockets/railtie"
 require "attachinary/orm/active_record"
 require "csv"

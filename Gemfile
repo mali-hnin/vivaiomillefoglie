@@ -15,7 +15,7 @@ gem 'pg'
 gem "puma", ">= 4.3.8"
 gem 'rails', "6.1.3.2"
 gem 'redis'
-gem 'webpacker', '~> 6.0.0.rc.5'
+# gem 'webpacker', '~> 3.0'
 gem 'coffee-rails'
 gem "actionview", ">= 5.2.2.1"
 gem "railties", ">= 5.2.2.1"
@@ -34,7 +34,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 end
 # specific gems
-gem 'cloudinary'
+gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'faker'
@@ -58,7 +58,6 @@ gem 'sass-rails'
 gem "simple_form", ">= 5.0.0"
 gem 'uglifier'
 gem 'jquery-slick-rails'
-gem 'image_processing', '~> 1.2'
 
 # Test and development gems
 group :development, :test do

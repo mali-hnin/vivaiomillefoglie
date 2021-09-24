@@ -1,0 +1,19 @@
+{
+  "application.js": "/packs/js/application.js",
+  "entrypoints": {
+    "application": {
+      "assets": {
+        "js": [
+          "/packs/js/runtime.js",
+          "/packs/js/vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878.js",
+          "/packs/js/application.js"
+        ]
+      }
+    }
+  },
+  "js/application.js.map": "/packs/js/application.js.map",
+  "js/runtime.js.map": "/packs/js/runtime.js.map",
+  "js/vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878.js": "/packs/js/vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878.js",
+  "js/vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878.js.map": "/packs/js/vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878.js.map",
+  "runtime.js": "/packs/js/runtime.js"
+}
