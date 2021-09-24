@@ -9,7 +9,7 @@ set :deploy_to, "/home/deploy/#{fetch :application}"
 
 set :deploy_via, :remote_cache
 
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'node_modules'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 3
