@@ -34,7 +34,7 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 end
 # specific gems
-gem 'cloudinary', '1.1.7'
+gem 'cloudinary'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'faker'
