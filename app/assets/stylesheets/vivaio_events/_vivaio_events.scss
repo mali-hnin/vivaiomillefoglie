@@ -1,0 +1,38 @@
+#blank-title {
+  display: none;
+}
+
+.events-grid {
+  margin: 6vh 0;
+}
+
+.event-admin-buttons {
+  position: absolute;
+  top: 35px;
+}
+
+.event h3 {
+  color: $purple;
+  margin: 7vh 0;
+}
+
+.event {
+  margin-bottom: 6vh;
+}
+
+.left-side-events {
+  width: 620px;
+}
+
+.eventi-index-link a{
+    background-color:rgba(255,255,255,0.5);
+    padding: 3px;
+    float: right;
+  }
+
+@media only screen and (max-width: 600px) {
+  .left-side-events {
+    width: 100%;
+    padding: 0px 5px;
+  }
+}
