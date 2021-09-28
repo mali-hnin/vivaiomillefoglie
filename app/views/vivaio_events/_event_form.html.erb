@@ -1,9 +1,0 @@
-<%= simple_form_for @vivaio_event do |f|%>
-  <%= f.input :title, label: "Titolo",  required: true, autofocus: true %>
-  <%= f.input :data_evento, label: "Data", include_blank: true %>
-  <%= f.rich_text_area :content, label: "Testo", input_html: { rows: 20} %>
-  <%= f.button :submit, "Pubblica", class: "btn btn-success" %>
-  <%= link_to "Annulla", vivaio_events_path, class: "btn btn-outline-secondary", data: { confirm: "Se lasci questa pagina senza pubblicare perderai il lavoro svolto" } %>
-<% end %>
-<br>
-<br>

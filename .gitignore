@@ -5,12 +5,9 @@ tmp/*
 *.swp
 .DS_Store
 public/assets
-/storage
 
 # Ignore application configuration
 /config/application.yml
 secrets.yml
 
 /config/master.key
-
-
