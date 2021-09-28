@@ -1,5 +1,5 @@
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["application"],{
-  
+
 /***/ "./app/packs/entrypoints/application.js":
 /*!**********************************************!*\
   !*** ./app/packs/entrypoints/application.js ***!
@@ -36,6 +36,7 @@ Trix.config.blockAttributes.heading1.tagName = "h2";
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
+/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
