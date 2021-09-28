@@ -105,5 +105,5 @@ Rails.application.configure do
   }
 
   # Use Cloudinary.
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :local
 end
