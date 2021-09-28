@@ -6,5 +6,4 @@
 //= require attachinary
 //= require jquery.slick
 
-
 //= require_tree .
