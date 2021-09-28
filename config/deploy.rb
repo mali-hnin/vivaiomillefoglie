@@ -47,14 +47,14 @@ set :keep_releases, 3
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-before "deploy:assets:precompile", "deploy:yarn_install"
+before "deploy:symlink:release", "deploy:ensure_bin_files_executable"
 
 namespace :deploy do
-  desc "Run rake yarn install"
-  task :yarn_install do
+  desc 'Ensure that bin files are executable'
+  task :ensure_bin_files_executable do
     on roles(:web) do
       within release_path do
-        execute("cd #{release_path} && yarn install --silent --no-progress --no-audit --no-optional")
+        execute "cd #{release_path} && chmod +x bin/*"
       end
     end
   end
