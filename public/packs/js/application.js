@@ -1,15 +1,5 @@
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["application"],{
 
-/***/ "./app/packs/entrypoints/application.scss":
-/*!************************************************!*\
-  !*** ./app/packs/entrypoints/application.scss ***!
-  \************************************************/
-/***/ (function() {
-
-throw new Error("Module parse failed: Unexpected token (15:26)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| \n> trix-toolbar .trix-button {\n|   /* remove to return to default transparent */\n|   background-color: #e9e9e9;");
-
-/***/ }),
-
 /***/ "./app/packs/entrypoints/application.js":
 /*!**********************************************!*\
   !*** ./app/packs/entrypoints/application.js ***!
@@ -46,7 +36,7 @@ Trix.config.blockAttributes.heading1.tagName = "h2";
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"), __webpack_exec__("./app/packs/entrypoints/application.scss"); });
+/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
