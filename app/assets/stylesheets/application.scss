@@ -11,12 +11,13 @@
 @import "slick";
 @import "slick-theme";
 
-// Your CSS partial
+// Your CSS partials
+@import "actiontext/actiontext";
 @import "carts/index";
 @import "components/index";
 @import "layouts/index";
-@import "components/index";
 @import "pages/index";
 @import "plants/index";
-@import "carts/index";
+@import "vivaio_events/index";
+
 
