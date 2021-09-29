@@ -35,7 +35,7 @@ group :development do
 end
 # specific gems
 gem 'cloudinary'
-gem 'attachinary', github: 'assembler/attachinary'
+# gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'faker'
 gem 'money-rails', '~>1.12'
