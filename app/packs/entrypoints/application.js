@@ -22,5 +22,5 @@ var Trix = require("trix")
 require("@rails/actiontext")
 require("@rails/activestorage").start()
 require("trix/dist/trix.css")
-require("./styles/actiontext.scss")
+
 Trix.config.blockAttributes.heading1.tagName = "h2";
