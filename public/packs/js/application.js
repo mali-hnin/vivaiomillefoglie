@@ -29,10 +29,6 @@ __webpack_require__(/*! @rails/actiontext */ "./node_modules/@rails/actiontext/a
 
 __webpack_require__(/*! @rails/activestorage */ "./node_modules/@rails/activestorage/app/assets/javascripts/activestorage.js").start();
 
-__webpack_require__(/*! trix/dist/trix.css */ "./node_modules/trix/dist/trix.css");
-
-__webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module './styles/actiontext.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
 Trix.config.blockAttributes.heading1.tagName = "h2";
 
 /***/ })
@@ -40,7 +36,7 @@ Trix.config.blockAttributes.heading1.tagName = "h2";
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-3d4262"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"); });
+/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
