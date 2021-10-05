@@ -13,13 +13,22 @@
         <!-- Admin buttons -->
         <div>
           <%= link_to "Nuovo Evento", new_vivaio_event_path, class: "btn btn-success" %>
+          <br>
+          <br>
+          <% if params[:scope] %>
+            <%= render 'shared/back_button' %>
+          <% else %>
+            <%= link_to vivaio_events_path(scope: :past), class: "btn btn-info" do %>
+              Vedi gli eventi passati
+            <% end %>
+          <% end %>
         </div>
         <!-- End of Admin buttons -->
       <% end %>
       <main class="events-grid">
         <div class="row">
           <% @vivaio_events.each do |event| %>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12">
               <%= render "event_card", event: event %>
               <% if user_signed_in? && current_user.admin %>
                 <!-- Admin buttons -->
@@ -33,17 +42,6 @@
           <% end %>
         </div>
       </main>
-      <div class="eventi-index-link">
-        <% if params[:scope] %>
-          <%= render 'shared/back_button' %>
-        <% else %>
-          <h4>
-            <%= link_to vivaio_events_path(scope: :past) do %>
-              Vedi gli eventi passati &#127811;
-            <% end %>
-          </h4>
-        <% end %>
-      </div>
     </div>
   </div>
 </div>

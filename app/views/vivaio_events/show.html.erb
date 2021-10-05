@@ -15,7 +15,12 @@
       <% end %>
       <h1 class="text-center"><%= @vivaio_event.title %></h1>
       <main class="event">
-        <h3><i class="far fa-calendar-alt"></i> <%= format_event_date @vivaio_event.data_evento, :event_long %></h3>
+        <h3>
+          <i class="far fa-calendar-alt"></i> <%= format_event_date @vivaio_event.data_evento, :event_long %>
+          <% if ! @vivaio_event.data_fine_evento.nil? %>
+            <%= "– " + I18n.l(@vivaio_event.data_fine_evento, format: :event_long).to_s  %>
+          <% end %>
+        </h3>
         <%= @vivaio_event.content %>
       </main>
       <%= render 'shared/back_button' %>
