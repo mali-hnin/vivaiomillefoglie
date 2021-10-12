@@ -23,7 +23,11 @@
         </h3>
         <%= @vivaio_event.content %>
       </main>
-      <%= render 'shared/back_button' %>
+      <% if user_signed_in? && current_user.admin %>
+        <%= link_to raw("&larr; Torna indietro"), vivaio_events_path %>
+      <% else %>
+        <%= render 'shared/back_button' %>
+      <% end %>
     </div>
   </div>
 </div>

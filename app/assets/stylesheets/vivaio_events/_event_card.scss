@@ -1,12 +1,17 @@
 .event-card {
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 250px;
+  width: 100%;
   position: relative;
   margin: 4vh 0;
-  background-color: white;
-  border-radius: 5px;
+  background-color: #ebebcb;
+  /* border: #BCBCA2 1px solid; */
+  border-radius: 2px;
   transition: all .25s linear;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
+  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
               0 3px 1px -2px rgba(0, 0, 0, 0.1),
-              0 1px 5px 0 rgba(0, 0, 0, 0.1);
+              0 1px 5px 0 rgba(0, 0, 0, 0.1); */
    &:hover {
     box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.4);
   }
@@ -25,7 +30,7 @@
   display: flex;
   align-items: center;
   border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+  border-bottom-left-radius: inherit;
 
 }
 
@@ -33,22 +38,42 @@
   min-height: 100%;
   width: 100%;
   display: block; /* remove extra space below image */
+  object-position: bottom center;
+  object-fit: cover;
 }
 
-.event-card-description {
+.event-card-content {
   padding: 10px;
-
 }
 
 .event-card-date {
-  color: $orange;
-  position: relative;
-
+  color: $purple;
+  p {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .event-card-title {
-  font-size: 26px;
+  font-size: 24px;
+  color: black;
+  p {
+   position: relative;
+   z-index: 2;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
 
+.event-card-description {
+  font-size: .7em;
+  color: #333333;
+  height: 4.5em;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 a.event-card-link {
