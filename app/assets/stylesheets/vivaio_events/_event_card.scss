@@ -79,6 +79,10 @@
 a.event-card-link {
   display: block;
   z-index: 1;
+  color: $purple;
+  text-align: center;
+  text-decoration: underline;
+  font-size: .8em;
 }
 
 a.event-card-link::after {
@@ -99,4 +103,11 @@ a.event-card-link::after {
 .other-card-links a{
   z-index: 2;
   position: relative;
+}
+
+.event-card-button {
+  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
