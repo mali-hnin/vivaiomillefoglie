@@ -12,9 +12,9 @@
       <%= image_tag "event_card.jpg" %>
     <% end %>
   </div>
-  <div class="event-card-description">
+  <div class="event-card-content">
     <div class="event-card-date">
-      <p class="small-caps">
+      <p class=""><i class="fas fa-map-pin"></i>
         <%= format_event_date event.data_evento, :event_short %>
         <% if ! event.data_fine_evento.nil? %>
           <%= "– " + I18n.l(event.data_fine_evento, format: :event_short).to_s  %>
@@ -22,7 +22,12 @@
       </p>
     </div>
     <div class="event-card-title">
-      <%= link_to event.title, vivaio_event_path(event.id), class:"event-card-link" %>
+      <p><%= event.title %></p>
     </div>
+    <div class="event-card-description">
+      <p><%= event.content.to_plain_text.truncate(200).gsub(/\[.*\]/, "") %></p>
+    </div>
+    <%= link_to raw("Continua &rarr;"), vivaio_event_path(event.id), class:"btn btn-purple event-card-button" %>
   </div>
+  <%= link_to "", vivaio_event_path(event.id), class:"event-card-link" %>
 </div>
