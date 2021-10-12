@@ -32,6 +32,12 @@
     float: right;
   }
 
+.date-grid {
+  display: inline-grid;
+  grid-template-columns: auto inherit;
+  grid-template-rows: auto auto;
+}
+
 @media only screen and (max-width: 1024px) {
   .left-side-events {
     width: 100%;
@@ -71,6 +77,16 @@
   .event-card-button {
     bottom: -20px;
     right: 0px;
+  }
+
+  .event-title {
+    font-size: 24px;
+  }
+
+  .event {
+    h3 {
+    font-size: 22px;
+    }
   }
 }
 

@@ -1,12 +1,10 @@
 .event-card {
   display: grid;
   grid-template-columns: 250px auto;
-  grid-template-rows: 250px;
+  grid-template-rows: auto;
   width: 100%;
   position: relative;
   margin: 4vh 0;
-  background-color: #ebebcb;
-  /* border: #BCBCA2 1px solid; */
   border-radius: 2px;
   transition: all .25s linear;
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
@@ -44,6 +42,8 @@
 
 .event-card-content {
   padding: 10px;
+  background-color: #ebebcb;
+  /* border: #BCBCA2 1px solid; */
 }
 
 .event-card-date {
