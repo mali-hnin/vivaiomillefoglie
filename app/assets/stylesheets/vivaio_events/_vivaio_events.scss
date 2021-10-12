@@ -9,6 +9,7 @@
 .event-admin-buttons {
   position: absolute;
   top: 35px;
+  z-index: 20;
 }
 
 .event h3 {
@@ -31,9 +32,45 @@
     float: right;
   }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   .left-side-events {
     width: 100%;
     padding: 0px 5px;
   }
 }
+
+
+@media only screen and (max-width: 700px) {
+  .event-card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .event-card-description {
+    max-height: 4.5em;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .event-card {
+    grid-template-columns: auto;
+    grid-template-rows: 250px auto;
+  }
+
+  .event-card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .event-card-description {
+    max-height: 4.5em;
+    margin-bottom: 10px;
+  }
+
+  .event-card-button {
+    bottom: -20px;
+    right: 0px;
+  }
+}
+
