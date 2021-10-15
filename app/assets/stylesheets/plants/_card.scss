@@ -13,9 +13,24 @@
   padding: 40px 0px;
 }
 
+.card-photo {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
 .card-photo img {
-  max-width: 100%;
+  width: 100%;
   max-height: 300px;
+  height: 100%;
+  // width: 100%;
+  display: block;
+  /* remove extra space below image */
+  object-position: bottom center;
+  object-fit: cover;
 }
 
 .card-content {
@@ -23,21 +38,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: #BCBCA2 1px solid;
 }
 
 .card-info {
   p {
     margin-bottom: 4px;
   }
+
   h1 {
     font-size: 22px;
     font-weight: bold;
     font-family: 'Muli', sans-serif;
     margin-bottom: 8px;
   }
+
   p.small {
     font-variant: small-caps;
   }
+
   p.light {
     font-weight: lighter;
   }
@@ -50,10 +69,11 @@
   bottom: 90px;
   right: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   background: black;
   opacity: 0;
 }
+
 .card-link:hover {
   opacity: 0.1;
 }
@@ -67,21 +87,52 @@
     bottom: 110px;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .card-photo {
+    width: 250px;
+    height: 250px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+
   .plant-card {
     margin: 0px;
     padding: 0px;
+    transform: scale(0.9, 0.9);
+    -ms-transform: scale(0.9, 0.9);
+    /* IE 9 */
+    -webkit-transform: scale(0.9, 0.9);
+    /* Safari and Chrome */
+    -o-transform: scale(0.9, 0.9);
+    /* Opera */
+    -moz-transform: scale(0.9, 0.9);
+    /* Firefox */
+  }
+
+  .my-flex-card>div>div.card {
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+  }
+
+  .card-photo {
+    width: 180px;
+    height: 180px;
   }
 }
 
 @media only screen and (max-width: 365px) {
   .plant-card {
     transform: scale(0.8, 0.8);
-    -ms-transform: scale(0.8, 0.8); /* IE 9 */
-    -webkit-transform: scale(0.8, 0.8); /* Safari and Chrome */
-    -o-transform: scale(0.8, 0.8); /* Opera */
-    -moz-transform: scale(0.8, 0.8); /* Firefox */
+    -ms-transform: scale(0.8, 0.8);
+    /* IE 9 */
+    -webkit-transform: scale(0.8, 0.8);
+    /* Safari and Chrome */
+    -o-transform: scale(0.8, 0.8);
+    /* Opera */
+    -moz-transform: scale(0.8, 0.8);
+    /* Firefox */
   }
 
 }
-
