@@ -7,6 +7,7 @@
 .plant-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 300px;
   margin: 15px;
@@ -38,19 +39,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: #BCBCA2 1px solid;
+  padding: 5px 10px;
+  border: #bcbca2 1px solid;
+  margin-top: 10px;
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 5px;
+    min-height: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .card-info {
   p {
     margin-bottom: 4px;
-  }
-
-  h1 {
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 'Muli', sans-serif;
-    margin-bottom: 8px;
   }
 
   p.small {
@@ -62,11 +70,19 @@
   }
 }
 
+.card-plant-name {
+  background-color: $light-blue-bright;
+  position: relative;
+  z-index: 2;
+  border-radius: 5px;
+  text-align: center;
+  margin: -25px auto 0px auto;
+}
+
 .card-link {
   position: absolute;
   top: 0;
-  // on smaller screens the card link covers the quantity input field if bottom is less than 110px, if changed fix mobile value too
-  bottom: 90px;
+  bottom: 0;
   right: 0;
   width: 100%;
   z-index: 1;
@@ -78,14 +94,16 @@
   opacity: 0.1;
 }
 
+.card-button {
+  z-index: 3;
+  text-align: center;
+}
+
 .small-field {
   width: 50px;
 }
 
 @media only screen and (max-width: 1090px) {
-  .card-link {
-    bottom: 110px;
-  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -96,7 +114,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-
   .plant-card {
     margin: 0px;
     padding: 0px;
@@ -111,7 +128,7 @@
     /* Firefox */
   }
 
-  .my-flex-card>div>div.card {
+  .my-flex-card > div > div.card {
     height: calc(100% - 15px);
     margin-bottom: 15px;
   }
@@ -134,5 +151,4 @@
     -moz-transform: scale(0.8, 0.8);
     /* Firefox */
   }
-
 }
