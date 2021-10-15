@@ -1,0 +1,45 @@
+<div class="column-center">
+  <div class="plant-card2">
+    <div class="card2-photo">
+      <% if plant.photos.empty? %>
+      <%= image_tag "Logo_2.png" %>
+      <% else %>
+      <% plant.photos.each do |photo| %>
+      <%= cl_image_tag photo.path %>
+      <% end %>
+      <% end %>
+    </div>
+      <div class="card2-plant-name">
+        <h1><%= plant.name %></h1>
+      </div>
+    <div class="card2-content">
+      <div class="card2-description">
+        <div class="card2-info">
+          <p><strong>Categoria:</strong> <%= plant.category %></p>
+          <p><strong>Esposizione:</strong> <%= plant.esposizione %></p>
+          <p><strong>Fioritura:</strong> <%= plant.fioritura %></p>
+          <p><strong>Altezza:</strong> <%= plant.altezza %></p>
+          <p><strong>Funzione:</strong> <%= plant.utile_per %></p>
+          <% if plant.disponibile? %>
+          <p class="small text-success">disponibile</p>
+          <% else %>
+          <p class="small text-danger">non disponibile</p>
+          <% end %>
+          <p class="light"><%= humanized_money_with_symbol plant.prezzo %></p>
+          </div>
+        </div>
+        <div class="card2-button">
+          <% if plant.disponibile? %>
+            <%= form_for @line_item do |f| %>
+              <%= f.hidden_field :plant_id, value: plant.id %>
+              <%= f.number_field :quantity, value: 1, class: "small-field" %>
+              <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
+            <% end %>
+          <% else %>
+            <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card2-link"%>
+          <% end %>
+        </div>
+      <%= link_to "", plant_path(plant), class: "card2-link"%>
+      </div>
+    </div>
+  </div>
