@@ -116,6 +116,10 @@
   z-index: 3;
   text-align: center;
   margin-top: 20px;
+
+  form {
+    display: flex;
+  }
 }
 
 // Remove arrows from number input field:
