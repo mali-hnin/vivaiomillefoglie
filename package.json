@@ -20,7 +20,10 @@
     "defaults"
   ],
   "devDependencies": {
+    "@prettier/plugin-ruby": "^2.0.0-rc4",
     "@webpack-cli/serve": "^1.5.2",
+    "prettier": "^2.4.1",
+    "prettier-plugin-erb": "^0.4.0",
     "webpack-dev-server": "^4.2.0"
   }
 }

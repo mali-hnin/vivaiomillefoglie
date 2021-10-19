@@ -20,8 +20,7 @@
     transform: scale(0.99);
   }
 
-  &:focus {
-  }
+  &:focus {}
 }
 
 .event-cover-photo {
@@ -105,8 +104,7 @@ a.event-card-link::after {
   opacity: 0;
 }
 
-.event-card-link:hover::after {
-}
+.event-card-link:hover::after {}
 
 /* this class makes links in div responsive inside a clickable card */
 .other-card-links a {
