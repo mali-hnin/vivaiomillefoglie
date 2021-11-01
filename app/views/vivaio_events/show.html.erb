@@ -17,9 +17,9 @@
       <main class="event">
         <h3>
           <% if @vivaio_event.data_fine_evento.nil? %>
-            <i class="fas fa-map-pin"></i> <%= format_event_date @vivaio_event.data_evento, :event_long_date %> | <i class="far fa-clock"></i> <%= format_event_date @vivaio_event.data_evento, :event_hour %>
+            </i> <%= format_event_date @vivaio_event.data_evento, :event_long_date %>
           <% else %>
-            <i class="fas fa-map-pin"></i> Da <%= format_event_date @vivaio_event.data_evento, :event_long_date %> <i class="far fa-clock"></i> <%= format_event_date @vivaio_event.data_evento, :event_hour %>, a <%= I18n.l(@vivaio_event.data_fine_evento, format: :event_long_date).to_s %> <i class="far fa-clock"></i> <%= format_event_date @vivaio_event.data_fine_evento, :event_hour %>
+            Da <%= format_event_date @vivaio_event.data_evento, :event_long_date %> a <%= I18n.l(@vivaio_event.data_fine_evento, format: :event_long_date).to_s %>
           <% end %>
         </h3>
         <%= @vivaio_event.content %>
