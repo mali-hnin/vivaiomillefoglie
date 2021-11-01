@@ -87,10 +87,7 @@
 a.event-card-link {
   display: block;
   z-index: 1;
-  color: $purple;
-  text-align: center;
-  text-decoration: underline;
-  font-size: 0.8em;
+
 }
 
 a.event-card-link::after {
@@ -107,9 +104,14 @@ a.event-card-link::after {
 .event-card-link:hover::after {}
 
 /* this class makes links in div responsive inside a clickable card */
-.other-card-links a {
-  z-index: 2;
-  position: relative;
+.other-card-links {
+  text-align: center;
+
+  a{
+    z-index: 2;
+    position: relative;
+    color: $purple;
+  }
 }
 
 .event-card-button {

@@ -5,7 +5,7 @@
 }
 
 .plant-card2 {
-  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,27 +13,21 @@
   margin: 30px;
 
   &:hover {
-    box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.4);
-  }
 
-  &:active {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transform: scale(0.99);
   }
 }
 
 .card2-photo {
-  height: 300px;
-  width: 300px;
+  position: relative;
+  height: 280px;
+  width: 280px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
   flex: 0 0 auto;
 }
 
 .card2-photo img {
   width: 100%;
-  max-height: 300px;
+  max-height: 280px;
   height: 100%;
   // width: 100%;
   display: block;
@@ -59,7 +53,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-
+  border-radius: 5px 5px 0px 0px;
   h1 {
     font-size: 22px;
     font-weight: bold;
@@ -79,19 +73,10 @@
   p {
     margin-bottom: 4px;
   }
-
-  p.small {
-    font-variant: small-caps;
-  }
-
-  p.light {
-    font-weight: lighter;
-  }
 }
 
 .card2-link {
   display: block;
-
   top: 0;
   bottom: 0;
   right: 0;
@@ -100,6 +85,7 @@
   background: black;
   opacity: 0;
 }
+
 
 .card2-link::after {
   position: absolute;
@@ -114,8 +100,14 @@
 
 .card2-button {
   z-index: 3;
-  text-align: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  span.small {
+    font-variant: small-caps;
+  }
+
+  span.light {
+    font-weight: lighter;
+  }
 
   form {
     display: flex;
