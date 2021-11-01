@@ -212,8 +212,8 @@ it:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
       event_long_full: "%a %d %B %Y, ore %H:%M"
-      event_long_date: "%a %d %B %Y"
+      event_long_date: "%A %d %B %Y"
       event_hour: "%H:%M"
-      event_short: "%d %b %Y, %H:%M"
+      event_short: "%d %b %Y"
       euro: "%d/%m/%Y, %H:%M"
     pm: pm
