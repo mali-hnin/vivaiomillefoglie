@@ -47,19 +47,12 @@
 
 .event-card-date {
   color: $purple;
-  p {
-    position: relative;
-    z-index: 2;
-  }
 }
 
 .event-card-title {
   font-size: 24px;
   color: black;
-  p {
-   position: relative;
-   z-index: 2;
-  }
+
   a:hover {
     color: black;
     text-decoration: none;
