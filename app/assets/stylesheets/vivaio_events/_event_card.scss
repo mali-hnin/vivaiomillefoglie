@@ -22,7 +22,6 @@
 }
 
 .event-cover-photo {
-  height: 250px;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -33,7 +32,7 @@
 }
 
 .event-cover-photo img{
-  min-height: 100%;
+
   width: 100%;
   display: block; /* remove extra space below image */
   object-position: bottom center;
