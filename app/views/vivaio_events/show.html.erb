@@ -17,7 +17,12 @@
       <main class="event">
         <h3>
           <% if @vivaio_event.data_fine_evento.nil? %>
-            </i> <%= format_event_date @vivaio_event.data_evento, :event_long_date %>
+            <%= format_event_date @vivaio_event.data_evento, :event_long_date %>
+            <% if @vivaio_event.data_evento.strftime("%H:%M") != "00:00" %>
+              , ore <%= @vivaio_event.data_evento.strftime("%H:%M") %>
+            <% end %>
+          <% elsif @vivaio_event.data_evento.to_date == @vivaio_event.data_evento.to_date %>
+            <%= format_event_date @vivaio_event.data_evento, :event_long_full %> – <%= @vivaio_event.data_fine_evento.strftime("%H:%M") %>
           <% else %>
             Da <%= format_event_date @vivaio_event.data_evento, :event_long_date %> a <%= I18n.l(@vivaio_event.data_fine_evento, format: :event_long_date).to_s %>
           <% end %>
