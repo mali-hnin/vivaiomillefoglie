@@ -15,7 +15,14 @@
   <div class="event-card-content">
     <div class="event-card-date">
       <p class="">
-        <%= format_event_date event.data_evento, :event_short %>
+        <% if event.data_evento.nil? %>
+          Data da confermare
+        <% elsif ! event.data_evento.nil? %>
+          <%= I18n.l(event.data_evento, format: :event_short).to_s %>
+          <% if event.data_evento.strftime("%H:%M") != "00:00" && event.data_fine_evento.nil? %>
+            , ore <%= event.data_evento.strftime("%H:%M") %>
+          <% end %>
+        <% end %>
         <% if ! event.data_fine_evento.nil? %>
           <%= "– " + I18n.l(event.data_fine_evento, format: :event_short).to_s  %>
         <% end %>
