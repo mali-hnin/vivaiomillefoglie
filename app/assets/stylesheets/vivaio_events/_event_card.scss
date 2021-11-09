@@ -7,35 +7,37 @@
   margin: 4vh 0;
   border-radius: 2px;
   transition: all .25s linear;
+
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
               0 3px 1px -2px rgba(0, 0, 0, 0.1),
               0 1px 5px 0 rgba(0, 0, 0, 0.1); */
-   &:hover {
-    box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.4);
+  &:hover {
+    box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.4);
   }
+
   &:active {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transform: scale(.99)
   }
-  &:focus {
-  }
+
+  &:focus {}
 }
 
 .event-cover-photo {
-  height: 250px;
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
-
+  background-color: whitesmoke;
 }
 
-.event-cover-photo img{
-  min-height: 100%;
+.event-cover-photo img {
+
   width: 100%;
-  display: block; /* remove extra space below image */
+  display: block;
+  /* remove extra space below image */
   object-position: bottom center;
   object-fit: cover;
 }
@@ -48,19 +50,12 @@
 
 .event-card-date {
   color: $purple;
-  p {
-    position: relative;
-    z-index: 2;
-  }
 }
 
 .event-card-title {
   font-size: 24px;
   color: black;
-  p {
-   position: relative;
-   z-index: 2;
-  }
+
   a:hover {
     color: black;
     text-decoration: none;
@@ -74,6 +69,7 @@
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+
   img {
     display: none;
   }
@@ -99,11 +95,8 @@ a.event-card-link::after {
   opacity: 0;
 }
 
-.event-card-link:hover::after {
-}
-
 /* this class makes links in div responsive inside a clickable card */
-.other-card-links a{
+.other-card-links a {
   z-index: 2;
   position: relative;
 }
