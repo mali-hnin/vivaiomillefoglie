@@ -14,21 +14,7 @@
   </div>
   <div class="event-card-content">
     <div class="event-card-date">
-      <p class="">
-        <% if event.data_evento.nil? %>
-          Data da confermare
-        <% else %>
-          <%= I18n.l(event.data_evento, format: :event_short).to_s %>
-          <% if event.data_evento.strftime("%H:%M") != "00:00" %>
-            <% if event.data_fine_evento.nil? || event.data_fine_evento.to_date == event.data_evento.to_date %>
-              , ore <%= event.data_evento.strftime("%H:%M") %>
-            <% end %>
-          <% end %>
-        <% end %>
-        <% if ! event.data_fine_evento.nil? && event.data_fine_evento.to_date != event.data_evento.to_date %>
-          <%= "– " + I18n.l(event.data_fine_evento, format: :event_short).to_s  %>
-        <% end %>
-      </p>
+      <p><%= format_card_date event.data_evento, event.data_fine_evento %></p>
     </div>
     <div class="event-card-title">
       <p><%= event.title %></p>
