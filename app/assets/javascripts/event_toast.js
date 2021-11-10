@@ -1,3 +1,3 @@
-$(document).ready(function(){
-  $("#myToast").toast("show");
-});
+// $(document).ready(function(){
+//   $("#myToast").toast("show");
+// });
