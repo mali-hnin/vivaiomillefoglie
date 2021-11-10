@@ -1,6 +1,7 @@
 <%# needs class .in instead of .show after .fade because i have someold bootstrap library set up with sprockets. Bootstrap5  behaviour would use .show %>
 <div class="alert alert-event alert-dismissible fade in" role="alert">
-  <span class="small-caps bold">Prossimo evento: </span><%= event.title %><%= link_to "Vedi di più...", vivaio_event_path(event) %> | <%= link_to "Altri eventi", vivaio_events_path %>
+  <span class="mobile-block"><span class="small-caps bold">Prossimo evento: </span><%= event.title %></span>
+  <%= link_to "Vedi di più...", vivaio_event_path(event) %> | <%= link_to "Altri eventi", vivaio_events_path %>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
 
