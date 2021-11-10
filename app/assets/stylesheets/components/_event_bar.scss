@@ -1,0 +1,11 @@
+.alert-event {
+  width: 100%;
+  background-color: $light-green;
+  padding: 5px;
+  min-height: 24px;
+  color: $dark-green;
+}
+
+.alert-dismissible .close {
+  right: 0px;
+}
