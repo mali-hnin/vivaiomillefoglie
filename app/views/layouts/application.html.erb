@@ -46,7 +46,6 @@
   </head>
   <body>
     <div class="wrapper">
-      <%= render 'shared/event_bar', event: @next_event %>
       <%= yield %>
       <%= javascript_include_tag 'application' %>
       <%= cloudinary_js_config %>

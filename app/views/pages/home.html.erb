@@ -23,12 +23,12 @@
       </div>
     </div>
     <div class="right-side">
-      <%# render 'shared/event_toast' %>
       <% if user_signed_in? && current_user.admin %>
       <!-- Admin Panel -->
         <%= render 'plants/admin_panel_main' %>
       <!-- End of Admin Panel -->
       <% end %>
+      <%= render 'shared/event_box', event: @next_event %>
     </div>
   </div>
 </div>
