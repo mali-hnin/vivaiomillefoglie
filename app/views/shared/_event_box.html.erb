@@ -1,7 +1,11 @@
 <div class="event-box">
-  <span class="small-caps bold">Prossimo evento: </span><br/>
-  <%= event.title %> <br/>
-  <%= link_to "Vedi di più...", vivaio_event_path(event), class: 'orange-link' %> <br/>
-  <%= link_to "Altri eventi", vivaio_events_path, class: 'orange-link' %>
-
+  <div class="pica fs-1 small-caps bold m-3">Prossimo evento: </div>
+  <div class="m-3"><%= event.title %> </div>
+  <div class="m-3">
+    <%= link_to "Vedi di più...", vivaio_event_path(event), class: 'orange-link' %>
+  </div>
+  <hr>
+  <div class="m-3">
+    <%= link_to "Altri eventi", vivaio_events_path, class: 'orange-link' %>
+  </div>
 </div>
