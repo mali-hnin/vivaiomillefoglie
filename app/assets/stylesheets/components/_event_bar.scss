@@ -21,7 +21,7 @@
 }
 
 .event-box {
-  background-color: #444225;
+  background-color: $dark-green;
   color: $light-green;
   font-family: Arial,
     Helvetica,
@@ -50,8 +50,8 @@ hr.hrstyle {
 .pica {
   font-family: 'IM Fell Double Pica SC',
     serif;
-  font-size: calc(1.375rem + 1.5vw);
 }
+
 
 @media only screen and (max-width: 840px) {
   .mobile-block {
@@ -62,7 +62,4 @@ hr.hrstyle {
     margin: 0px;
   }
 
-  .pica {
-    font-size: calc(1.375rem + 1.5vh);
-  }
 }
