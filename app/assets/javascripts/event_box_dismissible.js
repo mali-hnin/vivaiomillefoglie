@@ -1,4 +1,4 @@
 function dismissEvent() {
-  var x = document.getElementById("eventBox");
+  const x = document.getElementById("eventBox");
     x.style.display = "none";
 }
