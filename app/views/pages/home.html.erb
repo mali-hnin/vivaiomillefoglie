@@ -28,7 +28,9 @@
         <%= render 'plants/admin_panel_main' %>
       <!-- End of Admin Panel -->
       <% end %>
-      <%= render 'shared/event_box', event: @next_event %>
+      <% if @next_event %>
+        <%= render 'shared/event_box', event: @next_event %>
+      <% end %>
     </div>
   </div>
 </div>
