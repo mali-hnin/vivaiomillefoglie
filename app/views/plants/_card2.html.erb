@@ -1,17 +1,19 @@
 <div class="column-center">
   <div class="plant-card2">
-    <div class="card2-photo">
-      <% if plant.photos.empty? %>
-        <%= image_tag "Logo_2.png" %>
-      <% else %>
-        <% plant.photos.each do |photo| %>
-          <%= cl_image_tag photo.path %>
+  <div>
+      <div class="card2-photo">
+        <% if plant.photos.empty? %>
+          <%= image_tag "Logo_2.png" %>
+        <% else %>
+          <% plant.photos.each do |photo| %>
+            <%= cl_image_tag photo.path %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= link_to "", plant_path(plant), class: "card2-link"%>
-    </div>
-    <div class="card2-plant-name">
-      <h1><%= plant.name %></h1>
+        <%= link_to "", plant_path(plant), class: "card2-link"%>
+      </div>
+      <div class="card2-plant-name">
+        <h1><%= plant.name %></h1>
+      </div>
     </div>
     <div class="card2-content">
       <div class="card2-info">
