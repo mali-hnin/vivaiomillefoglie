@@ -30,10 +30,14 @@
   margin: 70px;
   line-height: 1.5;
   box-shadow: 0 1px 11px 5px rgba(0, 0, 0, 0.2);
-  border: solid rgba(240, 255, 235, 0.5) 1px;
+  border: solid rgba(240, 255, 235, 0.2) 1px;
   border-radius: 5px;
   max-width: 400px;
   align-self: flex-start;
+
+  .close {
+    color: inherit;
+  }
 }
 
 hr.hrstyle {
