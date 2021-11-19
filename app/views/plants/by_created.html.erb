@@ -10,7 +10,7 @@
         <div class="catalogo-admin-content">
           <h1>Catalogo / <%= Plant.all.count %> piante</h1>
           <ul class="flower-list">
-            <li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_path %></li>
+            <li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_intro_path(anchor: 'catalogo') %></li>
             <li class="spacing-5"><%= link_to "ordina per ultima creata", by_created_plants_path %></li>
             <li class="spacing-5"><%= link_to "ordina per ultima aggiornata", by_updated_plants_path %></li>
           </ul>
@@ -48,7 +48,7 @@
           </table>
           <div class="navigation-box">
             <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
-            <%= link_to raw("&larr; Torna indietro"), catalogo_path, class: 'uppercase-text' %>
+            <%= link_to raw("&larr; Torna indietro"), catalogo_intro_path(anchor: 'catalogo'), class: 'uppercase-text' %>
           </div>
         </div>
       </div>
