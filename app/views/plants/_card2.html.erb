@@ -20,8 +20,8 @@
         <p><strong>Fioritura:</strong> <%= plant.fioritura %></p>
         <p><strong>Altezza:</strong> <%= plant.altezza %></p>
 
-        <div class="other-card-links">
-          <%= link_to "Vedi di più", plant_path(plant), class: "other-card-links"%>
+        <div class="other-card-links" style="font-weight:bold;">
+          <%= link_to "Vedi di più", plant_path(plant), class: "other-card-links bold"%>
         </div>
       </div>
         <hr>
@@ -29,19 +29,19 @@
         <p>
           <%= humanized_money_with_symbol plant.prezzo %>
           <% if plant.disponibile? %>
-            <span class="small text-success">disponibile</span>
+            <span class="small-caps text-success">disponibile</span>
           <% else %>
-            <span class="small text-danger">non disponibile</span>
+            <span class="small-caps text-danger">non disponibile</span>
           <% end %>
         </p>
         <% if plant.disponibile? %>
           <%= form_for @line_item do |f| %>
             <%= f.hidden_field :plant_id, value: plant.id %>
             <%= f.number_field :quantity, value: 1, class: "small-field" %>
-            <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
+            <%= f.submit 'Aggiungi', class: 'btn btn-purple' %>
           <% end %>
         <% else %>
-          <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card2-link"%>
+          <%= button_to 'Aggiungi', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card2-link"%>
         <% end %>
       </div>
 
