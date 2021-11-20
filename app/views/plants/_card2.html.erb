@@ -1,19 +1,17 @@
 <div class="column-center">
   <div class="plant-card2">
-  <div>
-      <div class="card2-photo">
-        <% if plant.photos.empty? %>
-          <%= image_tag "Logo_2.png" %>
-        <% else %>
-          <% plant.photos.each do |photo| %>
-            <%= cl_image_tag photo.path %>
-          <% end %>
+    <div class="card2-photo">
+      <% if plant.photos.empty? %>
+        <%= image_tag "Logo_2.png" %>
+      <% else %>
+        <% plant.photos.each do |photo| %>
+          <%= cl_image_tag photo.path %>
         <% end %>
-        <%= link_to "", plant_path(plant), class: "card2-link"%>
-      </div>
-      <div class="card2-plant-name">
-        <h1><%= plant.name %></h1>
-      </div>
+      <% end %>
+      <%= link_to "", plant_path(plant), class: "card2-link"%>
+    </div>
+    <div class="card2-plant-name">
+      <h1><%= plant.name %></h1>
     </div>
     <div class="card2-content">
       <div class="card2-info">
@@ -21,17 +19,16 @@
         <p><strong>Esposizione:</strong> <%= plant.esposizione %></p>
         <p><strong>Fioritura:</strong> <%= plant.fioritura %></p>
         <p><strong>Altezza:</strong> <%= plant.altezza %></p>
-
-        <div class="other-card-links" style="font-weight:bold;">
-          <%= link_to "Vedi di più", plant_path(plant), class: "other-card-links bold"%>
+        <div class="other-card-links fw-bold">
+          <%= link_to "Vedi di più", plant_path(plant) %>
         </div>
       </div>
-        <hr>
+
       <div class="card2-button">
         <p>
           <%= humanized_money_with_symbol plant.prezzo %>
           <% if plant.disponibile? %>
-            <span class="small-caps text-success">disponibile</span>
+            <span class="small-caps text-success fw-bold">disponibile</span>
           <% else %>
             <span class="small-caps text-danger">non disponibile</span>
           <% end %>

@@ -62,7 +62,7 @@
     margin-bottom: 0px;
     margin-top: 0px;
     padding: 5px;
-    min-height: 2.5em;
+    min-height: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,44 +132,57 @@ input[type=number] {
 }
 
 .small-field {
-  width: 50px;
+  min-width: 40px;
+  max-width: 50px;
 }
 
-@media only screen and (max-width: 800px) {
-  .card2-photo {
-    width: 250px;
-    height: 250px;
+/* this class makes links in div responsive inside a clickable card */
+.other-card-links {
+  text-align: center;
+  margin: 25px 0px;
+  font-size: 1.1em;
+
+  a {
+    z-index: 2;
+    position: relative;
+    color: $purple;
   }
 }
 
+@media only screen and (max-width: 800px) {}
+
 @media only screen and (max-width: 600px) {
   .plant-card2 {
-    flex-direction: row;
     font-size: .9em;
     margin: 10px 0;
     padding: 0px;
     width: 100%;
-    // transform: scale(0.9, 0.9);
-    // -ms-transform: scale(0.9, 0.9);
-    // /* IE 9 */
-    // -webkit-transform: scale(0.9, 0.9);
-    // /* Safari and Chrome */
-    // -o-transform: scale(0.9, 0.9);
-    // /* Opera */
-    // -moz-transform: scale(0.9, 0.9);
-    // /* Firefox */
   }
 
   .card2-photo {
-    width: 150px;
-    height: 150px;
+    width: auto;
+    height: auto;
+
+    img {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
   }
 
   .card2-plant-name {
-    width: 150px;
+    border-radius: 0px;
+
+    h1 {
+      font-size: 16px;
+    }
   }
 
   hr {
     display: none;
+  }
+
+  .other-card-links {
+    margin: 20px 0;
+
   }
 }
