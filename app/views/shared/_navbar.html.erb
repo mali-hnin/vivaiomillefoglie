@@ -32,31 +32,31 @@
   </div>
   <!-- Dropdown navigation appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        MENU
-      </a>
-      <ul class="dropdown-menu navbar-wagon-dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "L'Orto dei Fiori", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Eventi", vivaio_events_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <% if user_signed_in? %>
+    <div >
+      <button class="btn" role="button" id="mobileMenuBtn" data-bs-toggle="mobile-menu" aria-expanded="false">MENU</button>
+      <div class="mobile-menu mobile-menu-closed transition-25" id="mobileMenu">
+        <ul class="navbar-wagon-dropdown-menu">
+          <li><%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><hr class="dropdown-divider"></li>
-          <li><%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-              <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
-            <% end %></li>
-        <% end %>
-      </ul>
+          <li><%= link_to "Catalogo", catalogo_intro_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Giardini", giardini_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "L'Orto dei Fiori", flowerslab_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Eventi", vivaio_events_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <% if user_signed_in? %>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+                <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
+              <% end %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
   <!-- End of dropdown -->
