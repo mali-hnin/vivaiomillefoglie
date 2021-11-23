@@ -141,6 +141,8 @@
   list-style-type: none;
   border-top: solid 1px $yellow;
   border-bottom: solid 1px $yellow;
+  max-height: calc(100vh - 100px);
+  overflow-y: scroll;
 
   li {
     padding: 20px;
