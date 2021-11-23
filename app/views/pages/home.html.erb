@@ -22,12 +22,15 @@
       <div class="left-side-bottom">
       </div>
     </div>
-    <% if user_signed_in? && current_user.admin %>
+    <div class="right-side">
+      <% if user_signed_in? && current_user.admin %>
       <!-- Admin Panel -->
-      <div class="right-side">
         <%= render 'plants/admin_panel_main' %>
-      </div>
       <!-- End of Admin Panel -->
-    <% end %>
+      <% end %>
+      <% if @next_event %>
+        <%= render 'shared/event_box', event: @next_event %>
+      <% end %>
+    </div>
   </div>
 </div>

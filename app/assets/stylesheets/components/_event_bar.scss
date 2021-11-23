@@ -1,0 +1,65 @@
+.alert-event {
+  width: 100%;
+  background-color: $light-green;
+  padding: 5px;
+  min-height: 24px;
+  color: $dark-green;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .95em;
+
+  a {
+    margin: 0px 15px;
+    color: $orange;
+    font-size: .85em;
+  }
+}
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+}
+
+.event-box {
+  background-color: $dark-green;
+  color: $light-green;
+  font-family: Arial,
+    Helvetica,
+    sans-serif;
+  padding: 20px;
+  margin: 70px;
+  line-height: 1.5;
+  box-shadow: 0 1px 11px 5px rgba(0, 0, 0, 0.2);
+  border: solid rgba(240, 255, 235, 0.2) 1px;
+  border-radius: 5px;
+  max-width: 400px;
+  align-self: flex-start;
+
+  .close {
+    color: inherit;
+  }
+}
+
+hr.hrstyle {
+  border: 0;
+  height: 1px;
+  background-color: #444225;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1));
+}
+
+.pica {
+  font-family: 'IM Fell Double Pica SC',
+    serif;
+}
+
+
+@media only screen and (max-width: 840px) {
+  .mobile-block {
+    display: block;
+  }
+
+  .event-box {
+    margin: 0px;
+  }
+
+}

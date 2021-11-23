@@ -14,20 +14,16 @@
   </div>
   <div class="event-card-content">
     <div class="event-card-date">
-      <p class=""><i class="fas fa-map-pin"></i>
-        <%= format_event_date event.data_evento, :event_short %>
-        <% if ! event.data_fine_evento.nil? %>
-          <%= "– " + I18n.l(event.data_fine_evento, format: :event_short).to_s  %>
-        <% end %>
-      </p>
+      <p><%= format_card_date event.data_evento, event.data_fine_evento %></p>
     </div>
     <div class="event-card-title">
       <p><%= event.title %></p>
     </div>
     <div class="event-card-description">
-      <p><%= event.content.to_plain_text.truncate(200).gsub(/\[.*\]/, "") %></p>
+      <%# add .truncate(200) to only keep 200 char %>
+      <p><%= event.content.to_plain_text.gsub(/\[.*\]/, "").truncate(200) %></p>
     </div>
-    <%= link_to raw("Continua &rarr;"), vivaio_event_path(event.id), class:"btn btn-purple event-card-button" %>
+    <%= link_to raw("Apri &rarr;"), vivaio_event_path(event.id), class:"btn btn-purple event-card-button" %>
   </div>
   <%= link_to "", vivaio_event_path(event.id), class:"event-card-link" %>
 </div>

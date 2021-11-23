@@ -13,15 +13,9 @@
         </div>
         <!-- End of Admin buttons -->
       <% end %>
-      <h1 class="text-center event-title"><%= @vivaio_event.title %></h1>
+      <h1 class="event-title"><%= @vivaio_event.title %></h1>
       <main class="event">
-        <h3>
-          <% if @vivaio_event.data_fine_evento.nil? %>
-            <i class="fas fa-map-pin"></i> <%= format_event_date @vivaio_event.data_evento, :event_long_date %> | <i class="far fa-clock"></i> <%= format_event_date @vivaio_event.data_evento, :event_hour %>
-          <% else %>
-            <i class="fas fa-map-pin"></i> Da <%= format_event_date @vivaio_event.data_evento, :event_long_date %> <i class="far fa-clock"></i> <%= format_event_date @vivaio_event.data_evento, :event_hour %>, a <%= I18n.l(@vivaio_event.data_fine_evento, format: :event_long_date).to_s %> <i class="far fa-clock"></i> <%= format_event_date @vivaio_event.data_fine_evento, :event_hour %>
-          <% end %>
-        </h3>
+        <h3><%= format_event_date @vivaio_event.data_evento, @vivaio_event.data_fine_evento %></h3>
         <%= @vivaio_event.content %>
       </main>
       <% if user_signed_in? && current_user.admin %>
