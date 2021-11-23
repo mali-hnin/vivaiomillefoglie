@@ -1,0 +1,194 @@
+.column-center {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.plant-card2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 30px;
+
+}
+
+.card2-photo {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  transition: all 0.25s linear;
+
+  &:hover {
+    box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -o-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+}
+
+.card2-photo img {
+  width: 100%;
+  max-height: 300px;
+  height: 100%;
+  // width: 100%;
+  display: block;
+  /* remove extra space below image */
+  object-position: bottom center;
+  object-fit: cover;
+
+}
+
+.card2-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
+    0 3px 1px -2px rgba(0, 0, 0, 0.1),
+    0 1px 5px 0 rgba(0, 0, 0, 0.1);
+
+  // border-right: #bcbca2 1px solid;
+  // border-bottom: #bcbca2 1px solid;
+  // border-left: #bcbca2 1px solid;
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 5px;
+    min-height: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.card2-info {
+  p {
+    margin-bottom: 4px;
+  }
+}
+
+.card2-link {
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  background: black;
+  opacity: 0;
+}
+
+
+.card2-link::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: " ";
+  background: pink;
+  opacity: 0;
+}
+
+.card2-button {
+  z-index: 3;
+  text-align: center;
+
+  /* margin-top: 20px; */
+  span.small {
+    font-variant: small-caps;
+  }
+
+  span.light {
+    font-weight: lighter;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// Remove arrows from number input field:
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.small-field {
+  min-width: 40px;
+  max-width: 50px;
+}
+
+/* this class makes links in div responsive inside a clickable card */
+.other-card-links {
+  text-align: center;
+  margin: 25px 0px;
+  font-size: 1.1em;
+
+  a {
+    z-index: 2;
+    position: relative;
+    color: $purple;
+  }
+
+  &:active {
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .plant-card2 {
+    font-size: .9em;
+    margin: 20px 0;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .card2-photo {
+    width: auto;
+    height: auto;
+
+    img {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
+  }
+
+  .card2-content h1 {
+    font-size: 20px;
+  }
+
+  .other-card-links {
+    margin: 20px 0;
+
+  }
+}

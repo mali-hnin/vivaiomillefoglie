@@ -7,7 +7,6 @@
   margin: 4vh 0;
   border-radius: 2px;
   transition: all .25s linear;
-
   /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1),
               0 3px 1px -2px rgba(0, 0, 0, 0.1),
               0 1px 5px 0 rgba(0, 0, 0, 0.1); */
@@ -34,7 +33,6 @@
 }
 
 .event-cover-photo img {
-
   width: 100%;
   display: block;
   /* remove extra space below image */
@@ -45,7 +43,6 @@
 .event-card-content {
   padding: 10px;
   background-color: #ebebcb;
-  /* border: #BCBCA2 1px solid; */
 }
 
 .event-card-date {
@@ -63,7 +60,7 @@
 }
 
 .event-card-description {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #333333;
   max-height: 4.5em;
   overflow: hidden;
@@ -78,10 +75,7 @@
 a.event-card-link {
   display: block;
   z-index: 1;
-  color: $purple;
-  text-align: center;
-  text-decoration: underline;
-  font-size: .8em;
+
 }
 
 a.event-card-link::after {
@@ -90,7 +84,7 @@ a.event-card-link::after {
   left: 0;
   right: 0;
   bottom: 0;
-  content: ' ';
+  content: " ";
   background: pink;
   opacity: 0;
 }

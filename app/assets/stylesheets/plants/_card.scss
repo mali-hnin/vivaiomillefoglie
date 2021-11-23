@@ -7,15 +7,31 @@
 .plant-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   width: 300px;
   margin: 15px;
   padding: 40px 0px;
 }
 
+.card-photo {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
 .card-photo img {
-  max-width: 100%;
+  width: 100%;
   max-height: 300px;
+  height: 100%;
+  // width: 100%;
+  display: block;
+  /* remove extra space below image */
+  object-position: bottom center;
+  object-fit: cover;
 }
 
 .card-content {
@@ -23,21 +39,41 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 5px 10px;
+  border: #bcbca2 1px solid;
+  margin-top: 15px;
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 5px;
+    min-height: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.card-plant-name {
+  background-color: $light-blue-bright;
+  position: relative;
+  z-index: 2;
+  border-radius: 5px;
+  margin: -25px auto 0px auto;
 }
 
 .card-info {
   p {
     margin-bottom: 4px;
   }
-  h1 {
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 'Muli', sans-serif;
-    margin-bottom: 8px;
-  }
+
   p.small {
     font-variant: small-caps;
   }
+
   p.light {
     font-weight: lighter;
   }
@@ -46,16 +82,21 @@
 .card-link {
   position: absolute;
   top: 0;
-  // on smaller screens the card link covers the quantity input field if bottom is less than 110px, if changed fix mobile value too
-  bottom: 90px;
+  bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   background: black;
   opacity: 0;
 }
+
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-button {
+  z-index: 3;
+  text-align: center;
 }
 
 .small-field {
@@ -63,25 +104,51 @@
 }
 
 @media only screen and (max-width: 1090px) {
-  .card-link {
-    bottom: 110px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card-photo {
+    width: 250px;
+    height: 250px;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .plant-card {
     margin: 0px;
     padding: 0px;
+    transform: scale(0.9, 0.9);
+    -ms-transform: scale(0.9, 0.9);
+    /* IE 9 */
+    -webkit-transform: scale(0.9, 0.9);
+    /* Safari and Chrome */
+    -o-transform: scale(0.9, 0.9);
+    /* Opera */
+    -moz-transform: scale(0.9, 0.9);
+    /* Firefox */
+  }
+
+  .my-flex-card > div > div.card {
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+  }
+
+  .card-photo {
+    width: 180px;
+    height: 180px;
   }
 }
 
 @media only screen and (max-width: 365px) {
   .plant-card {
     transform: scale(0.8, 0.8);
-    -ms-transform: scale(0.8, 0.8); /* IE 9 */
-    -webkit-transform: scale(0.8, 0.8); /* Safari and Chrome */
-    -o-transform: scale(0.8, 0.8); /* Opera */
-    -moz-transform: scale(0.8, 0.8); /* Firefox */
+    -ms-transform: scale(0.8, 0.8);
+    /* IE 9 */
+    -webkit-transform: scale(0.8, 0.8);
+    /* Safari and Chrome */
+    -o-transform: scale(0.8, 0.8);
+    /* Opera */
+    -moz-transform: scale(0.8, 0.8);
+    /* Firefox */
   }
-
 }
-
