@@ -40,7 +40,9 @@
             <% end %>
           <% end %>
         <% else %>
-          <%= button_to 'Carrello', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card2-link"%>
+          <%= button_tag class: 'btn btn-purple disabled btn-cart' do %>
+            <i class="fas fa-shopping-basket"></i>
+          <% end %>
         <% end %>
       </div>
 
