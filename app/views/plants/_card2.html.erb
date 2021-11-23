@@ -10,12 +10,10 @@
       <% end %>
       <%= link_to "", plant_path(plant), class: "card2-link"%>
     </div>
-    <div class="card2-plant-name">
-      <h1><%= plant.name %></h1>
-    </div>
+
     <div class="card2-content">
+      <h1><%= plant.name %></h1>
       <div class="card2-info">
-        <p><strong>Categoria:</strong> <%= plant.category %></p>
         <p><strong>Esposizione:</strong> <%= plant.esposizione %></p>
         <p><strong>Fioritura:</strong> <%= plant.fioritura %></p>
         <p><strong>Altezza:</strong> <%= plant.altezza %></p>
@@ -37,10 +35,10 @@
           <%= form_for @line_item do |f| %>
             <%= f.hidden_field :plant_id, value: plant.id %>
             <%= f.number_field :quantity, value: 1, class: "small-field" %>
-            <%= f.submit 'Aggiungi', class: 'btn btn-purple' %>
+            <%= f.submit 'Carrello', class: 'btn btn-purple btn-cart' %>
           <% end %>
         <% else %>
-          <%= button_to 'Aggiungi', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card2-link"%>
+          <%= button_to 'Carrello', line_items_path(plant_id: plant), class: 'btn btn-purple disabled' %><%= link_to "", plant_path(plant), class: "card2-link"%>
         <% end %>
       </div>
 
