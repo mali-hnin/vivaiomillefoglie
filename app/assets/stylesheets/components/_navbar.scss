@@ -48,7 +48,7 @@
 
 /* Basic navbar item */
 .navbar-wagon-item {
-  cursor: pointer;
+
   padding: 0 20px;
   display: flex;
   align-items: baseline;
@@ -142,13 +142,12 @@
   border-top: solid 1px $yellow;
   border-bottom: solid 1px $yellow;
 
-  hr {
-    display: none;
+  li {
+    padding: 20px;
   }
 
   a {
     color: $yellow;
-    padding: 20px;
     font-variant: small-caps;
   }
 
