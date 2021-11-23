@@ -24,11 +24,11 @@
           <% end %>
         <% end %>
         <div class="row">
+          <h1><%= @plant.name %></h1>
           <div class="col-xs-12 col-md-6">
             <!-- top part / left column-->
             <div class="pianta-top">
               <div class="content">
-                <h1><%= @plant.name %></h1>
               </div>
               <div class="content">
                 <% if @plant.photos.empty? %>
@@ -48,7 +48,7 @@
               <div class="pianta-bottom">
                 <div class="content">
                   <p><%= simple_format(@plant.description) %></p>
-                  <ul>
+                  <ul class="info">
                     <li><strong>Categoria:</strong> <%= @plant.category %></li>
                     <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
                     <li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
