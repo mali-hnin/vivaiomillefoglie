@@ -15,8 +15,8 @@
 
 .card2-photo {
   position: relative;
-  height: 280px;
-  width: 280px;
+  height: 300px;
+  width: 300px;
   overflow: hidden;
   flex: 0 0 auto;
   transition: all 0.25s linear;
@@ -37,7 +37,7 @@
 
 .card2-photo img {
   width: 100%;
-  max-height: 280px;
+  max-height: 300px;
   height: 100%;
   // width: 100%;
   display: block;
@@ -74,18 +74,6 @@
     justify-content: center;
     text-align: center;
   }
-}
-
-.btn-cart {
-  background-image: "&#128722;";
-  color: white;
-}
-
-.card2-plant-name {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-
 }
 
 .card2-info {
@@ -195,16 +183,8 @@ input[type=number] {
     }
   }
 
-  .card2-plant-name {
-    border-radius: 0px;
-
-    h1 {
-      font-size: 16px;
-    }
-  }
-
-  hr {
-    display: none;
+  .card2-content h1 {
+    font-size: 20px;
   }
 
   .other-card-links {
