@@ -1,9 +1,3 @@
-.filters {
-  background-color: rgba(78, 76, 43, 0.1);
-  text-align: center;
-  margin: 0 -100px;
-}
-
 .nascosta {
   color: #E6E6FA;
 }
@@ -28,7 +22,7 @@
   select {
     width: 200px;
     border: none;
-    background-color: #ebebcb;
+    background-color: #f8f8f2;
     border-radius: 2px;
     box-shadow: 0px 1px #c6c6c2;
     padding: 4px;
@@ -76,10 +70,6 @@
 }
 
 @media only screen and (max-width: 810px) {
-  .filters {
-    margin: 0 -5px;
-  }
-
   .catalogo-filters-grid {
     display: grid;
     grid-template-columns: auto;

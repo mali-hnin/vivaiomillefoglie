@@ -13,7 +13,7 @@
             <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-warning" %>
             <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
           </div>
-          <div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_intro_path(anchor: 'catalogo'), class: "btn btn-primary" %></div>
+          <div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_path(anchor: 'catalogo'), class: "btn btn-primary" %></div>
         </div>
       <% end %>
       <!-- End of Admin Panel -->
