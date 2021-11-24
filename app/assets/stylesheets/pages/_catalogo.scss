@@ -1,3 +1,8 @@
+#catalogo {
+  margin-top: -40px;
+  padding-top: 40px;
+}
+
 .catalogo-banner {
   display: flex;
   flex-direction: column;
@@ -5,6 +10,7 @@
   min-height: 200px;
   align-self: center;
   text-align: center;
+
   a {
     margin: 5px 0px;
 
@@ -12,13 +18,16 @@
 
 }
 
-.catalogo-admin-content, .catalogo-content {
+.catalogo-admin-content,
+.catalogo-content {
   padding: 60px 100px 40px 100px;
   display: flex;
   flex-direction: column;
+
   .white {
     background-color: #F1F0EA;
   }
+
   th {
     a {
       color: #1338be;
@@ -26,7 +35,7 @@
   }
 }
 
-.categorie-row{
+.categorie-row {
   // background-color: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
   width: 100%;
@@ -49,6 +58,7 @@
   display: flex;
   flex-direction: column;
   padding: 0px 15px;
+
   a {
     margin: 5px 0px;
     color: black;
@@ -71,7 +81,8 @@
   padding: 0;
   z-index: 2;
 }
-.accordion-menu li > a {
+
+.accordion-menu li>a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: $black !important;
@@ -79,26 +90,30 @@
   padding: 10px 20px;
 }
 
-.flower-list{
+.flower-list {
   margin: 30px 0px 40px 0px;
 
   li {
     list-style-type: "❀";
     padding-inline-start: 1ch;
+
     a {
-        color: #31b753;
+      color: #31b753;
     }
   }
 }
 
 /* Sets serial number in front of table row */
 .css-serial {
-  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+  counter-reset: serial-number;
+  /* Set the serial number counter to 0 */
 }
 
 .css-serial td:first-child:before {
-  counter-increment: serial-number;  /* Increment the serial number counter */
-  content: counter(serial-number);  /* Display the counter */
+  counter-increment: serial-number;
+  /* Increment the serial number counter */
+  content: counter(serial-number);
+  /* Display the counter */
 }
 
 
@@ -107,19 +122,22 @@
   background-color: rgba(253, 95, 0, 0.5);
   border-radius: 2px;
   padding: 2px 3px;
+
   a {
     color: white;
   }
 }
 
 a[class~="highlight"] {
-    color: white;
+  color: white;
 }
+
 a[class~="highlight"]:hover {
   color: white;
   text-decoration: none;
   background-color: rgba(253, 95, 0, 0.7);
 }
+
 a[class~="highlight"]:active {
   color: white;
   text-decoration: underline;

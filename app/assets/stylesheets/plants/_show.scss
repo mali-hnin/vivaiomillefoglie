@@ -10,4 +10,18 @@
 
 .pianta-bottom {
   align-self: flex-end;
+
+  .content {
+    .info {
+      line-height: 2;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    form {
+      display: flex;
+    }
+  }
 }

@@ -2,7 +2,7 @@
   <p class="uppercase-text">Pannello Amministratori</p>
   <div class="spacing-5"><%= link_to "Crea nuova pianta", new_plant_path, class: "btn btn-success btn-sm" %> </div>
   <div class="spacing-5"><%= link_to "Catalogo Amministratori (lista)", admin_catalogo_path, class: "btn btn-primary btn-sm" %></div>
-  <div class="spacing-5"><%= link_to "Catalogo Clienti (con foto)", catalogo_path, class: "btn btn-purple btn-sm" %></div>
+  <div class="spacing-5"><%= link_to "Catalogo Clienti (con foto)", catalogo_path(anchor: 'catalogo'), class: "btn btn-purple btn-sm" %></div>
   <div class="spacing-5">
     <%= link_to "Esporta catalogo Excel", export_plants_path(format: "xlsx"), class: "btn btn-light btn-sm" %>
     <%= link_to "Esporta catalogo CSV", export_plants_path(format: "csv"), class: "btn btn-light btn-sm" %>

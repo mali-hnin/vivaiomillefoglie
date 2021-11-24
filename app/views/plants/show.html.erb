@@ -13,7 +13,7 @@
             <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-warning" %>
             <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
           </div>
-          <div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_path, class: "btn btn-primary" %></div>
+          <div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_path(anchor: 'catalogo'), class: "btn btn-primary" %></div>
         </div>
       <% end %>
       <!-- End of Admin Panel -->
@@ -48,7 +48,7 @@
               <div class="pianta-bottom">
                 <div class="content">
                   <p><%= simple_format(@plant.description) %></p>
-                  <ul>
+                  <ul class="info">
                     <li><strong>Categoria:</strong> <%= @plant.category %></li>
                     <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
                     <li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="content">
                   <% if @plant.disponibile? %>
-                    <%= form_for @line_item do |f| %>
+                    <%= form_for @line_item, class: "d-flex justify-content-center" do |f| %>
                       <%= f.hidden_field :plant_id, value: @plant.id %>
                       <%= f.number_field :quantity, value: 1, class: "small-field" %>
                       <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
