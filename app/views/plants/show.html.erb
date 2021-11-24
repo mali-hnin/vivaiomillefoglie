@@ -24,12 +24,12 @@
           <% end %>
         <% end %>
         <div class="row">
-          <h1><%= @plant.name %></h1>
+          <div class="content">
+            <h1><%= @plant.name %></h1>
+          </div>
           <div class="col-xs-12 col-md-6">
             <!-- top part / left column-->
             <div class="pianta-top">
-              <div class="content">
-              </div>
               <div class="content">
                 <% if @plant.photos.empty? %>
                   <%= image_tag "Logo_2.png" %>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="content">
                   <% if @plant.disponibile? %>
-                    <%= form_for @line_item do |f| %>
+                    <%= form_for @line_item, class: "d-flex justify-content-center" do |f| %>
                       <%= f.hidden_field :plant_id, value: @plant.id %>
                       <%= f.number_field :quantity, value: 1, class: "small-field" %>
                       <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
