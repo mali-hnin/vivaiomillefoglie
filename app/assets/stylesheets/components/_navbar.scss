@@ -70,6 +70,12 @@
 .bright-blue-text {
   color: $light-blue-bright;
   font-weight: lighter;
+
+  a,
+  a:hover:active:focus:visited {
+    color: $light-blue-bright !important;
+
+  }
 }
 
 .navbar-wagon-link:hover {

@@ -1,3 +1,24 @@
+.bright-blue-text {
+  color: $light-blue-bright;
+
+  &:hover {
+    color: $light-blue-bright !important;
+  }
+
+  &:active {
+    color: $light-blue-bright !important;
+  }
+
+  &:focus {
+    color: $light-blue-bright !important;
+  }
+
+  &:visited {
+    color: $light-blue-bright !important;
+  }
+}
+
+
 @media only screen and (max-width: 800px) {
   .page-wrapper-row {
     flex-direction: column;
