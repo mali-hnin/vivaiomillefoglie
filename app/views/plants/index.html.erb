@@ -9,7 +9,7 @@
           <li class="bc-active" aria-current="page">Tutte le piante</li>
         </ul>
       </nav>
-      <%= render 'filters_form' %>
+      <%= render 'filters_form', chapter: plants_path %>
       <div class="filter-results">
         <%= render 'catalogo_clienti' %>
       </div>

@@ -10,7 +10,7 @@
         </ul>
       </nav>
       <h1 class="catalogo-mobile"><%= @category.titleize %></h1>
-      <%= render 'filters_form' %>
+      <%= render 'filters_form', chapter: erbacee_perenni_plants_path %>
       <div class="filter-results">
         <%= render 'catalogo_clienti' %>
       </div>
