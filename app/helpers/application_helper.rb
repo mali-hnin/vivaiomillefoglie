@@ -56,4 +56,8 @@ module ApplicationHelper
     end
   end
 
+  def chapter(word)
+    word.nil?
+  end
+
 end

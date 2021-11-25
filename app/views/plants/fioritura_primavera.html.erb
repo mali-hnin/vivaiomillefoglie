@@ -21,7 +21,8 @@
             <%= link_to('Resetta filtri', fioritura_primavera_plants_path ) %></div>
         </div>
       <% end %>
-      <!-- End of Filters -->
+            <%= render 'filters_form' %>
+<!-- End of Filters -->
       <div class="filter-results">
         <%= render 'catalogo_clienti' %>
       </div>

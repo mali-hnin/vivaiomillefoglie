@@ -2,11 +2,11 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except:
     [:index, :show, :erbacee_perenni, :erbacee_annuali, :graminacee, :categoria_altro,
-     :esposizione_sole, :esposizione_ombra,
-     :fioritura_primavera, :fioritura_estate, :fioritura_autunno, :fioritura_inverno,
-     :altezza_bassa, :altezza_media, :altezza_alta,
-     :fogliame_ornamentale, :da_taglio, :coprisuolo, :azotofissatrici,
-     :insetti_e_uccelli, :da_secco, :spontanee]
+    :esposizione_sole, :esposizione_ombra,
+    :fioritura_primavera, :fioritura_estate, :fioritura_autunno, :fioritura_inverno,
+    :altezza_bassa, :altezza_media, :altezza_alta,
+    :fogliame_ornamentale, :da_taglio, :coprisuolo, :azotofissatrici,
+    :insetti_e_uccelli, :da_secco, :spontanee]
 
     include Pagy::Backend
 
