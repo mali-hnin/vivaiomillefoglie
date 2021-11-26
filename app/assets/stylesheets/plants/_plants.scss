@@ -8,6 +8,10 @@
   flex-direction: column;
 }
 
+.filters-mobile {
+  margin: 20px 0;
+}
+
 .filters-body {
   background-color: $light-bg;
 }
@@ -74,7 +78,7 @@
 
 @media only screen and (max-width: 1285px) {
   .catalogo-filters-grid {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
   }
 }
 
