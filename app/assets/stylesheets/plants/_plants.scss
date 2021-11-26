@@ -8,10 +8,19 @@
   flex-direction: column;
 }
 
+.filters-body {
+  background-color: $light-bg;
+}
+
 .catalogo-filters-grid {
   display: inline-grid;
   grid-template-columns: auto auto auto auto auto auto;
   margin: 10px 0;
+}
+
+.catalogo-filters-grid-mobile {
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .catalogo-filters-content {
@@ -70,10 +79,7 @@
 }
 
 @media only screen and (max-width: 810px) {
-  .catalogo-filters-grid {
-    display: grid;
-    grid-template-columns: auto;
-  }
+
 
   .catalogo-filters-content {
     display: grid;
