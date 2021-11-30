@@ -5,14 +5,17 @@
   // margin-top: 30px;
 
   #search {
-    // border-right: 0px;
-
     font-size: 16px;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  .btn {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+
   }
 }
 
-.search-element {
-
-}
-
-
+.search-element {}
