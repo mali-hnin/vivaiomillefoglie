@@ -57,6 +57,21 @@
         <li><%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Eventi", vivaio_events_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li class="d-flex">
+          <div id="navbarSearchBoxMobile">
+            <%= form_tag plants_path, method: "get" do %>
+              <div class="input-group">
+                <div class="search-bar navbar-search-mobile">
+                  <%= text_field_tag :search, params[:search], placeholder: "Cerca una pianta", class: 'searchTerm search-element', remote: true %>
+                  <button  type="submit" class="search-notbtn-mobile">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <a href="#" id="navbarSearchMobile" class="navbar-wagon-item navbar-wagon-link"><i class="fas fa-search"></i></a>
+        </li>
         <% if user_signed_in? %>
           <li><%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
               <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>

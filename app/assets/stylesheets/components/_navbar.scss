@@ -189,7 +189,6 @@ $search-padding: 20px;
 .navbar-search {
   color: white !important;
   font-size: 20px;
-
 }
 
 .search-button-notbtn {
@@ -198,6 +197,26 @@ $search-padding: 20px;
   border-bottom-right-radius: 3px;
   background-color: $transparent-bg-dark;
   padding: $search-padding;
+}
+
+#navbarSearchBoxMobile {
+  display: none;
+
+}
+
+.navbar-search-mobile {
+  border-bottom: 1px solid $yellow;
+
+  input {
+    background-color: rgba(0, 0, 0, 0);
+    color: $yellow;
+  }
+}
+
+.search-notbtn-mobile {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: $yellow;
 }
 
 @media only screen and (max-width: 1300px) {
