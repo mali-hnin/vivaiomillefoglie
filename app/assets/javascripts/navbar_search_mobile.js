@@ -3,6 +3,6 @@ $(document).ready(function() {
     $("#navbarSearchBoxMobile").animate({
       width: "toggle"
     });
-    $("#navbarSearchMobile").css("opacity", "0");
+    $("#navbarSearchMobile").hide();
   })
 });
