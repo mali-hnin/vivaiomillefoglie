@@ -1,6 +1,8 @@
 $(document).ready(function() {
   $("#navbarSearchMobile").click(function() {
-    $("#navbarSearchBoxMobile").toggle("slide");
-    $("#navbarSearchMobile").css("color", "$dark-green");
+    $("#navbarSearchBoxMobile").animate({
+      width: "toggle"
+    });
+    $("#navbarSearchMobile").css("opacity", "0");
   })
 });
