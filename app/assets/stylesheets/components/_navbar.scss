@@ -172,10 +172,32 @@
   opacity: .7;
 }
 
+$transparent-bg-dark: rgba(0, 0, 0, .2);
+$search-padding: 20px;
+
 #navbarSearchBox {
   display: none;
   position: fixed;
   top: 80px;
+
+  input {
+    background-color: $transparent-bg-dark;
+    padding: $search-padding;
+  }
+}
+
+.navbar-search {
+  color: white !important;
+  font-size: 20px;
+
+}
+
+.search-button-notbtn {
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: $transparent-bg-dark;
+  padding: $search-padding;
 }
 
 @media only screen and (max-width: 1300px) {

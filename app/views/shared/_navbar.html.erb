@@ -16,7 +16,16 @@
     <div>
       <a href="#" id="navbarSearch" class="navbar-wagon-item navbar-wagon-link"><i class="fas fa-search"></i></a>
       <div id="navbarSearchBox">
-        <%= render 'shared/search_bar' %>
+        <%= form_tag plants_path, method: "get" do %>
+          <div class="input-group">
+            <div class="search-bar navbar-search">
+              <%= text_field_tag :search, params[:search], placeholder: "Cerca una pianta", class: 'searchTerm search-element', remote: true %>
+              <button  type="submit" class="search-button-notbtn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
