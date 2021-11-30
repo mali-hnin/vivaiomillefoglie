@@ -13,7 +13,7 @@
     <%= link_to "Contatti", contatti_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Eventi", vivaio_events_path, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
     <%= link_to "Blog", "https://millefoglieinuncampo.wordpress.com/", target: :_blank, class: "navbar-wagon-item navbar-wagon-link uppercase-text" %>
-    <div>
+    <div class="d-flex flex-column align-items-end">
       <a href="#" id="navbarSearch" class="navbar-wagon-item navbar-wagon-link"><i class="fas fa-search"></i></a>
       <div id="navbarSearchBox">
         <%= form_tag plants_path, method: "get" do %>

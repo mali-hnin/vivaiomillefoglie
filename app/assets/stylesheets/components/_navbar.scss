@@ -115,7 +115,6 @@
   font-size: 30px;
   font-weight: bold;
   padding: 0 10px;
-  margin-right: 10px;
   z-index: 101;
 }
 
@@ -172,7 +171,7 @@
   opacity: .7;
 }
 
-$transparent-bg-dark: rgba(0, 0, 0, .2);
+$transparent-bg-dark: rgba(0, 0, 0, .3);
 $search-padding: 20px;
 
 #navbarSearchBox {
