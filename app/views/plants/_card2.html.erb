@@ -32,7 +32,7 @@
           <% end %>
         </p>
         <% if plant.disponibile? %>
-          <%= form_for @line_item do |f| %>
+          <%= form_for @line_item, remote: true do |f| %>
             <%= f.hidden_field :plant_id, value: plant.id %>
             <%= f.number_field :quantity, value: 1, class: "small-field" %>
             <%= button_tag :submit, class: 'btn btn-purple btn-cart' do %>
