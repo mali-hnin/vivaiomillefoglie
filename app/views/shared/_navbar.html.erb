@@ -32,7 +32,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to cart_path(@cart), class: "navbar-wagon-item navbar-wagon-link bright-blue-text" do %>
-      <%= "Carrello" %>&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;</i> <%= cart_count %>
+      <%= "Carrello" %>&nbsp;<i class="fa fa-shopping-basket" aria-hidden="true">&nbsp;</i> <div id="howmany"><%= cart_count %></div>
     <% end %>
     <% if user_signed_in? %>
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link bright-blue-text", method: :delete do %>
