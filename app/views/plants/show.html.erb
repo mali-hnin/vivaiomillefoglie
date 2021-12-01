@@ -71,7 +71,7 @@
                 </div>
                 <div class="content">
                   <% if @plant.disponibile? %>
-                    <%= form_for @line_item, class: "d-flex justify-content-center" do |f| %>
+                    <%= form_for @line_item, class: "d-flex justify-content-center", remote: true do |f| %>
                       <%= f.hidden_field :plant_id, value: @plant.id %>
                       <%= f.number_field :quantity, value: 1, class: "small-field" %>
                       <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
