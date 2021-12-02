@@ -74,7 +74,7 @@
                     <%= form_for @line_item, class: "d-flex justify-content-center", remote: true do |f| %>
                       <%= f.hidden_field :plant_id, value: @plant.id %>
                       <%= f.number_field :quantity, value: 1, class: "small-field" %>
-                      <%= f.submit 'Aggiungi al carrello', class: 'btn btn-purple' %>
+                      <%= f.submit 'Aggiungi al carrello', id: 'cart-button', class: 'btn btn-purple' %>
                     <% end %>
                   <% else %>
                     <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>

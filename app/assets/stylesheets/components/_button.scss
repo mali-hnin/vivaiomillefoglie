@@ -1,6 +1,10 @@
 .btn-purple {
   background: $purple;
   color: white;
+
+  &:focus {
+    color: white;
+  }
 }
 
 .btn-purple:hover {
