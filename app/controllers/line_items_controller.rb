@@ -40,7 +40,7 @@ class LineItemsController < ApplicationController
       else
         format.html
         format.js
-        # flash[:warning] = "Errore interno: la pianta non è stata aggiunta al carrello. Ricarica la pagina e prova di nuovo."
+        flash[:warning] = "Errore interno: la pianta non è stata aggiunta al carrello. Ricarica la pagina e prova di nuovo."
         # redirect_back(fallback_location: @line_item.plant)
       end
     end
