@@ -76,6 +76,20 @@
   grid-template-columns: auto auto;
 }
 
+.toast {
+  font-size: .8em;
+}
+
+#toast-container>div {
+  box-shadow: none;
+  opacity: .9;
+  width: 400px;
+}
+
+#toast-container>div:hover {
+  box-shadow: none;
+}
+
 @media only screen and (max-width: 1285px) {
   .catalogo-filters-grid {
     grid-template-columns: auto auto;

@@ -1,6 +1,6 @@
 <% if @line_item.valid? %>
   $("#howmany").html("<%= j (cart_count + @line_item.quantity) %>");
-  toastr.info(" <%= j (@line_item.plant.name) %> aggiunta al carrello.")
+  toastr.success(" <%= j (@line_item.plant.name) %> aggiunta al carrello.")
 <% else %>
   alert("Errore interno: la pianta non è stata aggiunta al carrello. Ricarica la pagina e prova di nuovo.");
 <% end %>

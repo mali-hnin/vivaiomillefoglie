@@ -59,7 +59,7 @@ gem "simple_form", ">= 5.0.0"
 gem 'uglifier'
 gem 'jquery-slick-rails'
 gem 'image_processing', '~> 1.2'
-gem 'toastr-rails'
+
 
 # Test and development gems
 group :development, :test do
