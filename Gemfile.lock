@@ -302,6 +302,8 @@ GEM
       net-ssh (>= 2.8.0)
     thor (1.1.0)
     tilt (2.0.10)
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
@@ -371,6 +373,7 @@ DEPENDENCIES
   sass-rails
   simple_form (>= 5.0.0)
   spring-watcher-listen (~> 2.0.0)
+  toastr-rails
   uglifier
   web-console (>= 3.3.0)
   webpacker (~> 6.0.0.rc.5)
