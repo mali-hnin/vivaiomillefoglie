@@ -35,7 +35,8 @@
           <%= form_for @line_item, remote: true do |f| %>
             <%= f.hidden_field :plant_id, value: plant.id %>
             <%= f.number_field :quantity, value: 1, class: "small-field" %>
-            <%= button_tag :submit, class: 'btn btn-purple btn-cart' do %>
+            <%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
+  <span class='visually-hidden'>Loading...</span>".html_safe }, class: 'btn btn-purple btn-cart' do %>
               <i class="fas fa-shopping-basket"></i>
             <% end %>
           <% end %>
