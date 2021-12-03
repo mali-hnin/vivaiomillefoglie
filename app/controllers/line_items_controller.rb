@@ -32,17 +32,8 @@ class LineItemsController < ApplicationController
     @cart.save
     session[:cart_id] = @cart.id
     respond_to do |format|
-      if @line_item.save
-        format.html
-        format.js
-        # flash[:info] = "Pianta aggiunta al carrello"
-        # redirect_back(fallback_location: @line_item.plant)
-      else
-        format.html
-        format.js
-        flash[:warning] = "Errore interno: la pianta non è stata aggiunta al carrello. Ricarica la pagina e prova di nuovo."
-        # redirect_back(fallback_location: @line_item.plant)
-      end
+      format.html
+      format.js
     end
   end
 
