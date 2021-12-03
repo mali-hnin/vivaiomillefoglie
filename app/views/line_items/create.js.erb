@@ -1,6 +1,6 @@
 var id = <%= @line_item.plant_id %>;
 <% if @line_item.save %>
-  $("#howmany").html("<%= j (cart_count + @line_item.quantity) %>");
+  $("#howmany").html("<%= (cart_count + @line_item.quantity).to_i %>");
   toastr.success(" <%= j (@line_item.plant.name) %> aggiunta al carrello.");
 <%# for some frustratingly unknown reason, the following line doesnt work even tho it works in console. the code per se is right,
 but for some reason i dont understand effing jquery doesnt get the id i think (vanilla js doesnt work either, btw) %>
