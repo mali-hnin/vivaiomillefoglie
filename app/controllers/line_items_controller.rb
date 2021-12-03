@@ -29,6 +29,7 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     line_items = @cart.line_items.to_a
+    # NEED TO FIND WAY TO GET REUSABLE PLANT ID
     existing_item = line_items.find { |item| item.plant_id == 17 }
     if !existing_item.nil?
       #update
