@@ -28,6 +28,11 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     @cart = current_cart
+    if @cart.line_items.include?(LineItem.where(plant_id: ))
+
+    else
+
+    end
     @line_item = @cart.line_items.new(line_item_params)
     @cart.save
     session[:cart_id] = @cart.id
