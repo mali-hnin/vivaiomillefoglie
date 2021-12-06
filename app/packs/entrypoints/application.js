@@ -27,5 +27,5 @@ Trix.config.blockAttributes.heading1.tagName = "h2";
 import toastr from 'toastr'
 window.toastr = toastr
 toastr.options.closeButton = true;
-toastr.options.timeOut = 5000;
+toastr.options.timeOut = 0;
 toastr.options.closeDuration = 300;

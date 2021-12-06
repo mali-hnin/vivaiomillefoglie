@@ -37,7 +37,7 @@ Trix.config.blockAttributes.heading1.tagName = "h2";
 
 window.toastr = (toastr__WEBPACK_IMPORTED_MODULE_0___default());
 (toastr__WEBPACK_IMPORTED_MODULE_0___default().options.closeButton) = true;
-(toastr__WEBPACK_IMPORTED_MODULE_0___default().options.timeOut) = 5000;
+(toastr__WEBPACK_IMPORTED_MODULE_0___default().options.timeOut) = 0;
 (toastr__WEBPACK_IMPORTED_MODULE_0___default().options.closeDuration) = 300;
 
 /***/ })

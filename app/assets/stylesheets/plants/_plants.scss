@@ -96,6 +96,16 @@
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  table {
+    width: auto;
+  }
+
+  .catalogo-admin-content {
+    padding: 10px 0px;
+  }
+}
+
 @media only screen and (max-width: 810px) {
 
 
@@ -142,15 +152,6 @@ table th {
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 1000px) {
-  table {
-    width: auto;
-  }
-
-  .catalogo-admin-content {
-    padding: 10px 0px;
-  }
-}
 
 @media only screen and (max-width: 770px) {
   table {
@@ -198,5 +199,11 @@ table th {
 
   table td:last-child {
     border-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #toast-container>div {
+    width: 300px;
   }
 }
