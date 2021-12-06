@@ -30,17 +30,17 @@ class LineItemsController < ApplicationController
 
   def create
     @cart = current_cart
-    temp_line_item = @cart.line_items.new(line_item_params)
-    plant = Plant.find(temp_line_item.plant_id)
+    @temp_line_item = @cart.line_items.new(line_item_params)
+    plant = Plant.find(@temp_line_item.plant_id)
     existing_item = @cart.line_items.find_by(plant_id: plant.id)
     if existing_item
       #update
       @line_item = existing_item
-      new_quantity = @line_item.quantity + temp_line_item.quantity
+      new_quantity = @line_item.quantity + @temp_line_item.quantity
       @line_item.update(quantity: new_quantity)
-      temp_line_item.destroy
+      @temp_line_item.destroy
     else
-      @line_item = temp_line_item
+      @line_item = @temp_line_item
     end
     @cart.save
     session[:cart_id] = @cart.id
