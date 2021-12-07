@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   protect_from_forgery with: :exception
   include CurrentCart
-  before_action :set_cart, :next_event
+  before_action :set_cart
 
   helper_method :current_cart
 

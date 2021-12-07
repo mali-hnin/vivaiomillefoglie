@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @next_event = next_event
   end
 
   def flowerslab
@@ -11,4 +12,5 @@ class PagesController < ApplicationController
     hash = IgService.new
     @ig_photos = hash.get_ig_feed
   end
+
 end
