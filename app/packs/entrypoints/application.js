@@ -25,7 +25,7 @@ require("@rails/activestorage").start()
 Trix.config.blockAttributes.heading1.tagName = "h2";
 
 import * as Toastr from 'toastr';
-import './/../node_modules/toastr/build/toastr.css'; //You need style and css loader installed and set
+import './node_modules/toastr/build/toastr.css'; //You need style and css loader installed and set
 window.toastr = Toastr
 Toastr.options.closeButton = true;
 Toastr.options.timeOut = 3000;
