@@ -24,7 +24,7 @@ require("@rails/activestorage").start()
 
 Trix.config.blockAttributes.heading1.tagName = "h2";
 
-var toastr = require('toastr')
+import toastr from 'toastr'
 window.toastr = toastr
 toastr.options.closeButton = true;
 toastr.options.timeOut = 3000;
