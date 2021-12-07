@@ -1,5 +1,7 @@
 <div class="bg" style="background-image:linear-gradient(to right, rgba(0,0,0,0.4),rgba(0,0,0,0)),url(<%= asset_path "bg12.jpg" %>);filter: brightness(115%); ">
-  <%= render 'shared/event_bar', event: @next_event %>
+  <% if !@next_event.nil? %>
+    <%= render 'shared/event_bar', event: @next_event %>
+  <% end %>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
   <div class="page-wrapper-row">
