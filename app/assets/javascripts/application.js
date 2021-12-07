@@ -5,6 +5,5 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require jquery.slick
-//= require toastr
 
 //= require_tree .
