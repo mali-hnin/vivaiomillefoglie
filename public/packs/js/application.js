@@ -35,7 +35,7 @@ __webpack_require__(/*! @rails/activestorage */ "./node_modules/@rails/activesto
 
 Trix.config.blockAttributes.heading1.tagName = "h2";
 
-window.toastr = (toastr__WEBPACK_IMPORTED_MODULE_0___default());
+__webpack_require__.g.toastr = (toastr__WEBPACK_IMPORTED_MODULE_0___default());
 (toastr__WEBPACK_IMPORTED_MODULE_0___default().options.closeButton) = true;
 (toastr__WEBPACK_IMPORTED_MODULE_0___default().options.timeOut) = 3000;
 (toastr__WEBPACK_IMPORTED_MODULE_0___default().options.closeDuration) = 300;
