@@ -142,11 +142,12 @@
 }
 
 .mobile-menu-closed {
-  transform: translate(100%);
+  // transform: translate(100%);
+  left: 100vw;
 }
 
 .mobile-menu-open {
-  transform: translate(0);
+  transform: translateX(-100vw);
 }
 
 .modal-opaque-bg {
