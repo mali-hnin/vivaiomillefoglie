@@ -21,7 +21,7 @@ module.exports = {
         "jquery": "jQuery"
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.css$/, loader: 'style-loader!css-loader'
             },
