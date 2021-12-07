@@ -1,11 +1,15 @@
+"use strict";
 (self["webpackChunkapp"] = self["webpackChunkapp"] || []).push([["application"],{
 
 /***/ "./app/packs/entrypoints/application.js":
 /*!**********************************************!*\
   !*** ./app/packs/entrypoints/application.js ***!
   \**********************************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_0__);
 /* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
@@ -31,12 +35,17 @@ __webpack_require__(/*! @rails/activestorage */ "./node_modules/@rails/activesto
 
 Trix.config.blockAttributes.heading1.tagName = "h2";
 
+window.toastr = (toastr__WEBPACK_IMPORTED_MODULE_0___default());
+(toastr__WEBPACK_IMPORTED_MODULE_0___default().options.closeButton) = true;
+(toastr__WEBPACK_IMPORTED_MODULE_0___default().options.timeOut) = 0;
+(toastr__WEBPACK_IMPORTED_MODULE_0___default().options.closeDuration) = 300;
+
 /***/ })
 
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-7ef878"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"); });
+/******/ __webpack_require__.O(0, ["vendors-node_modules_rails_actiontext_app_javascript_actiontext_index_js-node_modules_rails_a-376fb4"], function() { return __webpack_exec__("./app/packs/entrypoints/application.js"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

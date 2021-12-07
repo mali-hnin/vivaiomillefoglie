@@ -26,17 +26,27 @@ class LineItemsController < ApplicationController
 
   # POST /line_items
   # POST /line_items.json
+  # NEED TO FIND WAY TO GET REUSABLE PLANT ID
+
   def create
     @cart = current_cart
-    @line_item = @cart.line_items.new(line_item_params)
+    @temp_line_item = @cart.line_items.new(line_item_params)
+    plant = Plant.find(@temp_line_item.plant_id)
+    existing_item = @cart.line_items.find_by(plant_id: plant.id)
+    if existing_item
+      #update
+      @line_item = existing_item
+      new_quantity = @line_item.quantity + @temp_line_item.quantity
+      @line_item.update(quantity: new_quantity)
+      @temp_line_item.destroy
+    else
+      @line_item = @temp_line_item
+    end
     @cart.save
     session[:cart_id] = @cart.id
-    if @line_item.save
-      flash[:info] = "Pianta aggiunta al carrello"
-      redirect_back(fallback_location: @line_item.plant)
-    else
-      flash[:warning] = "Errore interno: la pianta non è stata aggiunta al carrello. Ricarica la pagina e prova di nuovo."
-      redirect_back(fallback_location: @line_item.plant)
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
@@ -70,5 +80,10 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the whitelist through.
     def line_item_params
       params.require(:line_item).permit(:plant_id, :quantity)
+    end
+
+    def current_plant
+      @line_item = set_line_item
+      Plant.find(@line_item.plant_id)
     end
 end

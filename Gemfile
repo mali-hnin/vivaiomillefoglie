@@ -60,6 +60,7 @@ gem 'uglifier'
 gem 'jquery-slick-rails'
 gem 'image_processing', '~> 1.2'
 
+
 # Test and development gems
 group :development, :test do
   gem 'pry-byebug'

@@ -1,6 +1,6 @@
 function dismissEvent() {
   var x = document.getElementById("eventBox");
-    x.style.display = "none";
+  x.style.display = "none";
 }
 
 $(document).ready(function(){
