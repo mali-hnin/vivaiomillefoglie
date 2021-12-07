@@ -10,7 +10,7 @@
 @import "font-awesome";
 @import "slick";
 @import "slick-theme";
-@import 'toastr/build/toastr.min';
+// @import 'toastr/build/toastr.min';
 
 // Your CSS partials
 @import "carts/index";
@@ -18,5 +18,6 @@
 @import "layouts/index";
 @import "pages/index";
 @import "plants/index";
+@import "toastr/toastr";
 @import "vivaio_events/index";
 @import "actiontext"
