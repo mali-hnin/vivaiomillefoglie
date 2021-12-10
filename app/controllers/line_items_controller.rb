@@ -52,7 +52,6 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
-    @cart = current_cart
     respond_to do |format|
       if @line_item.update(line_item_params)
         format.html
@@ -62,7 +61,7 @@ class LineItemsController < ApplicationController
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
-    redirect_to cart_path(@cart)
+    redirect_to cart_path(current_cart)
   end
 
   # DELETE /line_items/1
