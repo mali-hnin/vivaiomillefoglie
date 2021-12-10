@@ -1,6 +1,5 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  # before_action :set_plant, only: [:show, :edit, :update]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create, :destroy]
 
@@ -53,15 +52,17 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
+    @cart = current_cart
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item }
+        format.html
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
+    redirect_to cart_path(@cart)
   end
 
   # DELETE /line_items/1
