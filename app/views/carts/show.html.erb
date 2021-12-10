@@ -44,7 +44,7 @@
                   <div class="pianta-bottom">
                     <div class="">
                       <div class="bolder-text"><%= link_to line_item.plant.name, plant_path(line_item.plant_id) %></div>
-                      <div class="small-caps lighter-text">Quantità: <%= line_item.quantity %></div>
+                      <div class="lighter-text"><span class="small-caps">Quantità:</span> <%= line_item.quantity %><%= link_to "modifica", edit_line_item_path(line_item.id), class: "ms-4", remote: true %></div>
                       <div class="bolder-text"><%= humanized_money_with_symbol line_item.total_price %></div>
                     </div>
                     <div class="">
@@ -67,5 +67,21 @@
       <br>
       <br>
     </div>
+
+    <div id="cartModal" class="modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="quantModal" class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
   </div>
 </div>

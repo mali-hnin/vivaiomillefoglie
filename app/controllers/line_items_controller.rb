@@ -1,6 +1,5 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_plant, only: [:show, :edit, :update]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create, :destroy]
 
@@ -55,13 +54,14 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item }
+        format.html
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
+    redirect_to cart_path(current_cart)
   end
 
   # DELETE /line_items/1
@@ -80,10 +80,5 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the whitelist through.
     def line_item_params
       params.require(:line_item).permit(:plant_id, :quantity)
-    end
-
-    def current_plant
-      @line_item = set_line_item
-      Plant.find(@line_item.plant_id)
     end
 end

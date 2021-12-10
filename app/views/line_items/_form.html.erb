@@ -1,12 +1,13 @@
 <%= simple_form_for(@line_item) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
-    <%= f.association :plant %>
-    <%= f.association :cart %>
+    <%= f.label :quantity, "Quantità:" %>
+    <%= f.number_field :quantity, label: "Quantità", class: "small-field mb-5" %>
   </div>
-
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
+  <span class='visually-hidden'>Loading...</span>".html_safe }, class: 'btn btn-purple', style: 'min-width:107px;' do %>
+      Conferma
+    <% end %>
   </div>
 <% end %>
