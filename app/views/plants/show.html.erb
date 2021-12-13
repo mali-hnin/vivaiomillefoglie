@@ -1,8 +1,8 @@
 <% content_for(:title_tag) do %>
-  <%= @plant.name %> | Vivaio Millefoglie
+  <%= @plant.name %>, acquista online | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "#{@plant.name} - Vendita online | Vivaio Millefoglie" %>
-<% content_for :meta_description, @plant.description %>
+<% content_for :meta_description, "#{@plant.name} - #{@plant.description} Categoria #{@plant.category}. Acquista #{@plant.name} online"%>
 
 <div class="bg">
   <%= render 'shared/navbar' %>
