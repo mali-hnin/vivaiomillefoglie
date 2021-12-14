@@ -1,3 +1,9 @@
+<% content_for(:title_tag) do %>
+  <%= @vivaio_event.title %> | Vivaio Millefoglie
+<% end %>
+<% content_for :meta_title, "#{@vivaio_event.title} | Vivaio Millefoglie" %>
+<% content_for :meta_description, @vivaio_event.content.to_plain_text.gsub(/\[.*\]/, "").truncate(300) %>
+
 <div class="bg">
   <%= render 'shared/navbar' %>
   <div class="page-wrapper white-bg">
