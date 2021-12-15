@@ -5,6 +5,8 @@
 <% content_for :meta_description, "#{@plant.name} - #{@plant.description} Categoria #{@plant.category}. Acquista #{@plant.name} online"%>
 <% if @plant.photos[0] %>
   <% content_for :meta_image, cl_image_path(@plant.photos[0].path) %>
+<% else %>
+  <% content_for :meta_image, "Logo_2.png" %>
 <% end %>
 
 
