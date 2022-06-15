@@ -79,6 +79,7 @@
           <p>Ordine vuoto.</p>
         <% end %>
       </ul>
+      <p>PRIMA DI EFFETTUARE IL PAGAMENTO ATTENDERE L'INVIO DELLA CONFERMA D'ORDINE RIPORTANTE IL TOTALE COMPLESSIVO PER LE PIANTE E LE SPESE DI SPEDIZIONE.</p>
       <p><strong>Totale piante (<u>escluse le spese di spedizione</u>):</strong>
         <% if !@order.cart.nil? %>
           <%= humanized_money_with_symbol @order.cart.total_price %>
