@@ -12,7 +12,12 @@
             </h4>
           </div>
           <div class="col-xs-12 col-sm-9 responsive-cart">
-            <%= link_to "Ordina", new_cart_order_path(@cart), class: "btn btn-purple btn-lg" %>
+            <% if @cart.total_price.to_i < 30 %>
+              Non hai ancora raggiunto la cifra minima di 30€ per spedire un ordine
+              <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg", disabled: true %>
+            <% else %>
+              <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg" %>
+            <% end %>
             <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "btn btn-outline-secondary cart-button" %>
           </div>
         </div>
