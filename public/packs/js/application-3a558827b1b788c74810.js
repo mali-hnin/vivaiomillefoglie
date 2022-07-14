@@ -1,2 +1,0 @@
-(self.webpackChunkapp=self.webpackChunkapp||[]).push([[34],{494:function(n,a,t){var e=t(250);t(552),t(292).start(),e.config.blockAttributes.heading1.tagName="h2"}},function(n){n.O(0,[534],(function(){return a=494,n(n.s=a);var a}));n.O()}]);
-//# sourceMappingURL=application-3a558827b1b788c74810.js.map

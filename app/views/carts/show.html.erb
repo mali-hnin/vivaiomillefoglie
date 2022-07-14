@@ -13,7 +13,9 @@
           </div>
           <div class="col-xs-12 col-sm-9 responsive-cart">
             <% if @cart.total_price.to_i < 30 %>
-              Non hai ancora raggiunto la cifra minima di 30€ per spedire un ordine
+              <div id="min-spending-msg">
+                Non hai ancora raggiunto la cifra minima di 30€ per spedire un ordine
+              </div>
               <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg", disabled: true %>
             <% else %>
               <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg" %>
