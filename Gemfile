@@ -28,7 +28,7 @@ gem "nokogiri", ">= 1.13.6"
 
 # deploy gems
 group :development do
-  gem 'capistrano', '~> 3.10', require: false
+  gem 'capistrano', '3.16', require: false
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-passenger', '~> 0.2.1'
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
