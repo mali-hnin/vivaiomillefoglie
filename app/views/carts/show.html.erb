@@ -14,7 +14,7 @@
           <div class="col-xs-12 col-sm-9 responsive-cart">
             <% if @cart.total_price.to_i < 30 %>
               <div id="min-spending-msg">
-                Per elaborare l'ordine devi raggiungere un totale minimo di 30€.
+                Per poter inviare l'ordine devi raggiungere un totale minimo di 30€.
                 <%= link_to 'Continua con gli acquisti!', catalogo_path(anchor: 'catalogo'), class: '' %>
               </div>
               <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg", disabled: true %>
