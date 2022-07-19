@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.6.0'
 
 # To force bundler to load github repos thru https protocol
 git_source(:github) do |repo_name|
@@ -22,7 +22,7 @@ gem "railties", ">= 5.2.2.1"
 
 
 
-gem "nokogiri", ">= 1.11.0.rc4"
+gem "nokogiri", ">= 1.13.6"
 
 
 
