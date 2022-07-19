@@ -12,7 +12,15 @@
             </h4>
           </div>
           <div class="col-xs-12 col-sm-9 responsive-cart">
-            <%= link_to "Ordina", new_cart_order_path(@cart), class: "btn btn-purple btn-lg" %>
+            <% if @cart.total_price.to_i < 30 %>
+              <div id="min-spending-msg">
+                Per poter inviare l'ordine devi raggiungere un totale minimo di 30€.
+                <%= link_to 'Continua con gli acquisti!', catalogo_path(anchor: 'catalogo'), class: '' %>
+              </div>
+              <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg", disabled: true %>
+            <% else %>
+              <%= button_to "Ordina", new_cart_order_path(@cart), method: :get, class: "btn btn-purple btn-lg" %>
+            <% end %>
             <%= button_to 'Svuota il carrello', @cart, method: :delete, data: { confirm: "Sei sicur*? " }, class: "btn btn-outline-secondary cart-button" %>
           </div>
         </div>
