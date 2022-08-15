@@ -40,7 +40,6 @@ Rails.application.routes.draw do
 
   resources :gardens, path: 'giardini', except: [:show]
 
-
   # scope(path_names: { new: 'neu', edit: 'bearbeiten' }) do
   #  resources :categories, path: 'kategorien'
   # end
