@@ -38,13 +38,15 @@ Rails.application.routes.draw do
   #get "eventi/:id", to: "vivaio_events#show", as: :vivaio_event
   resources :vivaio_events, path: 'eventi'
 
+  resources :gardens, path: 'giardini', except: [:show]
+
+
   # scope(path_names: { new: 'neu', edit: 'bearbeiten' }) do
   #  resources :categories, path: 'kategorien'
   # end
 
 
   get "/catalogo", to: "pages#catalogo_intro"
-  get "/giardini", to: "pages#giardini"
   get "/orto-dei-fiori", to: "pages#flowerslab", as: :ortodeifiori
   get "/contatti", to: "pages#contatti", as: :contatti
   get "/bonus-verde", to: "pages#bonusverde", as: :bonusverde
