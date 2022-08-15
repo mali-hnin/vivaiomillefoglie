@@ -18,6 +18,7 @@
 
 .photos {
   text-align: center;
+
   img {
     width: 1000px;
   }
@@ -25,8 +26,27 @@
 
 .ruota {
   -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.gardens-intro {
+  position: fixed;
+  top: 150px;
+  max-width: 25vw;
+}
+
+.gardens-display {
+  text-align: right;
+}
+
+.garden-photo {
+  max-width: 70vw;
+}
+
+.garden-photo-section {
+  margin: 50px 0px 100px 0px;
+
 }
