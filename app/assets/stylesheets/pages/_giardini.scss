@@ -32,14 +32,19 @@
   transform: rotate(90deg);
 }
 
+.gardens {}
+
 .gardens-intro {
   position: fixed;
   top: 150px;
+  left: 100px;
   max-width: 25vw;
+  font-size: 43px;
 }
 
 .gardens-display {
   text-align: right;
+  margin-top: 450px;
 }
 
 .garden-photo {
