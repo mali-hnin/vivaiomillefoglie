@@ -15,8 +15,8 @@
           <% if user_signed_in? && current_user.admin %>
             <!-- Admin buttons -->
             <div class="garden-admin-buttons">
-              <%= link_to "Modifica", edit_garden_path(garden.id), class: "btn btn-warning" %>
               <%= link_to "Elimina", garden_path(garden.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+              <%= link_to "Modifica", edit_garden_path(garden.id), class: "btn btn-warning" %>
             </div>
             <!-- End of Admin buttons -->
           <% end %>
