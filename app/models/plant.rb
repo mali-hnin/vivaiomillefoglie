@@ -1,4 +1,5 @@
 class Plant < ApplicationRecord
+  validates :name, presence: true
   has_attachments :photos, maximum: 5
   monetize :price_cents, as: "prezzo"
   scope :alphabetically, -> { order('name ASC') }
