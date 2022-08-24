@@ -12,7 +12,6 @@ RSpec.describe Cart, type: :model do
   describe "Associations" do
     it { should have_many(:line_items).dependent(:destroy) }
     it { should have_one(:order) }
-
   end
 
   it "adds up line items prices for total bill" do
