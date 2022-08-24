@@ -109,6 +109,11 @@ RSpec.describe Plant, type: :model do
         expect(described_class.filter_by_funzione("azoto")).to include(plant2)
         expect(described_class.filter_by_funzione("azoto")).to_not include(plant3)
       end
+      it "should filter plants by 2 functions" do
+        expect(described_class.filter_by_doppia_funzione("farfalle", "fiori")).to include(plant1) & include(plant3)
+        expect(described_class.filter_by_doppia_funzione("farfalle", "fiori")).to_not include(plant2)
+
+      end
     end
 
 
