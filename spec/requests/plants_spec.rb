@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../support/devise'
 
 RSpec.describe "Plants", type: :request do
   let(:valid_attributes) {
@@ -39,6 +40,8 @@ RSpec.describe "Plants", type: :request do
   end
 
   describe "GET /new" do
+    login_admin
+
     it "renders a successful response" do
       get new_plant_url
       expect(response).to have_http_status(200)

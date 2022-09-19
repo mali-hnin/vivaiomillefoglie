@@ -19,7 +19,6 @@ RSpec.configure do |config|
   # assertions if you prefer.
 
   # to sign_in user with Devise
-  config.include Devise::Test::IntegrationHelpers, type: :request
 
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
