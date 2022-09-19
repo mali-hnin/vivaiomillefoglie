@@ -15,7 +15,6 @@ RSpec.describe Plant, type: :model do
       novità: "true",
       utile_per: "farfalle",
       price_cents: "500",
-      price_cents: "500",
       nascondi: "false"
     )}
 

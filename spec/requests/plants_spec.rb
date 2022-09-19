@@ -14,15 +14,13 @@ RSpec.describe "Plants", type: :request do
     disponibile: "true",
     novità: "true",
     utile_per: "farfalle",
-    price_cents: "500",
+    prezzo: "5",
     nascondi: "false"}
   }
 
   let(:invalid_attributes) {
-
+    {name: nil}
   }
-
-  let(:user) { create(:user) }
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -40,6 +38,13 @@ RSpec.describe "Plants", type: :request do
   end
 
   describe "GET /new" do
+    context "no admin logged in" do
+      it "does not show new form and redirects to login form" do
+        get new_plant_url
+        expect(response).to redirect_to(new_user_session_url)
+      end
+    end
+
     context "admin logged in" do
       login_admin
       it "renders a successful response" do
@@ -47,18 +52,11 @@ RSpec.describe "Plants", type: :request do
         expect(response).to have_http_status(200)
       end
     end
-
-    context "no admin logged in" do
-      it "renders login form" do
-        get new_plant_url
-        expect(response).to redirect_to(new_user_session_url)
-      end
-    end
   end
 
   describe "GET /edit" do
     context "no admin logged in" do
-      it "renders login form" do
+      it "does not show edit form and redirects to login form" do
         plant = Plant.create! valid_attributes
         get edit_plant_url(plant)
         expect(response).to redirect_to(new_user_session_url)
@@ -76,75 +74,115 @@ RSpec.describe "Plants", type: :request do
   end
 
   describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new plant" do
+    context "with admin logged in and valid parameters" do
+      login_admin
+
+      it "creates a new plant record" do
         expect {
-          post plants_url, params: { plant: valid_attributes }
-        }.to change(Plant, :count).by(1)
+        post plants_path, params: { plant: valid_attributes }
+      }.to change{ Plant.count }.by(1)
       end
 
       it "redirects to the created plant" do
-      post plants_url, params: { plant: valid_attributes }
-      expect(response).to redirect_to(plant_url(Plant.last))
+        post plants_path, params: { plant: valid_attributes }
+        expect(response).to redirect_to(plant_url(Plant.last))
+      end
+    end
+
+    context "with valid parameters but no admin logged in" do
+      it "does not create a new plant" do
+        expect {
+        post plants_url, params: { plant: valid_attributes }
+      }.to change(Plant, :count).by(0)
+      end
+
+      it "redirects to login" do
+        post plants_url, params: { plant: valid_attributes }
+        expect(response).to redirect_to(new_user_session_url)
       end
     end
 
     context "with invalid parameters" do
+      login_admin
+
       it "does not create a new plant" do
         expect {
           post plants_url, params: { plant: invalid_attributes }
         }.to change(Plant, :count).by(0)
       end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
+      it "renders 'new' template" do
         post plants_url, params: { plant: invalid_attributes }
-        expect(response).to have_http_status(200)
+        expect(response).to render_template(:new)
       end
     end
   end
 
   describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        {name: "Beatrice", price_cents: "700"}
-      }
+    let(:new_attributes) {
+      {name: "Beatrice", prezzo: Money.new(700)}
+    }
+    context "with valid parameters and admin logged in" do
+      login_admin
 
       it "updates the requested plant" do
         plant = Plant.create! valid_attributes
         patch plant_url(plant), params: { plant: new_attributes }
         plant.reload
-        expect(response).to have_http_status(200)
-      end
-
-      it "redirects to the plant" do
-        plant = Plant.create! valid_attributes
-        patch plant_url(article), params: { plant: new_attributes }
-        plant.reload
         expect(response).to redirect_to(plant_url(plant))
+        expect(plant.name).to eq(new_attributes[:name])
+        expect(plant.prezzo).to eq(new_attributes[:prezzo])
       end
     end
 
     context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
+      login_admin
+      it "fails to update" do
         plant = Plant.create! valid_attributes
         patch plant_url(plant), params: { plant: invalid_attributes }
-        expect(response).to have_http_status(200)
+        plant.reload
+        expect(response).to render_template(:edit)
+        expect(plant.name).to eq(valid_attributes[:name])
+        expect(plant.name).to_not eq(invalid_attributes[:name])
+      end
+    end
+
+    context "without admin logged in" do
+      it "fails to update" do
+        plant = Plant.create! valid_attributes
+        patch plant_url(plant), params: { plant: new_attributes }
+        plant.reload
+        expect(response).to redirect_to(new_user_session_url)
+        expect(plant.name).to_not eq(new_attributes[:name])
+        expect(plant.prezzo).to_not eq(new_attributes[:prezzo])
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested plant" do
-      plant = Plant.create! valid_attributes
-      expect {
-        delete plant_url(article)
-      }.to change(Plant, :count).by(-1)
+    context "with admin logged in" do
+      login_admin
+      it "destroys the requested plant" do
+        plant = Plant.create! valid_attributes
+        expect {
+          delete plant_url(plant)
+        }.to change(Plant, :count).by(-1)
+      end
+
+      it "redirects to the plants list" do
+        plant = Plant.create! valid_attributes
+        delete plant_url(plant)
+        expect(response).to redirect_to(plants_url)
+      end
     end
 
-    it "redirects to the plants list" do
-      plant = Plant.create! valid_attributes
-      delete plant_url(plant)
-      expect(response).to redirect_to(plants_url)
+    context "without admin logged in" do
+      it "doesn't destroy the requested plant" do
+        plant = Plant.create! valid_attributes
+        expect {
+          delete plant_url(plant)
+        }.to change(Plant, :count).by(0)
+      end
     end
   end
 end

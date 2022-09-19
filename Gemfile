@@ -72,4 +72,5 @@ group :development, :test do
   gem 'better_errors'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
