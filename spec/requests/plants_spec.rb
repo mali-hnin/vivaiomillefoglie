@@ -40,19 +40,38 @@ RSpec.describe "Plants", type: :request do
   end
 
   describe "GET /new" do
-    login_admin
+    context "admin logged in" do
+      login_admin
+      it "renders a successful response" do
+        get new_plant_url
+        expect(response).to have_http_status(200)
+      end
+    end
 
-    it "renders a successful response" do
-      get new_plant_url
-      expect(response).to have_http_status(200)
+    context "no admin logged in" do
+      it "renders login form" do
+        get new_plant_url
+        expect(response).to redirect_to(new_user_session_url)
+      end
     end
   end
 
   describe "GET /edit" do
-    it "renders a successful response" do
-      plant = Plant.create! valid_attributes
-      get edit_plant_url(plant)
-      expect(response).to have_http_status(200)
+    context "no admin logged in" do
+      it "renders login form" do
+        plant = Plant.create! valid_attributes
+        get edit_plant_url(plant)
+        expect(response).to redirect_to(new_user_session_url)
+      end
+    end
+
+    context "admin logged in" do
+      login_admin
+      it "renders a successful response" do
+        plant = Plant.create! valid_attributes
+        get edit_plant_url(plant)
+        expect(response).to have_http_status(200)
+      end
     end
   end
 
