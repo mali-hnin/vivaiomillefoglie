@@ -1,6 +1,7 @@
 require 'rails_helper'
 require_relative '../support/devise'
 
+
 RSpec.describe "Plants", type: :request do
   let(:valid_attributes) {
     {name: "Achillea",
@@ -186,11 +187,22 @@ RSpec.describe "Plants", type: :request do
     end
   end
 
-  describe ".export" do
+  describe ".export", type: :feature do
+    login_admin
     it "generates xlxs file" do
-      get export_plants_url(format: "xlsx")
-
+      visit admin_catalogo_url
+      click_on("Esporta catalogo Excel")
+      wait_for_download
+      expect(downloads).to match([])
+      expect(downloads.length).to eq(1)
+      expect(download).to match(/.*\.xlsx/)
     end
-    it "generates csv file"
+    # it "generates csv file" do
+    #   visit admin_catalogo_url
+    #   click_on("Esporta catalogo CSV")
+    #   wait_for_download
+    #   expect(downloads.length).to eq(1)
+    #   expect(download).to match(/.*\.csv/)
+    # end
   end
 end

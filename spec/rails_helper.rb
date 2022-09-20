@@ -2,11 +2,12 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
+
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-
+require 'capybara/rails'
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -63,6 +64,26 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Warden::Test::Helpers
+
+  Capybara.register_driver :selenium_chrome_headless do |app|
+    browser_options = Selenium::Webdriver::Chrome::Options.new.tap do |opts|
+      opts.args << '--headless'
+      opts.args << '--disable-site-isolation-trials'
+    end
+    browser_options.add_preference(:download, prompt_for_download: false, default_directory: 'DownloadHelpers::PATH.to_s')
+
+    browser_options.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
+  end
+
+  config.before(:each, type: :system, js: true) do
+    clear_downloads
+    driven_by :selenium_chrome_headless
+  end
+
+  config.after(:each, type: :system, js: true) do
+    clear_downloads
+  end
 end
 
 Shoulda::Matchers.configure do |config|
@@ -71,3 +92,5 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+
