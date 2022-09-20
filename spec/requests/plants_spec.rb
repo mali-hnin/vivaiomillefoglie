@@ -185,4 +185,12 @@ RSpec.describe "Plants", type: :request do
       end
     end
   end
+
+  describe ".export" do
+    it "generates xlxs file" do
+      get export_plants_url(format: "xlsx")
+
+    end
+    it "generates csv file"
+  end
 end
