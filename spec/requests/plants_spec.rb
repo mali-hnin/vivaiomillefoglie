@@ -189,20 +189,42 @@ RSpec.describe "Plants", type: :request do
 
   describe ".export", type: :feature do
     login_admin
-    it "generates xlxs file" do
+    plants = Plant.all
+    it "exports csv file" do
       visit admin_catalogo_url
-      click_on("Esporta catalogo Excel")
-      wait_for_download
-      expect(downloads).to match([])
-      expect(downloads.length).to eq(1)
-      expect(download).to match(/.*\.xlsx/)
+      click_on("Esporta catalogo CSV")
+      # expect(page.response_headers["COntent-Disposition"]).to match("catalogo_vivaio_#{Date.today}.csv")
+      # expect(page.response_headers["Content-Type"]).to eq "text/csv"
+      expect_download(
+        content: plants.to_csv,
+        filename: "catalogo_vivaio_#{Date.today}.csv",
+        content_type: "text/csv"
+      )
     end
-    # it "generates csv file" do
-    #   visit admin_catalogo_url
-    #   click_on("Esporta catalogo CSV")
-    #   wait_for_download
-    #   expect(downloads.length).to eq(1)
-    #   expect(download).to match(/.*\.csv/)
-    # end
+
+    def expect_download(content:, filename:, content_type:)
+      expect(page.response_headers['Content-Type']).to eq content_type
+      expect(page.response_headers['Content-Disposition']).to include "filename=\"#{filename}\""
+      expect(page.body).to eq content
+    end
   end
+
+  # describe ".export", type: :feature do
+  #   login_admin
+  #   it "generates xlxs file" do
+  #     visit admin_catalogo_url
+  #     click_on("Esporta catalogo Excel")
+  #     wait_for_download
+  #     expect(downloads).to match([])
+  #     expect(downloads.length).to eq(1)
+  #     expect(download).to match(/.*\.xlsx/)
+  #   end
+  #   # it "generates csv file" do
+  #   #   visit admin_catalogo_url
+  #   #   click_on("Esporta catalogo CSV")
+  #   #   wait_for_download
+  #   #   expect(downloads.length).to eq(1)
+  #   #   expect(download).to match(/.*\.csv/)
+  #   # end
+  # end
 end

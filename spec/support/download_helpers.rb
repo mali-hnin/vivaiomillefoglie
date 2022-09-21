@@ -17,16 +17,18 @@ module DownloadHelpers
 
   def wait_for_download
     Timeout.timeout(TIMEOUT) do
-      sleep 0.1 until downloaded?
+      sleep 0.1 until !downloading?
     end
   end
 
   def downloaded?
-    downloads.any? && !downloading?
+    !downloading? && downloads.any?
   end
 
   def downloading?
-    downloads.grep(/\.crdownloads$/).any?
+    downloads_folder = Pathname.new(PATH)
+    downloads_folder.glob('*.crdownloads$').blank?
+    binding.pry
   end
 
   def clear_downloads
