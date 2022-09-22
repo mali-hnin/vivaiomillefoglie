@@ -189,12 +189,10 @@ RSpec.describe "Plants", type: :request do
 
   describe ".export", type: :feature do
     login_admin
-    plants = Plant.all
-    it "exports csv file" do
+    plants = Plant.all.alphabetically
+    it "exports catalogue to CSV fileXLSX file" do
       visit admin_catalogo_url
       click_on("Esporta catalogo CSV")
-      # expect(page.response_headers["COntent-Disposition"]).to match("catalogo_vivaio_#{Date.today}.csv")
-      # expect(page.response_headers["Content-Type"]).to eq "text/csv"
       expect_download(
         content: plants.to_csv,
         filename: "catalogo_vivaio_#{Date.today}.csv",
@@ -202,10 +200,23 @@ RSpec.describe "Plants", type: :request do
       )
     end
 
+    it "exports catalogue to XLSX file" do
+      visit admin_catalogo_url
+      respond_to do |format|
+        format.xlsx {render xlsx: 'plants', template: 'plants/export'}
+      end
+      click_on("Esporta catalogo Excel")
+      expect_download(
+        content: respond_to {format.xlsx {render xlsx: 'plants', template: 'plants/export'}},
+        filename: "catalogo_vivaio.xlsx",
+        content_type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      )
+    end
+
     def expect_download(content:, filename:, content_type:)
-      expect(page.response_headers['Content-Type']).to eq content_type
+      expect(page.response_headers['Content-Type']).to include content_type
       expect(page.response_headers['Content-Disposition']).to include "filename=\"#{filename}\""
-      expect(page.body).to eq content
+      expect(page.body).to include content
     end
   end
 
