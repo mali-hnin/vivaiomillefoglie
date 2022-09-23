@@ -202,18 +202,16 @@ RSpec.describe "Plants", type: :request do
 
     it "exports catalogue to XLSX file" do
       visit admin_catalogo_url
-      respond_to do |format|
-        format.xlsx {render xlsx: 'plants', template: 'plants/export'}
-      end
       click_on("Esporta catalogo Excel")
       expect_download(
-        content: respond_to {format.xlsx {render xlsx: 'plants', template: 'plants/export'}},
+        # content is only here as place-holder, if you want to check inside excel file needs specific gem, currently unnecessary
+        content: "a",
         filename: "catalogo_vivaio.xlsx",
         content_type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
       )
     end
 
-    def expect_download(content:, filename:, content_type:)
+    def expect_download(filename:, content_type:, content:)
       expect(page.response_headers['Content-Type']).to include content_type
       expect(page.response_headers['Content-Disposition']).to include "filename=\"#{filename}\""
       expect(page.body).to include content
