@@ -30,6 +30,171 @@ RSpec.describe "Plants", type: :request do
     end
   end
 
+  # all extra filtered indexes for the catalogue, to remove when methods will be streamlined
+  describe "GET /erbacee_perenni" do
+    it "renders a successful response" do
+      get erbacee_perenni_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /erbacee_annuali" do
+    it "renders a successful response" do
+      get erbacee_annuali_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /graminacee" do
+    it "renders a successful response" do
+      get graminacee_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /categoria_altro" do
+    it "renders a successful response" do
+      get categoria_altro_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /esposizione_sole" do
+    it "renders a successful response" do
+      get esposizione_sole_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /esposizione_ombra" do
+    it "renders a successful response" do
+      get esposizione_ombra_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /fioritura_primavera" do
+    it "renders a successful response" do
+      get fioritura_primavera_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /fioritura_estate" do
+    it "renders a successful response" do
+      get fioritura_estate_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /fioritura_autunno" do
+    it "renders a successful response" do
+      get fioritura_autunno_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /fioritura_inverno" do
+    it "renders a successful response" do
+      get fioritura_inverno_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /altezza_bassa" do
+    it "renders a successful response" do
+      get altezza_bassa_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /altezza_media" do
+    it "renders a successful response" do
+      get altezza_media_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /altezza_alta" do
+    it "renders a successful response" do
+      get altezza_alta_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /fogliame_ornamentale" do
+    it "renders a successful response" do
+      get fogliame_ornamentale_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /da_taglio" do
+    it "renders a successful response" do
+      get da_taglio_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /coprisuolo" do
+    it "renders a successful response" do
+      get coprisuolo_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /azotofissatrici" do
+    it "renders a successful response" do
+      get azotofissatrici_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /insetti_e_uccelli" do
+    it "renders a successful response" do
+      get insetti_e_uccelli_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /da_secco" do
+    it "renders a successful response" do
+      get da_secco_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /spontanee" do
+    it "renders a successful response" do
+      get spontanee_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /admin_catalogo" do
+    login_admin
+    it "renders a successful response" do
+      get admin_catalogo_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /by_created" do
+    login_admin
+    it "renders a successful response" do
+      get by_created_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /by_updated" do
+    login_admin
+    it "renders a successful response" do
+      get by_updated_plants_path
+      expect(response).to have_http_status(200)
+    end
+  end
+
   describe "GET /show" do
     it "renders a successful response" do
       plant = Plant.create! valid_attributes
