@@ -247,10 +247,6 @@ RSpec.describe "Plants", type: :request do
         expect {
         post plants_path, params: { plant: valid_attributes }
       }.to change{ Plant.count }.by(1)
-      end
-
-      it "redirects to the created plant" do
-        post plants_path, params: { plant: valid_attributes }
         expect(response).to redirect_to(plant_url(Plant.last))
       end
     end
@@ -260,10 +256,6 @@ RSpec.describe "Plants", type: :request do
         expect {
         post plants_url, params: { plant: valid_attributes }
       }.to change(Plant, :count).by(0)
-      end
-
-      it "redirects to login" do
-        post plants_url, params: { plant: valid_attributes }
         expect(response).to redirect_to(new_user_session_url)
       end
     end
@@ -275,11 +267,7 @@ RSpec.describe "Plants", type: :request do
         expect {
           post plants_url, params: { plant: invalid_attributes }
         }.to change(Plant, :count).by(0)
-      end
-
-      it "renders 'new' template" do
-        post plants_url, params: { plant: invalid_attributes }
-        expect(response).to render_template(:new)
+          expect(response).to render_template(:new)
       end
     end
   end
