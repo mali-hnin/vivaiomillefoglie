@@ -9,7 +9,6 @@ RSpec.describe "Carts", type: :request do
     end
   end
 
-
   describe "POST /create" do
     it "creates a new cart record" do
       expect {
