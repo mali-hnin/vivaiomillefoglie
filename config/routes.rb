@@ -34,14 +34,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create]
   end
 
-  #get "eventi", to: "vivaio_events#index", as: :vivaio_events
-  #get "eventi/:id", to: "vivaio_events#show", as: :vivaio_event
   resources :vivaio_events, path: 'eventi'
-
-  # scope(path_names: { new: 'neu', edit: 'bearbeiten' }) do
-  #  resources :categories, path: 'kategorien'
-  # end
-
 
   get "/catalogo", to: "pages#catalogo_intro"
   get "/giardini", to: "pages#giardini"
