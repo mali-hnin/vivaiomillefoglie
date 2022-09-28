@@ -38,7 +38,7 @@ RSpec.describe Plant, type: :model do
     end
 
     describe "Associations" do
-      it { should have_many(:line_items) }
+      it { should have_many(:line_items).dependent(:destroy) }
     end
 
     describe "Scopes" do
