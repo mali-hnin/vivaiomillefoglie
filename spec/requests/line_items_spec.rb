@@ -34,6 +34,15 @@ RSpec.describe "LineItems", type: :request do
         expect(LineItem.last.quantity).to eq(quantity + 1)
       end
     end
+  end
 
+  describe "DELETE /destroy" do
+    it "destroys the requested line_item and redirects to cart" do
+      line_item = LineItem.create(plant_id: Plant.last.id, cart_id: Cart.last.id)
+      count = LineItem.count
+      delete line_item_path(line_item)
+      expect(LineItem.count).to eq(count - 1)
+      expect(response).to redirect_to(cart_path(Cart.last))
+    end
   end
 end
