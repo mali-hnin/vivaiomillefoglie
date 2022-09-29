@@ -1,4 +1,5 @@
 class Plant < ApplicationRecord
+  validates :name, presence: true
   has_attachments :photos, maximum: 5
   monetize :price_cents, as: "prezzo"
   scope :alphabetically, -> { order('name ASC') }
@@ -14,7 +15,7 @@ class Plant < ApplicationRecord
   scope :filter_by_doppia_funzione, -> (funzione, funzione_bis) { where("utile_per ILIKE ?", '%'+funzione+'%').or(where("utile_per ILIKE ?", '%'+funzione_bis+'%'))}
 
 
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
   include PgSearch::Model
   pg_search_scope :search_plants, against: [:name, :description, :category, :utile_per], using: { tsearch: { any_word: true } }
 

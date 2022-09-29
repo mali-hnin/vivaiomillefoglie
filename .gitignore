@@ -11,3 +11,7 @@ public/assets
 secrets.yml
 
 /config/master.key
+
+#rspec stuff
+.rspec
+/spec/tmp
