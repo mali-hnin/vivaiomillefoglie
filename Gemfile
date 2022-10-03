@@ -75,5 +75,5 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'capybara-selenium'
   gem 'webdrivers'
-
+  gem 'simplecov', require: false
 end

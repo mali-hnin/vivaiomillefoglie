@@ -64,33 +64,33 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Warden::Test::Helpers
+end
 
-  Capybara.register_driver :selenium_chrome_headless do |app|
-    browser_options = Selenium::Webdriver::Chrome::Options.new.tap do |opts|
-      opts.args << '--headless'
-      opts.args << '--disable-site-isolation-trials'
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
     end
-    browser_options.add_preference(:download, prompt_for_download: false, default_directory: 'DownloadHelpers::PATH.to_s')
-
-    browser_options.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
-    Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
   end
 
-  config.before(:each, type: :system, js: true) do
-    clear_downloads
-    driven_by :selenium_chrome_headless
-  end
 
-  config.after(:each, type: :system, js: true) do
-    clear_downloads
-  end
-end
+#   for now not needed
+#   Capybara.register_driver :selenium_chrome_headless do |app|
+#     browser_options = Selenium::Webdriver::Chrome::Options.new.tap do |opts|
+#       opts.args << '--headless'
+#       opts.args << '--disable-site-isolation-trials'
+#     end
+#     browser_options.add_preference(:download, prompt_for_download: false, default_directory: 'DownloadHelpers::PATH.to_s')
 
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
-end
+#     browser_options.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
+#     Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
+#   end
 
+#   config.before(:each, type: :system, js: true) do
+#     clear_downloads
+#     driven_by :selenium_chrome_headless
+#   end
 
+#   config.after(:each, type: :system, js: true) do
+#     clear_downloads
+#   end
