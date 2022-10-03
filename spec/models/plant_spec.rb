@@ -59,7 +59,6 @@ RSpec.describe Plant, type: :model do
         fioritura: 'estate',
         altezza: 'media',
         utile_per: 'azotofissatrice',
-      price_cents: "500",
         price_cents: "500",
         nascondi: false
       )
