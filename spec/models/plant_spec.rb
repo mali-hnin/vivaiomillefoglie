@@ -33,7 +33,7 @@ RSpec.describe Plant, type: :model do
       end
 
       it "prezzo should be transformed to full euros, not cents" do
-        expect(subject.prezzo).to eq(Money.from_cents(subject.price_cents, "EUR"))
+        expect(subject).to monetize(:price_cents).as(:prezzo).with_currency(:eur)
       end
     end
 
@@ -59,7 +59,6 @@ RSpec.describe Plant, type: :model do
         fioritura: 'estate',
         altezza: 'media',
         utile_per: 'azotofissatrice',
-      price_cents: "500",
         price_cents: "500",
         nascondi: false
       )
