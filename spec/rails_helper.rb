@@ -64,6 +64,14 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Warden::Test::Helpers
+  if ENV["DEPRECATION_TRACKER"]
+    DeprecationTracker.track_rspec(
+      config,
+      shitlist_path: "spec/support/deprecation_warning.shitlist.json",
+      mode: ENV["DEPRECATION_TRACKER"],
+      transform_message: -> (message) { message.gsub("#{Rails.root}/", "") }
+    )
+  end
 end
 
   Shoulda::Matchers.configure do |config|
