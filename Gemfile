@@ -1,3 +1,6 @@
+def next?
+  File.basename(__FILE__) == "Gemfile.next"
+end
 source 'https://rubygems.org'
 ruby '2.6.0'
 
@@ -32,6 +35,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-passenger', '~> 0.2.1'
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'web-console', '>= 3.3.0'
 end
 # specific gems
 gem 'cloudinary'
@@ -65,9 +69,15 @@ gem 'image_processing', '~> 1.12'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   # gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'capybara-selenium'
+  gem 'webdrivers'
+  gem 'simplecov', require: false
+  gem 'next_rails'
 end
