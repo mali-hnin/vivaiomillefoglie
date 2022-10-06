@@ -1,3 +1,6 @@
+def next?
+  File.basename(__FILE__) == "Gemfile.next"
+end
 source 'https://rubygems.org'
 ruby '2.6.0'
 
@@ -76,4 +79,5 @@ group :development, :test do
   gem 'capybara-selenium'
   gem 'webdrivers'
   gem 'simplecov', require: false
+  gem 'next_rails'
 end
