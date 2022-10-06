@@ -1,0 +1,10 @@
+<%= simple_form_for @garden do |f|%>
+  <%= f.input :title, label: "Titolo", autofocus: true, placeholder: "Facoltativo" %>
+  <%= f.input :description, label: "Descrizione", placeholder: "Facoltativo" %>
+  <%= f.file_field :photo, label: "Foto", accept: 'image/*', onchange: "preview()", class: "mt-5 mb-5" %>
+  <%= f.button :submit, "Salva", class: "btn btn-success" %>
+  <%= link_to "Annulla", gardens_path, class: "btn btn-outline-secondary", data: { confirm: "Se lasci questa pagina senza pubblicare perderai il lavoro svolto" } %>
+<% end %>
+<img id="garden-preview" src="" alt="">
+<br>
+<br>

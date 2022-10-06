@@ -18,6 +18,7 @@
 
 .photos {
   text-align: center;
+
   img {
     width: 1000px;
   }
@@ -25,8 +26,47 @@
 
 .ruota {
   -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.gardens-text {
+  margin-left: 70px;
+  margin-right: 50vw;
+  text-align: justify;
+}
+
+.gardens-intro {
+  position: fixed;
+  top: 300px;
+  left: 100px;
+  max-width: 25vw;
+  font-size: 43px;
+}
+
+.gardens-display {
+  text-align: right;
+  margin-top: 450px;
+}
+
+.garden-photo {
+  max-width: 70vw;
+}
+
+.garden-photo-section {
+  margin: 50px 0px 100px 0px;
+
+}
+
+.garden-admin-buttons {
+  position: relative;
+  bottom: -50px;
+  right: 10px;
+}
+
+#garden-preview {
+  max-height: 300px;
+  max-width: 300px;
 }
