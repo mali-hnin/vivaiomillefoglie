@@ -444,7 +444,7 @@ DEPENDENCIES
   yaml_db
 
 RUBY VERSION
-   ruby 2.6.0p0
+   ruby 3.0.4p208
 
 BUNDLED WITH
    2.3.18
