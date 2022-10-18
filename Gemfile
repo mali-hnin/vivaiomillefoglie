@@ -69,7 +69,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
   # gem 'spring'
-  gem 'capybara-selenium'
+  # gem 'capybara-selenium'
   gem 'better_errors'
   gem 'next_rails'
   gem 'rails-controller-testing'
