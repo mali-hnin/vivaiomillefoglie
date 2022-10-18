@@ -1,6 +1,3 @@
-def next?
-  File.basename(__FILE__) == "Gemfile.next"
-end
 source 'https://rubygems.org'
 ruby '3.0.4'
 
@@ -19,6 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem "nokogiri", ">= 1.13.6"
 gem 'pg'
 gem "puma", ">= 4.3.8"
+gem "racc", "~> 1.5.2"
 gem 'rails', "7.0.4"
 gem 'redis'
 gem "railties", ">= 5.2.2.1"
