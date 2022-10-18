@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 gem "nokogiri", ">= 1.13.6"
 gem 'pg'
 gem "puma", ">= 4.3.8"
-gem 'rails', "6.1.6.1"
+gem 'rails', "7.0.4"
 gem 'redis'
 gem "railties", ">= 5.2.2.1"
 gem 'webpacker', '~> 6.0.0.rc.5'
