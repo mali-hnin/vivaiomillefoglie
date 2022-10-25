@@ -46,6 +46,7 @@ gem 'jquery-fileupload-rails'
 gem 'money-rails', '~>1.12'
 gem 'pagy'
 gem 'pg_search', '~> 2.3.0'
+gem 'turbo-rails'
 gem 'yaml_db'
 
 
