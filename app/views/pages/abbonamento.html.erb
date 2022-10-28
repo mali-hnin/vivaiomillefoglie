@@ -1,46 +1,45 @@
 <% content_for(:title_tag) do %>
-  Abbonamento all'Orto dei Fiori | Vivaio Millefoglie
+	Abbonamento all'Orto dei Fiori | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "Abbonamento fiori a domicilio a Ivrea e dintorni | Vivaio Millefoglie" %>
 <% content_for :meta_description, "Abbonamento consegna fiori a domicilio, Ivrea e dintorni. Vendita fiori di stagione a km zero, sempre freschi, appena colti." %>
 <% content_for :meta_image, "preview_fiori.png" %>
-
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  <div class="page-wrapper white-bg">
-    <div class="container">
-      <div class="content">
-        <h1 class="text-center">L'Abbonamento all'Orto dei Fiori</h1>
-      </div>
-      <div class="content">
-        <p>Fiori belli, di stagione, coltivati localmente che arrivano a domicilio.</p>
-        <p>Li raccogliamo freschi, ne facciamo un bouquet e li consegniamo, quando vuoi tu!</p>
-        <p>Puoi scegliere di fare un abbonamento (a cadenza settimanale, mensile...) e le dimensioni del mazzo (da 10, da 20 euro...). A tutto il resto penseremo noi.</p>
-        <p>Se vuoi fare un regalo: è semplice!</p>
-        <ol>
-          <li>Acquisti una card abbonamento.</li>
-          <li>La consegni  con un biglietto di auguri che ti forniamo noi.</li>
-          <li>Chi la riceve dovrà solo contattarci per  attivare l'abbonamento e concordare le modalità di consegna.</li>
-        </ol>
-        <p>Le consegne dei fiori in abbonamento vengono fatte il giovedì o il venerdì.</p>
-      </div>
-      <div class="content">
-        <p><%= link_to "Contattaci", contatti_path, class: "orange-text" %> per prenotare il tuo abbonamento o singolo mazzo!</p>
-      </div>
-      <div class="content text-center">
-        <% if !@ig_photos.nil? %>
-          <% @ig_photos.sample(3).each do |ig_photo| %>
-            <%= link_to ig_photo["permalink"], target: :_blank do %>
-              <%= image_tag ig_photo["media_url"], class: "ortodeifiori-deco" %>
-            <% end %>
-          <% end %>
-        <% else %>
-          <%= image_tag "abbonamento4.png", class: "ortodeifiori-deco" %>
-          <%= image_tag "abbonamento7.png", class: "ortodeifiori-deco" %>
-          <%= image_tag "abbonamento6.png", class: "ortodeifiori-deco" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+	<%= render 'shared/navbar' %>
+	<%= render 'shared/flashes' %>
+	<div class="page-wrapper white-bg">
+		<div class="container">
+			<div class="content">
+				<h1 class="text-center">L'Abbonamento all'Orto dei Fiori</h1>
+			</div>
+			<div class="content">
+				<p>Fiori belli, di stagione, coltivati localmente che arrivano a domicilio.</p>
+				<p>Li raccogliamo freschi, ne facciamo un bouquet e li consegniamo, quando vuoi tu!</p>
+				<p>Puoi scegliere di fare un abbonamento (a cadenza settimanale, mensile...) e le dimensioni del mazzo (da 10, da 20 euro...). A tutto il resto penseremo noi.</p>
+				<p>Se vuoi fare un regalo: è semplice!</p>
+				<ol>
+					<li>Acquisti una card abbonamento.</li>
+					<li>La consegni  con un biglietto di auguri che ti forniamo noi.</li>
+					<li>Chi la riceve dovrà solo contattarci per  attivare l'abbonamento e concordare le modalità di consegna.</li>
+				</ol>
+				<p>Le consegne dei fiori in abbonamento vengono fatte il giovedì o il venerdì.</p>
+			</div>
+			<div class="content">
+				<p><%= link_to "Contattaci", contatti_path, class: "orange-text" %> per prenotare il tuo abbonamento o singolo mazzo!</p>
+			</div>
+			<div class="content text-center">
+				<% if !@ig_photos.nil? %>
+					<% @ig_photos.sample(3).each do |ig_photo| %>
+						<%= link_to ig_photo["permalink"], target: :_blank do %>
+							<%= image_tag ig_photo["media_url"], class: "ortodeifiori-deco" %>
+						<% end %>
+					<% end %>
+				<% else %>
+					<%= image_tag "abbonamento4.png", class: "ortodeifiori-deco" %>
+					<%= image_tag "abbonamento7.png", class: "ortodeifiori-deco" %>
+					<%= image_tag "abbonamento6.png", class: "ortodeifiori-deco" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
