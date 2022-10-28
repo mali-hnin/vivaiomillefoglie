@@ -1,15 +1,15 @@
 <div class="event-box hidden-sm" id="eventBox">
-  <button class="close btn1" type="button" data-dismiss="event-box" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <div class="pica fs-2 m-3">Prossimo evento: </div>
-  <div class="fs-1 m-3">
-    <% if !event.nil? %>
-      <%= event.title %></div>
-    <% end %>
-  <div class="m-3">
-    <%= link_to "Vedi di più...", vivaio_event_path(event), class: 'orange-link small-caps' %>
-  </div>
-  <hr class="hrstyle" />
-  <div class="m-3">
-    <%= link_to "Altri eventi", vivaio_events_path, class: 'orange-link small-caps' %>
-  </div>
+	<button class="close btn1" type="button" data-dismiss="event-box" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<div class="pica fs-2 m-3">Prossimo evento: </div>
+	<div class="fs-1 m-3">
+		<% if !event.nil? %>
+			<%= event.title %></div>
+	<% end %>
+	<div class="m-3">
+		<%= link_to "Vedi di più...", vivaio_event_path(event), class: 'orange-link small-caps' %>
+	</div>
+	<hr class="hrstyle" />
+	<div class="m-3">
+		<%= link_to "Altri eventi", vivaio_events_path, class: 'orange-link small-caps' %>
+	</div>
 </div>

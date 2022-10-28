@@ -1,53 +1,53 @@
 <div class="footer">
-  <div class="footer-main">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-lg-3">
-        <div class="footer-column mobile-column-center" id="orari">
-          <p class="uppercase-text bolder-text">Gli orari del vivaio</p>
-          <p>Dal martedì al sabato<br>
-            9.30-12.30<br>
-            15.30-tramonto</p>
-          <p>Dicembre, Gennaio, Febbraio e Agosto <span class="bolder-text">aperto solo su appuntamento</span></p>
-          <%= link_to "Dove Siamo", contatti_path, class: "orange-text" %><br>
-          <%= link_to "Come Acquistare", acquistare_path, class: "orange-text" %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-3">
-        <div class="footer-column mobile-column-center">
-          <div id="acquista-online">
-          <p style="font-size:15px;">IN QUESTO PERIODO LE SPEDIZIONI SONO SOSPESE. RIPRENDEREMO A SPEDIRE LE PIANTE IN AUTUNNO</p>
-            <%= link_to "ordina online ", catalogo_path, class: "orange-text" %><span class= "orange-text"><i class="fab fa-envira"></i></span>
-          </div>
-          <br>
-          <br>
-          <%= render 'shared/search_bar' %>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-3">
-        <div class="footer-column mobile-column-center" id="social-media">
-          <div class="uppercase-text bolder-text", id="one">
-            <p>seguici</p>
-          </div>
-          <div id="links">
-            <p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "vivaiomillefoglie.it", "https://www.facebook.com/vivaiomillefoglie.it/", target: :_blank %></p>
-            <p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "l'orto dei fiori", "https://www.facebook.com/millefoglieflowerslab/", target: :_blank %></p>
-            <p><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %><%= link_to "@felipedelmillefoglie", "https://www.instagram.com/felipedelmillefoglie/", target: :_blank %></p>
-            <p><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %><%= link_to "@roxdelmillefoglie", "https://www.instagram.com/roxdelmillefoglie/", target: :_blank %></p>
-            <p><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %><%= link_to "@orto.dei.fiori", "https://www.instagram.com/orto.dei.fiori/", target: :_blank %></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-lg-3">
-        <div class="footer-column mobile-column-center" id="bonus-verde">
-          <p class="uppercase-text bolder-text">Bonus Verde</p>
-          <p class="bolder-text">incentivi fiscali del 36%</p>
-          <p>per giardini, balconi e terrazzi privati e condominiali</p>
-          <%= link_to "clicca qui per maggiori informazioni", bonusverde_path, class: "orange-text" %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>Copyright©2019 Millefoglie piante e giardini via Aosta 83/A 10015 Ivrea (To)  P.IVA 12088940015    <%= mail_to "info@vivaiomillefoglie.it", "info@vivaiomillefoglie.it", class: "orange-text" %>    <%= link_to "Condizioni di vendita", condizionivendita_path, class: "orange-text" %> | <%= link_to "Impostazioni Cookies", "#", id:"impostazioniCookies", class: "orange-text" %> | developed by <%= link_to "mali-hnin", "https://github.com/mali-hnin/", target: :_blank, class: "orange-text" %></p>
-  </div>
+	<div class="footer-main">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-lg-3">
+				<div class="footer-column mobile-column-center" id="orari">
+					<p class="uppercase-text bolder-text">Gli orari del vivaio</p>
+					<p>Dal martedì al sabato<br>
+						9.30-12.30<br>
+						15.30-tramonto</p>
+					<p>Dicembre, Gennaio, Febbraio e Agosto <span class="bolder-text">aperto solo su appuntamento</span></p>
+					<%= link_to "Dove Siamo", contatti_path, class: "orange-text" %><br>
+					<%= link_to "Come Acquistare", acquistare_path, class: "orange-text" %>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-lg-3">
+				<div class="footer-column mobile-column-center">
+					<div id="acquista-online">
+						<p style="font-size:15px;">IN QUESTO PERIODO LE SPEDIZIONI SONO SOSPESE. RIPRENDEREMO A SPEDIRE LE PIANTE IN AUTUNNO</p>
+						<%= link_to "ordina online ", catalogo_path, class: "orange-text" %><span class= "orange-text"><i class="fab fa-envira"></i></span>
+					</div>
+					<br>
+					<br>
+					<%= render 'shared/search_bar' %>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-lg-3">
+				<div class="footer-column mobile-column-center" id="social-media">
+					<div class="uppercase-text bolder-text", id="one">
+						<p>seguici</p>
+					</div>
+					<div id="links">
+						<p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "vivaiomillefoglie.it", "https://www.facebook.com/vivaiomillefoglie.it/", target: :_blank %></p>
+						<p><%= image_tag "fb-xsmall.png", alt: "Facebook" %><%= link_to "l'orto dei fiori", "https://www.facebook.com/millefoglieflowerslab/", target: :_blank %></p>
+						<p><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %><%= link_to "@felipedelmillefoglie", "https://www.instagram.com/felipedelmillefoglie/", target: :_blank %></p>
+						<p><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %><%= link_to "@roxdelmillefoglie", "https://www.instagram.com/roxdelmillefoglie/", target: :_blank %></p>
+						<p><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %><%= link_to "@orto.dei.fiori", "https://www.instagram.com/orto.dei.fiori/", target: :_blank %></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-lg-3">
+				<div class="footer-column mobile-column-center" id="bonus-verde">
+					<p class="uppercase-text bolder-text">Bonus Verde</p>
+					<p class="bolder-text">incentivi fiscali del 36%</p>
+					<p>per giardini, balconi e terrazzi privati e condominiali</p>
+					<%= link_to "clicca qui per maggiori informazioni", bonusverde_path, class: "orange-text" %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<p>Copyright©2019 Millefoglie piante e giardini via Aosta 83/A 10015 Ivrea (To)  P.IVA 12088940015    <%= mail_to "info@vivaiomillefoglie.it", "info@vivaiomillefoglie.it", class: "orange-text" %>    <%= link_to "Condizioni di vendita", condizionivendita_path, class: "orange-text" %> | <%= link_to "Impostazioni Cookies", "#", id:"impostazioniCookies", class: "orange-text" %> | developed by <%= link_to "mali-hnin", "https://github.com/mali-hnin/", target: :_blank, class: "orange-text" %></p>
+	</div>
 </div>
