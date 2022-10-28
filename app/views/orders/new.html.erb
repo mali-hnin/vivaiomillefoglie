@@ -1,18 +1,18 @@
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <div class="page-wrapper white-bg">
-    <div class="container">
-      <h3 class="text-center">Inserisci i tuoi dati per l'ordine</h3>
-      <div class="row justify-content-center">
-        <div class="col-sm-7">
-        <% if @cart.total_price.to_i >= 30 %>
-          <%= render 'form' %>
-        <% else %>
-          Il tuo ordine non può ancora essere elaborato perchè non raggiunge il totale minimo di 30€.
-          <%= render 'shared/back_button' %>
-        <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+	<%= render 'shared/navbar' %>
+	<div class="page-wrapper white-bg">
+		<div class="container">
+			<h3 class="text-center">Inserisci i tuoi dati per l'ordine</h3>
+			<div class="row justify-content-center">
+				<div class="col-sm-7">
+					<% if @cart.total_price.to_i >= 30 %>
+						<%= render 'form' %>
+					<% else %>
+						Il tuo ordine non può ancora essere elaborato perchè non raggiunge il totale minimo di 30€.
+						<%= render 'shared/back_button' %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
