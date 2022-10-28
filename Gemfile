@@ -26,9 +26,11 @@ gem 'webpacker', '~> 6.0.0.rc.5'
 # deploy gems
 group :development do
   gem 'capistrano', '3.16', require: false
-  gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-passenger', '~> 0.2.1'
+  gem 'capistrano-rails', '~> 1.6', require: false
   gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
   gem 'web-console', '>= 3.3.0'
 end
 
