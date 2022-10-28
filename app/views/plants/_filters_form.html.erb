@@ -1,77 +1,77 @@
 <!-- Filters -->
 <div class ="filters hidden-xs hidden-sm">
-  <%= form_with(url: chapter, method: :get, remote: true) do |f| %>
-    <div class="catalogo-filters-grid">
-      <% if chapter(@category) %>
-        <div class="catalogo-filters-content">
-          <%= f.select :category, Plant.options_for_category, include_blank: true, prompt: "Categoria", class: "form-select"  %>
-        </div>
-      <% end %>
-      <% if chapter(@esposizione) %>
-        <div class="catalogo-filters-content">
-          <%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true, prompt: "Esposizione"  %>
-        </div>
-      <% end %>
-      <% if chapter(@fioritura) %>
-        <div class="catalogo-filters-content">
-          <%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true, prompt: "Fioritura" %>
-        </div>
-      <% end %>
-      <% if chapter(@altezza) %>
-        <div class="catalogo-filters-content">
-          <%= f.select :altezza, Plant.options_for_altezza, include_blank: true, prompt: "Altezza" %>
-        </div>
-      <% end %>
-      <%# This one always shows up so you can mix multiple functions %>
-      <div class="catalogo-filters-content">
-        <%= f.select :funzione, Plant.options_for_funzione, include_blank: true, prompt: "Funzione"  %>
-      </div>
-      <div class="catalogo-filters-content">
-        <%= f.submit 'Filtra', class: "btn btn-primary" %>
-        <%= link_to('Resetta filtri', chapter ) %>
-      </div>
-    </div>
-  <% end %>
+	<%= form_with(url: chapter, method: :get, remote: true) do |f| %>
+		<div class="catalogo-filters-grid">
+			<% if chapter(@category) %>
+				<div class="catalogo-filters-content">
+					<%= f.select :category, Plant.options_for_category, include_blank: true, prompt: "Categoria", class: "form-select"  %>
+				</div>
+			<% end %>
+			<% if chapter(@esposizione) %>
+				<div class="catalogo-filters-content">
+					<%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true, prompt: "Esposizione"  %>
+				</div>
+			<% end %>
+			<% if chapter(@fioritura) %>
+				<div class="catalogo-filters-content">
+					<%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true, prompt: "Fioritura" %>
+				</div>
+			<% end %>
+			<% if chapter(@altezza) %>
+				<div class="catalogo-filters-content">
+					<%= f.select :altezza, Plant.options_for_altezza, include_blank: true, prompt: "Altezza" %>
+				</div>
+			<% end %>
+			<%# This one always shows up so you can mix multiple functions %>
+			<div class="catalogo-filters-content">
+				<%= f.select :funzione, Plant.options_for_funzione, include_blank: true, prompt: "Funzione"  %>
+			</div>
+			<div class="catalogo-filters-content">
+				<%= f.submit 'Filtra', class: "btn btn-primary" %>
+				<%= link_to('Resetta filtri', chapter ) %>
+			</div>
+		</div>
+	<% end %>
 </div>
 <div class ="filters-mobile hidden-md hidden-lg">
-  <a class="btn btn-block btn-primary" data-bs-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
-    <i class="fas fa-filter"></i> Filtra
-  </a>
+	<a class="btn btn-block btn-primary" data-bs-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
+		<i class="fas fa-filter"></i> Filtra
+	</a>
 </div>
 <div class="collapse" id="collapseFilters">
-  <div class="card filters-body">
-    <%= form_with(url: chapter, method: :get, remote: true) do |f| %>
-      <div class="catalogo-filters-grid-mobile">
-        <% if chapter(@category) %>
-          <div class="catalogo-filters-content">
-            <%= f.select :category, Plant.options_for_category, include_blank: true, prompt: "Categoria", class: "form-select"  %>
-          </div>
-        <% end %>
-        <% if chapter(@esposizione) %>
-          <div class="catalogo-filters-content">
-            <%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true, prompt: "Esposizione"  %>
-          </div>
-        <% end %>
-        <% if chapter(@fioritura) %>
-          <div class="catalogo-filters-content">
-            <%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true, prompt: "Fioritura" %>
-          </div>
-        <% end %>
-        <% if chapter(@altezza) %>
-          <div class="catalogo-filters-content">
-            <%= f.select :altezza, Plant.options_for_altezza, include_blank: true, prompt: "Altezza" %>
-          </div>
-        <% end %>
-        <%# This one always shows up so you can mix multiple functions %>
-        <div class="catalogo-filters-content">
-          <%= f.select :funzione, Plant.options_for_funzione, include_blank: true, prompt: "Funzione"  %>
-        </div>
-        <div class="catalogo-filters-content">
-          <%= f.submit 'Filtra', class: "btn btn-primary" %>
-          <%= link_to('Resetta filtri', chapter ) %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+	<div class="card filters-body">
+		<%= form_with(url: chapter, method: :get, remote: true) do |f| %>
+			<div class="catalogo-filters-grid-mobile">
+				<% if chapter(@category) %>
+					<div class="catalogo-filters-content">
+						<%= f.select :category, Plant.options_for_category, include_blank: true, prompt: "Categoria", class: "form-select"  %>
+					</div>
+				<% end %>
+				<% if chapter(@esposizione) %>
+					<div class="catalogo-filters-content">
+						<%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true, prompt: "Esposizione"  %>
+					</div>
+				<% end %>
+				<% if chapter(@fioritura) %>
+					<div class="catalogo-filters-content">
+						<%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true, prompt: "Fioritura" %>
+					</div>
+				<% end %>
+				<% if chapter(@altezza) %>
+					<div class="catalogo-filters-content">
+						<%= f.select :altezza, Plant.options_for_altezza, include_blank: true, prompt: "Altezza" %>
+					</div>
+				<% end %>
+				<%# This one always shows up so you can mix multiple functions %>
+				<div class="catalogo-filters-content">
+					<%= f.select :funzione, Plant.options_for_funzione, include_blank: true, prompt: "Funzione"  %>
+				</div>
+				<div class="catalogo-filters-content">
+					<%= f.submit 'Filtra', class: "btn btn-primary" %>
+					<%= link_to('Resetta filtri', chapter ) %>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>
 <!-- End of Filters -->

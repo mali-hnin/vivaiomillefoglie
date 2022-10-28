@@ -1,39 +1,27 @@
 <%= form_for @plant do |f| %>
-  <%= f.label :nome %>
-  <%= f.text_field :name, required: true, autofocus: true %><br />
-
-  <%= f.label :descrizione %><br />
-  <%= f.text_field :description, class: "text-field-height" %><br />
-
-  <%= f.label :categoria %><br />
-  <%= f.text_field :category %><br />
-
-  <%= f.label :esposizione %><br />
-  <%= f.text_field :esposizione %><br />
-
-  <%= f.label :fioritura %><br />
-  <%= f.text_field :fioritura %><br />
-
-  <%= f.label :utile_per %><br />
-  <%= f.text_field :utile_per %><br />
-
-  <%= f.label :altezza %><br />
-  <%= f.text_field :altezza %><br />
-
-  <%= f.label :terreno %><br />
-  <%= f.text_field :terreno %><br />
-
-  <%= f.label :densità %><br />
-  <%= f.text_field :densità %><br />
-
-  <%= f.label :vaso %><br />
-  <%= f.text_field :vaso %><br />
-
-  <%= f.label :disponibile %><br />
-  <%= f.text_field :disponibile %><br />
-
-  <%= f.label :novità %><br />
-  <%= f.text_field :novità %><br />
-
-  <%= f.button :submit, class: "btn btn-info btn-block" %>
+	<%= f.label :nome %>
+	<%= f.text_field :name, required: true, autofocus: true %><br />
+	<%= f.label :descrizione %><br />
+	<%= f.text_field :description, class: "text-field-height" %><br />
+	<%= f.label :categoria %><br />
+	<%= f.text_field :category %><br />
+	<%= f.label :esposizione %><br />
+	<%= f.text_field :esposizione %><br />
+	<%= f.label :fioritura %><br />
+	<%= f.text_field :fioritura %><br />
+	<%= f.label :utile_per %><br />
+	<%= f.text_field :utile_per %><br />
+	<%= f.label :altezza %><br />
+	<%= f.text_field :altezza %><br />
+	<%= f.label :terreno %><br />
+	<%= f.text_field :terreno %><br />
+	<%= f.label :densità %><br />
+	<%= f.text_field :densità %><br />
+	<%= f.label :vaso %><br />
+	<%= f.text_field :vaso %><br />
+	<%= f.label :disponibile %><br />
+	<%= f.text_field :disponibile %><br />
+	<%= f.label :novità %><br />
+	<%= f.text_field :novità %><br />
+	<%= f.button :submit, class: "btn btn-info btn-block" %>
 <% end %>
