@@ -64,17 +64,17 @@ gem 'uglifier'
 
 # Test and development gems
 group :development, :test do
-  gem 'listen', '~> 3.0.5'
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  # gem 'spring'
   gem 'better_errors'
   gem 'capybara-selenium'
+  gem 'listen', '~> 3.0.5'
   gem 'next_rails'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring', '>= 3.0.0'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'webdrivers'
 end
