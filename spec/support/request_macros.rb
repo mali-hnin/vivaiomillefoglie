@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module RequestMacros
   def login_admin
     before(:each) do
-      admin = User.create(email: 'test@test.org', password: "password", password_confirmation: "password", admin: true)
+      admin = User.create(email: 'test@test.org', password: 'password', password_confirmation: 'password', admin: true)
       sign_in admin
     end
   end

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'capybara/rails'
@@ -64,23 +66,22 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Warden::Test::Helpers
-  if ENV["DEPRECATION_TRACKER"]
+  if ENV['DEPRECATION_TRACKER']
     DeprecationTracker.track_rspec(
       config,
-      shitlist_path: "spec/support/deprecation_warning.shitlist.json",
-      mode: ENV["DEPRECATION_TRACKER"],
-      transform_message: -> (message) { message.gsub("#{Rails.root}/", "") }
+      shitlist_path: 'spec/support/deprecation_warning.shitlist.json',
+      mode: ENV['DEPRECATION_TRACKER'],
+      transform_message: ->(message) { message.gsub("#{Rails.root}/", '') }
     )
   end
 end
 
-  Shoulda::Matchers.configure do |config|
-    config.integrate do |with|
-      with.test_framework :rspec
-      with.library :rails
-    end
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
-
+end
 
 #   for now not needed
 #   Capybara.register_driver :selenium_chrome_headless do |app|
