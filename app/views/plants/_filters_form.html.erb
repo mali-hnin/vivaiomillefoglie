@@ -44,27 +44,27 @@
 			<div class="catalogo-filters-grid-mobile">
 				<% if chapter(@category) %>
 					<div class="catalogo-filters-content">
-						<%= f.select :category, Plant.options_for_category, include_blank: true, prompt: "Categoria", class: "form-select"  %>
+						<%= f.select :category, Plant.options_for_category, selected: params[:category], include_blank: true, prompt: "Categoria", class: "form-select"  %>
 					</div>
 				<% end %>
 				<% if chapter(@esposizione) %>
 					<div class="catalogo-filters-content">
-						<%= f.select :esposizione, Plant.options_for_esposizione, include_blank: true, prompt: "Esposizione"  %>
+						<%= f.select :esposizione, Plant.options_for_esposizione, selected: params[:esposizione], include_blank: true, prompt: "Esposizione"  %>
 					</div>
 				<% end %>
 				<% if chapter(@fioritura) %>
 					<div class="catalogo-filters-content">
-						<%= f.select :fioritura, Plant.options_for_fioritura, include_blank: true, prompt: "Fioritura" %>
+						<%= f.select :fioritura, Plant.options_for_fioritura, selected: params[:fioritura], include_blank: true, prompt: "Fioritura" %>
 					</div>
 				<% end %>
 				<% if chapter(@altezza) %>
 					<div class="catalogo-filters-content">
-						<%= f.select :altezza, Plant.options_for_altezza, include_blank: true, prompt: "Altezza" %>
+						<%= f.select :altezza, Plant.options_for_altezza, selected: params[:altezza], include_blank: true, prompt: "Altezza" %>
 					</div>
 				<% end %>
 				<%# This one always shows up so you can mix multiple functions %>
 				<div class="catalogo-filters-content">
-					<%= f.select :funzione, Plant.options_for_funzione, include_blank: true, prompt: "Funzione"  %>
+					<%= f.select :funzione, Plant.options_for_funzione, selected: params[:funzione], include_blank: true, prompt: "Funzione"  %>
 				</div>
 				<div class="catalogo-filters-content">
 					<%= f.submit 'Filtra', class: "btn btn-primary" %>
