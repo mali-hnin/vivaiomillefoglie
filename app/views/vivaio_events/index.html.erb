@@ -1,53 +1,52 @@
 <% content_for(:title_tag) do %>
-  Eventi | Vivaio Millefoglie
+	Eventi | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "Eventi | Vivaio Millefoglie" %>
 <% content_for :meta_image, "preview_eventi.png" %>
-
 <div class="bg" style="background-image:linear-gradient(to right, rgba(0,0,0,0.2),rgba(0,0,0,0)),url(<%= asset_path "bg_eventi.jpg" %>);  background-repeat: no-repeat;
   background-attachment: fixed;">
-  <div style="background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.3) 80%, rgba(61, 62, 42, 0));">
-    <%= render 'shared/navbar' %>
-  </div>
-  <div class="page-wrapper">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
-    <% end %>
-    <div class="left-side-events">
-      <h1 class="text-center" id="blank-title">Eventi presso il Vivaio Millefoglie di Ivrea</h1>
-      <% if user_signed_in? && current_user.admin %>
-        <!-- Admin buttons -->
-        <div>
-          <%= link_to "Nuovo Evento", new_vivaio_event_path, class: "btn btn-success" %>
-          <br>
-          <br>
-          <% if params[:scope] %>
-            <%= render 'shared/back_button' %>
-          <% else %>
-            <%= link_to vivaio_events_path(scope: :past), class: "btn btn-info" do %>
-              Vedi gli eventi passati
-            <% end %>
-          <% end %>
-        </div>
-        <!-- End of Admin buttons -->
-      <% end %>
-      <main class="events-grid">
-        <div class="row">
-          <% @vivaio_events.each do |event| %>
-            <div class="col-xs-12">
-              <%= render "event_card", event: event %>
-              <% if user_signed_in? && current_user.admin %>
-                <!-- Admin buttons -->
-                <div class="event-admin-buttons">
-                  <%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
-                  <%= link_to "Elimina", vivaio_event_path(event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-                </div>
-                <!-- End of Admin buttons -->
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </main>
-    </div>
-  </div>
+	<div style="background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.3) 80%, rgba(61, 62, 42, 0));">
+		<%= render 'shared/navbar' %>
+	</div>
+	<div class="page-wrapper">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
+		<% end %>
+		<div class="left-side-events">
+			<h1 class="text-center" id="blank-title">Eventi presso il Vivaio Millefoglie di Ivrea</h1>
+			<% if user_signed_in? && current_user.admin %>
+				<!-- Admin buttons -->
+				<div>
+					<%= link_to "Nuovo Evento", new_vivaio_event_path, class: "btn btn-success" %>
+					<br>
+					<br>
+					<% if params[:scope] %>
+						<%= render 'shared/back_button' %>
+					<% else %>
+						<%= link_to vivaio_events_path(scope: :past), class: "btn btn-info" do %>
+							Vedi gli eventi passati
+						<% end %>
+					<% end %>
+				</div>
+				<!-- End of Admin buttons -->
+			<% end %>
+			<main class="events-grid">
+				<div class="row">
+					<% @vivaio_events.each do |event| %>
+						<div class="col-xs-12">
+							<%= render "event_card", event: event %>
+							<% if user_signed_in? && current_user.admin %>
+								<!-- Admin buttons -->
+								<div class="event-admin-buttons">
+									<%= link_to "Modifica", edit_vivaio_event_path(event.id), class: "btn btn-warning" %>
+									<%= link_to "Elimina", vivaio_event_path(event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+								</div>
+								<!-- End of Admin buttons -->
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			</main>
+		</div>
+	</div>
 </div>

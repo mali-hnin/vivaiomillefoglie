@@ -1,34 +1,33 @@
 <% content_for(:title_tag) do %>
-  Catalogo - Vendita piante online | Vivaio Millefoglie
+	Catalogo - Vendita piante online | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "Acquista piante online | Vivaio Millefoglie" %>
 <% content_for :meta_description, "Vendita piante online dal 2010. Spedizione con corriere in tutta Italia. Erbacee perenni, graminacee ornamentali e annuali da fiore. Piante per attirare insetti e uccelli in giardino, per migliorare in modo naturale il suolo (azotofissatrici, coprisuolo), per siccità e arido, piante spontanee, .." %>
 <% content_for :meta_image, "preview_catalogo-intro.png" %>
-
 <div class="bg" style="background-image:linear-gradient(to right, rgba(0,0,0,0.4),rgba(0,0,0,0)), url(<%= asset_path "bg04.jpg" %>)">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  <!-- <p class="notice"><%= notice %></p>
+	<%= render 'shared/navbar' %>
+	<%= render 'shared/flashes' %>
+	<!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-  <div class="page-wrapper-row">
-    <div class = "left-side">
-      <div class="left-side-text">
-        <div class="info-box">
-          <p>Nel nostro catalogo trovate erbacee perenni, graminacee ornamentali ed annuali da fiore
-            scelte per la loro qualità e bellezza. Molte di queste piante possono essere utili a una gestione del giardino secondo natura. Possono servire per attirare insetti e uccelli in giardino, per migliorare in modo naturale il suolo (specie azotofissatrici, coprisuolo) per sopportare siccità e arido, piante spontanee...</p>
-          <h3 style="font-weight:bold;"><%= link_to "Sfoglia il catalogo", "#catalogo", style: "color:#fd5f00;a:hover:#F15014;}" %></h3>
-          <p>Selezioniamo le varietà che riteniamo più resistenti a malattie e parassiti, poco esigenti di irrigazione, belle il più a lungo possibile nell'arco delle stagioni.</br>
-          Cerchiamo di allevare piante forti, pronte a crescere e diventare rigogliose nei vostri giardini; per questo vengono coltivate per tutto l'anno in campo aperto nel rispetto dei loro cicli biologici.</p>
-          <p>Evitiamo eccessi di concimazione e forzature di qualunque tipo per poter ottenere esemplari sani e resistenti.</br>
-              Impieghiamo terricci preparati in azienda con terra di campo, compost da verde, torba e pomice.</br>
-              Utilizziamo  per la concimazione ed eventuali trattamenti antiparassitari prodotti poco inquinanti ammessi in agricoltura biologica.</br>
-              Molte delle piante sono riprodotte da semi, talee o divisioni di piante madri coltivate e selezionate nel nostro giardino.</p>
-          <h1>Coltiviamo la bellezza al ritmo della natura!</h1>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="page-wrapper-row">
+		<div class = "left-side">
+			<div class="left-side-text">
+				<div class="info-box">
+					<p>Nel nostro catalogo trovate erbacee perenni, graminacee ornamentali ed annuali da fiore
+						scelte per la loro qualità e bellezza. Molte di queste piante possono essere utili a una gestione del giardino secondo natura. Possono servire per attirare insetti e uccelli in giardino, per migliorare in modo naturale il suolo (specie azotofissatrici, coprisuolo) per sopportare siccità e arido, piante spontanee...</p>
+					<h3 style="font-weight:bold;"><%= link_to "Sfoglia il catalogo", "#catalogo", style: "color:#fd5f00;a:hover:#F15014;}" %></h3>
+					<p>Selezioniamo le varietà che riteniamo più resistenti a malattie e parassiti, poco esigenti di irrigazione, belle il più a lungo possibile nell'arco delle stagioni.</br>
+					Cerchiamo di allevare piante forti, pronte a crescere e diventare rigogliose nei vostri giardini; per questo vengono coltivate per tutto l'anno in campo aperto nel rispetto dei loro cicli biologici.</p>
+				<p>Evitiamo eccessi di concimazione e forzature di qualunque tipo per poter ottenere esemplari sani e resistenti.</br>
+				Impieghiamo terricci preparati in azienda con terra di campo, compost da verde, torba e pomice.</br>
+			Utilizziamo  per la concimazione ed eventuali trattamenti antiparassitari prodotti poco inquinanti ammessi in agricoltura biologica.</br>
+		Molte delle piante sono riprodotte da semi, talee o divisioni di piante madri coltivate e selezionate nel nostro giardino.</p>
+	<h1>Coltiviamo la bellezza al ritmo della natura!</h1>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="catalogo">
-  <%= render "catalogo" %>
+	<%= render "catalogo" %>
 </div>

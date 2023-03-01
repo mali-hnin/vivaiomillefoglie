@@ -1,57 +1,57 @@
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  <div class="white-bg">
-    <% if user_signed_in? && current_user.admin %>
-      <div class="container">
-        <!-- Admin Panel -->
-        <%= render 'plants/admin_panel_main' %>
-        <!-- End of Admin Panel -->
-        <div class="catalogo-admin-content">
-          <h1>Catalogo / <%= Plant.all.count %> piante</h1>
-          <ul class="flower-list">
-            <li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_path(anchor: 'catalogo') %></li>
-            <li class="spacing-5"><%= link_to "ordina per ultima creata", by_created_plants_path %></li>
-            <li class="spacing-5"><%= link_to "ordina per ultima aggiornata", by_updated_plants_path %></li>
-          </ul>
-          <table class="css-serial">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Nome</th>
-                <th scope="col">Creata</th>
-                <th scope="col">Ultimo Aggiornamento</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @plants.each do |pianta| %>
-                <tr>
-                  <td> <!-- this td stays empty to receive the row number from the css-serial class-->
-                  </td>
-                  <th scope="row">
-                    <% if pianta.nascondi? %>
-                      <span class="text-warning">NASCOSTA</span>
-                    <% end %>
-                    <%= link_to pianta.name, plant_path(pianta.id) %>
-                  </th>
-                  <td data-label="Creata il">
-                    <!-- Turns Rails timestamps into European format, setup in en.yml -->
-                    <%= l pianta.created_at, format: :euro %>
-                  </td>
-                  <td scope="row" data-label="Aggiornata il">
-                    <!-- Turns Rails timestamps into European format, setup in en.yml -->
-                    <%= l pianta.updated_at, format: :euro %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-          <div class="navigation-box">
-            <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
-            <%= link_to raw("&larr; Torna indietro"), catalogo_path(anchor: 'catalogo'), class: 'uppercase-text' %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+	<%= render 'shared/navbar' %>
+	<%= render 'shared/flashes' %>
+	<div class="white-bg">
+		<% if user_signed_in? && current_user.admin %>
+			<div class="container">
+				<!-- Admin Panel -->
+				<%= render 'plants/admin_panel_main' %>
+				<!-- End of Admin Panel -->
+				<div class="catalogo-admin-content">
+					<h1>Catalogo / <%= Plant.all.count %> piante</h1>
+					<ul class="flower-list">
+						<li class="spacing-5"><%= link_to "ordine alfabetico", admin_catalogo_path(anchor: 'catalogo') %></li>
+						<li class="spacing-5"><%= link_to "ordina per ultima creata", by_created_plants_path %></li>
+						<li class="spacing-5"><%= link_to "ordina per ultima aggiornata", by_updated_plants_path %></li>
+					</ul>
+					<table class="css-serial">
+						<thead>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col">Nome</th>
+								<th scope="col">Creata</th>
+								<th scope="col">Ultimo Aggiornamento</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @plants.each do |pianta| %>
+								<tr>
+									<td> <!-- this td stays empty to receive the row number from the css-serial class-->
+									</td>
+									<th scope="row">
+										<% if pianta.nascondi? %>
+											<span class="text-warning">NASCOSTA</span>
+										<% end %>
+										<%= link_to pianta.name, plant_path(pianta.id) %>
+									</th>
+									<td data-label="Creata il">
+										<!-- Turns Rails timestamps into European format, setup in en.yml -->
+										<%= l pianta.created_at, format: :euro %>
+									</td>
+									<td scope="row" data-label="Aggiornata il">
+										<!-- Turns Rails timestamps into European format, setup in en.yml -->
+										<%= l pianta.updated_at, format: :euro %>
+									</td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+					<div class="navigation-box">
+						<%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+						<%= link_to raw("&larr; Torna indietro"), catalogo_path(anchor: 'catalogo'), class: 'uppercase-text' %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>

@@ -1,112 +1,110 @@
 <% content_for(:title_tag) do %>
-  <%= @plant.name %>, acquista online | Vivaio Millefoglie
+	<%= @plant.name %>, acquista online | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "#{@plant.name} - Acquista online | Vivaio Millefoglie" %>
 <% content_for :meta_description, "#{@plant.name} - #{@plant.description} Categoria #{@plant.category}. Acquista #{@plant.name} online"%>
 <% if @plant.photos[0] %>
-  <% content_for :meta_image, cl_image_path(@plant.photos[0].path) %>
+	<% content_for :meta_image, cl_image_path(@plant.photos[0].path) %>
 <% else %>
-  <% content_for :meta_image, "Logo_2.png" %>
+	<% content_for :meta_image, "Logo_2.png" %>
 <% end %>
-
-
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <div class="white-bg">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
-    <% end %>
-    <div class="container">
-      <!-- Admin Panel -->
-      <% if user_signed_in? && current_user.admin %>
-        <div class="admin-buttons">
-          <p class="uppercase-text">Pannello Amministratori</p>
-          <div class="spacing-5">
-            <%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-warning" %>
-            <%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-          </div>
-          <div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_path(anchor: 'catalogo'), class: "btn btn-primary" %></div>
-        </div>
-      <% end %>
-      <!-- End of Admin Panel -->
-      <div class="pianta-content mb-5">
-        <% if user_signed_in? && current_user.admin%>
-          <% if @plant.nascondi? %>
-            <h3><span class="highlight">NASCOSTA</span></h3>
-          <% end %>
-        <% end %>
-        <div class="row">
-          <div class="content">
-            <h1><%= @plant.name %></h1>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <!-- top part / left column-->
-            <div class="pianta-top">
-              <div class="content">
-                <% if @plant.photos.empty? %>
-                  <%= image_tag "Logo_2.png" %>
-                <% else %>
-                  <% @plant.photos.each do |photo| %>
-                    <%= cl_image_tag photo.path %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <!-- need this dumba** extra div otherwise pianta bottom won't stay tf down -->
-            <div class="flexy">
-              <!-- bottom part / right column-->
-              <div class="pianta-bottom">
-                <div class="content">
-                  <p><%= simple_format(@plant.description) %></p>
-                  <ul class="info">
-                    <li><strong>Categoria:</strong> <%= @plant.category %></li>
-                    <li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
-                    <li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
-                    <li><strong>Altezza:</strong> <%= @plant.altezza %></li>
-                    <li><strong>Terreno:</strong> <%= @plant.terreno %></li>
-                    <li><strong>Densità:</strong> <%= @plant.densità %></li>
-                    <li><strong>Vaso:</strong> <%= @plant.vaso %></li>
-                    <li><strong>Prezzo:</strong> <%= humanized_money_with_symbol @plant.prezzo %></li>
-                  </ul>
-                  <ul>
-                    <% if @plant.disponibile? %>
-                      <li>Questa pianta è <span class="text-success">disponibile</span>.</li>
-                    <% else %>
-                      <li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
-                    <% end %>
-                    <% if @plant.novità? %>
-                      <li>Questa pianta è una <span class="text-warning">novità</span>!</li>
-                    <% end %>
-                  </ul>
-                </div>
-                <div class="content">
-                  <% if @plant.disponibile? %>
-                    <%= form_for @line_item, class: "d-flex justify-content-center", remote: true do |f| %>
-                      <%= f.hidden_field :plant_id, value: @plant.id %>
-                      <%= f.number_field :quantity, value: 1, class: "small-field" %>
-                      <%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
+	<%= render 'shared/navbar' %>
+	<div class="white-bg">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
+		<% end %>
+		<div class="container">
+			<!-- Admin Panel -->
+			<% if user_signed_in? && current_user.admin %>
+				<div class="admin-buttons">
+					<p class="uppercase-text">Pannello Amministratori</p>
+					<div class="spacing-5">
+						<%= link_to "Modifica pianta", edit_plant_path(@plant.id), class: "btn btn-warning" %>
+						<%= link_to "Elimina pianta", plant_path(@plant.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+					</div>
+					<div class="spacing-5"><%= link_to "Catalogo Amministratori", admin_catalogo_path(anchor: 'catalogo'), class: "btn btn-primary" %></div>
+				</div>
+			<% end %>
+			<!-- End of Admin Panel -->
+			<div class="pianta-content mb-5">
+				<% if user_signed_in? && current_user.admin%>
+					<% if @plant.nascondi? %>
+						<h3><span class="highlight">NASCOSTA</span></h3>
+					<% end %>
+				<% end %>
+				<div class="row">
+					<div class="content">
+						<h1><%= @plant.name %></h1>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<!-- top part / left column-->
+						<div class="pianta-top">
+							<div class="content">
+								<% if @plant.photos.empty? %>
+									<%= image_tag "Logo_2.png" %>
+								<% else %>
+									<% @plant.photos.each do |photo| %>
+										<%= cl_image_tag photo.path %>
+									<% end %>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<!-- need this dumba** extra div otherwise pianta bottom won't stay tf down -->
+						<div class="flexy">
+							<!-- bottom part / right column-->
+							<div class="pianta-bottom">
+								<div class="content">
+									<p><%= simple_format(@plant.description) %></p>
+									<ul class="info">
+										<li><strong>Categoria:</strong> <%= @plant.category %></li>
+										<li><strong>Esposizione:</strong> <%= @plant.esposizione %></li>
+										<li><strong>Fioritura:</strong> <%= @plant.fioritura %></li>
+										<li><strong>Altezza:</strong> <%= @plant.altezza %></li>
+										<li><strong>Terreno:</strong> <%= @plant.terreno %></li>
+										<li><strong>Densità:</strong> <%= @plant.densità %></li>
+										<li><strong>Vaso:</strong> <%= @plant.vaso %></li>
+										<li><strong>Prezzo:</strong> <%= humanized_money_with_symbol @plant.prezzo %></li>
+									</ul>
+									<ul>
+										<% if @plant.disponibile? %>
+											<li>Questa pianta è <span class="text-success">disponibile</span>.</li>
+										<% else %>
+											<li>Questa pianta <span class="text-danger">non è disponibile</span> al momento.</li>
+										<% end %>
+										<% if @plant.novità? %>
+											<li>Questa pianta è una <span class="text-warning">novità</span>!</li>
+										<% end %>
+									</ul>
+								</div>
+								<div class="content">
+									<% if @plant.disponibile? %>
+										<%= form_for @line_item, class: "d-flex justify-content-center", remote: true do |f| %>
+											<%= f.hidden_field :plant_id, value: @plant.id %>
+											<%= f.number_field :quantity, value: 1, class: "small-field" %>
+											<%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
   <span class='visually-hidden'>Loading...</span>".html_safe }, class: 'btn btn-purple', style: 'min-width:187px;' do %>
-                        Aggiungi al carrello
-                      <% end %>
-                    <% end %>
-                  <% else %>
-                    <%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
-                  <% end %>
-                </div>
-                <div class="content">
-                  <%= render 'shared/back_button' %>
-                </div>
-                <!-- end of pianta bottom div -->
-              </div>
-              <!-- end of flexy div -->
-            </div>
-            <!-- end of col div -->
-          </div>
-          <!-- end of row div -->
-        </div>
-      </div>
-    </div>
-  </div>
+												Aggiungi al carrello
+											<% end %>
+										<% end %>
+									<% else %>
+										<%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
+									<% end %>
+								</div>
+								<div class="content">
+									<%= render 'shared/back_button' %>
+								</div>
+								<!-- end of pianta bottom div -->
+							</div>
+							<!-- end of flexy div -->
+						</div>
+						<!-- end of col div -->
+					</div>
+					<!-- end of row div -->
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

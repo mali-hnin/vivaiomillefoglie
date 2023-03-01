@@ -1,54 +1,54 @@
 <div class="order-form">
-  <%= form_with model: [@cart, @order] do |f| %>
-    <div>
-      <%= f.label :name, "Nome e cognome" %>
-      <%= f.text_field :name, autofocus: true %>
-    </div>
-    <div>
-      <%= f.label :address, "Indirizzo" %>
-      <%= f.text_field :address %>
-    </div>
-    <div>
-      <div>
-        <%= f.label :citta, "Comune" %>
-        <%= f.text_field :citta %>
-      </div>
-      <div>
-        <%= f.label :cap, "CAP" %>
-        <%= f.text_field :cap %>
-      </div>
-    </div>
-    <div>
-      <div>
-        <%= f.label :cf, "Codice fiscale" %>
-        <%= f.text_field :cf, hint: 'Necessario per la ricevuta'  %>
-      </div>
-      <div>
-        <%= f.label :phone, "Telefono" %>
-        <%= f.text_field :phone %>
-      </div>
-    </div>
-    <div>
-      <%= f.label :email, "Email" %>
-      <%= f.text_field :email, as: :email %>
-      <%= f.label :email_confirmation, "Conferma email" %>
-      <%= f.text_field :email_confirmation, as: :email %>
-    </div>
-    <%= f.label :message, "Note o messaggi addizionali" %>
-    <%= f.text_field :message %>
-    <%= f.label :periodo_spedizione, "Scegli il periodo di spedizione" %>
-    <%= f.select :periodo_spedizione, ['A discrezione del vivaio', 'Novembre', 'Dicembre', 'Gennaio', 'Febbraio', 'Marzo'], include_blank: true %>
-    Metodo di pagamento:
-    <%= f.radio_button :metodo_pagamento, 'Satispay' %>
-    <%= f.label :metodo_pagamento, "Satispay" %>
-    <%= f.radio_button :metodo_pagamento, 'Bonifico bancario' %>
-    <%= f.label :metodo_pagamento, "Bonifico bancario" %>
-    <%= f.radio_button :metodo_pagamento, 'Contrassegno postale' %>
-    <%= f.label :metodo_pagamento, "Contrassegno postale" %>
-    <%= f.check_box :trattamento_dati%>
-    <%= f.label :trattamento_dati, "Autorizzo il trattamento dei miei dati ai sensi del D.Lgs 96/2003."%>
-    <%= f.check_box :condizioni_di_vendita %>
-    <%= f.label :condizioni_di_vendita, "Dichiaro di avere letto e accettato le #{link_to 'Condizioni di Vendita', condizionivendita_path, target: :_blank, class: "orange-text"}.".html_safe %>
-    <%= f.submit "Invia", class: "btn btn-purple" %>
-  <% end %>
+	<%= form_with model: [@cart, @order] do |f| %>
+		<div>
+			<%= f.label :name, "Nome e cognome" %>
+			<%= f.text_field :name, autofocus: true %>
+		</div>
+		<div>
+			<%= f.label :address, "Indirizzo" %>
+			<%= f.text_field :address %>
+		</div>
+		<div>
+			<div>
+				<%= f.label :citta, "Comune" %>
+				<%= f.text_field :citta %>
+			</div>
+			<div>
+				<%= f.label :cap, "CAP" %>
+				<%= f.text_field :cap %>
+			</div>
+		</div>
+		<div>
+			<div>
+				<%= f.label :cf, "Codice fiscale" %>
+				<%= f.text_field :cf, hint: 'Necessario per la ricevuta'  %>
+			</div>
+			<div>
+				<%= f.label :phone, "Telefono" %>
+				<%= f.text_field :phone %>
+			</div>
+		</div>
+		<div>
+			<%= f.label :email, "Email" %>
+			<%= f.text_field :email, as: :email %>
+			<%= f.label :email_confirmation, "Conferma email" %>
+			<%= f.text_field :email_confirmation, as: :email %>
+		</div>
+		<%= f.label :message, "Note o messaggi addizionali" %>
+		<%= f.text_field :message %>
+		<%= f.label :periodo_spedizione, "Scegli il periodo di spedizione" %>
+		<%= f.select :periodo_spedizione, ['A discrezione del vivaio', 'Novembre', 'Dicembre', 'Gennaio', 'Febbraio', 'Marzo'], include_blank: true %>
+		Metodo di pagamento:
+		<%= f.radio_button :metodo_pagamento, 'Satispay' %>
+		<%= f.label :metodo_pagamento, "Satispay" %>
+		<%= f.radio_button :metodo_pagamento, 'Bonifico bancario' %>
+		<%= f.label :metodo_pagamento, "Bonifico bancario" %>
+		<%= f.radio_button :metodo_pagamento, 'Contrassegno postale' %>
+		<%= f.label :metodo_pagamento, "Contrassegno postale" %>
+		<%= f.check_box :trattamento_dati%>
+		<%= f.label :trattamento_dati, "Autorizzo il trattamento dei miei dati ai sensi del D.Lgs 96/2003."%>
+		<%= f.check_box :condizioni_di_vendita %>
+		<%= f.label :condizioni_di_vendita, "Dichiaro di avere letto e accettato le #{link_to 'Condizioni di Vendita', condizionivendita_path, target: :_blank, class: "orange-text"}.".html_safe %>
+		<%= f.submit "Invia", class: "btn btn-purple" %>
+	<% end %>
 </div>
