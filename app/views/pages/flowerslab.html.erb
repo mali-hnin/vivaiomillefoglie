@@ -1,51 +1,50 @@
 <% content_for(:title_tag) do %>
-  L'Orto dei Fiori | Vivaio Millefoglie
+	L'Orto dei Fiori | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "Acquista fiori online per mazzi e composizioni, consegna a domicilio a Ivrea e dintorni | Vivaio Millefoglie" %>
 <% content_for :meta_description, "Vendita fiori recisi, mazzi e composizioni, consegna fiori a domicilio a Ivrea e dintorni. Contattaci per feste, matrimoni ed eventi. Fiori di stagione a km zero, sempre freschi, appena colti." %>
 <% content_for :meta_image, "preview_fiori.png" %>
-
 <div class="bg bg-lab" style="background-image:url(<%= asset_path "bg08b.jpg" %>); background-position:75% 25%">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  <!-- <p class="notice"><%= notice %></p>
+	<%= render 'shared/navbar' %>
+	<%= render 'shared/flashes' %>
+	<!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-  <div class="page-wrapper">
-    <div class="left-side">
-      <div class="info-box bg-opacity">
-        <div class="title">
-          <h1>Ci piacciono i fiori belli!</h1>
-        </div>
-        <p>Quelli che coltiviamo nel nostro orto dei fiori, cresciuti con attenzione e rispetto per l'ambiente.</p>
-        <p>Fiori che portano in casa i colori e i profumi di ogni stagione.</p>
-        <p>Mescoliamo i fiori del nostro orto e del giardino con quelli che raccogliamo nei prati o nei boschi, con le fronde prese nelle siepi tra i campi.</p>
-        <p>Puoi venire a raccoglierli nel nostro orto dei fiori, oppure chiederci di portare dei mazzi a casa tua, o a casa di qualcuno a cui vuoi fare un dono. Avrai fiori sempre freschi perchè appena colti.</p>
-        <p>Puoi scegliere di fare un <span style="font-size:16pt"><%= link_to "abbonamento", abbonamento_path, class: "orange-text" %></span>, per il tempo che vuoi, per rendere i fiori una gioia di tutti i giorni.</p>
-        <p><%= link_to "Contattaci", contatti_path, class: "orange-link" %> per feste, matrimoni ed eventi.</p>
-        <p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>
-            Sono fiori di stagione a km zero!</span></p>
-        <p class="orange-text text-center" style="margin-top:30px"><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %> <%= link_to "instagram.com/orto.dei.fiori", "https://www.instagram.com/orto.dei.fiori/", target: :_blank, class: "orange-text"%></p>
-        <% if !@ig_photos.nil? %>
-          <div class="ig-feed-container">
-            <% @ig_photos.first(9).each do |ig_photo| %>
-              <%= link_to ig_photo["permalink"], target: :_blank do %>
-                <%= image_tag ig_photo["media_url"] %>
-              <% end %>
-            <% end %>
-            <!-- blank 10th square appears with mobile layout ONLY -->
-            <a class="ig-grid-fixer" href="https://www.instagram.com/orto.dei.fiori/" target="blank">
-              <p>+</p>
-            </a>
-          <% else %>
-            <div class="flowers-photos">
-              <%= image_tag "abbonamento4.png" %>
-              <%= image_tag "abbonamento7.png" %>
-              <%= image_tag "abbonamento5.png" %>
-              <%= image_tag "abbonamento6.png" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="page-wrapper">
+		<div class="left-side">
+			<div class="info-box bg-opacity">
+				<div class="title">
+					<h1>Ci piacciono i fiori belli!</h1>
+				</div>
+				<p>Quelli che coltiviamo nel nostro orto dei fiori, cresciuti con attenzione e rispetto per l'ambiente.</p>
+				<p>Fiori che portano in casa i colori e i profumi di ogni stagione.</p>
+				<p>Mescoliamo i fiori del nostro orto e del giardino con quelli che raccogliamo nei prati o nei boschi, con le fronde prese nelle siepi tra i campi.</p>
+				<p>Puoi venire a raccoglierli nel nostro orto dei fiori, oppure chiederci di portare dei mazzi a casa tua, o a casa di qualcuno a cui vuoi fare un dono. Avrai fiori sempre freschi perchè appena colti.</p>
+				<p>Puoi scegliere di fare un <span style="font-size:16pt"><%= link_to "abbonamento", abbonamento_path, class: "orange-text" %></span>, per il tempo che vuoi, per rendere i fiori una gioia di tutti i giorni.</p>
+				<p><%= link_to "Contattaci", contatti_path, class: "orange-link" %> per feste, matrimoni ed eventi.</p>
+				<p><span style="font-size:18pt">Sono belli, puliti e giusti i fiori che ci piacciono.<br>
+						Sono fiori di stagione a km zero!</span></p>
+				<p class="orange-text text-center" style="margin-top:30px"><%= image_tag "instagram.png", alt: "Instagram", size: "24x24" %> <%= link_to "instagram.com/orto.dei.fiori", "https://www.instagram.com/orto.dei.fiori/", target: :_blank, class: "orange-text"%></p>
+				<% if !@ig_photos.nil? %>
+					<div class="ig-feed-container">
+						<% @ig_photos.first(9).each do |ig_photo| %>
+							<%= link_to ig_photo["permalink"], target: :_blank do %>
+								<%= image_tag ig_photo["media_url"] %>
+							<% end %>
+						<% end %>
+						<!-- blank 10th square appears with mobile layout ONLY -->
+						<a class="ig-grid-fixer" href="https://www.instagram.com/orto.dei.fiori/" target="blank">
+							<p>+</p>
+						</a>
+					<% else %>
+						<div class="flowers-photos">
+							<%= image_tag "abbonamento4.png" %>
+							<%= image_tag "abbonamento7.png" %>
+							<%= image_tag "abbonamento5.png" %>
+							<%= image_tag "abbonamento6.png" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

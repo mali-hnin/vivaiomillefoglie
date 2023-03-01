@@ -1,29 +1,29 @@
 <div class="event-card">
-  <div class="event-cover-photo">
-    <% if event.content.body.attachments()[0].present? %>
-      <!-- takes the first attached image: -->
-      <% if Rails.env.development? %>
-        <%= image_tag url_for(event.content.body.attachments()[0]) %>
-      <% end %>
-      <% if Rails.env.production? %>
-        <%= cl_image_tag url_for(event.content.body.attachments()[0]) %>
-      <% end %>
-    <% else %>
-      <%= image_tag "event_card.jpg" %>
-    <% end %>
-  </div>
-  <div class="event-card-content">
-    <div class="event-card-date">
-      <p><%= format_card_date event.data_evento, event.data_fine_evento %></p>
-    </div>
-    <div class="event-card-title">
-      <p><%= event.title %></p>
-    </div>
-    <div class="event-card-description">
-      <%# add .truncate(200) to only keep 200 char %>
-      <p><%= event.content.to_plain_text.gsub(/\[.*\]/, "").truncate(200) %></p>
-    </div>
-    <%= link_to raw("Apri &rarr;"), vivaio_event_path(event.id), class:"btn btn-purple event-card-button" %>
-  </div>
-  <%= link_to "", vivaio_event_path(event.id), class:"event-card-link" %>
+	<div class="event-cover-photo">
+		<% if event.content.body.attachments()[0].present? %>
+			<!-- takes the first attached image: -->
+			<% if Rails.env.development? %>
+				<%= image_tag url_for(event.content.body.attachments()[0]) %>
+			<% end %>
+			<% if Rails.env.production? %>
+				<%= cl_image_tag url_for(event.content.body.attachments()[0]) %>
+			<% end %>
+		<% else %>
+			<%= image_tag "event_card.jpg" %>
+		<% end %>
+	</div>
+	<div class="event-card-content">
+		<div class="event-card-date">
+			<p><%= format_card_date event.data_evento, event.data_fine_evento %></p>
+		</div>
+		<div class="event-card-title">
+			<p><%= event.title %></p>
+		</div>
+		<div class="event-card-description">
+			<%# add .truncate(200) to only keep 200 char %>
+			<p><%= event.content.to_plain_text.gsub(/\[.*\]/, "").truncate(200) %></p>
+		</div>
+		<%= link_to raw("Apri &rarr;"), vivaio_event_path(event.id), class:"btn btn-purple event-card-button" %>
+	</div>
+	<%= link_to "", vivaio_event_path(event.id), class:"event-card-link" %>
 </div>

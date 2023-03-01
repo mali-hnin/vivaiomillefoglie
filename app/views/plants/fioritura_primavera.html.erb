@@ -1,26 +1,25 @@
 <% content_for(:title_tag) do %>
-  Piante a Fioritura Primaverile, acquista online | Vivaio Millefoglie
+	Piante a Fioritura Primaverile, acquista online | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "Acquista online piante a Fioritura Primaverile | Vivaio Millefoglie" %>
 <% content_for :meta_description, "Acquista online piante che fioriscono in primavera. Le nostre piante sono utili a una gestione del giardino secondo natura e crescono in campo aperto con prodotti per l'agricoltura biologica. Scopri il resto del nostro catalogo." %>
 <% render 'catalogo_meta_image' %>
-
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <div class="white-bg">
-    <%= render 'shared/catalogo_flash' %>
-    <div class="catalogo-content">
-      <nav aria-label="breadcrumb" class="breadcrumbs">
-        <ul>
-          <li><%= link_to "Catalogo", catalogo_path(anchor: 'catalogo'), class: "orange-text" %></li>
-          <li class="bc-active" aria-current="page">Fioritura - Primavera</li>
-        </ul>
-      </nav>
-      <h1 class="catalogo-mobile">Fioritura in <%= @fioritura.titleize %></h1>
-      <%= render 'filters_form', chapter: fioritura_primavera_plants_path %>
-      <div class="filter-results">
-        <%= render 'catalogo_clienti' %>
-      </div>
-    </div>
-  </div>
+	<%= render 'shared/navbar' %>
+	<div class="white-bg">
+		<%= render 'shared/catalogo_flash' %>
+		<div class="catalogo-content">
+			<nav aria-label="breadcrumb" class="breadcrumbs">
+				<ul>
+					<li><%= link_to "Catalogo", catalogo_path(anchor: 'catalogo'), class: "orange-text" %></li>
+					<li class="bc-active" aria-current="page">Fioritura - Primavera</li>
+				</ul>
+			</nav>
+			<h1 class="catalogo-mobile">Fioritura in <%= @fioritura.titleize %></h1>
+			<%= render 'filters_form', chapter: fioritura_primavera_plants_path %>
+			<div class="filter-results">
+				<%= render 'catalogo_clienti' %>
+			</div>
+		</div>
+	</div>
 </div>

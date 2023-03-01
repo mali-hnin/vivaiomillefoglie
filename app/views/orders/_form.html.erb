@@ -1,28 +1,28 @@
 <%= simple_form_for [@cart, @order] do |f| %>
-  <%= f.input :name, label: "Nome e cognome", autofocus: true %>
-  <%= f.input :address, label: "Indirizzo" %>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6"><%= f.input :citta, label: "Comune" %></div>
-    <div class="col-xs-6 col-sm-3"><%= f.input :cap, label: "CAP" %></div>
-    <div class="col-xs-6 col-sm-3"><%= f.input :provincia, as: :string %></div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6"><%= f.input :cf, label: "Codice Fiscale", hint: 'Necessario per la ricevuta' %></div>
-    <div class="col-sm-6"><%= f.input :phone, label: "Telefono", as: :tel %></div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6"><%= f.input :email, label: "Email", as: :email%></div>
-    <div class="col-sm-6"><%= f.input :email_confirmation, label: "Conferma email", as: :email%></div>
-  </div>
-  <%= f.input :message, label: "Note o messaggi"%>
-  <%= f.input :periodo_spedizione, label: "Scegli il periodo di spedizione", collection: ['A discrezione del vivaio', 'Novembre', 'Dicembre', 'Gennaio', 'Febbraio', 'Marzo'] , include_blank: false %>
-  <%= f.input :metodo_pagamento, label: "Metodo di pagamento", as: :radio_buttons, collection: ['Satispay', 'Bonifico bancario']  %>
-  <%= f.input :trattamento_dati, label: "Autorizzo il trattamento dei miei dati ai sensi del D.Lgs 96/2003."%>
-  <%= f.input :condizioni_di_vendita, label: "Dichiaro di avere letto e accettato le #{link_to 'Condizioni di Vendita', condizionivendita_path, target: :_blank, class: "orange-text"}.".html_safe %>
-  <div class="row">
-    <div class="col-sm text-center">
-      <%= f.button :submit, "Invia", class: "btn-purple btn-lg" %>
-      <%= link_to "Annulla", cart_path(@cart), class: "btn btn-outline-secondary" %>
-    </div>
-  </div>
+	<%= f.input :name, label: "Nome e cognome", autofocus: true %>
+	<%= f.input :address, label: "Indirizzo" %>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6"><%= f.input :citta, label: "Comune" %></div>
+		<div class="col-xs-6 col-sm-3"><%= f.input :cap, label: "CAP" %></div>
+		<div class="col-xs-6 col-sm-3"><%= f.input :provincia, as: :string %></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6"><%= f.input :cf, label: "Codice Fiscale", hint: 'Necessario per la ricevuta' %></div>
+		<div class="col-sm-6"><%= f.input :phone, label: "Telefono", as: :tel %></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6"><%= f.input :email, label: "Email", as: :email%></div>
+		<div class="col-sm-6"><%= f.input :email_confirmation, label: "Conferma email", as: :email%></div>
+	</div>
+	<%= f.input :message, label: "Note o messaggi"%>
+	<%= f.input :periodo_spedizione, label: "Scegli il periodo di spedizione", collection: ['A discrezione del vivaio', 'Novembre', 'Dicembre', 'Gennaio', 'Febbraio', 'Marzo'] , include_blank: false %>
+	<%= f.input :metodo_pagamento, label: "Metodo di pagamento", as: :radio_buttons, collection: ['Satispay', 'Bonifico bancario']  %>
+	<%= f.input :trattamento_dati, label: "Autorizzo il trattamento dei miei dati ai sensi del D.Lgs 96/2003."%>
+	<%= f.input :condizioni_di_vendita, label: "Dichiaro di avere letto e accettato le #{link_to 'Condizioni di Vendita', condizionivendita_path, target: :_blank, class: "orange-text"}.".html_safe %>
+	<div class="row">
+		<div class="col-sm text-center">
+			<%= f.button :submit, "Invia", class: "btn-purple btn-lg" %>
+			<%= link_to "Annulla", cart_path(@cart), class: "btn btn-outline-secondary" %>
+		</div>
+	</div>
 <% end %>

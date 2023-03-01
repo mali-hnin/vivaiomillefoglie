@@ -1,52 +1,52 @@
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  <div class="page-wrapper white-bg">
-  <% if user_signed_in? && current_user.admin %>
-      <div class="gardens">
-        <div class="gardens-text">
-          <p><span style="font-size:24px;font-weight:bold">Ogni giardino </span>a cui lavoriamo è una occasione di incontri. Con un luogo: la sua storia, le vite, animali o vegetali, che ospita. Con persone: desideri, esigenze, ricordi, sogni. Dietro ogni giardino c'è un mondo complesso, un piccolo angolo del pianeta terra di cui prendersi cura.</p>
-          <p>Un giardino è uno spazio mai finito, in continuo mutamento, in cui le persone possono trovare benessere, intimità, esplorare il mondo naturale e trovarvi la propria casa.</p>
-        </div>
-        <div class="gardens-intro">
-          <p>giardini</p>
-          <p>appunti</p>
-          <p>suggestioni</p>
-          <p>dettagli</p>
-          <p>immagini</p>
-          <% if user_signed_in? && current_user.admin %>
-            <!-- Admin buttons -->
-            <div class="spacing-5"><%= link_to "Aggiungi foto", new_garden_path, class: "btn btn-success btn-sm" %> </div>
-          <% end %>
-        </div>
-        <div class="gardens-display">
-          <% @gardens.each do |garden| %>
-            <div class="garden-photo-section">
-              <% if user_signed_in? && current_user.admin %>
-                <!-- Admin buttons -->
-                <div class="garden-admin-buttons">
-                  <%= link_to "Elimina", garden_path(garden.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-                  <%= link_to "Modifica", edit_garden_path(garden.id), class: "btn btn-warning" %>
-                </div>
-                <!-- End of Admin buttons -->
-              <% end %>
-              <% if Rails.env.development? %>
-                <%= image_tag garden.photo, class: "big-img-resize garden-photo" %>
-              <% elsif Rails.env.production? %>
-                <%= cl_image_tag garden.photo, class: "big-img-resize garden-photo" %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% else %>
-      <div class="container text-center">
-        <h1>Giardini</h1>
-        <div class="catalogo-banner text-center">
-          <h2>Pagina in costruzione... tornate a trovarci!</h3>
-        </div>
-        <%= image_tag "Logo_2.png", class: "big-img-resize" %>
-      </div>
-    <% end %>
-  </div>
+	<%= render 'shared/navbar' %>
+	<%= render 'shared/flashes' %>
+	<div class="page-wrapper white-bg">
+		<% if user_signed_in? && current_user.admin %>
+			<div class="gardens">
+				<div class="gardens-text">
+					<p><span style="font-size:24px;font-weight:bold">Ogni giardino </span>a cui lavoriamo è una occasione di incontri. Con un luogo: la sua storia, le vite, animali o vegetali, che ospita. Con persone: desideri, esigenze, ricordi, sogni. Dietro ogni giardino c'è un mondo complesso, un piccolo angolo del pianeta terra di cui prendersi cura.</p>
+					<p>Un giardino è uno spazio mai finito, in continuo mutamento, in cui le persone possono trovare benessere, intimità, esplorare il mondo naturale e trovarvi la propria casa.</p>
+				</div>
+				<div class="gardens-intro">
+					<p>giardini</p>
+					<p>appunti</p>
+					<p>suggestioni</p>
+					<p>dettagli</p>
+					<p>immagini</p>
+					<% if user_signed_in? && current_user.admin %>
+						<!-- Admin buttons -->
+						<div class="spacing-5"><%= link_to "Aggiungi foto", new_garden_path, class: "btn btn-success btn-sm" %> </div>
+					<% end %>
+				</div>
+				<div class="gardens-display">
+					<% @gardens.each do |garden| %>
+						<div class="garden-photo-section">
+							<% if user_signed_in? && current_user.admin %>
+								<!-- Admin buttons -->
+								<div class="garden-admin-buttons">
+									<%= link_to "Elimina", garden_path(garden.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+									<%= link_to "Modifica", edit_garden_path(garden.id), class: "btn btn-warning" %>
+								</div>
+								<!-- End of Admin buttons -->
+							<% end %>
+							<% if Rails.env.development? %>
+								<%= image_tag garden.photo, class: "big-img-resize garden-photo" %>
+							<% elsif Rails.env.production? %>
+								<%= cl_image_tag garden.photo, class: "big-img-resize garden-photo" %>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		<% else %>
+			<div class="container text-center">
+				<h1>Giardini</h1>
+				<div class="catalogo-banner text-center">
+					<h2>Pagina in costruzione... tornate a trovarci!</h3>
+				</div>
+				<%= image_tag "Logo_2.png", class: "big-img-resize" %>
+			</div>
+		<% end %>
+	</div>
 </div>

@@ -1,54 +1,53 @@
 <% content_for(:title_tag) do %>
-  Contatti & Dove Trovarci | Vivaio Millefoglie
+	Contatti & Dove Trovarci | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "Contatti & Dove Trovarci | Vivaio Millefoglie, Ivrea" %>
 <% content_for :meta_description, "Il Vivaio Millefoglie si trova a Ivrea, nel Canavese, a metà strada fra Torino e Aosta. Aperti dal martedì al sabato dalle 9.00 alle 12.30 e dalle 15.30 al tramonto; solo su appuntamento nei mesi di dicembre, gennaio, febbraio e agosto. Via Aosta, 83/a, 10015 Ivrea TO." %>
 <% content_for :meta_image, "mappa_campo.jpg" %>
-
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-  <!-- <p class="notice"><%= notice %></p>
+	<%= render 'shared/navbar' %>
+	<%= render 'shared/flashes' %>
+	<!-- <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> -->
-  <div class="page-wrapper white-bg">
-    <div class="container">
-      <h2>Contatti & Dove Trovarci</h2>
-      <p>Il Vivaio Millefoglie si trova a Ivrea, in via Aosta 83/A.</p>
-      <p>Siamo aperti dal martedì al sabato dalle 9.00 alle 12.30 e dalle 15.30 al tramonto. E' possibile visitare il vivaio anche su appuntamento.</p>
-      <p>Nei mesi di dicembre, gennaio, febbraio e agosto siamo aperti <span class="bolder-text">solo</span> su appuntamento.</p>
-      <p class="bolder-text">I nostri telefoni:</p>
-      <ul style="list-style-type:none;">
-        <li><i class="fas fa-phone"></i> Filippo 3337276955</li>
-        <li><i class="fas fa-phone"></i> Rossana 3476902167</li>
-      </ul>
-      <p class="bolder-text">Le nostre mail:</p>
-      <ul style="list-style-type:none;">
-        <li class="orange-link"><i class="far fa-envelope"></i> <%= mail_to "info@vivaiomillefoglie.it" %></li>
-        <li class="orange-link"><i class="far fa-envelope"></i> <%= mail_to "filippo@vivaiomillefoglie.it" %></li>
-        <li class="orange-link"><i class="far fa-envelope"></i> <%= mail_to "rossana@vivaiomillefoglie.it" %></li>
-      </ul>
-      <br>
-      <br>
-      <p class="uppercase-text bolder-text">Come Raggiungerci</p>
-      <div class="row">
-        <div class="col-xs-12 col-md-12 col-lg-6">
-          <p class="bolder-text">Da Sud (Torino, Milano Genova...)</p>
-          <p>Dal casello di Ivrea dell'autostrada A5 Torino-Aosta seguite le indicazioni per Ivrea-Aosta.<br>
-             Attraversate la città in direzione ospedale e, giunti alla rotonda dell'ospedale, svoltate a destra: vi troverete a questo punto sulla ss.26 che porta verso la Valle d'Aosta. <br>
-            Proseguite dritti in questa direzione per circa 1,5km. Al termine della curva ad ampio raggio che incontrerete, dopo un breve rettilineo vedrete sulla vostra sinistra una palina gialla per la fermata degli autubus. Proseguite per pochi metri ancora e svoltate a sinistra per entrare nella strada di accesso al vivaio.</p>
-          <p class="bolder-text">Da Nord (Valle d'Aosta)</p>
-          <p>In autostrada uscite a Quincinetto e immettetevi sulla ss. 26 direzione Ivrea.<br>
-            Dopo l'abitato di Montalto Dora e di un lungo rettilineo che immette in Ivrea, troverete una curva larga superata la quale, sulla vostra destra, vedrete l'accesso alla strada che conduce al vivaio al termine di una lunga recinzione bianca.</p>
-        </div>
-        <div class="col-xs-12 col-md-12 col-lg-6">
-          <p class="bolder-text">Coordinate per il navigatore: 45.475820, 7.865980</p>
-          <%= image_tag "mappa_campo.jpg", alt: "mappa", class: "big-img-resize" %><br />
-          <br />
-        </div>
-      </div>
-      <div class="map-responsive">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.731129356483!2d7.863590315482391!3d45.47521987910114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47889aa528736031%3A0x2cbfe2984cddb391!2sVivaio+Millefoglie!5e0!3m2!1sen!2sit!4v1552848304497" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
+	<div class="page-wrapper white-bg">
+		<div class="container">
+			<h2>Contatti & Dove Trovarci</h2>
+			<p>Il Vivaio Millefoglie si trova a Ivrea, in via Aosta 83/A.</p>
+			<p>Siamo aperti dal martedì al sabato dalle 9.00 alle 12.30 e dalle 15.30 al tramonto. E' possibile visitare il vivaio anche su appuntamento.</p>
+			<p>Nei mesi di dicembre, gennaio, febbraio e agosto siamo aperti <span class="bolder-text">solo</span> su appuntamento.</p>
+			<p class="bolder-text">I nostri telefoni:</p>
+			<ul style="list-style-type:none;">
+				<li><i class="fas fa-phone"></i> Filippo 3337276955</li>
+				<li><i class="fas fa-phone"></i> Rossana 3476902167</li>
+			</ul>
+			<p class="bolder-text">Le nostre mail:</p>
+			<ul style="list-style-type:none;">
+				<li class="orange-link"><i class="far fa-envelope"></i> <%= mail_to "info@vivaiomillefoglie.it" %></li>
+				<li class="orange-link"><i class="far fa-envelope"></i> <%= mail_to "filippo@vivaiomillefoglie.it" %></li>
+				<li class="orange-link"><i class="far fa-envelope"></i> <%= mail_to "rossana@vivaiomillefoglie.it" %></li>
+			</ul>
+			<br>
+			<br>
+			<p class="uppercase-text bolder-text">Come Raggiungerci</p>
+			<div class="row">
+				<div class="col-xs-12 col-md-12 col-lg-6">
+					<p class="bolder-text">Da Sud (Torino, Milano Genova...)</p>
+					<p>Dal casello di Ivrea dell'autostrada A5 Torino-Aosta seguite le indicazioni per Ivrea-Aosta.<br>
+						Attraversate la città in direzione ospedale e, giunti alla rotonda dell'ospedale, svoltate a destra: vi troverete a questo punto sulla ss.26 che porta verso la Valle d'Aosta. <br>
+						Proseguite dritti in questa direzione per circa 1,5km. Al termine della curva ad ampio raggio che incontrerete, dopo un breve rettilineo vedrete sulla vostra sinistra una palina gialla per la fermata degli autubus. Proseguite per pochi metri ancora e svoltate a sinistra per entrare nella strada di accesso al vivaio.</p>
+					<p class="bolder-text">Da Nord (Valle d'Aosta)</p>
+					<p>In autostrada uscite a Quincinetto e immettetevi sulla ss. 26 direzione Ivrea.<br>
+						Dopo l'abitato di Montalto Dora e di un lungo rettilineo che immette in Ivrea, troverete una curva larga superata la quale, sulla vostra destra, vedrete l'accesso alla strada che conduce al vivaio al termine di una lunga recinzione bianca.</p>
+				</div>
+				<div class="col-xs-12 col-md-12 col-lg-6">
+					<p class="bolder-text">Coordinate per il navigatore: 45.475820, 7.865980</p>
+					<%= image_tag "mappa_campo.jpg", alt: "mappa", class: "big-img-resize" %><br />
+					<br />
+				</div>
+			</div>
+			<div class="map-responsive">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.731129356483!2d7.863590315482391!3d45.47521987910114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47889aa528736031%3A0x2cbfe2984cddb391!2sVivaio+Millefoglie!5e0!3m2!1sen!2sit!4v1552848304497" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
 </div>

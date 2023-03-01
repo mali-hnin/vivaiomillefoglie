@@ -1,39 +1,38 @@
 <% content_for(:title_tag) do %>
-  <%= @vivaio_event.title %> | Vivaio Millefoglie
+	<%= @vivaio_event.title %> | Vivaio Millefoglie
 <% end %>
 <% content_for :meta_title, "#{@vivaio_event.title} | Vivaio Millefoglie" %>
 <% content_for :meta_description, @vivaio_event.content.to_plain_text.gsub(/\[.*\]/, "").truncate(300) %>
 <% if @vivaio_event.content.body.attachments()[0] %>
-  <% content_for :meta_image, url_for(@vivaio_event.content.body.attachments()[0]) %>
+	<% content_for :meta_image, url_for(@vivaio_event.content.body.attachments()[0]) %>
 <% else %>
-  <% content_for :meta_image, "preview_eventi.png" %>
+	<% content_for :meta_image, "preview_eventi.png" %>
 <% end %>
-
 <div class="bg">
-  <%= render 'shared/navbar' %>
-  <div class="page-wrapper white-bg">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
-    <% end %>
-    <div class="container">
-      <% if user_signed_in? && current_user.admin %>
-        <!-- Admin buttons -->
-        <div>
-          <%= link_to "Modifica", edit_vivaio_event_path(@vivaio_event.id), class: "btn btn-warning" %>
-          <%= link_to "Elimina", vivaio_event_path(@vivaio_event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
-        </div>
-        <!-- End of Admin buttons -->
-      <% end %>
-      <h1 class="event-title"><%= @vivaio_event.title %></h1>
-      <main class="event">
-        <h3><%= format_event_date @vivaio_event.data_evento, @vivaio_event.data_fine_evento %></h3>
-        <%= @vivaio_event.content %>
-      </main>
-      <% if user_signed_in? && current_user.admin %>
-        <%= link_to raw("&larr; Torna indietro"), vivaio_events_path %>
-      <% else %>
-        <%= render 'shared/back_button' %>
-      <% end %>
-    </div>
-  </div>
+	<%= render 'shared/navbar' %>
+	<div class="page-wrapper white-bg">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %> alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= value %></div>
+		<% end %>
+		<div class="container">
+			<% if user_signed_in? && current_user.admin %>
+				<!-- Admin buttons -->
+				<div>
+					<%= link_to "Modifica", edit_vivaio_event_path(@vivaio_event.id), class: "btn btn-warning" %>
+					<%= link_to "Elimina", vivaio_event_path(@vivaio_event.id), method: :delete, data: { confirm: "Eliminare davvero?"}, class: "btn btn-danger" %>
+				</div>
+				<!-- End of Admin buttons -->
+			<% end %>
+			<h1 class="event-title"><%= @vivaio_event.title %></h1>
+			<main class="event">
+				<h3><%= format_event_date @vivaio_event.data_evento, @vivaio_event.data_fine_evento %></h3>
+				<%= @vivaio_event.content %>
+			</main>
+			<% if user_signed_in? && current_user.admin %>
+				<%= link_to raw("&larr; Torna indietro"), vivaio_events_path %>
+			<% else %>
+				<%= render 'shared/back_button' %>
+			<% end %>
+		</div>
+	</div>
 </div>
