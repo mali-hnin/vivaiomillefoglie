@@ -19,40 +19,32 @@
   text-align: justify;
 }
 
-#social-media {
-  a {
-    color: $yellow;
-  }
-  img {
-    margin: 5px;
-  }
- }
-
- #one {
+#one {
   width: inherit;
- }
+}
 
- #acquista-online {
+#acquista-online {
   font-size: 30px;
 
   a:hover {
     color: $orange;
   }
- }
+}
 
- .footer-bottom {
+.footer-bottom {
   font-size: 12px;
   text-align: center;
- }
+}
 
- @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .mobile-column-center {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   #links {
     text-align: justify;
   }
- }
+}
