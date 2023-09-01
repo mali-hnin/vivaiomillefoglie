@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/integer/time'
+require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -26,7 +26,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
@@ -80,13 +80,13 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = Logger::Formatter.new
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-  if ENV['RAILS_LOG_TO_STDOUT'].present?
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
@@ -96,19 +96,19 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
-  host = 'https://www.vivaiomillefoglie.it'
+  host = "https://www.vivaiomillefoglie.it"
   config.action_mailer.default_url_options = { host: host }
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: "smtp.gmail.com",
     port: 587,
-    user_name: ENV.fetch('GMAIL_USERNAME', nil),
-    password: ENV.fetch('GMAIL_PASSWORD', nil),
-    authentication: 'plain',
+    user_name: ENV.fetch("GMAIL_USERNAME", nil),
+    password: ENV.fetch("GMAIL_PASSWORD", nil),
+    authentication: "plain",
     enable_starttls_auto: true
   }
 
   # Use Cloudinary.
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :amazon
 end

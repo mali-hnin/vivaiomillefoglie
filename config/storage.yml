@@ -9,3 +9,11 @@ test:
 cloudinary:
   service: Cloudinary
   # Any other settings you want, to be sent on all requests, can be included here as well.
+
+amazon:
+  service: S3
+  access_key_id: ""
+  secret_access_key: ""
+  bucket: "" #your_own_bucket-<%= Rails.env %>
+  region: "" # e.g. 'us-east-1'
+
