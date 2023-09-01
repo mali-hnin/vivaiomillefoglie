@@ -9,3 +9,9 @@ test:
 cloudinary:
   service: Cloudinary
   # Any other settings you want, to be sent on all requests, can be included here as well.
+
+amazon:
+  service: S3
+  bucket: <%= ENV['AWS_BUCKET'] %>
+  region: <%= ENV['AWS_REGION'] %>
+

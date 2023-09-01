@@ -43,6 +43,7 @@ gem "caxlsx_rails"
 gem "cloudinary"
 gem "faker"
 # client library for making http requests from Ruby
+gem "aws-sdk-s3", require: false
 gem "http", "~> 4.4.1"
 gem "jquery-fileupload-rails"
 gem "money-rails", "~>1.12"

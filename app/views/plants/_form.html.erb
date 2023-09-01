@@ -1,6 +1,6 @@
 <%= simple_form_for @plant do |f| %>
 	<%= f.input :name, label: "Nome",  required: true, autofocus: true %>
-	<%= f.input :photos, label: "Foto", as: :attachinary %>
+	<%= f.input :photo, label: "Foto", as: :file %>
 	<%= f.input :description, label: "Descrizione", class: "text-field-height", input_html: { rows: 7} %>
 	<%= f.input :category, label: "Tipologia",  placeholder: "erbacee perenni/erbacee annuali/graminacee/altro" %>
 	<%= f.input :esposizione, label: "Esposizione/Esigenza", placeholder: "Esigenza: sole/ombra/mezz'ombra/secco" %>

@@ -38,10 +38,10 @@
 								<!-- top part / left column-->
 								<div class="pianta-top">
 									<div class="cart-img">
-										<% if line_item.plant.photos.empty? %>
+										<% if line_item.plant.photo.nil? %>
 											<%= image_tag "Logo_2.png", style: 'height:100px;width:auto;' %>
 										<% else %>
-											<%= cl_image_tag line_item.plant.photos.first.path, size: '100x100', crop: :fill %>
+											<%= image_tag line_item.plant.photo, size: '100x100', crop: :fill %>
 										<% end %>
 									</div>
 								</div>
