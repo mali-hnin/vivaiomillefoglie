@@ -1,12 +1,10 @@
 <div class="column-center">
 	<div class="plant-card2">
 		<div class="card2-photo">
-			<% if plant.photos.empty? %>
+			<% if plant.photo.nil? %>
 				<%= image_tag "Logo_2.png" %>
 			<% else %>
-				<% plant.photos.each do |photo| %>
-					<%= cl_image_tag photo.path %>
-				<% end %>
+				<% cl_image_tag plant.photo.path %>
 			<% end %>
 			<%= link_to "", plant_path(plant), class: "card2-link"%>
 		</div>

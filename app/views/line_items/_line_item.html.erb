@@ -1,10 +1,10 @@
 <div class="columns align-items-center">
 	<div>
 		<figure>
-			<% if line_item.plant.photos.empty? %>
+			<% if line_item.plant.photo.nil? %>
 				<%= image_tag "Logo_2_thumb.png" %>
 			<% else %>
-				<%= cl_image_tag line_item.plant.photos.first.path, size: '100x100', crop: :fill %>
+				<%= cl_image_tag line_item.plant.photo.path, size: '100x100', crop: :fill %>
 			<% end %>
 		</figure>
 	</div>

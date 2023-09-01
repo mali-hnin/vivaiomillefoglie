@@ -1,20 +1,21 @@
 class PlantsController < ApplicationController
-  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :set_plant, only: %i[show edit update destroy]
   before_action :authenticate_user!, except:
-    [:index, :show, :erbacee_perenni, :erbacee_annuali, :graminacee, :categoria_altro,
-    :esposizione_sole, :esposizione_ombra,
-    :fioritura_primavera, :fioritura_estate, :fioritura_autunno, :fioritura_inverno,
-    :altezza_bassa, :altezza_media, :altezza_alta,
-    :fogliame_ornamentale, :da_taglio, :coprisuolo, :azotofissatrici,
-    :insetti_e_uccelli, :da_secco, :spontanee]
+    %i[index show erbacee_perenni erbacee_annuali graminacee categoria_altro
+       esposizione_sole esposizione_ombra
+       fioritura_primavera fioritura_estate fioritura_autunno fioritura_inverno
+       altezza_bassa altezza_media altezza_alta
+       fogliame_ornamentale da_taglio coprisuolo azotofissatrici
+       insetti_e_uccelli da_secco spontanee]
 
-    include Pagy::Backend
+  include Pagy::Backend
 
   def index
     if params[:search] && params[:search].present?
       @pagy, @plants = pagy(Plant.search_plants(params[:search]).alphabetically)
     else
-      @pagy, @plants = pagy(Plant.filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+      @pagy, @plants = pagy(Plant.filter_params(params.slice(:category, :esposizione, :fioritura, :altezza,
+                                                             :funzione)).is_visible.alphabetically)
     end
     respond_to do |format|
       format.html
@@ -25,7 +26,8 @@ class PlantsController < ApplicationController
 
   def erbacee_perenni
     @category = "erbacee perenni"
-    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -35,7 +37,8 @@ class PlantsController < ApplicationController
 
   def erbacee_annuali
     @category = "erbacee annuali"
-    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -45,7 +48,8 @@ class PlantsController < ApplicationController
 
   def graminacee
     @category = "graminacee"
-    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -55,7 +59,8 @@ class PlantsController < ApplicationController
 
   def categoria_altro
     @category = "altre categorie"
-    @pagy, @plants = pagy(Plant.altre_categorie.filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.altre_categorie.filter_params(params.slice(:category, :esposizione, :fioritura,
+                                                                           :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -65,7 +70,8 @@ class PlantsController < ApplicationController
 
   def esposizione_sole
     @esposizione = "sole"
-    @pagy, @plants = pagy(Plant.filter_by_esposizione(@esposizione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_esposizione(@esposizione).filter_params(params.slice(:category, :esposizione,
+                                                                                               :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -75,7 +81,8 @@ class PlantsController < ApplicationController
 
   def esposizione_ombra
     @esposizione = "ombra"
-    @pagy, @plants = pagy(Plant.filter_by_esposizione(@esposizione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_esposizione(@esposizione).filter_params(params.slice(:category, :esposizione,
+                                                                                               :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -85,7 +92,8 @@ class PlantsController < ApplicationController
 
   def fioritura_primavera
     @fioritura = "primavera"
-    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione,
+                                                                                           :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -95,7 +103,8 @@ class PlantsController < ApplicationController
 
   def fioritura_estate
     @fioritura = "estate"
-    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione,
+                                                                                           :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -105,7 +114,8 @@ class PlantsController < ApplicationController
 
   def fioritura_autunno
     @fioritura = "autunno"
-    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione,
+                                                                                           :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -115,7 +125,8 @@ class PlantsController < ApplicationController
 
   def fioritura_inverno
     @fioritura = "inverno"
-    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_fioritura(@fioritura).filter_params(params.slice(:category, :esposizione,
+                                                                                           :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -125,7 +136,8 @@ class PlantsController < ApplicationController
 
   def altezza_bassa
     @altezza = "bassa"
-    @pagy, @plants = pagy(Plant.filter_by_altezza(@altezza).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_altezza(@altezza).filter_params(params.slice(:category, :esposizione,
+                                                                                       :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -135,7 +147,8 @@ class PlantsController < ApplicationController
 
   def altezza_media
     @altezza = "media"
-    @pagy, @plants = pagy(Plant.filter_by_altezza(@altezza).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_altezza(@altezza).filter_params(params.slice(:category, :esposizione,
+                                                                                       :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -145,7 +158,8 @@ class PlantsController < ApplicationController
 
   def altezza_alta
     @altezza = "alta"
-    @pagy, @plants = pagy(Plant.filter_by_altezza(@altezza).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_altezza(@altezza).filter_params(params.slice(:category, :esposizione,
+                                                                                       :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -156,7 +170,9 @@ class PlantsController < ApplicationController
   def fogliame_ornamentale
     @funzione = "fogliame"
     @funzione_bis = "fogliame decorativo"
-    @pagy, @plants = pagy(Plant.filter_by_doppia_funzione(@funzione, @funzione_bis).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_doppia_funzione(@funzione,
+                                                          @funzione_bis).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza,
+                                                                                                    :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -166,7 +182,8 @@ class PlantsController < ApplicationController
 
   def da_taglio
     @funzione = "taglio"
-    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -176,7 +193,8 @@ class PlantsController < ApplicationController
 
   def coprisuolo
     @funzione = "coprisuolo"
-    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -186,7 +204,8 @@ class PlantsController < ApplicationController
 
   def azotofissatrici
     @funzione = "azotofissat"
-    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -197,7 +216,9 @@ class PlantsController < ApplicationController
   def insetti_e_uccelli
     @funzione = "insetti"
     @funzione_bis = "uccelli"
-    @pagy, @plants = pagy(Plant.filter_by_doppia_funzione(@funzione, @funzione_bis).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_doppia_funzione(@funzione,
+                                                          @funzione_bis).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza,
+                                                                                                    :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -207,7 +228,8 @@ class PlantsController < ApplicationController
 
   def da_secco
     @funzione = "secco"
-    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -217,7 +239,8 @@ class PlantsController < ApplicationController
 
   def spontanee
     @funzione = "spontan"
-    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione, :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    @pagy, @plants = pagy(Plant.filter_by_funzione(@funzione).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
@@ -228,9 +251,9 @@ class PlantsController < ApplicationController
   def export
     @plants = Plant.all.alphabetically
     respond_to do |format|
-      format.xlsx {
-        response.headers['Content-Disposition'] = 'filename="catalogo_vivaio.xlsx"'
-      }
+      format.xlsx do
+        response.headers["Content-Disposition"] = 'filename="catalogo_vivaio.xlsx"'
+      end
       format.csv { send_data @plants.to_csv, filename: "catalogo_vivaio_#{Date.today}.csv" }
     end
   end
@@ -255,6 +278,8 @@ class PlantsController < ApplicationController
     @plant = Plant.new
   end
 
+  def edit; end
+
   def create
     @plant = Plant.new(plant_params)
     if @plant.save
@@ -262,9 +287,6 @@ class PlantsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
@@ -276,7 +298,6 @@ class PlantsController < ApplicationController
     end
   end
 
-
   def destroy
     @plant.destroy
     redirect_to plants_path
@@ -284,11 +305,12 @@ class PlantsController < ApplicationController
 
   private
 
-  def set_plant
-    @plant = Plant.find(params[:id])
-  end
+    def set_plant
+      @plant = Plant.find(params[:id])
+    end
 
-  def plant_params
-    params.require(:plant).permit(:name, :description, :category, :esposizione, :fioritura, :altezza, :terreno, :densità, :vaso, :disponibile, :novità, :utile_per, :prezzo, :nascondi, photos: [])
-  end
+    def plant_params
+      params.require(:plant).permit(:name, :description, :category, :esposizione, :fioritura, :altezza, :terreno,
+                                    :densità, :vaso, :disponibile, :novità, :utile_per, :prezzo, :nascondi, photo: [])
+    end
 end
