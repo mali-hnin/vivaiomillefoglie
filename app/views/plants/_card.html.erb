@@ -4,7 +4,7 @@
 			<% if plant.photo.nil? %>
 				<%= image_tag "Logo_2.png" %>
 			<% else %>
-				<%= cl_image_tag plant.photo.path %>
+				<%= url_for(plant.photo) %>
 			<% end %>
 		</div>
 		<div class="card-content">

@@ -4,7 +4,7 @@
 <% content_for :meta_title, "#{@plant.name} - Acquista online | Vivaio Millefoglie" %>
 <% content_for :meta_description, "#{@plant.name} - #{@plant.description} Categoria #{@plant.category}. Acquista #{@plant.name} online"%>
 <% if @plant.photo %>
-	<% content_for :meta_image, cl_image_path(@plant.photo.path) %>
+	<% content_for :meta_image, url_for(@plant.photo) %>
 <% else %>
 	<% content_for :meta_image, "Logo_2.png" %>
 <% end %>
@@ -44,7 +44,7 @@
 								<% if @plant.photo.nil? %>
 									<%= image_tag "Logo_2.png" %>
 								<% else %>
-									<% cl_image_tag @plant.photo.path %>
+									<% image_tag @plant.photo %>
 								<% end %>
 							</div>
 						</div>
