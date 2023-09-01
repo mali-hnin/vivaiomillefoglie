@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/integer/time'
+require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -21,13 +21,13 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join('tmp/cachingdev.txt').exist?
+  if Rails.root.join("tmp/cachingdev.txt").exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'CacheControl' => "public, maxage=#{2.days.to_i}"
+      "CacheControl" => "public, maxage=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -40,7 +40,7 @@ Rails.application.configure do
 
   # check what this does because rails:update didnt include it
   #  In production, :host should be set to the actual host of your application.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -82,19 +82,19 @@ Rails.application.configure do
 
   # check what this does because rails:update didnt include it
   config.action_mailer.delivery_method = :smtp
-  host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: 'localhost:3000', protocol: 'http' }
+  host = "localhost:3000"
+  config.action_mailer.default_url_options = { host: "localhost:3000", protocol: "http" }
 
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: "smtp.gmail.com",
     port: 587,
-    user_name: ENV.fetch('GMAIL_USERNAME', nil),
-    password: ENV.fetch('GMAIL_PASSWORD', nil),
-    authentication: 'plain',
+    user_name: ENV.fetch("GMAIL_USERNAME", nil),
+    password: ENV.fetch("GMAIL_PASSWORD", nil),
+    authentication: "plain",
     enable_starttls_auto: true
   }
 
   # Use Cloudinary.
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 end

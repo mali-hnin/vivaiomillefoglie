@@ -109,6 +109,6 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
-  # Use Cloudinary.
+  # Use S3.
   config.active_storage.service = :amazon
 end

@@ -1,10 +1,10 @@
 <div class="column-center">
 	<div class="plant-card2">
 		<div class="card2-photo">
-			<% if plant.photo.nil? %>
-				<%= image_tag "Logo_2.png" %>
+			<% if plant.photo.attached? %>
+				<%= image_tag plant.photo %>
 			<% else %>
-				<% image_tag plant.photo %>
+				<%= image_tag "Logo_2.png" %>
 			<% end %>
 			<%= link_to "", plant_path(plant), class: "card2-link"%>
 		</div>

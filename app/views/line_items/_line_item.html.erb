@@ -4,7 +4,7 @@
 			<% if line_item.plant.photo.nil? %>
 				<%= image_tag "Logo_2_thumb.png" %>
 			<% else %>
-				<%= cl_image_tag line_item.plant.photo.path, size: '100x100', crop: :fill %>
+				<%= image_tag line_item.plant.photo, size: '100x100', crop: :fill %>
 			<% end %>
 		</figure>
 	</div>
