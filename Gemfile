@@ -36,7 +36,6 @@ group :development do
 end
 
 # specific gems
-gem "attachinary", git: "https://github.com/mali-hnin/attachinary.git"
 # to export data to xls:
 gem "caxlsx"
 gem "caxlsx_rails"
