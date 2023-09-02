@@ -260,29 +260,6 @@ class PlantsController < ApplicationController
     end
   end
 
-  def images_upload
-    s3 = Aws::S3::Resource.new
-    bucket = s3.bucket("foto-vivaio")
-    plants = Plant.limit(5)
-    objects = bucket.objects(prefix: "foto-catalogo/foto catalogo vivaio/")
-    plants.each do |p|
-      p "PLANT ID: #{p.id}"
-      objects.each do |obj|
-        p obj.key
-        if obj.key.include?("foto-catalogo/foto catalogo vivaio/#{p.id}")
-          p "foto trovata"
-          p.photo.attach(io: URI.open("https://foto-vivaio.s3.eu-south-1.amazonaws.com/#{obj.key}"),
-                         filename: "#{p.id}")
-          p "****************FOTO CARICATA**************"
-        else
-          p "foto non trovata"
-        end
-      end
-      p ""
-    end
-    redirect_to plants_path
-  end
-
   def admin_catalogo
     @pagy, @plants = pagy(Plant.all.alphabetically, items: 50)
   end

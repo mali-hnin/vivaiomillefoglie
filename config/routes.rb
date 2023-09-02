@@ -27,7 +27,6 @@ Rails.application.routes.draw do
       get "da_secco", to: "plants#da_secco"
       get "spontanee", to: "plants#spontanee"
       get "export", to: "plants#export"
-      get "images_upload", to: "plants#images_upload"
     end
   end
   resources :line_items
