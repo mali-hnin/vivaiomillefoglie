@@ -9,6 +9,8 @@ public/assets
 /coverage
 /.vscode
 .rubocop.yml
+/storage
+
 # Ignore application configuration
 /config/application.yml
 secrets.yml
