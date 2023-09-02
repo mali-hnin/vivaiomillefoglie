@@ -30,11 +30,7 @@
 								</div>
 								<!-- End of Admin buttons -->
 							<% end %>
-							<% if Rails.env.development? %>
-								<%= image_tag garden.photo, class: "big-img-resize garden-photo" %>
-							<% elsif Rails.env.production? %>
-								<%= cl_image_tag garden.photo, class: "big-img-resize garden-photo" %>
-							<% end %>
+							<%= image_tag garden.photo, class: "big-img-resize garden-photo" %>
 						</div>
 					<% end %>
 				</div>

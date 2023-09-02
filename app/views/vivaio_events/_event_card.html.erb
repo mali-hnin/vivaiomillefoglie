@@ -2,12 +2,7 @@
 	<div class="event-cover-photo">
 		<% if event.content.body.attachments()[0].present? %>
 			<!-- takes the first attached image: -->
-			<% if Rails.env.development? %>
-				<%= image_tag url_for(event.content.body.attachments()[0]) %>
-			<% end %>
-			<% if Rails.env.production? %>
-				<%= cl_image_tag url_for(event.content.body.attachments()[0]) %>
-			<% end %>
+			<%= image_tag url_for(event.content.body.attachments()[0]) %>
 		<% else %>
 			<%= image_tag "event_card.jpg" %>
 		<% end %>

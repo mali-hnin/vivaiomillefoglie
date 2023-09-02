@@ -39,7 +39,6 @@ end
 # to export data to xls:
 gem "caxlsx"
 gem "caxlsx_rails"
-gem "cloudinary"
 gem "faker"
 # client library for making http requests from Ruby
 gem "aws-sdk-s3", require: false
