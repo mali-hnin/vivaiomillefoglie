@@ -9,6 +9,8 @@ class PlantsController < ApplicationController
        insetti_e_uccelli da_secco spontanee]
 
   include Pagy::Backend
+  require "aws-sdk-s3"
+  require "open-uri"
 
   def index
     if params[:search] && params[:search].present?
@@ -256,6 +258,29 @@ class PlantsController < ApplicationController
       end
       format.csv { send_data @plants.to_csv, filename: "catalogo_vivaio_#{Date.today}.csv" }
     end
+  end
+
+  def images_upload
+    s3 = Aws::S3::Resource.new
+    bucket = s3.bucket("foto-vivaio")
+    plants = Plant.limit(5)
+    objects = bucket.objects(prefix: "foto-catalogo/foto catalogo vivaio/")
+    plants.each do |p|
+      p "PLANT ID: #{p.id}"
+      objects.each do |obj|
+        p obj.key
+        if obj.key.include?("foto-catalogo/foto catalogo vivaio/#{p.id}")
+          p "foto trovata"
+          p.photo.attach(io: URI.open("https://foto-vivaio.s3.eu-south-1.amazonaws.com/#{obj.key}"),
+                         filename: "#{p.id}")
+          p "****************FOTO CARICATA**************"
+        else
+          p "foto non trovata"
+        end
+      end
+      p ""
+    end
+    redirect_to plants_path
   end
 
   def admin_catalogo
