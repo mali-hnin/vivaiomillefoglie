@@ -313,6 +313,6 @@ class PlantsController < ApplicationController
 
     def plant_params
       params.require(:plant).permit(:name, :description, :category, :esposizione, :fioritura, :altezza, :terreno,
-                                    :densità, :vaso, :disponibile, :novità, :utile_per, :prezzo, :nascondi, :photo)
+                                    :densità, :vaso, :disponibile, :novità, :utile_per, :prezzo, :nascondi, :photo, :vendita_vivaio)
     end
 end

@@ -32,7 +32,9 @@ class Plant < ApplicationRecord
         ["Erbacee perenni"],
         ["Erbacee annuali"],
         ["Graminacee"],
-        ["Altro"]
+        ["Alberi"],
+        ["Arbusti"],
+        ["Rampicanti"]
       ]
     end
 

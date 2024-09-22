@@ -78,17 +78,23 @@
 									</ul>
 								</div>
 								<div class="content">
-									<% if @plant.disponibile? %>
-										<%= form_for @line_item, class: "d-flex justify-content-center", remote: true do |f| %>
-											<%= f.hidden_field :plant_id, value: @plant.id %>
-											<%= f.number_field :quantity, value: 1, class: "small-field" %>
-											<%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
+									<% if !@plant.vendita_vivaio? %>
+										<% if @plant.disponibile? %>
+											<%= form_for @line_item, class: "d-flex justify-content-center", remote: true do |f| %>
+												<%= f.hidden_field :plant_id, value: @plant.id %>
+												<%= f.number_field :quantity, value: 1, class: "small-field" %>
+												<%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
   <span class='visually-hidden'>Loading...</span>".html_safe }, class: 'btn btn-purple', style: 'min-width:187px;' do %>
-												Aggiungi al carrello
+													Aggiungi al carrello
+												<% end %>
 											<% end %>
+										<% else %>
+											<%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
 										<% end %>
 									<% else %>
-										<%= button_to 'Aggiungi al carrello', line_items_path(plant_id: @plant), class: 'btn btn-purple disabled' %>
+										<ul>
+											<li><span class="small-caps text-success">Questa pianta può essere acquistata solo in vivaio.</span></li>
+										</ul>
 									<% end %>
 								</div>
 								<div class="content">
