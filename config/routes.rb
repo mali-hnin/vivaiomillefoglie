@@ -3,13 +3,16 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :plants do
-    collection do    # collection => no restaurant id in URL
+    collection do # collection => no restaurant id in URL
       get "by_created", to: "plants#by_created"
       get "by_updated", to: "plants#by_updated"
       get "erbacee_perenni", to: "plants#erbacee_perenni"
       get "erbacee_annuali", to: "plants#erbacee_annuali"
       get "graminacee", to: "plants#graminacee"
       get "categoria_altro", to: "plants#categoria_altro"
+      get "alberi", to: "plants#alberi"
+      get "arbusti", to: "plants#arbusti"
+      get "rampicanti", to: "plants#rampicanti"
       get "esposizione_sole", to: "plants#esposizione_sole"
       get "esposizione_ombra", to: "plants#esposizione_ombra"
       get "fioritura_primavera", to: "plants#fioritura_primavera"
