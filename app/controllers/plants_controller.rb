@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show edit update destroy]
   before_action :authenticate_user!, except:
-    %i[index show erbacee_perenni erbacee_annuali graminacee categoria_altro
+    %i[index show erbacee_perenni erbacee_annuali graminacee alberi arbusti rampicanti
        esposizione_sole esposizione_ombra
        fioritura_primavera fioritura_estate fioritura_autunno fioritura_inverno
        altezza_bassa altezza_media altezza_alta
@@ -63,6 +63,39 @@ class PlantsController < ApplicationController
     @category = "altre categorie"
     @pagy, @plants = pagy(Plant.altre_categorie.filter_params(params.slice(:category, :esposizione, :fioritura,
                                                                            :altezza, :funzione)).is_visible.alphabetically)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @line_item = @cart.line_items.new
+  end
+
+  def alberi
+    @category = "alberi"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @line_item = @cart.line_items.new
+  end
+
+  def arbusti
+    @category = "arbusti"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @line_item = @cart.line_items.new
+  end
+
+  def rampicanti
+    @category = "rampicanti"
+    @pagy, @plants = pagy(Plant.filter_by_category(@category).filter_params(params.slice(:category, :esposizione,
+                                                                                         :fioritura, :altezza, :funzione)).is_visible.alphabetically)
     respond_to do |format|
       format.html
       format.js
