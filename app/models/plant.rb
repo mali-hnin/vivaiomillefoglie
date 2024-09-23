@@ -8,7 +8,7 @@ class Plant < ApplicationRecord
   scope :is_visible, -> { where(nascondi: false) }
   scope :filter_by_category, ->(category) { where("category ILIKE ?", "%" + category + "%") }
   scope :altre_categorie, lambda {
-                            where.not("category ILIKE ?", "erbacee perenni").where.not("category ILIKE ?", "erbacee annuali").where.not("category ILIKE ?", "graminacee").where.not("category ILIKE ?", "alberi").where.not("category ILIKE ?", "arbusti").where.not("category ILIKE ?", "rampicanti")
+                            where.not("category ILIKE ?", "erbacee perenni").where.not("category ILIKE ?", "erbacee annuali").where.not("category ILIKE ?", "graminacee")
                           }
   scope :filter_by_esposizione, ->(esposizione) { where("esposizione ILIKE ?", "%" + esposizione + "%") }
   scope :filter_by_fioritura, ->(fioritura) { where("fioritura ILIKE ?", "%" + fioritura + "%") }
