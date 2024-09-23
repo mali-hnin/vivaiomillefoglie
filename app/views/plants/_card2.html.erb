@@ -22,26 +22,31 @@
 				<p>
 					<%= humanized_money_with_symbol plant.prezzo %>
 					<% if plant.disponibile? %>
-						<span class="small-caps text-success fw-bold">disponibile</span>
-					<% else %>
-						<span class="small-caps text-danger">non disponibile</span>
+						<span class="small-caps text-success fw-bold">disponibile</span></br>
+					<% if plant.vendita_vivaio? %>
+						<span class="small-caps text-success fw-bold">solo in vivaio</span>
 					<% end %>
-				</p>
-				<% if plant.disponibile? %>
+				<% else %>
+					<span class="small-caps text-danger">non disponibile</span>
+				<% end %>
+			</p>
+			<% if plant.disponibile? %>
+				<% if !plant.vendita_vivaio? %>
 					<%= form_for @line_item, remote: true do |f| %>
 						<%= f.hidden_field :plant_id, value: plant.id %>
 						<%= f.number_field :quantity, value: 1, class: "small-field" %>
 						<%= button_tag :submit, data: { "disable-with": "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
-  <span class='visually-hidden'>Loading...</span>".html_safe }, id: "cart-button-#{plant.id}", class: 'btn btn-purple btn-cart' do %>
+    <span class='visually-hidden'>Loading...</span>".html_safe }, id: "cart-button-#{plant.id}", class: 'btn btn-purple btn-cart' do %>
 							<i class="fas fa-shopping-basket"></i><span class='visually-hidden'>Carrello</span>
 						<% end %>
 					<% end %>
-				<% else %>
-					<%= button_tag class: 'btn btn-purple disabled btn-cart' do %>
-						<i class="fas fa-shopping-basket"></i>
-					<% end %>
 				<% end %>
-			</div>
+			<% else %>
+				<%= button_tag class: 'btn btn-purple disabled btn-cart' do %>
+					<i class="fas fa-shopping-basket"></i>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
+</div>
 </div>
